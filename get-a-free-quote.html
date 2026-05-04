@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Gallery - AmeriDex Dryspace Showcase</title>
+  <title>Get a Free AmeriDex Quote</title>
   <meta name="description" content="Premium American-made integrated water-diverting decking system. Transform the space under your deck into dry, finished living space.">
   <meta name="theme-color" content="#0A2A4E">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Gallery - AmeriDex Dryspace Showcase">
+  <meta property="og:title" content="Get a Free AmeriDex Quote">
   <meta property="og:description" content="Premium American-made integrated water-diverting decking system. Transform the space under your deck into dry, finished living space.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/img/og.jpg">
@@ -37,8 +37,8 @@
     <a href="index.html">Home</a>
     <a href="how-system-works.html">How System Works</a>
     <a href="https://www.youtube.com/channel/UC3Fz0TEKbLpQZefnYQNCxmg" target="_blank" rel="noopener">Instructional Videos</a>
-    <a href="gallery.html" class="active">Gallery</a>
-    <a href="get-a-free-quote.html">Get a Free Quote</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="get-a-free-quote.html" class="active">Get a Free Quote</a>
     <a href="contact-us.html">Contact Us</a>
     </nav>
 
@@ -80,22 +80,153 @@
 
   <section class="page-hero">
     <div class="container">
-      <h1>AmeriDex Dryspace Showcase</h1>
-      <p>See how customers utilized their extra space.</p>
+      <h1 data-quote-h1>Get a Free AmeriDex Quote</h1>
+      <p data-quote-sub>Share a few details about your deck and how you may want to use the space underneath. We will connect you with an AmeriDex expert.</p>
     </div>
   </section>
 
   <section class="section-pad bg-offwhite">
     <div class="container">
-      <!-- TODO: drop additional gallery images into assets/img/gallery/ and add another <div class="gallery-photo"> per image. -->
-      <div class="gallery-carousel reveal">
-        <figure class="gallery-photo"><img src="assets/img/gallery/under-deck-1.png" alt="Finished under-deck living space with AmeriDex"></figure>
-        <figure class="gallery-photo"><img src="assets/img/gallery/under-deck-2.png" alt="Under-deck dryspace with seating area"></figure>
-        <figure class="gallery-photo"><img src="assets/img/gallery/under-deck-3.png" alt="Outdoor kitchen built under an AmeriDex deck"></figure>
+
+      <div class="form-card reveal">
+        <div class="form-card-header">
+          <h2>AmeriDex Quote Request</h2>
+          <p data-quote-cardsub>Fill out the form below and we will provide a detailed quote for your DrySpace project within 1-2 business days.</p>
+        </div>
+
+        <div class="step-indicator" aria-hidden="true">
+          <span class="step-pill active"><span class="num">1</span> Project Basics</span>
+          <span class="step-connector"></span>
+          <span class="step-pill"><span class="num">2</span> Site Details</span>
+          <span class="step-connector"></span>
+          <span class="step-pill"><span class="num">3</span> Contact</span>
+        </div>
+
+        <!-- Replace https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT with your real endpoint. -->
+        <form class="form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT" method="POST" enctype="multipart/form-data">
+
+          <div class="form-section" data-dealer-hide>
+            <h3>1. Project Basics</h3>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="deck_status">New or existing deck?</label>
+                <select id="deck_status" name="deck_status">
+                  <option value="">Select an option</option>
+                  <option>New construction</option>
+                  <option>Replacing an existing deck</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="deck_height">Deck height off the ground</label>
+                <select id="deck_height" name="deck_height">
+                  <option value="">Select height</option>
+                  <option>Under 8 ft</option>
+                  <option>8-12 ft</option>
+                  <option>12+ ft</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="deck_width">Deck size (approx. width, ft)</label>
+                <input type="number" id="deck_width" name="deck_width" min="0" inputmode="numeric">
+              </div>
+              <div>
+                <label for="deck_depth">Deck size (approx. depth, ft)</label>
+                <input type="number" id="deck_depth" name="deck_depth" min="0" inputmode="numeric">
+              </div>
+            </div>
+            <div>
+              <label>How do you want to use the space below?</label>
+              <div class="checkbox-row">
+                <label><input type="checkbox" name="use_below" value="Outdoor Kitchen"> Outdoor Kitchen</label>
+                <label><input type="checkbox" name="use_below" value="Lounge Area"> Lounge Area</label>
+                <label><input type="checkbox" name="use_below" value="Kids Play Zone"> Kids Play Zone</label>
+                <label><input type="checkbox" name="use_below" value="Storage / Gear"> Storage / Gear</label>
+                <label><input type="checkbox" name="use_below" value="Other"> Other</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section" data-dealer-show style="display:none;">
+            <h3>Tell us about your business</h3>
+            <div>
+              <label for="business_info">Tell us about your business</label>
+              <textarea id="business_info" name="business_info" placeholder="Company name, type of business (lumber yard, builder, architect, etc.), markets served, and what you are looking for from AmeriDex."></textarea>
+            </div>
+          </div>
+
+          <div class="form-section" data-dealer-hide>
+            <h3>2. Site Details</h3>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="zip">ZIP Code</label>
+                <input type="text" id="zip" name="zip" inputmode="numeric" autocomplete="postal-code">
+              </div>
+              <div>
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" autocomplete="address-level2">
+              </div>
+            </div>
+            <div>
+              <label for="state">State</label>
+              <input type="text" id="state" name="state" autocomplete="address-level1">
+            </div>
+            <div>
+              <label for="files">Upload photos or plans</label>
+              <input type="file" id="files" name="files" multiple accept="image/*,.pdf">
+              <p class="helper">Images and PDFs only. Max 10MB per file.</p>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>3. Contact</h3>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="first_name">First Name *</label>
+                <input type="text" id="first_name" name="first_name" required autocomplete="given-name">
+              </div>
+              <div>
+                <label for="last_name">Last Name *</label>
+                <input type="text" id="last_name" name="last_name" required autocomplete="family-name">
+              </div>
+            </div>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+              <div>
+                <label for="phone">Phone (optional)</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
+            </div>
+            <div>
+              <label for="best_time">Best time to reach you</label>
+              <select id="best_time" name="best_time">
+                <option value="">Select a window</option>
+                <option>Morning</option>
+                <option>Afternoon</option>
+                <option>Evening</option>
+                <option>Anytime</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <label class="agree-line">
+              <input type="checkbox" name="agree" required>
+              <span>I agree that AmeriDex or an authorized installer may contact me regarding my inquiry.</span>
+            </label>
+          </div>
+
+          <div class="submit-row">
+            <button type="submit" class="btn btn-red btn-lg">Submit Quote Request</button>
+          </div>
+        </form>
       </div>
-      <div style="text-align:center;margin-top:3rem;" class="reveal">
-        <a class="footer-portal-pill" href="contact-us.html" style="background:var(--navy);border-color:var(--navy);">Talk to an AmeriDex Specialist</a>
-      </div>
+
     </div>
   </section>
 

@@ -1,8 +1,11 @@
 // AmeriDex Dryspace System - site.js
-// Sticky header, mobile menu, reveal-on-scroll, quote query-param prefill
+// Sticky header, mobile menu, reveal-on-scroll, query-param prefill, samples picker
 
 (function() {
   'use strict';
+
+  // Mark JS available so reveal anims activate
+  document.documentElement.classList.add('js');
 
   // ===== Mobile menu toggle =====
   const hamburger = document.querySelector('.hamburger');
@@ -41,17 +44,68 @@
   }
 
   // ===== Quote page query-param prefill =====
-  // If ?type=dealer, swap H1 and pre-select "Dealer prospect"
+  // ?type=dealer flips H1 + sub copy and hides the deck size fields.
   const qs = new URLSearchParams(window.location.search);
   if (qs.get('type') === 'dealer') {
     const h1 = document.querySelector('[data-quote-h1]');
     if (h1) h1.textContent = 'Become an AmeriDex Dealer';
-    const select = document.querySelector('select[name="role"]');
-    if (select) {
-      const opt = Array.from(select.options).find(o => /dealer/i.test(o.value) || /dealer/i.test(o.textContent));
-      if (opt) select.value = opt.value;
-    }
     const sub = document.querySelector('[data-quote-sub]');
     if (sub) sub.textContent = "Tell us about your business. We'll get back to you within one business day.";
+    const cardSub = document.querySelector('[data-quote-cardsub]');
+    if (cardSub) cardSub.textContent = "Fill out the form below and our dealer team will be in touch within 1 business day.";
+    document.querySelectorAll('[data-dealer-hide]').forEach(el => { el.style.display = 'none'; });
+    const businessBlock = document.querySelector('[data-dealer-show]');
+    if (businessBlock) businessBlock.style.display = '';
+  }
+
+  // ===== Samples request: size radio cards (visual selection) =====
+  document.querySelectorAll('.size-radio').forEach(card => {
+    const input = card.querySelector('input[type="radio"]');
+    card.addEventListener('click', (ev) => {
+      if (!input) return;
+      input.checked = true;
+      document.querySelectorAll('.size-radio').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+    });
+  });
+  // Pre-select the first size radio that has [checked]
+  const checkedSize = document.querySelector('.size-radio input[type="radio"]:checked');
+  if (checkedSize) checkedSize.closest('.size-radio').classList.add('selected');
+
+  // ===== Samples request: color toggle =====
+  const colorPicks = document.querySelectorAll('.color-pick');
+  const colorCounter = document.querySelector('.color-pick-counter');
+  const hiddenColors = document.querySelector('input[name="selected_colors"]');
+  function updateColorState() {
+    const selected = Array.from(document.querySelectorAll('.color-pick.selected'))
+      .map(el => el.getAttribute('data-color'));
+    if (colorCounter) colorCounter.textContent = selected.length + (selected.length === 1 ? ' color selected' : ' colors selected');
+    if (hiddenColors) hiddenColors.value = selected.join(', ');
+  }
+  colorPicks.forEach(el => {
+    el.addEventListener('click', () => {
+      el.classList.toggle('selected');
+      updateColorState();
+    });
+  });
+  const selectAll = document.querySelector('.select-all-pill');
+  if (selectAll) {
+    selectAll.addEventListener('click', () => {
+      const allSelected = Array.from(colorPicks).every(c => c.classList.contains('selected'));
+      colorPicks.forEach(c => c.classList.toggle('selected', !allSelected));
+      selectAll.textContent = allSelected ? 'Select All' : 'Clear All';
+      updateColorState();
+    });
+  }
+  if (colorPicks.length) updateColorState();
+
+  // ===== Warranty form: prefill today's date in signature_date if empty =====
+  const sigDate = document.querySelector('input[name="signature_date"]');
+  if (sigDate && !sigDate.value) {
+    const t = new Date();
+    const yyyy = t.getFullYear();
+    const mm = String(t.getMonth() + 1).padStart(2, '0');
+    const dd = String(t.getDate()).padStart(2, '0');
+    sigDate.value = yyyy + '-' + mm + '-' + dd;
   }
 })();

@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Gallery - AmeriDex Dryspace Showcase</title>
+  <title>Contact AmeriDex</title>
   <meta name="description" content="Premium American-made integrated water-diverting decking system. Transform the space under your deck into dry, finished living space.">
   <meta name="theme-color" content="#0A2A4E">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Gallery - AmeriDex Dryspace Showcase">
+  <meta property="og:title" content="Contact AmeriDex">
   <meta property="og:description" content="Premium American-made integrated water-diverting decking system. Transform the space under your deck into dry, finished living space.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/img/og.jpg">
@@ -37,9 +37,9 @@
     <a href="index.html">Home</a>
     <a href="how-system-works.html">How System Works</a>
     <a href="https://www.youtube.com/channel/UC3Fz0TEKbLpQZefnYQNCxmg" target="_blank" rel="noopener">Instructional Videos</a>
-    <a href="gallery.html" class="active">Gallery</a>
+    <a href="gallery.html">Gallery</a>
     <a href="get-a-free-quote.html">Get a Free Quote</a>
-    <a href="contact-us.html">Contact Us</a>
+    <a href="contact-us.html" class="active">Contact Us</a>
     </nav>
 
     <div class="site-header-cta">
@@ -80,22 +80,158 @@
 
   <section class="page-hero">
     <div class="container">
-      <h1>AmeriDex Dryspace Showcase</h1>
-      <p>See how customers utilized their extra space.</p>
+      <h1>Contact AmeriDex</h1>
+      <p>Have questions about the AmeriDex dryspace system, products, or installation? Send us a message and we will respond within 1-2 business days.</p>
     </div>
   </section>
 
   <section class="section-pad bg-offwhite">
     <div class="container">
-      <!-- TODO: drop additional gallery images into assets/img/gallery/ and add another <div class="gallery-photo"> per image. -->
-      <div class="gallery-carousel reveal">
-        <figure class="gallery-photo"><img src="assets/img/gallery/under-deck-1.png" alt="Finished under-deck living space with AmeriDex"></figure>
-        <figure class="gallery-photo"><img src="assets/img/gallery/under-deck-2.png" alt="Under-deck dryspace with seating area"></figure>
-        <figure class="gallery-photo"><img src="assets/img/gallery/under-deck-3.png" alt="Outdoor kitchen built under an AmeriDex deck"></figure>
+
+      <div class="form-card reveal">
+        <div class="form-card-header">
+          <h2>Contact AmeriDex</h2>
+          <p>Send us a message and we will respond within 1-2 business days.</p>
+        </div>
+
+        <!-- Replace https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT with your real endpoint. -->
+        <form class="form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT" method="POST">
+          <div class="form-row form-row-2">
+            <div>
+              <label for="first_name">First Name *</label>
+              <input type="text" id="first_name" name="first_name" required autocomplete="given-name">
+            </div>
+            <div>
+              <label for="last_name">Last Name *</label>
+              <input type="text" id="last_name" name="last_name" required autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-row form-row-2">
+            <div>
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div>
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-row form-row-2">
+            <div>
+              <label for="city">City *</label>
+              <input type="text" id="city" name="city" required autocomplete="address-level2">
+            </div>
+            <div>
+              <label for="state">State / Province *</label>
+              <select id="state" name="state" required autocomplete="address-level1">
+                <option value="">Select a state</option>
+                  <option>AL</option>
+                  <option>AK</option>
+                  <option>AZ</option>
+                  <option>AR</option>
+                  <option>CA</option>
+                  <option>CO</option>
+                  <option>CT</option>
+                  <option>DE</option>
+                  <option>FL</option>
+                  <option>GA</option>
+                  <option>HI</option>
+                  <option>ID</option>
+                  <option>IL</option>
+                  <option>IN</option>
+                  <option>IA</option>
+                  <option>KS</option>
+                  <option>KY</option>
+                  <option>LA</option>
+                  <option>ME</option>
+                  <option>MD</option>
+                  <option>MA</option>
+                  <option>MI</option>
+                  <option>MN</option>
+                  <option>MS</option>
+                  <option>MO</option>
+                  <option>MT</option>
+                  <option>NE</option>
+                  <option>NV</option>
+                  <option>NH</option>
+                  <option>NJ</option>
+                  <option>NM</option>
+                  <option>NY</option>
+                  <option>NC</option>
+                  <option>ND</option>
+                  <option>OH</option>
+                  <option>OK</option>
+                  <option>OR</option>
+                  <option>PA</option>
+                  <option>RI</option>
+                  <option>SC</option>
+                  <option>SD</option>
+                  <option>TN</option>
+                  <option>TX</option>
+                  <option>UT</option>
+                  <option>VT</option>
+                  <option>VA</option>
+                  <option>WA</option>
+                  <option>WV</option>
+                  <option>WI</option>
+                  <option>WY</option>
+                  <option>DC</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row form-row-2">
+            <div>
+              <label for="zip">ZIP / Postal Code *</label>
+              <input type="text" id="zip" name="zip" required inputmode="numeric" autocomplete="postal-code">
+            </div>
+            <div>
+              <label for="topic">How can we help? *</label>
+              <select id="topic" name="topic" required>
+                <option value="">Select a topic</option>
+                <option>General Question</option>
+                <option>Pricing &amp; Quote</option>
+                <option>Installation Help</option>
+                <option>Warranty</option>
+                <option>Become a Dealer</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <label class="agree-line">
+            <input type="checkbox" name="agree" required>
+            <span>I agree that AmeriDex or an authorized installer may contact me regarding my inquiry.</span>
+          </label>
+          <div class="submit-row">
+            <button type="submit" class="btn btn-red btn-lg">Send Message</button>
+          </div>
+        </form>
       </div>
-      <div style="text-align:center;margin-top:3rem;" class="reveal">
-        <a class="footer-portal-pill" href="contact-us.html" style="background:var(--navy);border-color:var(--navy);">Talk to an AmeriDex Specialist</a>
+
+      <div class="direct-contact-band reveal">
+        <div class="direct-contact-grid">
+          <div>
+            <h4>Sales</h4>
+            <p>
+              <a href="mailto:sales@ameridex.com?subject=AmeriDex%20Inquiry">sales@ameridex.com</a><br>
+              <a href="tel:18002179206">1-800-217-9206</a><br>
+              Mon-Fri, 8am-5pm ET
+            </p>
+          </div>
+          <div>
+            <h4>Address</h4>
+            <p>1129A Industrial Parkway<br>Brick, NJ 08724</p>
+          </div>
+          <div>
+            <h4>Dealer Portal</h4>
+            <p><a href="https://dealerportal.ameridex.com" target="_blank" rel="noopener">dealerportal.ameridex.com</a><br>For authorized AmeriDex dealers and installers.</p>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
