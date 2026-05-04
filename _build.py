@@ -229,53 +229,15 @@ def trust_strip_white():
 
 
 def cross_section_svg():
-    """Inline SVG of the AmeriDex board cross-section: brown deck boards with
-    gray Dexerdry seal between them, blue arrows showing water shedding."""
+    """AmeriDex assembly cross-section, generated directly from the geometry
+    in Assem2.STEP and Azek-Seal-4-19-19-Version-1.2.STEP. The SVG file lives
+    at assets/img/diagrams/ameridex-system.svg and is the source of truth for
+    the board + Dexerdry seal profile. Do NOT replace with hand-drawn shapes."""
     return '''
-<svg viewBox="0 0 480 320" role="img" aria-label="AmeriDex cross-section: integrated PVC deck boards with Dexerdry seal stopping water at the surface" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="brd" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#7a5538"/>
-      <stop offset="100%" stop-color="#553a26"/>
-    </linearGradient>
-    <pattern id="grain" width="6" height="120" patternUnits="userSpaceOnUse">
-      <rect width="6" height="120" fill="url(#brd)"/>
-      <rect x="0" y="0" width="1" height="120" fill="rgba(0,0,0,0.18)"/>
-      <rect x="3" y="0" width="0.5" height="120" fill="rgba(0,0,0,0.1)"/>
-    </pattern>
-  </defs>
-  <!-- left board -->
-  <rect x="40"  y="120" width="170" height="120" fill="url(#grain)" stroke="#3a2818" stroke-width="2"/>
-  <!-- right board -->
-  <rect x="270" y="120" width="170" height="120" fill="url(#grain)" stroke="#3a2818" stroke-width="2"/>
-  <!-- Dexerdry seal between (cross-shape) -->
-  <g fill="#9aa0a8" stroke="#5b6068" stroke-width="2">
-    <rect x="210" y="130" width="60" height="100" />
-    <path d="M210 150 L195 158 L195 172 L210 180 Z"/>
-    <path d="M270 150 L285 158 L285 172 L270 180 Z"/>
-    <path d="M210 200 L195 208 L195 222 L210 230 Z"/>
-    <path d="M270 200 L285 208 L285 222 L270 230 Z"/>
-  </g>
-  <!-- top notch joining seal to flush deck top -->
-  <rect x="225" y="115" width="30" height="14" fill="#9aa0a8" stroke="#5b6068" stroke-width="2"/>
-  <!-- water arrows -->
-  <g stroke="#3D8BD6" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M150 90 L80  60"/>
-    <path d="M80 60 L92 56 M80 60 L88 70"/>
-    <path d="M330 90 L400 60"/>
-    <path d="M400 60 L388 56 M400 60 L392 70"/>
-  </g>
-  <!-- water droplets -->
-  <g fill="#3D8BD6" opacity="0.85">
-    <circle cx="125" cy="90" r="4"/>
-    <circle cx="355" cy="90" r="4"/>
-  </g>
-  <!-- captions -->
-  <g font-family="Archivo, sans-serif" font-weight="800" font-size="11" fill="#0A2A4E" letter-spacing="0.08em">
-    <text x="80"  y="48" text-anchor="start">WATER SHEDS</text>
-    <text x="400" y="48" text-anchor="end">WATER SHEDS</text>
-  </g>
-</svg>
+<img src="assets/img/diagrams/ameridex-system.svg"
+     alt="AmeriDex assembly cross-section: cellular PVC deck boards locking onto the Dexerdry TPE seal"
+     loading="lazy"
+     style="width:100%;height:auto;display:block;">
 '''
 
 
@@ -337,7 +299,7 @@ def page_index():
     </div>
   </section>
 
-  {{trust_strip_white()}}
+  {trust_strip_white()}
 
   <!-- Why the AmeriDex System Works -->
   <section class="section-pad bg-offwhite">
@@ -381,7 +343,7 @@ def page_index():
           </div>
         </div>
         <div class="why-diagram reveal">
-{{cross_section_svg()}}
+{cross_section_svg()}
         </div>
       </div>
     </div>
@@ -446,17 +408,13 @@ def page_how_it_works():
         </div>
         <div class="system-card reveal">
           <div class="visual">
-            <svg viewBox="0 0 220 160" role="img" aria-label="Dexerdry seal cross-section profile" xmlns="http://www.w3.org/2000/svg">
-              <g fill="#9aa0a8" stroke="#5b6068" stroke-width="2">
-                <rect x="90"  y="20"  width="40" height="120"/>
-                <path d="M90 40 L70 50 L70 70 L90 80 Z"/>
-                <path d="M130 40 L150 50 L150 70 L130 80 Z"/>
-                <path d="M90 90 L70 100 L70 120 L90 130 Z"/>
-                <path d="M130 90 L150 100 L150 120 L130 130 Z"/>
-                <rect x="100" y="10" width="20" height="14"/>
-              </g>
-              <text x="110" y="155" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11" font-weight="800" fill="#0A2A4E" letter-spacing="0.1em">DEXERDRY PROFILE</text>
-            </svg>
+            <!-- Real Dexerdry profile generated from Azek-Seal-4-19-19-Version-1.2.STEP.
+                 Source of truth: assets/img/diagrams/dexerdry-profile.svg.
+                 Do NOT replace with hand-drawn shapes. -->
+            <img src="assets/img/diagrams/dexerdry-profile.svg"
+                 alt="Dexerdry seal cross-section profile (from SolidWorks STEP geometry)"
+                 loading="lazy"
+                 style="width:100%;height:auto;display:block;">
           </div>
           <div class="body">
             <h3>Dexerdry Integrated Seal</h3>
