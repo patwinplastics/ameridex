@@ -7,3 +7,1151 @@ the navigation, head meta, and footer stay in lockstep.
 
 Usage:  python3 _build.py
 """
+import os, pathlib, textwrap
+
+ROOT = pathlib.Path(__file__).resolve().parent
+
+# ----------------------------------------------------------------------
+# SHARED PARTIALS
+# ----------------------------------------------------------------------
+
+NAV_LINKS = [
+    ("Home",                 "index.html"),
+    ("How System Works",     "how-system-works.html"),
+    ("Instructional Videos", "https://www.youtube.com/channel/UC3Fz0TEKbLpQZefnYQNCxmg"),
+    ("Gallery",              "gallery.html"),
+    ("Get a Free Quote",     "get-a-free-quote.html"),
+    ("Contact Us",           "contact-us.html"),
+]
+
+DEALER_PORTAL_URL = "https://dealerportal.ameridex.com"
+
+
+def head(title, description="Premium American-made integrated water-diverting decking system. Transform the space under your deck into dry, finished living space."):
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{title}</title>
+  <meta name="description" content="{description}">
+  <meta name="theme-color" content="#0A2A4E">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{title}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/og.jpg">
+  <!-- TODO: drop a real 1200x630 OG image at assets/img/og.jpg -->
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/site.css">
+
+  <!-- Tailwind CDN is a progressive enhancement only - all critical styling is in site.css -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script defer src="js/site.js"></script>
+</head>
+<body>
+'''
+
+
+def header(active_path):
+    """Sticky navy header with full nav + utilities + mobile menu."""
+    nav_items = []
+    for label, href in NAV_LINKS:
+        is_external = href.startswith("http")
+        is_active = (href == active_path)
+        target = ' target="_blank" rel="noopener"' if is_external else ''
+        cls = ' class="active"' if is_active else ''
+        nav_items.append(f'    <a href="{href}"{target}{cls}>{label}</a>')
+
+    mobile_items = []
+    for label, href in NAV_LINKS:
+        is_external = href.startswith("http")
+        target = ' target="_blank" rel="noopener"' if is_external else ''
+        mobile_items.append(f'      <a href="{href}"{target}>{label}</a>')
+
+    nav_html = "\n".join(nav_items)
+    mobile_html = "\n".join(mobile_items)
+
+    return f'''
+<header class="site-header">
+  <div class="container site-header-inner">
+    <a href="index.html" aria-label="AmeriDex home" class="block">
+      <img class="header-logo-img" src="assets/img/logo.png" alt="AmeriDex">
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+{nav_html}
+    </nav>
+
+    <div class="site-header-cta">
+      <a href="samples-request.html" class="outline-link" style="color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;border:1.5px solid rgba(255,255,255,0.4);border-radius:999px;padding:0.5rem 0.85rem;">Order Samples</a>
+      <a href="get-a-free-quote.html" style="background:var(--red);color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;border-radius:999px;padding:0.55rem 1rem;">Get a Free Quote</a>
+    </div>
+
+    <button class="hamburger" aria-label="Open menu" aria-controls="mobile-menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-head container">
+    <a href="index.html" aria-label="AmeriDex home"><img class="header-logo-img" style="height:36px" src="assets/img/logo.png" alt="AmeriDex"></a>
+    <button class="hamburger mobile-menu-close" aria-label="Close menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 6 18 18M6 18 18 6"/></svg>
+    </button>
+  </div>
+  <nav class="container" aria-label="Mobile">
+{mobile_html}
+    <a href="samples-request.html">Order Samples</a>
+    <a href="warranty-registration.html">Register Warranty</a>
+  </nav>
+  <div class="mobile-cta container">
+    <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Get a Free Quote</a>
+    <a class="btn btn-outline-white btn-lg" href="{DEALER_PORTAL_URL}" target="_blank" rel="noopener">Dealer Portal</a>
+  </div>
+</div>
+'''
+
+
+def footer():
+    return f'''
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <div class="footer-col footer-brand">
+      <h4>SITEMAP</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://www.youtube.com/channel/UC3Fz0TEKbLpQZefnYQNCxmg" target="_blank" rel="noopener">Instructional Videos</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="get-a-free-quote.html">Get a Free Quote</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+        <li><a href="warranty-registration.html">Register Warranty</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>LOCATION</h4>
+      <p class="footer-contact">
+        <a href="mailto:sales@ameridex.com?subject=AmeriDex%20Inquiry">sales@ameridex.com</a><br>
+        <a href="tel:18002179206">Tel. 1-800-217-9206</a><br>
+        1129A Industrial Parkway<br>
+        Brick, NJ 08724
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>SOCIAL</h4>
+      <ul>
+        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+      <p style="margin-top:1rem;color:rgba(255,255,255,0.78);font-size:0.92rem;line-height:1.55;max-width:18rem;">Under-deck dryspace systems that protect and transform outdoor living.</p>
+      <div class="badge-row">
+        <span class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18v14H3z"/><path d="M3 9h18M3 13h18"/></svg>Made in USA</span>
+        <span class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 9.4 8 11 4.5-1.6 8-6 8-11V5l-8-3z"/></svg>Warranty</span>
+      </div>
+    </div>
+
+    <div class="footer-col footer-logo-block">
+      <img src="assets/img/logo.png" alt="AmeriDex">
+      <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-top:0.25rem;">Authorized dealers, log in to manage orders.</p>
+      <a href="{DEALER_PORTAL_URL}" target="_blank" rel="noopener" class="footer-portal-pill">Dealer Portal</a>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <div class="container">© 2026 by A &amp; M Building Products</div>
+  </div>
+</footer>
+
+<a class="dealer-pill" href="{DEALER_PORTAL_URL}" target="_blank" rel="noopener" aria-label="AmeriDex Dealer Portal (opens new tab)">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+  AmeriDex Dealer Portal
+</a>
+
+</body>
+</html>
+'''
+
+
+# ----------------------------------------------------------------------
+# REUSABLE BLOCKS
+# ----------------------------------------------------------------------
+
+SWATCHES = [
+    ("Driftwood",  "driftwood",  "solid",      "Solid"),
+    ("Khaki",      "khaki",      "solid",      "Solid"),
+    ("Slate",      "slate",      "solid",      "Solid"),
+    ("Beachwood",  "beachwood",  "variegated", "Variegated"),
+    ("Chestnut",   "chestnut",   "variegated", "Variegated"),
+    ("Redwood",    "redwood",    "variegated", "Variegated"),
+    ("Hazelnut",   "hazelnut",   "variegated", "Variegated"),
+]
+
+
+def trust_strip_white():
+    return '''
+<section class="trust-strip-white reveal">
+  <div class="container">
+    <div class="trust-strip-white-grid">
+      <div>
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 4v16"/><path d="M3 4h12l-2 4 2 4H3"/></svg>
+        </div>
+        <span class="trust-title">American Made</span>
+        <span class="trust-sub">Produced in the USA</span>
+      </div>
+      <div>
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3s-6 7.5-6 12a6 6 0 0 0 12 0c0-4.5-6-12-6-12z"/><path d="M9.5 14a2.5 2.5 0 0 0 2.5 2.5"/></svg>
+        </div>
+        <span class="trust-title">Integrated Waterproofing</span>
+        <span class="trust-sub">Seamless protection</span>
+      </div>
+      <div>
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="3" rx="0.5"/><rect x="3" y="11" width="18" height="3" rx="0.5"/><rect x="3" y="16" width="18" height="3" rx="0.5"/></svg>
+        </div>
+        <span class="trust-title">Premium PVC Decking</span>
+        <span class="trust-sub">Durable and low-maintenance</span>
+      </div>
+    </div>
+  </div>
+</section>
+'''
+
+
+def cross_section_svg():
+    """Inline SVG of the AmeriDex board cross-section: brown deck boards with
+    gray Dexerdry seal between them, blue arrows showing water shedding."""
+    return '''
+<svg viewBox="0 0 480 320" role="img" aria-label="AmeriDex cross-section: integrated PVC deck boards with Dexerdry seal stopping water at the surface" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7a5538"/>
+      <stop offset="100%" stop-color="#553a26"/>
+    </linearGradient>
+    <pattern id="grain" width="6" height="120" patternUnits="userSpaceOnUse">
+      <rect width="6" height="120" fill="url(#brd)"/>
+      <rect x="0" y="0" width="1" height="120" fill="rgba(0,0,0,0.18)"/>
+      <rect x="3" y="0" width="0.5" height="120" fill="rgba(0,0,0,0.1)"/>
+    </pattern>
+  </defs>
+  <!-- left board -->
+  <rect x="40"  y="120" width="170" height="120" fill="url(#grain)" stroke="#3a2818" stroke-width="2"/>
+  <!-- right board -->
+  <rect x="270" y="120" width="170" height="120" fill="url(#grain)" stroke="#3a2818" stroke-width="2"/>
+  <!-- Dexerdry seal between (cross-shape) -->
+  <g fill="#9aa0a8" stroke="#5b6068" stroke-width="2">
+    <rect x="210" y="130" width="60" height="100" />
+    <path d="M210 150 L195 158 L195 172 L210 180 Z"/>
+    <path d="M270 150 L285 158 L285 172 L270 180 Z"/>
+    <path d="M210 200 L195 208 L195 222 L210 230 Z"/>
+    <path d="M270 200 L285 208 L285 222 L270 230 Z"/>
+  </g>
+  <!-- top notch joining seal to flush deck top -->
+  <rect x="225" y="115" width="30" height="14" fill="#9aa0a8" stroke="#5b6068" stroke-width="2"/>
+  <!-- water arrows -->
+  <g stroke="#3D8BD6" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M150 90 L80  60"/>
+    <path d="M80 60 L92 56 M80 60 L88 70"/>
+    <path d="M330 90 L400 60"/>
+    <path d="M400 60 L388 56 M400 60 L392 70"/>
+  </g>
+  <!-- water droplets -->
+  <g fill="#3D8BD6" opacity="0.85">
+    <circle cx="125" cy="90" r="4"/>
+    <circle cx="355" cy="90" r="4"/>
+  </g>
+  <!-- captions -->
+  <g font-family="Archivo, sans-serif" font-weight="800" font-size="11" fill="#0A2A4E" letter-spacing="0.08em">
+    <text x="80"  y="48" text-anchor="start">WATER SHEDS</text>
+    <text x="400" y="48" text-anchor="end">WATER SHEDS</text>
+  </g>
+</svg>
+'''
+
+
+def swatch_grid_v2_html():
+    cards = []
+    for name, slug, kind, label in SWATCHES:
+        cards.append(f'''      <div class="swatch-card-v2 reveal">
+        <img src="assets/img/swatches/{slug}.png" alt="AmeriDex {name} deck board sample" loading="lazy">
+        <h3>{name}</h3>
+        <span class="tag-pill {kind}">{label}</span>
+      </div>''')
+    return "\n".join(cards)
+
+
+# ----------------------------------------------------------------------
+# PAGES
+# ----------------------------------------------------------------------
+
+def page_index():
+    body = f'''
+<main id="main">
+
+  <!-- Hero with photo on right, navy gradient overlay -->
+  <section class="hero hero-with-photo">
+    <div class="hero-photo" aria-hidden="true">
+      <img src="assets/img/hero.jpg" alt="" loading="eager" fetchpriority="high">
+    </div>
+    <div class="container">
+      <div class="hero-content reveal">
+        <h1>Protect The Space Under Your Deck.</h1>
+        <p class="kicker">Premium, American-made integrated water-diverting system that turns your unused deck area into a dry, luxurious living space.</p>
+        <div class="hero-cta">
+          <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Get a Free Quote</a>
+          <a class="btn btn-outline-white btn-lg" href="how-system-works.html">See How it Works</a>
+        </div>
+        <a class="hero-pdf-link" href="pdfs/ameridex-installation.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6M9 15l3 3 3-3"/></svg>
+          Download Installation Instructions (PDF)
+        </a>
+        <!-- TODO: drop the real installation PDF at pdfs/ameridex-installation.pdf -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Deck Board Colors -->
+  <section class="section-pad bg-cream">
+    <div class="container">
+      <div class="section-head reveal" style="text-align:center;margin-left:auto;margin-right:auto;">
+        <h2 style="color:var(--navy)">Deck Board Colors</h2>
+        <p>Visualize the perfect finish for your AmeriDex system.</p>
+      </div>
+      <div class="swatch-grid-v2">
+{swatch_grid_v2_html()}
+      </div>
+      <div class="swatch-cta-row reveal">
+        <a class="btn btn-navy btn-lg" href="samples-request.html">Order Color Samples</a>
+        <a class="btn btn-outline-navy btn-lg" href="samples-request.html">Request Samples</a>
+      </div>
+    </div>
+  </section>
+
+  {{trust_strip_white()}}
+
+  <!-- Why the AmeriDex System Works -->
+  <section class="section-pad bg-offwhite">
+    <div class="container">
+      <div class="why-grid">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:1.25rem;">
+            <h2 style="color:var(--navy)">Why the AmeriDex System Works</h2>
+            <p>Integrated PVC decking and seal stops water at the surface and creates dry space below.</p>
+          </div>
+          <div class="why-bullets">
+            <div class="why-bullet">
+              <svg viewBox="0 0 96 72" role="img" aria-label="Integrated board and seal" xmlns="http://www.w3.org/2000/svg" style="width:96px;height:72px;margin:0 auto 0.6rem;display:block;">
+                <rect x="4"  y="24" width="40" height="36" fill="#7a5538" stroke="#0A2A4E" stroke-width="2"/>
+                <rect x="52" y="24" width="40" height="36" fill="#7a5538" stroke="#0A2A4E" stroke-width="2"/>
+                <rect x="40" y="18" width="16" height="48" fill="#9aa0a8" stroke="#0A2A4E" stroke-width="2"/>
+              </svg>
+              <span class="label">Integrated<br>Board + Seal</span>
+            </div>
+            <div class="why-bullet">
+              <svg viewBox="0 0 96 72" role="img" aria-label="Water stopped at the surface" xmlns="http://www.w3.org/2000/svg" style="width:96px;height:72px;margin:0 auto 0.6rem;display:block;">
+                <g fill="#3D8BD6" stroke="#0A2A4E" stroke-width="1.5">
+                  <path d="M30 6 c-4 8 -8 14 -8 18 a8 8 0 0 0 16 0 c0 -4 -4 -10 -8 -18z"/>
+                  <path d="M48 2  c-4 8 -8 14 -8 18 a8 8 0 0 0 16 0 c0 -4 -4 -10 -8 -18z"/>
+                  <path d="M66 6  c-4 8 -8 14 -8 18 a8 8 0 0 0 16 0 c0 -4 -4 -10 -8 -18z"/>
+                </g>
+                <rect x="4" y="42" width="88" height="22" fill="#7a5538" stroke="#0A2A4E" stroke-width="2"/>
+              </svg>
+              <span class="label">Water and Debris Stopped<br>at the Surface</span>
+            </div>
+            <div class="why-bullet">
+              <svg viewBox="0 0 96 72" role="img" aria-label="Dry space below" xmlns="http://www.w3.org/2000/svg" style="width:96px;height:72px;margin:0 auto 0.6rem;display:block;">
+                <rect x="4" y="6" width="88" height="10" fill="#7a5538" stroke="#0A2A4E" stroke-width="2"/>
+                <rect x="10" y="16" width="6"  height="48" fill="#5a4632" stroke="#0A2A4E" stroke-width="2"/>
+                <rect x="80" y="16" width="6"  height="48" fill="#5a4632" stroke="#0A2A4E" stroke-width="2"/>
+                <rect x="22" y="42" width="22" height="22" fill="#cdb795" stroke="#0A2A4E" stroke-width="1.5"/>
+                <rect x="50" y="34" width="22" height="30" fill="#cdb795" stroke="#0A2A4E" stroke-width="1.5"/>
+              </svg>
+              <span class="label">Dry Space<br>Below</span>
+            </div>
+          </div>
+        </div>
+        <div class="why-diagram reveal">
+{{cross_section_svg()}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lifestyle -->
+  <section class="section-pad bg-cream">
+    <div class="container">
+      <div class="section-head reveal" style="text-align:center;margin-left:auto;margin-right:auto;">
+        <h2 style="color:var(--navy)">See What Your Under-Deck Space Can Become</h2>
+      </div>
+      <div class="lifestyle-grid">
+        <div class="lifestyle-card reveal">
+          <img src="assets/img/lifestyle/outdoor-kitchen.png" alt="Outdoor Kitchen: covered cooking and dining zone that stays usable in rain">
+        </div>
+        <div class="lifestyle-card reveal">
+          <img src="assets/img/lifestyle/lounge-area.png" alt="Lounge Area: turn the space under your deck into an all-weather living room">
+        </div>
+        <div class="lifestyle-card reveal">
+          <img src="assets/img/lifestyle/kids-play-zone.png" alt="Kids Play Zone: give kids a dry place to play, even when the weather does not cooperate">
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.25rem;" class="reveal">
+        <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Get a Free Quote</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+'''
+    return head("AmeriDex - Protect The Space Under Your Deck") + header("index.html") + body + footer()
+
+
+def page_how_it_works():
+    body = f'''
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">ENGINEERED FOR DRY SPACE</span>
+      <h1>How the AmeriDex Dryspace System Works</h1>
+      <p>Integrated PVC decking and Dexerdry seal stop water at the surface and create dry, finished space below.</p>
+    </div>
+  </section>
+
+  <!-- Two-part system -->
+  <section class="section-pad bg-offwhite">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 style="color:var(--navy)">The Two-Part System</h2>
+        <p>One product. Two engineered components working together.</p>
+      </div>
+      <div class="two-card-grid">
+        <div class="system-card reveal">
+          <div class="visual">
+            <img src="assets/img/swatches/driftwood.png" alt="AmeriDex cellular PVC deck board">
+          </div>
+          <div class="body">
+            <h3>Cellular PVC Deck Boards</h3>
+            <p>Premium cellular PVC core with a proprietary ASA cap. Will not rot, splinter, or warp. Authentic grain. Generational lifespan.</p>
+          </div>
+        </div>
+        <div class="system-card reveal">
+          <div class="visual">
+            <svg viewBox="0 0 220 160" role="img" aria-label="Dexerdry seal cross-section profile" xmlns="http://www.w3.org/2000/svg">
+              <g fill="#9aa0a8" stroke="#5b6068" stroke-width="2">
+                <rect x="90"  y="20"  width="40" height="120"/>
+                <path d="M90 40 L70 50 L70 70 L90 80 Z"/>
+                <path d="M130 40 L150 50 L150 70 L130 80 Z"/>
+                <path d="M90 90 L70 100 L70 120 L90 130 Z"/>
+                <path d="M130 90 L150 100 L150 120 L130 130 Z"/>
+                <rect x="100" y="10" width="20" height="14"/>
+              </g>
+              <text x="110" y="155" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11" font-weight="800" fill="#0A2A4E" letter-spacing="0.1em">DEXERDRY PROFILE</text>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>Dexerdry Integrated Seal</h3>
+            <p>Automotive-grade TPE seal engineered to lock between every board. Diverts every drop of rain and snowmelt off the deck and away from the framing below.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 steps -->
+  <section class="section-pad bg-cream">
+    <div class="container">
+      <div class="section-head reveal" style="text-align:center;margin-left:auto;margin-right:auto;">
+        <h2 style="color:var(--navy)">How It Works in 3 Steps</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step-num">01</span>
+          <h3 style="color:var(--navy)">Frame your deck like normal.</h3>
+          <p>Standard joist layout, standard framing, no special substructure. AmeriDex installs on a conventional frame at 16" o.c.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">02</span>
+          <h3 style="color:var(--navy)">Install AmeriDex boards with the integrated Dexerdry seal.</h3>
+          <p>Each board carries the wood-alternative face and the integrated seal as part of its profile. Tongue-and-groove engagement creates a continuous waterproof deck surface.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">03</span>
+          <h3 style="color:var(--navy)">Water sheds away. Under-deck space stays bone dry.</h3>
+          <p>Rain runs across the deck, gets carried out by the seal, and falls clear of the joists. The space below stays dry, finished, and usable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New construction only -->
+  <section class="section-pad bg-offwhite">
+    <div class="container" style="max-width:880px;">
+      <div class="callout-card reveal">
+        <h3>Why New Construction Only</h3>
+        <p>AmeriDex is engineered into your build from the joists up. That is exactly why it works. Retrofit drainage systems hang underneath your deck and fail. AmeriDex is the deck.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs at a glance -->
+  <section class="section-pad bg-offwhite">
+    <div class="container" style="max-width:960px;">
+      <div class="section-head reveal">
+        <h2 style="color:var(--navy)">Specs At A Glance</h2>
+      </div>
+      <table class="spec-table-v2 reveal">
+        <tbody>
+          <tr><td>Board</td><td>Cellular PVC with proprietary ASA cap</td></tr>
+          <tr><td>Seal</td><td>Dexerdry automotive-grade TPE</td></tr>
+          <tr><td>Profile</td><td>Tongue-and-groove with integrated water-diverting seal</td></tr>
+          <!-- TODO: confirm exact lengths offered with A&M -->
+          <tr><td>Lengths</td><td>12 ft, 16 ft, 20 ft</td></tr>
+          <tr><td>Joist Spacing</td><td>16" o.c. residential</td></tr>
+          <tr><td>Fasteners</td><td>Starborn epoxy-coated screws or stainless screws and plugs (sold separately)</td></tr>
+          <tr><td>Warranty</td><td>25-Year Residential, 10-Year Limited Commercial</td></tr>
+          <tr><td>Application</td><td>New deck construction only</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CTA band -->
+  <section class="section-pad bg-navy">
+    <div class="container" style="text-align:center;">
+      <h2 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:1.5rem;">Ready to build with AmeriDex?</h2>
+      <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
+        <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Get a Free Quote</a>
+        <a class="btn btn-outline-white btn-lg" href="samples-request.html">Order Samples</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+'''
+    return head("How the AmeriDex Dryspace System Works") + header("how-system-works.html") + body + footer()
+
+
+def page_gallery():
+    body = '''
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>AmeriDex Dryspace Showcase</h1>
+      <p>See how customers utilized their extra space.</p>
+    </div>
+  </section>
+
+  <section class="section-pad bg-offwhite">
+    <div class="container">
+      <!-- TODO: drop additional gallery images into assets/img/gallery/ and add another <div class="gallery-photo"> per image. -->
+      <div class="gallery-carousel reveal">
+        <figure class="gallery-photo"><img src="assets/img/gallery/under-deck-1.png" alt="Finished under-deck living space with AmeriDex"></figure>
+        <figure class="gallery-photo"><img src="assets/img/gallery/under-deck-2.png" alt="Under-deck dryspace with seating area"></figure>
+        <figure class="gallery-photo"><img src="assets/img/gallery/under-deck-3.png" alt="Outdoor kitchen built under an AmeriDex deck"></figure>
+      </div>
+      <div style="text-align:center;margin-top:3rem;" class="reveal">
+        <a class="footer-portal-pill" href="contact-us.html" style="background:var(--navy);border-color:var(--navy);">Talk to an AmeriDex Specialist</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+'''
+    return head("Gallery - AmeriDex Dryspace Showcase") + header("gallery.html") + body + footer()
+
+
+def page_quote():
+    body = '''
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <h1 data-quote-h1>Get a Free AmeriDex Quote</h1>
+      <p data-quote-sub>Share a few details about your deck and how you may want to use the space underneath. We will connect you with an AmeriDex expert.</p>
+    </div>
+  </section>
+
+  <section class="section-pad bg-offwhite">
+    <div class="container">
+
+      <div class="form-card reveal">
+        <div class="form-card-header">
+          <h2>AmeriDex Quote Request</h2>
+          <p data-quote-cardsub>Fill out the form below and we will provide a detailed quote for your DrySpace project within 1-2 business days.</p>
+        </div>
+
+        <div class="step-indicator" aria-hidden="true">
+          <span class="step-pill active"><span class="num">1</span> Project Basics</span>
+          <span class="step-connector"></span>
+          <span class="step-pill"><span class="num">2</span> Site Details</span>
+          <span class="step-connector"></span>
+          <span class="step-pill"><span class="num">3</span> Contact</span>
+        </div>
+
+        <!-- Replace https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT with your real endpoint. -->
+        <form class="form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT" method="POST" enctype="multipart/form-data">
+
+          <div class="form-section" data-dealer-hide>
+            <h3>1. Project Basics</h3>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="deck_status">New or existing deck?</label>
+                <select id="deck_status" name="deck_status">
+                  <option value="">Select an option</option>
+                  <option>New construction</option>
+                  <option>Replacing an existing deck</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="deck_height">Deck height off the ground</label>
+                <select id="deck_height" name="deck_height">
+                  <option value="">Select height</option>
+                  <option>Under 8 ft</option>
+                  <option>8-12 ft</option>
+                  <option>12+ ft</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="deck_width">Deck size (approx. width, ft)</label>
+                <input type="number" id="deck_width" name="deck_width" min="0" inputmode="numeric">
+              </div>
+              <div>
+                <label for="deck_depth">Deck size (approx. depth, ft)</label>
+                <input type="number" id="deck_depth" name="deck_depth" min="0" inputmode="numeric">
+              </div>
+            </div>
+            <div>
+              <label>How do you want to use the space below?</label>
+              <div class="checkbox-row">
+                <label><input type="checkbox" name="use_below" value="Outdoor Kitchen"> Outdoor Kitchen</label>
+                <label><input type="checkbox" name="use_below" value="Lounge Area"> Lounge Area</label>
+                <label><input type="checkbox" name="use_below" value="Kids Play Zone"> Kids Play Zone</label>
+                <label><input type="checkbox" name="use_below" value="Storage / Gear"> Storage / Gear</label>
+                <label><input type="checkbox" name="use_below" value="Other"> Other</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section" data-dealer-show style="display:none;">
+            <h3>Tell us about your business</h3>
+            <div>
+              <label for="business_info">Tell us about your business</label>
+              <textarea id="business_info" name="business_info" placeholder="Company name, type of business (lumber yard, builder, architect, etc.), markets served, and what you are looking for from AmeriDex."></textarea>
+            </div>
+          </div>
+
+          <div class="form-section" data-dealer-hide>
+            <h3>2. Site Details</h3>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="zip">ZIP Code</label>
+                <input type="text" id="zip" name="zip" inputmode="numeric" autocomplete="postal-code">
+              </div>
+              <div>
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" autocomplete="address-level2">
+              </div>
+            </div>
+            <div>
+              <label for="state">State</label>
+              <input type="text" id="state" name="state" autocomplete="address-level1">
+            </div>
+            <div>
+              <label for="files">Upload photos or plans</label>
+              <input type="file" id="files" name="files" multiple accept="image/*,.pdf">
+              <p class="helper">Images and PDFs only. Max 10MB per file.</p>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>3. Contact</h3>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="first_name">First Name *</label>
+                <input type="text" id="first_name" name="first_name" required autocomplete="given-name">
+              </div>
+              <div>
+                <label for="last_name">Last Name *</label>
+                <input type="text" id="last_name" name="last_name" required autocomplete="family-name">
+              </div>
+            </div>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+              <div>
+                <label for="phone">Phone (optional)</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
+            </div>
+            <div>
+              <label for="best_time">Best time to reach you</label>
+              <select id="best_time" name="best_time">
+                <option value="">Select a window</option>
+                <option>Morning</option>
+                <option>Afternoon</option>
+                <option>Evening</option>
+                <option>Anytime</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <label class="agree-line">
+              <input type="checkbox" name="agree" required>
+              <span>I agree that AmeriDex or an authorized installer may contact me regarding my inquiry.</span>
+            </label>
+          </div>
+
+          <div class="submit-row">
+            <button type="submit" class="btn btn-red btn-lg">Submit Quote Request</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+'''
+    return head("Get a Free AmeriDex Quote") + header("get-a-free-quote.html") + body + footer()
+
+
+def page_contact():
+    states = ["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY","DC"]
+    state_options = "\n".join(f'                  <option>{s}</option>' for s in states)
+    body = f'''
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contact AmeriDex</h1>
+      <p>Have questions about the AmeriDex dryspace system, products, or installation? Send us a message and we will respond within 1-2 business days.</p>
+    </div>
+  </section>
+
+  <section class="section-pad bg-offwhite">
+    <div class="container">
+
+      <div class="form-card reveal">
+        <div class="form-card-header">
+          <h2>Contact AmeriDex</h2>
+          <p>Send us a message and we will respond within 1-2 business days.</p>
+        </div>
+
+        <!-- Replace https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT with your real endpoint. -->
+        <form class="form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT" method="POST">
+          <div class="form-row form-row-2">
+            <div>
+              <label for="first_name">First Name *</label>
+              <input type="text" id="first_name" name="first_name" required autocomplete="given-name">
+            </div>
+            <div>
+              <label for="last_name">Last Name *</label>
+              <input type="text" id="last_name" name="last_name" required autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-row form-row-2">
+            <div>
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div>
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-row form-row-2">
+            <div>
+              <label for="city">City *</label>
+              <input type="text" id="city" name="city" required autocomplete="address-level2">
+            </div>
+            <div>
+              <label for="state">State / Province *</label>
+              <select id="state" name="state" required autocomplete="address-level1">
+                <option value="">Select a state</option>
+{state_options}
+              </select>
+            </div>
+          </div>
+          <div class="form-row form-row-2">
+            <div>
+              <label for="zip">ZIP / Postal Code *</label>
+              <input type="text" id="zip" name="zip" required inputmode="numeric" autocomplete="postal-code">
+            </div>
+            <div>
+              <label for="topic">How can we help? *</label>
+              <select id="topic" name="topic" required>
+                <option value="">Select a topic</option>
+                <option>General Question</option>
+                <option>Pricing &amp; Quote</option>
+                <option>Installation Help</option>
+                <option>Warranty</option>
+                <option>Become a Dealer</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <label class="agree-line">
+            <input type="checkbox" name="agree" required>
+            <span>I agree that AmeriDex or an authorized installer may contact me regarding my inquiry.</span>
+          </label>
+          <div class="submit-row">
+            <button type="submit" class="btn btn-red btn-lg">Send Message</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="direct-contact-band reveal">
+        <div class="direct-contact-grid">
+          <div>
+            <h4>Sales</h4>
+            <p>
+              <a href="mailto:sales@ameridex.com?subject=AmeriDex%20Inquiry">sales@ameridex.com</a><br>
+              <a href="tel:18002179206">1-800-217-9206</a><br>
+              Mon-Fri, 8am-5pm ET
+            </p>
+          </div>
+          <div>
+            <h4>Address</h4>
+            <p>1129A Industrial Parkway<br>Brick, NJ 08724</p>
+          </div>
+          <div>
+            <h4>Dealer Portal</h4>
+            <p><a href="https://dealerportal.ameridex.com" target="_blank" rel="noopener">dealerportal.ameridex.com</a><br>For authorized AmeriDex dealers and installers.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+'''
+    return head("Contact AmeriDex") + header("contact-us.html") + body + footer()
+
+
+def page_samples():
+    color_picks = []
+    for name, slug, kind, label in SWATCHES:
+        color_picks.append(f'''        <button type="button" class="color-pick" data-color="{name}" aria-pressed="false">
+          <img src="assets/img/swatches/{slug}.png" alt="{name} sample">
+          <span>{name}</span>
+          <span class="check" aria-hidden="true">&#10003;</span>
+        </button>''')
+    color_html = "\n".join(color_picks)
+
+    body = f'''
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">FREE SAMPLES</span>
+      <h1>Request AmeriDex Deck Samples</h1>
+      <p>Pick the colors you want to see in person. We will ship small deck board samples to your door at no cost.</p>
+    </div>
+  </section>
+
+  <section class="section-pad bg-offwhite">
+    <div class="container">
+
+      <div class="form-card reveal">
+        <!-- Replace https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT with your real endpoint. -->
+        <form class="form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT" method="POST">
+
+          <div class="form-section">
+            <h3>1. Choose your sample size</h3>
+            <div class="size-radio-row">
+              <label class="size-radio">
+                <input type="radio" name="sample_size" value="6-Inch Sample" checked>
+                <span class="icon">
+                  <svg viewBox="0 0 80 36" fill="none" stroke="#0A2A4E" stroke-width="2"><rect x="2" y="6" width="76" height="24" rx="3"/><path d="M14 10v16M26 10v16M38 10v16M50 10v16M62 10v16"/></svg>
+                </span>
+                <strong>6-Inch Sample</strong>
+                <span>Compact swatch, great for color matching.</span>
+              </label>
+              <label class="size-radio">
+                <input type="radio" name="sample_size" value="12-Inch Sample">
+                <span class="icon">
+                  <svg viewBox="0 0 120 36" fill="none" stroke="#0A2A4E" stroke-width="2"><rect x="2" y="6" width="116" height="24" rx="3"/><path d="M16 10v16M30 10v16M44 10v16M58 10v16M72 10v16M86 10v16M100 10v16"/></svg>
+                </span>
+                <strong>12-Inch Sample</strong>
+                <span>Larger piece, see the full grain and texture.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>2. Select your colors</h3>
+            <div class="color-pick-head">
+              <span class="color-pick-counter">0 colors selected</span>
+              <button type="button" class="select-all-pill">Select All</button>
+            </div>
+            <div class="color-pick-grid">
+{color_html}
+            </div>
+            <input type="hidden" name="selected_colors" value="">
+          </div>
+
+          <div class="form-section">
+            <h3>3. Where do we send them?</h3>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="first_name">First Name *</label>
+                <input type="text" id="first_name" name="first_name" required autocomplete="given-name">
+              </div>
+              <div>
+                <label for="last_name">Last Name *</label>
+                <input type="text" id="last_name" name="last_name" required autocomplete="family-name">
+              </div>
+            </div>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
+            </div>
+            <div>
+              <label for="street">Mailing Address *</label>
+              <input type="text" id="street" name="street" required placeholder="Street address" autocomplete="street-address">
+            </div>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="city">City *</label>
+                <input type="text" id="city" name="city" required autocomplete="address-level2">
+              </div>
+              <div>
+                <label for="state">State *</label>
+                <input type="text" id="state" name="state" required autocomplete="address-level1">
+              </div>
+            </div>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="zip">ZIP *</label>
+                <input type="text" id="zip" name="zip" required autocomplete="postal-code">
+              </div>
+              <div>
+                <label for="project_type">Project type</label>
+                <select id="project_type" name="project_type">
+                  <option value="">Select a type</option>
+                  <option>Homeowner</option>
+                  <option>Builder</option>
+                  <option>Architect</option>
+                  <option>Dealer prospect</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="submit-row">
+            <button type="submit" class="btn btn-red btn-lg">Send My Sample Request</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+'''
+    return head("Order AmeriDex Samples - Free Decking Samples") + header("samples-request.html") + body + footer()
+
+
+def page_warranty():
+    body = '''
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">A&amp;M BUILDING PRODUCTS LLC</span>
+      <h1>AmeriDex Dryspace System Warranty Registration</h1>
+      <p>25-Year Residential / 10-Year Commercial Limited Warranty.</p>
+    </div>
+  </section>
+
+  <section class="section-pad bg-offwhite">
+    <div class="container">
+
+      <div class="form-card reveal">
+        <div class="note-yellow">
+          <strong>Important.</strong> Registration is required within 30 days of purchase or installation completion (whichever is later) for warranty coverage to take effect. Submit this form to register your AmeriDex Dryspace System installation.
+        </div>
+
+        <!-- Replace https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT with your real endpoint. -->
+        <form class="form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT" method="POST" enctype="multipart/form-data">
+
+          <div class="form-section">
+            <h3>Purchaser Information</h3>
+            <div>
+              <label for="purchaser_name">Original Purchaser / Property Owner *</label>
+              <input type="text" id="purchaser_name" name="purchaser_name" required>
+            </div>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="phone">Telephone *</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+              <div>
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Property Address</h3>
+            <div>
+              <label for="install_address">Installation Address *</label>
+              <input type="text" id="install_address" name="install_address" required placeholder="Street, City, State, ZIP">
+            </div>
+            <div>
+              <label for="mail_address">Mailing Address (if different)</label>
+              <input type="text" id="mail_address" name="mail_address" placeholder="Street, City, State, ZIP">
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Purchase &amp; Installation</h3>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="purchase_date">Date of Purchase *</label>
+                <input type="date" id="purchase_date" name="purchase_date" required>
+              </div>
+              <div>
+                <label for="install_date">Date of Installation Completion *</label>
+                <input type="date" id="install_date" name="install_date" required>
+              </div>
+            </div>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="dealer">Dealer / Distributor *</label>
+                <input type="text" id="dealer" name="dealer" required>
+              </div>
+              <div>
+                <label for="installer">Installer / Contractor *</label>
+                <input type="text" id="installer" name="installer" required>
+              </div>
+            </div>
+            <div class="form-row form-row-2">
+              <div>
+                <label for="lf_board">Linear Feet of Deck Board Installed *</label>
+                <input type="number" id="lf_board" name="lf_board" required min="0">
+              </div>
+              <div>
+                <label for="lf_seal">Linear Feet of Seal / Drainage Component *</label>
+                <input type="number" id="lf_seal" name="lf_seal" required min="0">
+              </div>
+            </div>
+            <div>
+              <label>Application Type *</label>
+              <div class="radio-inline">
+                <label><input type="radio" name="application" value="Residential" required> Residential</label>
+                <label><input type="radio" name="application" value="Commercial"> Commercial</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Proof of Purchase</h3>
+            <div>
+              <label for="proof_file">Upload Proof of Purchase (receipt or invoice)</label>
+              <input type="file" id="proof_file" name="proof_file" accept="image/*,.pdf">
+              <p class="helper">Optional but strongly recommended. PDF or image, max 10MB.</p>
+            </div>
+            <div>
+              <label>Proof of Purchase Status *</label>
+              <div class="radio-inline">
+                <label><input type="radio" name="proof_status" value="Attached above" required> Attached above</label>
+                <label><input type="radio" name="proof_status" value="Will email separately"> Will email separately</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Purchaser Acknowledgment</h3>
+            <p style="font-size:0.92rem;line-height:1.55;color:#333;margin-bottom:1rem;">
+              The AmeriDex Dryspace System Limited Warranty issued by A&amp;M Building Products LLC sets out the terms, conditions, and exclusions that apply to this product. Coverage requires installation per published instructions, including the use of approved fasteners (Starborn epoxy-coated screws or stainless steel screws and plugs), even though fasteners themselves are not warranted under this Limited Warranty.
+            </p>
+            <label class="agree-line">
+              <input type="checkbox" name="ack" required>
+              <span>I certify that the information provided is accurate and complete. I acknowledge that I have read and understand the AmeriDex Dryspace System Limited Warranty issued by A&amp;M Building Products LLC, including its terms, conditions, exclusions, and the requirement that fasteners (Starborn epoxy-coated screws or stainless steel screws and plugs) were used as specified, even though fasteners are not warranted under this Limited Warranty.</span>
+            </label>
+            <div class="form-row form-row-2" style="margin-top:1rem;">
+              <div>
+                <label for="signature">Digital Signature (type full name) *</label>
+                <input type="text" id="signature" name="signature" required>
+              </div>
+              <div>
+                <label for="signature_date">Date *</label>
+                <input type="date" id="signature_date" name="signature_date" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="submit-row">
+            <button type="submit" class="btn btn-navy btn-lg">SUBMIT REGISTRATION</button>
+          </div>
+        </form>
+      </div>
+
+      <div style="text-align:center;margin-top:2.5rem;font-size:0.92rem;line-height:1.7;color:#444;" class="reveal">
+        <strong style="display:block;color:var(--navy);font-family:var(--font-display);">A&amp;M Building Products LLC</strong>
+        Attn: AmeriDex Warranty Registration<br>
+        1129A Industrial Parkway, Brick, NJ 08724<br>
+        <a href="mailto:sales@ameridex.com" style="color:var(--red);font-weight:600;">sales@ameridex.com</a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+'''
+    return head("AmeriDex Warranty Registration") + header("warranty-registration.html") + body + footer()
+
+
+# ----------------------------------------------------------------------
+# WRITE
+# ----------------------------------------------------------------------
+PAGES = {
+    "index.html":                   page_index,
+    "how-system-works.html":        page_how_it_works,
+    "gallery.html":                 page_gallery,
+    "get-a-free-quote.html":        page_quote,
+    "contact-us.html":              page_contact,
+    "samples-request.html":         page_samples,
+    "warranty-registration.html":   page_warranty,
+}
+
+
+def main():
+    for fname, fn in PAGES.items():
+        out = ROOT / fname
+        out.write_text(fn(), encoding="utf-8")
+        print(f"wrote {fname} ({out.stat().st_size} bytes)")
+
+
+if __name__ == "__main__":
+    main()
