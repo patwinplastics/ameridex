@@ -26,34 +26,281 @@ NAV_LINKS = [
 
 DEALER_PORTAL_URL = "https://dealerportal.ameridex.com"
 
+# Canonical site origin used for absolute URLs in OG tags, canonical links,
+# JSON-LD, and the sitemap. Update if the production domain ever changes.
+SITE_ORIGIN = "https://ameridex.com"
+SITE_NAME = "AmeriDex"
+LEGAL_NAME = "A & M Building Products"
+DEFAULT_DESCRIPTION = (
+    "AmeriDex is the integrated above-joist deck drainage system. "
+    "PVC deck boards lock onto a Dexerdry seal at install, sending rain off the deck "
+    "and creating a dry, finished under-deck living space. Made in the USA."
+)
+# Default Organization-level JSON-LD that ships on every page so search
+# engines build a knowledge-graph entity for the brand.
+ORG_JSONLD = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": f"{SITE_ORIGIN}/#organization",
+    "name": "AmeriDex",
+    "legalName": LEGAL_NAME,
+    "url": SITE_ORIGIN,
+    "logo": f"{SITE_ORIGIN}/assets/img/logo.png",
+    "image": f"{SITE_ORIGIN}/assets/img/og.jpg",
+    "description": DEFAULT_DESCRIPTION,
+    "telephone": "+1-800-217-9206",
+    "email": "sales@ameridex.com",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1129A Industrial Parkway",
+        "addressLocality": "Brick",
+        "addressRegion": "NJ",
+        "postalCode": "08724",
+        "addressCountry": "US",
+    },
+    "sameAs": ["https://www.facebook.com/"],
+    "areaServed": "US",
+    "slogan": "Protect The Space Under Your Deck.",
+}
 
-def head(title, description="Premium American-made integrated water-diverting decking system. Transform the space under your deck into dry, finished living space."):
+
+def _jsonld(obj):
+    """Serialize a Python dict (or list of dicts) as a <script type=application/ld+json> tag.
+    Uses minimal escaping; we control the input so this is safe."""
+    import json
+    return f'<script type="application/ld+json">{json.dumps(obj, separators=(",", ":"), ensure_ascii=False)}</script>'
+
+
+def breadcrumb_schema(*pairs):
+    """Build a BreadcrumbList JSON-LD schema from (name, path) pairs.
+    Use '' as path for the homepage.
+    Example: breadcrumb_schema(('Home',''), ('Gallery','gallery.html'))
+    """
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": i + 1,
+                "name": name,
+                "item": f"{SITE_ORIGIN}/{path}".rstrip("/") if path else f"{SITE_ORIGIN}/",
+            }
+            for i, (name, path) in enumerate(pairs)
+        ],
+    }
+
+
+# Product schema for the AmeriDex Dryspace System (used on homepage and how-it-works)
+PRODUCT_JSONLD = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": f"{SITE_ORIGIN}/#product",
+    "name": "AmeriDex Dryspace System",
+    "alternateName": ["AmeriDex PVC Decking", "AmeriDex Above-Joist Drainage"],
+    "description": (
+        "Integrated above-joist deck drainage system combining cellular PVC deck boards "
+        "with the Dexerdry automotive-grade TPE seal. Creates a dry, finished living "
+        "space under the deck. Made in the USA for new deck construction."
+    ),
+    "brand": {"@type": "Brand", "name": "AmeriDex"},
+    "manufacturer": {"@id": f"{SITE_ORIGIN}/#organization"},
+    "category": "Decking / Under-Deck Drainage",
+    "countryOfOrigin": "US",
+    "image": [
+        f"{SITE_ORIGIN}/assets/img/og.jpg",
+        f"{SITE_ORIGIN}/assets/img/system-anatomy.jpg",
+        f"{SITE_ORIGIN}/assets/img/hero.jpg",
+    ],
+    "material": "Cellular PVC with proprietary ASA cap; TPE seal",
+    "audience": {"@type": "Audience", "audienceType": "Builders, contractors, dealers, homeowners building new decks"},
+    "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/ReturnShippingFees",
+    },
+}
+
+# FAQ content used both as JSON-LD and rendered as a real DOM section on how-it-works.
+HOW_IT_WORKS_FAQ = [
+    (
+        "What makes AmeriDex different from other under-deck drainage systems?",
+        "AmeriDex is an above-joist, integrated system. The waterproofing happens at the "
+        "deck surface itself, not in a tray hung underneath the framing. Competing retrofit "
+        "systems (Trex RainEscape, TimberTech DrySpace, ZipUP UnderDeck) are added below an "
+        "existing deck. AmeriDex is engineered into a new deck from the joists up, which is "
+        "why your joists, beams, and ledger stay dry for the life of the structure.",
+    ),
+    (
+        "Can AmeriDex be installed on an existing deck?",
+        "No. AmeriDex is engineered for new deck construction only. The Dexerdry TPE seal "
+        "locks between every board as the deck is installed, so it has to be built into the "
+        "project from the start. Trying to retrofit it onto an existing deck would require "
+        "removing all of the existing deck boards.",
+    ),
+    (
+        "What is the Dexerdry seal and what is it made of?",
+        "Dexerdry is the integrated drainage seal that ships between every AmeriDex deck "
+        "board. It is made from automotive-grade TPE (thermoplastic elastomer), the same "
+        "material category used in car door and window seals. It is engineered to flex "
+        "through years of thermal cycling without cracking or losing its watertight fit.",
+    ),
+    (
+        "What are AmeriDex deck boards made of?",
+        "AmeriDex boards are premium cellular PVC with a proprietary ASA cap. They will not "
+        "rot, splinter, or warp, and they carry an authentic wood grain finish. They are "
+        "made in the USA.",
+    ),
+    (
+        "What joist spacing does AmeriDex require?",
+        "AmeriDex installs on a conventional 16 inches on-center joist layout for residential "
+        "applications. No special substructure, sleepers, or sub-framing is required.",
+    ),
+    (
+        "What lengths and colors are available?",
+        "AmeriDex deck boards are available in 12, 16, and 20 foot lengths and in seven PVC "
+        "colors. You can request free samples to see all seven colors in person.",
+    ),
+    (
+        "What is the AmeriDex warranty?",
+        "AmeriDex carries a 25-year residential limited warranty and a 10-year limited "
+        "commercial warranty on the deck board system.",
+    ),
+]
+
+FAQ_JSONLD = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": q,
+            "acceptedAnswer": {"@type": "Answer", "text": a},
+        }
+        for q, a in HOW_IT_WORKS_FAQ
+    ],
+}
+
+# LocalBusiness schema for the contact page (NAP signal for local SEO).
+LOCAL_BUSINESS_JSONLD = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": f"{SITE_ORIGIN}/#localbusiness",
+    "name": "AmeriDex (A & M Building Products)",
+    "image": f"{SITE_ORIGIN}/assets/img/og.jpg",
+    "url": SITE_ORIGIN,
+    "telephone": "+1-800-217-9206",
+    "email": "sales@ameridex.com",
+    "priceRange": "$$",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1129A Industrial Parkway",
+        "addressLocality": "Brick",
+        "addressRegion": "NJ",
+        "postalCode": "08724",
+        "addressCountry": "US",
+    },
+    "openingHoursSpecification": [
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "17:00",
+        }
+    ],
+    "areaServed": {"@type": "Country", "name": "United States"},
+}
+
+
+def head(title, description=DEFAULT_DESCRIPTION, *, canonical="", keywords="",
+         og_image="assets/img/og.jpg", og_type="website", extra_jsonld=None,
+         extra_head=""):
+    """Render the shared <head> for a page with full SEO metadata.
+
+    Args:
+        title:        Page <title>. Should be unique per page, ~50-60 chars.
+        description:  Meta description. Should be unique per page, ~140-160 chars.
+        canonical:    Path of the page relative to SITE_ORIGIN, e.g. 'gallery.html'
+                      or '' for the homepage. Used for canonical link, og:url,
+                      and absolute URL resolution.
+        keywords:     Optional comma-separated keywords (low SEO weight today,
+                      but still parsed by Bing and some directories).
+        og_image:     Page-relative path to the social-share image. Defaults
+                      to the brand OG image.
+        og_type:      Open Graph type ("website" by default; "article" for posts).
+        extra_jsonld: Optional dict OR list of dicts of additional JSON-LD
+                      structured data to inject (FAQPage, Product, BreadcrumbList,
+                      etc). The Organization schema always ships.
+    """
+    canonical_url = f"{SITE_ORIGIN}/{canonical}".rstrip("/") if canonical else f"{SITE_ORIGIN}/"
+    og_image_abs = og_image if og_image.startswith("http") else f"{SITE_ORIGIN}/{og_image}"
+    keywords_meta = f'\n  <meta name="keywords" content="{keywords}">' if keywords else ""
+
+    # Always include the Organization schema; append page-specific schemas after it.
+    schemas = [ORG_JSONLD]
+    if extra_jsonld:
+        if isinstance(extra_jsonld, list):
+            schemas.extend(extra_jsonld)
+        else:
+            schemas.append(extra_jsonld)
+    jsonld_block = "\n  ".join(_jsonld(s) for s in schemas)
+
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>{title}</title>
-  <meta name="description" content="{description}">
+  <meta name="description" content="{description}">{keywords_meta}
+  <meta name="author" content="{LEGAL_NAME}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="theme-color" content="#0A2A4E">
+  <meta name="format-detection" content="telephone=yes">
+  <link rel="canonical" href="{canonical_url}">
 
-  <!-- Open Graph -->
+  <!-- Open Graph (Facebook, LinkedIn, iMessage, Slack) -->
+  <meta property="og:site_name" content="{SITE_NAME}">
   <meta property="og:title" content="{title}">
   <meta property="og:description" content="{description}">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/img/og.jpg">
-  <!-- TODO: drop a real 1200x630 OG image at assets/img/og.jpg -->
+  <meta property="og:type" content="{og_type}">
+  <meta property="og:url" content="{canonical_url}">
+  <meta property="og:image" content="{og_image_abs}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{title}">
+  <meta property="og:locale" content="en_US">
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{description}">
+  <meta name="twitter:image" content="{og_image_abs}">
+  <meta name="twitter:image:alt" content="{title}">
+
+  <!-- Favicons / app icons -->
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Performance: preconnect to font origins, preload the hero image on the homepage -->{extra_head}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/site.css">
 
   <!-- Tailwind CDN is a progressive enhancement only - all critical styling is in site.css -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
 
   <script defer src="js/site.js"></script>
+
+  <!-- Structured data (schema.org / JSON-LD) -->
+  {jsonld_block}
 </head>
 <body>
 '''
@@ -245,7 +492,7 @@ def swatch_grid_v2_html():
     cards = []
     for name, slug, kind, label in SWATCHES:
         cards.append(f'''      <div class="swatch-card-v2 reveal">
-        <img src="assets/img/swatches/{slug}.png" alt="AmeriDex {name} deck board sample" loading="lazy">
+        <img src="assets/img/swatches/{slug}.png" alt="AmeriDex {name} cellular PVC deck board color sample" loading="lazy">
         <h3>{name}</h3>
         <span class="tag-pill {kind}">{label}</span>
       </div>''')
@@ -263,7 +510,7 @@ def page_index():
   <!-- Hero with photo on right, navy gradient overlay -->
   <section class="hero hero-with-photo">
     <div class="hero-photo" aria-hidden="true">
-      <img src="assets/img/hero.jpg" alt="" loading="eager" fetchpriority="high">
+      <img src="assets/img/hero.jpg" alt="Finished dry living space under an AmeriDex Dryspace deck with lounge and dining furniture" loading="eager" fetchpriority="high" width="1600" height="1066">
     </div>
     <div class="container">
       <div class="hero-content reveal">
@@ -373,10 +620,23 @@ def page_index():
 
 </main>
 '''
-    return head("AmeriDex - Protect The Space Under Your Deck") + header("index.html") + body + footer()
+    return head(
+        "Protect The Space Under Your Deck | AmeriDex Dryspace System",
+        "AmeriDex is the integrated above-joist deck drainage system. Cellular PVC deck "
+        "boards lock onto the Dexerdry seal so rain runs off and the space below stays "
+        "dry, finished, and usable. Made in the USA for new deck construction.",
+        canonical="",
+        keywords="under deck drainage, dry space under deck, above-joist drainage, PVC decking, integrated deck drainage, AmeriDex, Dexerdry, new deck construction, made in USA decking",
+        extra_jsonld=[PRODUCT_JSONLD, breadcrumb_schema(("Home", ""))],
+        extra_head='\n  <link rel="preload" as="image" href="assets/img/hero.jpg" fetchpriority="high">',
+    ) + header("index.html") + body + footer()
 
 
 def page_how_it_works():
+    faq_html = "\n        ".join(
+        f'<details class="faq-item"><summary>{q}</summary><p>{a}</p></details>'
+        for q, a in HOW_IT_WORKS_FAQ
+    )
     body = f'''
 <main id="main">
 
@@ -398,7 +658,7 @@ def page_how_it_works():
       <div class="two-card-grid">
         <div class="system-card reveal">
           <div class="visual">
-            <img src="assets/img/swatches/driftwood.png" alt="AmeriDex cellular PVC deck board">
+            <img src="assets/img/swatches/driftwood.png" alt="AmeriDex Driftwood cellular PVC deck board with authentic wood grain finish" loading="lazy">
           </div>
           <div class="body">
             <h3>Cellular PVC Deck Boards</h3>
@@ -482,6 +742,19 @@ def page_how_it_works():
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="section-pad bg-cream" id="faq">
+    <div class="container" style="max-width:880px;">
+      <div class="section-head reveal">
+        <h2 style="color:var(--navy)">Frequently Asked Questions</h2>
+        <p>Everything builders, dealers, and homeowners ask before specifying AmeriDex.</p>
+      </div>
+      <div class="faq-list reveal">
+        {faq_html}
+      </div>
+    </div>
+  </section>
+
   <!-- CTA band -->
   <section class="section-pad bg-navy">
     <div class="container" style="text-align:center;">
@@ -495,7 +768,19 @@ def page_how_it_works():
 
 </main>
 '''
-    return head("How the AmeriDex Dryspace System Works") + header("how-system-works.html") + body + footer()
+    return head(
+        "How the AmeriDex Dryspace System Works | Above-Joist Deck Drainage",
+        "See how AmeriDex cellular PVC deck boards and the Dexerdry TPE seal create a "
+        "dry under-deck living space. Above-joist drainage, 16 inch o.c. install, "
+        "25-year warranty. Engineered for new deck construction.",
+        canonical="how-system-works.html",
+        keywords="how under deck drainage works, above joist deck drainage system, Dexerdry seal, integrated deck drainage, PVC deck installation",
+        extra_jsonld=[
+            PRODUCT_JSONLD,
+            FAQ_JSONLD,
+            breadcrumb_schema(("Home", ""), ("How System Works", "how-system-works.html")),
+        ],
+    ) + header("how-system-works.html") + body + footer()
 
 
 def page_gallery():
@@ -557,7 +842,24 @@ def page_gallery():
 
 </main>
 '''
-    return head("Gallery - AmeriDex Dryspace Showcase") + header("gallery.html") + body + footer()
+    return head(
+        "Gallery: Real AmeriDex Under-Deck Spaces | Dryspace Showcase",
+        "Real AmeriDex Dryspace installations. See finished under-deck living rooms, "
+        "outdoor kitchens, fire-pit lounges, and lakeside decks built with the "
+        "AmeriDex above-joist drainage system.",
+        canonical="gallery.html",
+        keywords="under deck drainage gallery, dry space under deck examples, AmeriDex installations, dexerdry deck photos",
+        extra_jsonld=[
+            breadcrumb_schema(("Home", ""), ("Gallery", "gallery.html")),
+            {
+                "@context": "https://schema.org",
+                "@type": "ImageGallery",
+                "name": "AmeriDex Dryspace Installations",
+                "description": "Real-world AmeriDex Dryspace System under-deck living spaces.",
+                "url": f"{SITE_ORIGIN}/gallery.html",
+            },
+        ],
+    ) + header("gallery.html") + body + footer()
 
 
 def page_quote():
@@ -718,7 +1020,17 @@ def page_quote():
 
 </main>
 '''
-    return head("Get a Free AmeriDex Quote") + header("get-a-free-quote.html") + body + footer()
+    return head(
+        "Get a Free AmeriDex Quote | Under-Deck Drainage Pricing",
+        "Request a free quote for the AmeriDex Dryspace System. Tell us about your "
+        "new deck project and our team will price out cellular PVC boards, the "
+        "Dexerdry seal, and accessories for your build.",
+        canonical="get-a-free-quote.html",
+        keywords="AmeriDex quote, PVC decking quote, under deck drainage pricing, deck system pricing, get a deck quote",
+        extra_jsonld=[
+            breadcrumb_schema(("Home", ""), ("Get a Free Quote", "get-a-free-quote.html")),
+        ],
+    ) + header("get-a-free-quote.html") + body + footer()
 
 
 def page_contact():
@@ -836,14 +1148,25 @@ def page_contact():
 
 </main>
 '''
-    return head("Contact AmeriDex") + header("contact-us.html") + body + footer()
+    return head(
+        "Contact AmeriDex | New Jersey PVC Decking Manufacturer",
+        "Reach the AmeriDex team in Brick, NJ. Call 1-800-217-9206 or email "
+        "sales@ameridex.com for product questions, dealer inquiries, or to learn "
+        "more about the Dryspace under-deck drainage system.",
+        canonical="contact-us.html",
+        keywords="contact AmeriDex, AmeriDex phone number, AmeriDex Brick NJ, decking manufacturer New Jersey, A and M Building Products",
+        extra_jsonld=[
+            LOCAL_BUSINESS_JSONLD,
+            breadcrumb_schema(("Home", ""), ("Contact Us", "contact-us.html")),
+        ],
+    ) + header("contact-us.html") + body + footer()
 
 
 def page_samples():
     color_picks = []
     for name, slug, kind, label in SWATCHES:
         color_picks.append(f'''        <button type="button" class="color-pick" data-color="{name}" aria-pressed="false">
-          <img src="assets/img/swatches/{slug}.png" alt="{name} sample">
+          <img src="assets/img/swatches/{slug}.png" alt="AmeriDex {name} cellular PVC deck board color sample" loading="lazy">
           <span>{name}</span>
           <span class="check" aria-hidden="true">&#10003;</span>
         </button>''')
@@ -966,7 +1289,17 @@ def page_samples():
 
 </main>
 '''
-    return head("Order AmeriDex Samples - Free Decking Samples") + header("samples-request.html") + body + footer()
+    return head(
+        "Free AmeriDex Decking Samples | 7 PVC Color Options",
+        "Order free AmeriDex cellular PVC decking samples. Pick from seven authentic "
+        "wood-grain colors and we will ship them direct so you can match your home "
+        "and finish your deck design.",
+        canonical="samples-request.html",
+        keywords="free decking samples, AmeriDex color samples, PVC deck colors, deck board samples, free PVC decking sample",
+        extra_jsonld=[
+            breadcrumb_schema(("Home", ""), ("Order Samples", "samples-request.html")),
+        ],
+    ) + header("samples-request.html") + body + footer()
 
 
 def page_warranty():
@@ -1118,7 +1451,17 @@ def page_warranty():
 
 </main>
 '''
-    return head("AmeriDex Warranty Registration") + header("warranty-registration.html") + body + footer()
+    return head(
+        "Register Your AmeriDex Warranty | 25-Year Dryspace Warranty",
+        "Register your AmeriDex Dryspace System purchase to activate the 25-year "
+        "residential limited warranty (10-year limited commercial). Submit your "
+        "proof of purchase and project details in minutes.",
+        canonical="warranty-registration.html",
+        keywords="AmeriDex warranty registration, deck warranty registration, PVC decking warranty, 25 year deck warranty",
+        extra_jsonld=[
+            breadcrumb_schema(("Home", ""), ("Warranty Registration", "warranty-registration.html")),
+        ],
+    ) + header("warranty-registration.html") + body + footer()
 
 
 # ----------------------------------------------------------------------
