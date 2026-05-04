@@ -294,7 +294,6 @@ def page_index():
       </div>
       <div class="swatch-cta-row reveal">
         <a class="btn btn-navy btn-lg" href="samples-request.html">Order Color Samples</a>
-        <a class="btn btn-outline-navy btn-lg" href="samples-request.html">Request Samples</a>
       </div>
     </div>
   </section>
