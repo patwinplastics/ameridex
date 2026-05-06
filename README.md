@@ -38,7 +38,7 @@ This repo ships with `.github/workflows/pages.yml` which deploys the repo root o
 Both `quote.html` and `contact.html` use Formspree as the placeholder submission target. Replace `REPLACE_WITH_YOUR_ENDPOINT` in both files with your actual Formspree (or other) form endpoint.
 
 ```html
-<form action="https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT" method="POST">
+<form action="https://formspree.io/f/xreljrrd" method="POST">
 ```
 
 ## Site map
