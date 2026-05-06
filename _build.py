@@ -421,7 +421,7 @@ def footer():
     <div class="footer-col">
       <h4>SOCIAL</h4>
       <ul>
-        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.facebook.com/ameridexdryspace/" target="_blank" rel="noopener">Facebook</a></li>
       </ul>
       <p style="margin-top:1rem;color:rgba(255,255,255,0.78);font-size:0.92rem;line-height:1.55;max-width:18rem;">Under-deck dryspace systems that protect and transform outdoor living.</p>
       <div class="badge-row">
