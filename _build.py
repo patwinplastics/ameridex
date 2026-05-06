@@ -890,8 +890,8 @@ def page_quote():
           <span class="step-pill"><span class="num">3</span> Contact</span>
         </div>
 
-        <!-- Replace https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT with your real endpoint. -->
-        <form class="form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT" method="POST" enctype="multipart/form-data">
+        <!-- Replace https://formspree.io/f/xreljrrd with your real endpoint. -->
+        <form class="form" action="https://formspree.io/f/xreljrrd" method="POST" enctype="multipart/form-data">
 
           <div class="form-section" data-dealer-hide>
             <h3>1. Project Basics</h3>
@@ -1055,8 +1055,8 @@ def page_contact():
           <p>Send us a message and we will respond within 1-2 business days.</p>
         </div>
 
-        <!-- Replace https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT with your real endpoint. -->
-        <form class="form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT" method="POST">
+        <!-- Replace https://formspree.io/f/xreljrrd with your real endpoint. -->
+        <form class="form" action="https://formspree.io/f/xreljrrd" method="POST">
           <div class="form-row form-row-2">
             <div>
               <label for="first_name">First Name *</label>
@@ -1187,8 +1187,8 @@ def page_samples():
     <div class="container">
 
       <div class="form-card reveal">
-        <!-- Replace https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT with your real endpoint. -->
-        <form class="form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT" method="POST">
+        <!-- Replace https://formspree.io/f/xreljrrd with your real endpoint. -->
+        <form class="form" action="https://formspree.io/f/xreljrrd" method="POST">
 
           <div class="form-section">
             <h3>1. Choose your sample size</h3>
@@ -1322,8 +1322,8 @@ def page_warranty():
           <strong>Important.</strong> Registration is required within 30 days of purchase or installation completion (whichever is later) for warranty coverage to take effect. Submit this form to register your AmeriDex Dryspace System installation.
         </div>
 
-        <!-- Replace https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT with your real endpoint. -->
-        <form class="form" action="https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT" method="POST" enctype="multipart/form-data">
+        <!-- Replace https://formspree.io/f/xreljrrd with your real endpoint. -->
+        <form class="form" action="https://formspree.io/f/xreljrrd" method="POST" enctype="multipart/form-data">
 
           <div class="form-section">
             <h3>Purchaser Information</h3>

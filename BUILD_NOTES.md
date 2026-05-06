@@ -31,7 +31,7 @@ references it via `<meta property="og:image">`.
 Every form page contains:
 
 ```html
-<form action="https://formspree.io/f/REPLACE_WITH_YOUR_ENDPOINT" method="POST">
+<form action="https://formspree.io/f/xreljrrd" method="POST">
 ```
 
 Search-and-replace `REPLACE_WITH_YOUR_ENDPOINT` across:
