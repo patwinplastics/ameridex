@@ -2209,3 +2209,173 @@ section { position: relative; }
   line-height: 1.6;
   color: #333;
 }
+
+/* ==========================================================================
+   Dealer routing (banner, where-to-buy, dealer card)
+   Appended by the dealer-routing prototype. Uses .ad-dealer-* namespace.
+   ========================================================================== */
+.site-nav a { white-space: nowrap; }
+
+#ad-dealer-banner {
+  background: var(--navy);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  border-bottom: 2px solid var(--red);
+}
+.ad-dealer-banner-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0.55rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.85rem;
+}
+.ad-dealer-banner-label { color: rgba(255,255,255,0.75); }
+.ad-dealer-banner-loc {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.82rem;
+}
+.ad-dealer-banner-action {
+  margin-left: auto;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: 0.82rem;
+}
+.ad-dealer-banner-clear {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.45);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.ad-dealer-banner-clear:hover { background: rgba(255,255,255,0.12); }
+@media (max-width: 640px) {
+  .ad-dealer-banner-action { margin-left: 0; }
+}
+
+/* Dealer card (used on /where-to-buy and /dealers/<slug>) */
+.ad-dealer-card {
+  background: #fff;
+  border: 1px solid var(--divider);
+  border-radius: 14px;
+  padding: 1.5rem 1.5rem 1.25rem;
+  box-shadow: 0 6px 22px rgba(10, 42, 78, 0.08);
+}
+.ad-dealer-card-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin: 0 0 0.4rem;
+}
+.ad-dealer-card h3 {
+  font-family: var(--font-display);
+  color: var(--navy);
+  margin: 0 0 0.25rem;
+  font-size: 1.4rem;
+}
+.ad-dealer-card .ad-dealer-loc {
+  color: #555;
+  margin: 0 0 0.9rem;
+  font-size: 0.95rem;
+}
+.ad-dealer-card .ad-dealer-rows { display: grid; gap: 0.35rem; margin: 0 0 1rem; }
+.ad-dealer-card .ad-dealer-rows div { font-size: 0.95rem; color: #333; }
+.ad-dealer-card .ad-dealer-rows strong {
+  display: inline-block;
+  min-width: 78px;
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.ad-dealer-card .ad-dealer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+.ad-dealer-card .ad-dealer-actions a { white-space: nowrap; }
+
+/* Where-to-buy ZIP form */
+.ad-zip-form {
+  display: flex;
+  gap: 0.6rem;
+  max-width: 460px;
+  margin: 1rem 0 1.5rem;
+}
+.ad-zip-form input {
+  flex: 1;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--divider);
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-family: var(--font-body);
+}
+.ad-zip-form input:focus {
+  outline: 3px solid var(--red);
+  outline-offset: 1px;
+}
+.ad-no-match {
+  background: var(--cream);
+  border: 1px solid var(--divider);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+}
+.ad-no-match h4 {
+  font-family: var(--font-display);
+  color: var(--navy);
+  margin: 0 0 0.4rem;
+}
+.ad-note {
+  background: #fff7ec;
+  border-left: 4px solid var(--red);
+  padding: 0.75rem 1rem;
+  border-radius: 0 10px 10px 0;
+  font-size: 0.9rem;
+  color: #4a2a00;
+  margin: 0.5rem 0 1rem;
+}
+
+/* Tighten desktop nav so 7 items + CTAs fit without overflowing the header */
+@media (min-width: 900px) {
+  .site-nav { gap: 0; }
+  .site-nav a { padding: 0.6rem 0.55rem; font-size: 0.8rem; }
+}
+@media (min-width: 1100px) {
+  .site-nav a { padding: 0.6rem 0.75rem; font-size: 0.85rem; }
+}
+.site-header-inner { min-width: 0; }
+.site-header-cta { flex: 0 0 auto; }
+
+/* Hard-protect the logo from shrinking once we add more nav items */
+.site-header-inner > a:first-child { flex: 0 0 auto; }
+.site-header-inner > a:first-child img.header-logo-img {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+
+/* Raise the desktop-nav threshold so 7 items + 2 CTAs only render when there's room.
+   Below 1100px we fall back to the existing hamburger menu, which already lists
+   all pages including Where to Buy. */
+@media (min-width: 900px) and (max-width: 1099px) {
+  .site-nav { display: none; }
+  .site-header-cta { display: none; }
+  .hamburger { display: inline-flex; }
+}
+
+/* When nav is showing 7+ items, the header CTAs are redundant and crowd the
+   bar. Hide them universally on desktop. Same links exist in the nav and on
+   every page hero, so users still have one-click access. */
+.site-header-cta { display: none !important; }
