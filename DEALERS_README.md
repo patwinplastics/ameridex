@@ -17,11 +17,12 @@ without code changes.
 3. **A cookie tags the session.** From that point on, every page shows a sticky
    banner ("Shopping with Guy C Lee Building Supply, Mt. Pleasant, SC") and the
    "Get a Free Quote" CTA quietly relabels to "Quote from Mt. Pleasant".
-4. **Form submissions route to the dealer.** The quote, contact, and samples
-   forms get hidden fields stamped on them: dealer slug, dealer name, dealer
-   email. Formspree sends the message to AmeriDex sales (primary) and CCs the
-   dealer's email so both teams see it. The subject line is prefixed with the
-   dealer slug so the AmeriDex inbox is filterable.
+4. **Form submissions go to AmeriDex only.** All quote, contact, and sample
+   requests are sent to AmeriDex. AmeriDex manually forwards each lead to the
+   matched dealer. The forms get hidden fields stamped with the dealer slug and
+   name, plus a subject prefix (`[<slug>] ...`), so the AmeriDex inbox is
+   filterable per dealer and you always know which dealer to forward to. The
+   dealer is **not** CC'd — this keeps quality control with AmeriDex.
 5. **Visitor can change dealer** anytime via the "Change" button in the banner,
    which clears the cookie and bounces them back to Where to Buy.
 
@@ -58,7 +59,7 @@ Copy the existing block, change the values. Slug must be URL-safe and unique.
   "address_line1": "123 Main St",
   "address_line2": "Asheville, NC 28801",
   "phone": "828-555-0100",
-  "email": "sales@smithlumber.com",
+  "email": "sales@smithlumber.com",   // INTERNAL ONLY — never shown on the site; used by AmeriDex to forward leads
   "contact_person": "Jane Smith, Manager",
   "hours": "Mon–Fri 7–5, Sat 8–12",
   "lat": 35.5951,
@@ -98,24 +99,34 @@ wanders into the main AmeriDex site to browse, they stay tagged to that dealer.
 
 ## How form routing works
 
-When a dealer is active, every Formspree form on the site gets four hidden
-fields injected at runtime:
+**Policy: every form submission goes to AmeriDex only.** AmeriDex manually
+forwards each lead to the matched dealer. The dealer is never CC'd or copied
+on the raw inbound message.
 
-| Field name                | Value                                       |
-|---------------------------|---------------------------------------------|
-| `routed_to_dealer`        | dealer slug (e.g. `guy-c-lee-mt-pleasant`)  |
-| `routed_to_dealer_name`   | Display name + location                     |
-| `routed_to_dealer_email`  | Dealer's email                              |
-| `_subject`                | Prefixed with `[<slug>]`                    |
-| `_cc`                     | Dealer's email (Formspree CC)               |
+When a dealer is active, every Formspree form on the site gets these hidden
+fields stamped on it at runtime:
 
-This means **the dealer always gets a copy** of every quote, contact, or sample
-request from a visitor in their territory, while AmeriDex stays the primary
-recipient and can step in if the dealer doesn't respond.
+| Field name              | Value                                          |
+|-------------------------|------------------------------------------------|
+| `routed_to_dealer`      | dealer slug (e.g. `guy-c-lee-mt-pleasant`)     |
+| `routed_to_dealer_name` | Display name + location                        |
+| `_subject`              | Prefixed with `[<slug>]` for inbox filtering   |
 
-> If the dealer prefers to be the **primary** recipient instead of CC, we can
-> swap the Formspree config. For now, AmeriDex sales is primary so we maintain
-> visibility and a 24-hour SLA fallback.
+The dealer's `email` in `dealers.json` is **internal-only**. It exists so the
+AmeriDex team knows where to forward each lead. It is never rendered on a
+public page and never used as a Formspree recipient.
+
+What the visitor sees on dealer cards and the co-branded landing page:
+
+- Dealer name, location, address
+- **Phone number** (click-to-call)
+- Contact person (manager/salesperson)
+- Hours
+- **Visit Dealer Site** link (when `url_external` is set)
+
+So if the visitor wants to bypass the form and contact the dealer directly,
+they can call them or visit their website — those channels are intentionally
+left open. The form, however, always lands in the AmeriDex inbox first.
 
 ## Reporting
 

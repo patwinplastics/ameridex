@@ -134,22 +134,26 @@
   }
 
   // ---------- form rewrite ----------
-  // When a dealer is active, every quote/contact/sample form gets:
-  //   - hidden routed_to_dealer (slug)
-  //   - hidden routed_to_dealer_name (display)
-  //   - hidden routed_to_dealer_email (Formspree forwards to AmeriDex; we use the field
-  //     so the AmeriDex inbox can auto-forward or a downstream integration can route)
-  //   - subject prefix update so the AmeriDex inbox can sort by dealer
-  // Header copy on quote/contact pages is also softened so the visitor knows
-  // the request is going to the local dealer first.
+  // POLICY: All form submissions go to AmeriDex only. AmeriDex manually pushes
+  // each lead to the matched dealer. The dealer's email is NOT used for routing
+  // and is intentionally never stamped onto the form. The dealer's phone and
+  // website (url_external) remain visible on dealer cards and landing pages so
+  // visitors can self-serve those channels if they want.
+  //
+  // What we DO stamp on every form when a dealer is active:
+  //   - routed_to_dealer       (slug, e.g. "guy-c-lee-mt-pleasant")
+  //   - routed_to_dealer_name  (display name + location)
+  //   - _subject prefix        ("[<slug>] ...") so the AmeriDex inbox is filterable
+  //
+  // That gives AmeriDex everything needed to know which dealer to forward to,
+  // without copying the dealer on the raw inbound message.
   function stampForms(dealer) {
     if (!dealer) return;
     var forms = document.querySelectorAll('form[action*="formspree"]');
     forms.forEach(function (form) {
       ensureHidden(form, 'routed_to_dealer', dealer.slug);
       ensureHidden(form, 'routed_to_dealer_name', dealer.name + ' \u2014 ' + dealer.location_label);
-      ensureHidden(form, 'routed_to_dealer_email', dealer.email);
-      // Subject prefix: makes the AmeriDex inbox instantly filterable.
+      // Subject prefix: makes the AmeriDex inbox instantly filterable per dealer.
       var existingSubject = form.querySelector('input[name="_subject"]');
       var prefix = '[' + dealer.slug + '] ';
       if (existingSubject) {
@@ -159,18 +163,22 @@
       } else {
         ensureHidden(form, '_subject', prefix + (document.title || 'AmeriDex submission'));
       }
-      // Formspree _cc lets multiple addresses receive the email; we use it to send
-      // straight to the dealer while AmeriDex sales remains the primary recipient.
-      ensureHidden(form, '_cc', dealer.email);
+      // Defensive cleanup: if a previous version of this script stamped a CC or
+      // dealer email field onto the form, remove them. AmeriDex is the only
+      // recipient by policy.
+      var stale = form.querySelectorAll('input[name="_cc"], input[name="routed_to_dealer_email"]');
+      stale.forEach(function (n) { n.parentNode.removeChild(n); });
     });
 
-    // Soft copy update on quote + contact pages, if those hooks exist.
+    // Visitor-facing note above forms. Honest framing: AmeriDex receives the
+    // request and connects them with their local dealer. (We don't promise the
+    // dealer is copied, because they're not.)
     var noteHosts = document.querySelectorAll('[data-dealer-note]');
     noteHosts.forEach(function (host) {
       host.style.display = '';
       host.innerHTML =
-        'This will go to <strong>' + escapeHtml(dealer.name) + '</strong> ' +
-        '(' + escapeHtml(dealer.location_label) + ') with AmeriDex copied. ' +
+        'AmeriDex will receive your request and connect you with <strong>' + escapeHtml(dealer.name) + '</strong> ' +
+        '(' + escapeHtml(dealer.location_label) + '). ' +
         '<a href="/where-to-buy.html">Use a different dealer</a>.';
     });
   }
