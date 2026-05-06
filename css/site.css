@@ -2352,8 +2352,15 @@ section { position: relative; }
   .site-nav { gap: 0; }
   .site-nav a { padding: 0.6rem 0.55rem; font-size: 0.8rem; }
 }
-@media (min-width: 1100px) {
-  .site-nav a { padding: 0.6rem 0.75rem; font-size: 0.85rem; }
+@media (min-width: 1100px) and (max-width: 1280px) {
+  .site-nav a { padding: 0.6rem 0.5rem; font-size: 0.8rem; }
+  .site-header-inner { gap: 0.75rem; }
+}
+@media (min-width: 1281px) {
+  .site-nav a { padding: 0.6rem 0.55rem; font-size: 0.82rem; }
+}
+@media (min-width: 1400px) {
+  .site-nav a { padding: 0.6rem 0.65rem; font-size: 0.84rem; }
 }
 .site-header-inner { min-width: 0; }
 .site-header-cta { flex: 0 0 auto; }
@@ -2379,3 +2386,223 @@ section { position: relative; }
    bar. Hide them universally on desktop. Same links exist in the nav and on
    every page hero, so users still have one-click access. */
 .site-header-cta { display: none !important; }
+
+/* ==========================================================================
+   My Store chip + popover (header-mounted)
+   Two states:
+     .ad-store-chip                 (confirmed pick, solid red pin)
+     .ad-store-chip--suggested      (IP-detected suggestion, dashed border)
+   Compact pill shape so it fits next to the 7-item nav at desktop widths.
+
+   Layout strategy: when the chip is present, override the header container
+   to a wider max-width so the chip + 7 nav items + logo all fit. The body
+   already centers content, so this just gives the header a touch more room.
+   ========================================================================== */
+.site-header:has(.ad-store-chip) .site-header-inner { max-width: 1380px; padding-right: 1.5rem; }
+.ad-store-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  flex: 0 0 auto;
+  margin-left: 0.25rem;
+  font-family: var(--font-body);
+}
+.ad-store-chip-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #fff;
+  border: 1.5px solid var(--divider);
+  border-radius: 999px;
+  padding: 0.3rem 0.6rem 0.3rem 0.55rem;
+  cursor: pointer;
+  font: inherit;
+  color: var(--navy);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+  line-height: 1.1;
+  max-width: 160px;
+}
+.ad-store-chip-button:hover { border-color: var(--navy); box-shadow: 0 2px 8px rgba(10,42,78,0.08); }
+.ad-store-chip-button:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+.ad-store-chip-pin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px; height: 14px;
+  color: var(--red);
+  flex: 0 0 auto;
+}
+.ad-store-chip-label {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 0;
+  overflow: hidden;
+}
+.ad-store-chip-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.ad-store-chip-name {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ad-store-chip-caret { color: #888; display: inline-flex; }
+
+/* Suggested state: dotted border + softened pin to signal "not yet committed". */
+.ad-store-chip--suggested .ad-store-chip-button {
+  border-style: dashed;
+  border-color: #c0c0c0;
+  background: #fafafa;
+}
+.ad-store-chip--suggested .ad-store-chip-pin { color: #999; }
+.ad-store-chip--suggested .ad-store-chip-eyebrow { color: var(--red); }
+
+/* Popover */
+.ad-store-chip-pop {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 240px;
+  background: #fff;
+  border: 1px solid var(--divider);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(10, 42, 78, 0.15);
+  padding: 0.85rem 0.95rem 0.7rem;
+  z-index: 50;
+}
+.ad-store-chip-pop[hidden] { display: none; }
+.ad-store-chip-pop-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 0.15rem;
+}
+.ad-store-chip-pop-loc { font-size: 0.82rem; color: #555; margin: 0 0 0.2rem; }
+.ad-store-chip-pop-phone { font-size: 0.85rem; margin: 0 0 0.6rem; }
+.ad-store-chip-pop-phone a { color: var(--navy); text-decoration: none; font-weight: 600; }
+.ad-store-chip-pop-phone a:hover { color: var(--red); }
+.ad-store-chip-pop-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-top: 1px solid var(--divider);
+  padding-top: 0.55rem;
+}
+.ad-store-chip-link,
+.ad-store-chip-pop button {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--navy);
+  text-decoration: none;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  padding: 0.35rem 0;
+  cursor: pointer;
+}
+.ad-store-chip-link:hover,
+.ad-store-chip-pop button:hover { color: var(--red); }
+.ad-store-chip-set {
+  background: var(--red) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  padding: 0.5rem 0.8rem !important;
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center !important;
+}
+.ad-store-chip-set:hover { background: var(--red-dark) !important; color: #fff !important; }
+.ad-store-chip-clear { color: #888 !important; }
+
+/* Hide on phones (under 1100); the hamburger menu carries the Where to Buy
+   link and the banner still shows the suggestion. */
+@media (max-width: 1099px) {
+  .ad-store-chip { display: none; }
+}
+
+/* Standard laptop range (1100-1280). The 7-item nav + logo leaves no room
+   for a labeled chip, so collapse to icon + caret only. The popover still
+   carries the full dealer details. */
+@media (min-width: 1100px) and (max-width: 1280px) {
+  .ad-store-chip-label { display: none; }
+  .ad-store-chip-button { padding: 0.4rem 0.5rem; }
+}
+
+/* Wide laptop range (1281-1399). Show city name only, hide eyebrow. */
+@media (min-width: 1281px) and (max-width: 1399px) {
+  .ad-store-chip-eyebrow { display: none; }
+}
+
+/* Banner: suggested variant uses cream background with navy text for contrast.
+   Confirmed variant uses the navy/white treatment defined earlier. */
+#ad-dealer-banner.ad-dealer-banner-suggested {
+  background: var(--cream);
+  color: var(--navy);
+  border-bottom: 2px solid var(--red);
+}
+#ad-dealer-banner.ad-dealer-banner-suggested strong { color: var(--navy); }
+#ad-dealer-banner.ad-dealer-banner-suggested .ad-dealer-banner-loc { color: #555; }
+#ad-dealer-banner.ad-dealer-banner-suggested .ad-dealer-banner-dismiss { color: var(--navy); }
+.ad-dealer-banner-set {
+  background: var(--red);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: auto;
+}
+.ad-dealer-banner-set:hover { background: var(--red-dark); }
+.ad-dealer-banner-dismiss {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  margin-left: 0.5rem;
+}
+.ad-dealer-banner-dismiss:hover { opacity: 0.7; }
+
+/* Highlight the active dealer card on /where-to-buy */
+.ad-dealer-card.is-active {
+  border: 2px solid var(--red);
+  box-shadow: 0 8px 24px rgba(214, 38, 58, 0.12);
+}
+.ad-current-store-tag {
+  display: inline-flex;
+  align-items: center;
+  background: var(--red);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}

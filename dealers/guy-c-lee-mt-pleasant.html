@@ -130,7 +130,11 @@
   var meta = document.querySelector('meta[name="ad-dealer-slug"]');
   var slug = meta ? meta.content : null;
   if (!slug) return;
-  AmeriDexDealers.setActiveDealer(slug);
+  // Direct visits to a dealer landing page DO NOT auto-set the store. The
+  // visitor picks via the explicit "Set as My Store" button on this page or
+  // anywhere in the chip/banner. URL-param visits (?dealer=<slug>) DO set,
+  // because that link was shared by the dealer themselves (handled in the
+  // dealer-routing.js captureFromUrl path).
   AmeriDexDealers.load().then(function (data) {
     var list = (data && data.dealers) || [];
     var d = null;
@@ -142,23 +146,36 @@
     // Render the dealer card.
     var host = document.getElementById('ad-dealer-card-host');
     var external = d.url_external ? '<a class="btn btn-outline" href="' + d.url_external + '" target="_blank" rel="noopener">Visit Dealer Site</a>' : '';
-    host.innerHTML =
-      '<div class="ad-dealer-card">' +
-        '<p class="ad-dealer-card-eyebrow">Your AmeriDex Dealer</p>' +
-        '<h3>' + esc(d.name) + '</h3>' +
-        '<p class="ad-dealer-loc">' + esc(d.location_label) + '</p>' +
-        '<div class="ad-dealer-rows">' +
-          '<div><strong>Address</strong> ' + esc(d.address_line1) + ', ' + esc(d.address_line2) + '</div>' +
-          '<div><strong>Phone</strong> <a href="tel:' + d.phone.replace(/[^0-9]/g, '') + '">' + esc(d.phone) + '</a></div>' +
-          (d.contact_person ? '<div><strong>Contact</strong> ' + esc(d.contact_person) + '</div>' : '') +
-          (d.hours ? '<div><strong>Hours</strong> ' + esc(d.hours) + '</div>' : '') +
-        '</div>' +
-        '<div class="ad-dealer-actions">' +
-          '<a class="btn btn-red" href="tel:' + d.phone.replace(/[^0-9]/g, '') + '">Call ' + esc(d.location_label.split(',')[0]) + '</a>' +
-          '<a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(d.address_line1 + ', ' + d.address_line2) + '" target="_blank" rel="noopener">Get Directions</a>' +
-          external +
-        '</div>' +
-      '</div>';
+    function render() {
+      var isActive = AmeriDexDealers.getActiveSlug() === slug;
+      var setBtn = isActive
+        ? '<span class="ad-current-store-tag">\u2713 Your store</span>'
+        : '<button type="button" class="btn btn-red" id="ad-set-store-btn">Set as My Store</button>';
+      host.innerHTML =
+        '<div class="ad-dealer-card' + (isActive ? ' is-active' : '') + '">' +
+          '<p class="ad-dealer-card-eyebrow">' + (isActive ? 'Your AmeriDex Store' : 'Authorized AmeriDex Dealer') + '</p>' +
+          '<h3>' + esc(d.name) + '</h3>' +
+          '<p class="ad-dealer-loc">' + esc(d.location_label) + '</p>' +
+          '<div class="ad-dealer-rows">' +
+            '<div><strong>Address</strong> ' + esc(d.address_line1) + ', ' + esc(d.address_line2) + '</div>' +
+            '<div><strong>Phone</strong> <a href="tel:' + d.phone.replace(/[^0-9]/g, '') + '">' + esc(d.phone) + '</a></div>' +
+            (d.contact_person ? '<div><strong>Contact</strong> ' + esc(d.contact_person) + '</div>' : '') +
+            (d.hours ? '<div><strong>Hours</strong> ' + esc(d.hours) + '</div>' : '') +
+          '</div>' +
+          '<div class="ad-dealer-actions">' +
+            setBtn +
+            '<a class="btn btn-outline" href="tel:' + d.phone.replace(/[^0-9]/g, '') + '">Call ' + esc(d.location_label.split(',')[0]) + '</a>' +
+            '<a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(d.address_line1 + ', ' + d.address_line2) + '" target="_blank" rel="noopener">Get Directions</a>' +
+            external +
+          '</div>' +
+        '</div>';
+      var setBtnEl = document.getElementById('ad-set-store-btn');
+      if (setBtnEl) setBtnEl.addEventListener('click', function () {
+        AmeriDexDealers.setActiveDealer(slug);
+      });
+    }
+    render();
+    AmeriDexDealers.onChange(render);
   });
 
   function esc(s) {
