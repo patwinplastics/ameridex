@@ -1,0 +1,39 @@
+{
+  "_comment": "Single source of truth for AmeriDex dealers. To add a dealer: copy the Guy C Lee block, change the slug + values, and you are done. Pages and the Where to Buy lookup read from this file at runtime. Territories must NOT overlap (we treat them as exclusive).",
+  "_schema": {
+    "slug": "URL-safe id, used for /dealers/<slug>.html and the dealer cookie value.",
+    "name": "Legal/dba name shown on the dealer card.",
+    "location_label": "City, ST shown next to the name.",
+    "url_external": "Optional. Link to the dealer's own location page.",
+    "logo": "Optional. Path under assets/img/dealers/. Leave blank if no logo yet.",
+    "address_line1": "Street address.",
+    "address_line2": "City, ST ZIP.",
+    "phone": "Tel for the click-to-call.",
+    "email": "Where quote/contact submissions are sent (will be CC'd to AmeriDex).",
+    "contact_person": "Optional. Salesperson/manager name shown on the card.",
+    "hours": "Free-text hours line.",
+    "lat": "Decimal latitude of the store. Used for radius fallback.",
+    "lng": "Decimal longitude of the store.",
+    "service_radius_miles": "Hard cap on radius matching. Matches outside this radius are rejected even if no other dealer covers the ZIP.",
+    "zip_prefixes": "Array of 3-digit ZIP prefixes (e.g. \"294\") that this dealer exclusively covers. This is the primary match. Radius is the fallback."
+  },
+  "dealers": [
+    {
+      "slug": "guy-c-lee-mt-pleasant",
+      "name": "Guy C Lee Building Supply",
+      "location_label": "Mt. Pleasant, SC",
+      "url_external": "https://guyclee.com/locations/mt-pleasant-sc/",
+      "logo": "",
+      "address_line1": "2985 Highway 17 N",
+      "address_line2": "Mt. Pleasant, SC 29466",
+      "phone": "843-884-3131",
+      "email": "bstrickland@guyclee.com",
+      "contact_person": "Bryan Strickland, Manager",
+      "hours": "Mon\u2013Thu 7:00 AM \u2013 4:00 PM \u00b7 Fri 7:00 AM \u2013 2:00 PM",
+      "lat": 32.8777,
+      "lng": -79.7692,
+      "service_radius_miles": 75,
+      "zip_prefixes": ["294", "295", "299"]
+    }
+  ]
+}
