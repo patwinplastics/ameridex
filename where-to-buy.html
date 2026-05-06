@@ -118,10 +118,15 @@
 
   function dealerCardHtml(d, opts) {
     opts = opts || {};
+    var activeSlug = AmeriDexDealers.getActiveSlug();
+    var isActive = activeSlug === d.slug;
     var external = d.url_external ? '<a class="btn btn-outline" href="' + d.url_external + '" target="_blank" rel="noopener">Visit Dealer Site</a>' : '';
     var quoteHref = '/dealers/' + encodeURIComponent(d.slug) + '.html#quote';
+    var setBtn = isActive
+      ? '<span class="ad-current-store-tag">\u2713 Your store</span>'
+      : '<button type="button" class="btn btn-red" data-set-store="' + escapeHtml(d.slug) + '">Set as My Store</button>';
     return ''
-      + '<div class="ad-dealer-card">'
+      + '<div class="ad-dealer-card' + (isActive ? ' is-active' : '') + '">'
       +   (opts.eyebrow ? '<p class="ad-dealer-card-eyebrow">' + opts.eyebrow + '</p>' : '')
       +   '<h3>' + escapeHtml(d.name) + '</h3>'
       +   '<p class="ad-dealer-loc">' + escapeHtml(d.location_label) + '</p>'
@@ -132,7 +137,8 @@
       +     (d.hours ? '<div><strong>Hours</strong> ' + escapeHtml(d.hours) + '</div>' : '')
       +   '</div>'
       +   '<div class="ad-dealer-actions">'
-      +     '<a class="btn btn-red" href="' + quoteHref + '" data-pick="' + escapeHtml(d.slug) + '">Request a Quote</a>'
+      +     setBtn
+      +     '<a class="btn btn-outline" href="' + quoteHref + '">View Dealer Page</a>'
       +     '<a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(d.address_line1 + ', ' + d.address_line2) + '" target="_blank" rel="noopener">Get Directions</a>'
       +     external
       +   '</div>'
@@ -145,25 +151,49 @@
     });
   }
 
-  // Render the full list once on load.
-  AmeriDexDealers.load().then(function (data) {
-    var list = (data && data.dealers) || [];
-    if (!list.length) {
-      listHost.innerHTML = '<p>No dealers listed yet. Please contact AmeriDex directly.</p>';
-      return;
-    }
-    listHost.innerHTML = list.map(function (d) { return dealerCardHtml(d); }).join('');
-    bindPickButtons();
-  });
+  // Render the full list once on load. Re-render on dealer change so cards
+  // reflect the new "Your store" badge.
+  function renderAll() {
+    AmeriDexDealers.load().then(function (data) {
+      var list = (data && data.dealers) || [];
+      if (!list.length) {
+        listHost.innerHTML = '<p>No dealers listed yet. Please contact AmeriDex directly.</p>';
+        return;
+      }
+      listHost.innerHTML = list.map(function (d) { return dealerCardHtml(d); }).join('');
+      bindSetButtons();
+    });
+  }
+  renderAll();
+  AmeriDexDealers.onChange(function () { renderAll(); renderCurrentMatch(); });
 
-  // Bind "Request a Quote" buttons to set the dealer cookie before navigating.
-  function bindPickButtons() {
-    document.querySelectorAll('a[data-pick]').forEach(function (a) {
-      a.addEventListener('click', function () {
-        AmeriDexDealers.setActiveDealer(a.getAttribute('data-pick'));
+  // Bind "Set as My Store" buttons. Clicking confirms the dealer pick.
+  function bindSetButtons() {
+    document.querySelectorAll('button[data-set-store]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        AmeriDexDealers.setActiveDealer(b.getAttribute('data-set-store'));
+        // Smooth-scroll the chosen card into view so confirmation feels obvious.
+        var card = b.closest('.ad-dealer-card');
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
     });
   }
+
+  // If the visitor already has an active store, render a confirmation card at
+  // the top so they know it's set without re-running ZIP lookup.
+  function renderCurrentMatch() {
+    var slug = AmeriDexDealers.getActiveSlug();
+    if (!slug) { result.innerHTML = ''; return; }
+    AmeriDexDealers.getActiveDealer().then(function (d) {
+      if (!d) { result.innerHTML = ''; return; }
+      result.innerHTML =
+        '<div style="margin-top:1.25rem;">' +
+        dealerCardHtml(d, { eyebrow: 'Your Store' }) +
+        '</div>';
+      bindSetButtons();
+    });
+  }
+  renderCurrentMatch();
 
   // ZIP submit.
   form.addEventListener('submit', function (e) {
@@ -176,20 +206,22 @@
     }
     AmeriDexDealers.matchByZip(zip).then(function (d) {
       if (d) {
-        AmeriDexDealers.setActiveDealer(d.slug);
+        // Don't auto-save. Show the match with an explicit Set button.
         result.innerHTML =
           '<div style="margin-top:1.25rem;">' +
-          dealerCardHtml(d, { eyebrow: 'Your Local Dealer' }) +
+          dealerCardHtml(d, { eyebrow: 'Match for ' + escapeHtml(zip) }) +
           '</div>';
-        bindPickButtons();
-        // Scroll the matched card into view on mobile.
+        bindSetButtons();
         result.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else {
+        // No-match: AmeriDex handles directly. Show the full directory below
+        // so visitors can still browse if they want a specific dealer.
         result.innerHTML =
           '<div class="ad-no-match" style="margin-top:1.25rem;">' +
-          '<h4>We don\'t have a dealer in your area yet.</h4>' +
-          '<p style="margin:0 0 0.75rem;color:#444;">AmeriDex is expanding fast. Reach out and our team will help you source the system or connect you with the closest option.</p>' +
-          '<a class="btn btn-red" href="contact-us.html?reason=no-dealer&zip=' + encodeURIComponent(zip) + '">Contact AmeriDex</a>' +
+          '<h4>No dealer in your area yet.</h4>' +
+          '<p style="margin:0 0 0.75rem;color:#444;">AmeriDex will handle your request directly. Browse the full dealer list below if you\'d like to source through a specific location anyway.</p>' +
+          '<a class="btn btn-red" href="get-a-free-quote.html">Continue with AmeriDex</a> ' +
+          '<a class="btn btn-outline" href="contact-us.html?reason=no-dealer&zip=' + encodeURIComponent(zip) + '" style="margin-left:0.5rem;">Contact AmeriDex</a>' +
           '</div>';
       }
     });
