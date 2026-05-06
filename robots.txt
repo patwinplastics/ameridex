@@ -22,4 +22,4 @@ Disallow: /
 User-agent: Google-Extended
 Disallow: /
 
-Sitemap: https://ameridex.com/sitemap.xml
+Sitemap: https://www.ameridex.com/sitemap.xml
