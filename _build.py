@@ -20,6 +20,7 @@ NAV_LINKS = [
     ("How System Works",     "how-system-works.html"),
     ("Instructional Videos", "https://www.youtube.com/channel/UC3Fz0TEKbLpQZefnYQNCxmg"),
     ("Gallery",              "gallery.html"),
+    ("Where to Buy",         "where-to-buy.html"),
     ("Get a Free Quote",     "get-a-free-quote.html"),
     ("Contact Us",           "contact-us.html"),
 ]
@@ -317,6 +318,10 @@ def head(title, description=DEFAULT_DESCRIPTION, *, canonical="", keywords="",
 
   <script defer src="js/site.js"></script>
 
+  <!-- Dealer routing: My Store chip, suggestion banner, IP-based suggestion, form stamping. -->
+  <!-- Loaded on every page so the chip and confirmed-state CTAs follow the visitor sitewide. -->
+  <script defer src="js/dealer-routing.js"></script>
+
   <!-- Structured data (schema.org / JSON-LD) -->
   {jsonld_block}
 </head>
@@ -396,6 +401,7 @@ def footer():
         <li><a href="index.html">Home</a></li>
         <li><a href="https://www.youtube.com/channel/UC3Fz0TEKbLpQZefnYQNCxmg" target="_blank" rel="noopener">Instructional Videos</a></li>
         <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="where-to-buy.html">Where to Buy</a></li>
         <li><a href="get-a-free-quote.html">Get a Free Quote</a></li>
         <li><a href="contact-us.html">Contact Us</a></li>
         <li><a href="warranty-registration.html">Register Warranty</a></li>
