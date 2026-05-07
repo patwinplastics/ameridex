@@ -183,6 +183,14 @@ HOW_IT_WORKS_FAQ = [
         "AmeriDex carries a 25-year residential limited warranty and a 10-year limited "
         "commercial warranty on the deck board system.",
     ),
+    (
+        "What is the fire rating of AmeriDex deck boards?",
+        "AmeriDex cellular PVC deck boards carry a Class A flame spread rating under "
+        "ASTM E84, the highest flame spread classification for building materials. That "
+        "makes the boards a strong fit for projects in wildfire-prone regions and for "
+        "jurisdictions that require Class A surface burning performance on the walking "
+        "surface.",
+    ),
 ]
 
 FAQ_JSONLD = {
@@ -759,6 +767,7 @@ def page_how_it_works():
           <tr><td>Joist Spacing</td><td>16" o.c. residential</td></tr>
           <tr><td>Fasteners</td><td>Starborn epoxy-coated screws or stainless screws and plugs (sold separately)</td></tr>
           <tr><td>Warranty</td><td>25-Year Residential, 10-Year Limited Commercial</td></tr>
+          <tr><td>Fire Rating</td><td>Class A flame spread (ASTM E84)</td></tr>
           <tr><td>Application</td><td>New deck construction only</td></tr>
         </tbody>
       </table>
