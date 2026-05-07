@@ -59,7 +59,7 @@ ORG_JSONLD = {
         "postalCode": "08724",
         "addressCountry": "US",
     },
-    "sameAs": ["https://www.facebook.com/"],
+    "sameAs": ["https://www.facebook.com/ameridexdryspace/"],
     "areaServed": "US",
     "slogan": "Protect The Space Under Your Deck.",
 }

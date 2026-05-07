@@ -108,5 +108,3 @@ Update the URL in `_build.py` (constant `DEALER_PORTAL_URL`) and rerun
 - Wire up Formspree endpoint (4 forms, see above).
 - Confirm the exact deck board lengths offered (currently shown as 12 / 16 /
   20 ft on `how-system-works.html`; there is a TODO comment in that file).
-- Update the Facebook URL in the footer (currently links to facebook.com root;
-  search for `facebook.com` in `_build.py` to update).
