@@ -144,9 +144,9 @@ HOW_IT_WORKS_FAQ = [
         "What makes AmeriDex different from other under-deck drainage systems?",
         "AmeriDex is an above-joist, integrated system. The waterproofing happens at the "
         "deck surface itself, not in a tray hung underneath the framing. Competing retrofit "
-        "systems (Trex RainEscape, TimberTech DrySpace, ZipUP UnderDeck) are added below an "
-        "existing deck. AmeriDex is engineered into a new deck from the joists up, which is "
-        "why your joists, beams, and ledger stay dry for the life of the structure.",
+        "drainage systems are added below an existing deck as a tray or panel hung from the "
+        "joists. AmeriDex is engineered into a new deck from the joists up, which is why "
+        "your joists, beams, and ledger stay dry for the life of the structure.",
     ),
     (
         "Can AmeriDex be installed on an existing deck?",
