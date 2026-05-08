@@ -546,8 +546,8 @@ def page_index():
     </div>
     <div class="container">
       <div class="hero-content reveal">
-        <h1>Protect The Space Under Your Deck.</h1>
-        <p class="kicker">Premium, American-made integrated water-diverting system that turns your unused deck area into a dry, luxurious living space.</p>
+        <h1>The Integrated Above-Joist Deck Drainage System.</h1>
+        <p class="kicker">AmeriDex is the American-made above-joist deck drainage system. Cellular PVC boards lock onto the Dexerdry seal so 100% of rain is diverted off the deck, protecting your framing and creating a dry, finished living space below.</p>
         <div class="hero-cta">
           <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Get a Free Quote</a>
           <a class="btn btn-outline-white btn-lg" href="how-system-works.html">See How it Works</a>
@@ -585,8 +585,8 @@ def page_index():
       <div class="why-grid">
         <div class="reveal">
           <div class="section-head" style="margin-bottom:1.25rem;">
-            <h2 style="color:var(--navy)">Why the AmeriDex System Works</h2>
-            <p>Integrated PVC decking and seal stops water at the surface and creates dry space below.</p>
+            <h2 style="color:var(--navy)">Why an Above-Joist Deck Drainage System Wins</h2>
+            <p>The AmeriDex water-diverting system stops every drop at the surface, before it ever touches your joists or beams.</p>
           </div>
           <div class="why-bullets">
             <div class="why-bullet">
@@ -627,6 +627,21 @@ def page_index():
     </div>
   </section>
 
+  <!-- SEO content: Above-Joist vs Below-Joist context -->
+  <section class="section-pad bg-white">
+    <div class="container" style="max-width:880px;">
+      <div class="section-head reveal">
+        <h2 style="color:var(--navy)">Above-Joist vs Below-Joist: The Real Difference</h2>
+        <p>Most under-deck drainage systems are retrofits. AmeriDex is engineered into the deck itself.</p>
+      </div>
+      <div class="reveal" style="font-size:1.03rem;line-height:1.7;color:var(--navy);">
+        <p>An <strong>above-joist deck drainage system</strong> stops water at the walking surface. The waterproofing happens between the boards, on top of the joists, before a single drop reaches the framing. AmeriDex is built this way. Cellular PVC deck boards lock onto the Dexerdry TPE seal as the deck is installed, so 100% of the rain is diverted off the deck and away from the structure.</p>
+        <p>Below-joist, retrofit drainage systems are different. They are tray, panel, or membrane assemblies hung underneath an existing deck after the boards are already in place. Water still falls through the gaps in the deck boards, soaks the joists and beams, and is caught in a tray below. Over time, those wet joists can rot, fasteners can corrode, and stains can bleed through onto the panels.</p>
+        <p>If you are building a new deck and you want a real <strong>dry space under the deck</strong>, integrated above-joist drainage is the only way to keep your framing dry for the life of the structure. <a href="above-joist-vs-below-joist-deck-drainage.html">See the full above-joist vs below-joist comparison</a>, or read the deeper <a href="above-joist-deck-drainage.html">above-joist deck drainage explainer</a> to understand why the AmeriDex water-diverting system is engineered the way it is.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Lifestyle -->
   <section class="section-pad bg-cream">
     <div class="container">
@@ -653,11 +668,11 @@ def page_index():
 </main>
 '''
     return head(
-        "Protect The Space Under Your Deck | AmeriDex Dryspace System",
-        "Integrated above-joist deck drainage. Cellular PVC boards lock onto the Dexerdry seal so rain runs off and the space below stays dry. Made in the USA.",
-        # description is 155 chars - within Google's SERP limit
+        "Above-Joist Deck Drainage System | AmeriDex Made in USA",
+        "AmeriDex is the integrated above-joist deck drainage system. Cellular PVC boards lock onto the Dexerdry seal so rain is diverted off the deck and the space below stays dry. Made in the USA.",
+        # description is 192 chars; Google may truncate at ~160 but the lead phrase is preserved
         canonical="",
-        keywords="under deck drainage, dry space under deck, above-joist drainage, PVC decking, integrated deck drainage, AmeriDex, Dexerdry, new deck construction, made in USA decking",
+        keywords="above-joist deck drainage, above joist deck drainage system, under deck drainage system, water diverting system for deck, dry space under deck, integrated deck drainage, deck water diverter, PVC deck drainage, AmeriDex, Dexerdry, new deck construction, made in USA deck drainage",
         extra_jsonld=[PRODUCT_JSONLD, breadcrumb_schema(("Home", ""))],
         extra_head='\n  <link rel="preload" as="image" href="assets/img/hero.jpg" fetchpriority="high">',
     ) + header("index.html") + body + footer()
@@ -698,7 +713,7 @@ def page_how_it_works():
         </div>
         <div class="system-card reveal">
           <div class="visual">
-            <!-- Real Dexerdry profile generated from Azek-Seal-4-19-19-Version-1.2.STEP.
+            <!-- Real Dexerdry profile generated from the seal STEP geometry.
                  Source of truth: assets/img/diagrams/dexerdry-profile.svg.
                  Do NOT replace with hand-drawn shapes. -->
             <img src="assets/img/diagrams/dexerdry-profile.svg"
@@ -784,6 +799,19 @@ def page_how_it_works():
       <div class="faq-list reveal">
         {faq_html}
       </div>
+    </div>
+  </section>
+
+  <!-- Related reading -->
+  <section class="section-pad bg-white">
+    <div class="container" style="max-width:880px;">
+      <div class="section-head reveal">
+        <h2 style="color:var(--navy)">Related Reading</h2>
+      </div>
+      <ul class="reveal" style="font-size:1.03rem;line-height:1.8;color:var(--navy);list-style:disc;padding-left:1.25rem;">
+        <li><a href="above-joist-deck-drainage.html">What is an above-joist deck drainage system?</a></li>
+        <li><a href="above-joist-vs-below-joist-deck-drainage.html">Above-joist vs below-joist deck drainage: a builder's comparison</a></li>
+      </ul>
     </div>
   </section>
 
@@ -1485,16 +1513,333 @@ def page_warranty():
 
 
 # ----------------------------------------------------------------------
+# SEO PILLAR PAGE: Above-Joist Deck Drainage (the explainer)
+# ----------------------------------------------------------------------
+ABOVE_JOIST_FAQ = [
+    (
+        "What does above-joist deck drainage mean?",
+        "Above-joist deck drainage is a waterproofing approach where the drainage layer sits on top of the joists, between the deck boards themselves, instead of being hung underneath the framing as a separate tray or panel. The deck surface itself is the watertight layer. With AmeriDex, every cellular PVC deck board locks onto the Dexerdry TPE seal as it is installed, so 100% of the rain is diverted off the deck before it can ever touch the joists, beams, or ledger.",
+    ),
+    (
+        "Is above-joist drainage better than below-joist drainage?",
+        "For new deck construction, yes. Below-joist systems are retrofits. They are designed to be added to a deck that already exists, and they protect the space below by catching water that has already passed through the deck surface and soaked the framing. Above-joist drainage stops the water before it ever gets to the joists. That keeps the structural members dry for the life of the deck and removes the long-term risk of joist rot, fastener corrosion, and stained tray panels.",
+    ),
+    (
+        "Can an above-joist drainage system be retrofitted onto an existing deck?",
+        "Not without removing the existing deck boards. The integrated water-diverting seal has to be placed between every board as the deck is built. AmeriDex specifically is engineered for new deck construction. If you already have a finished deck and you do not want to tear up the surface, a below-joist retrofit drainage system is the only option, but you will be living with wet framing.",
+    ),
+    (
+        "Will above-joist drainage protect my joists from rot?",
+        "That is the entire point of the design. With AmeriDex, water and debris stop at the surface of the deck. The joists, beams, ledger, and fasteners stay dry from the day the deck is built. Dry framing lasts longer, holds fasteners better, and removes the maintenance and inspection burden that wet framing creates over the life of the structure.",
+    ),
+    (
+        "What does an above-joist deck drainage system cost?",
+        "Pricing varies by deck size, board color, and accessories. AmeriDex does not publish public price lists because every project is quoted from a takeoff. Submit your deck dimensions through the free quote form and a regional dealer will return a written quote, usually within one or two business days.",
+    ),
+    (
+        "What materials are used in the AmeriDex above-joist system?",
+        "AmeriDex deck boards are premium cellular PVC with a proprietary ASA cap. The water-diverting layer is the Dexerdry seal, which is made from automotive-grade TPE (thermoplastic elastomer), the same material category used in car door and window seals. Both components are made in the USA.",
+    ),
+]
+
+ABOVE_JOIST_FAQ_JSONLD = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": q,
+            "acceptedAnswer": {"@type": "Answer", "text": a},
+        }
+        for q, a in ABOVE_JOIST_FAQ
+    ],
+}
+
+ABOVE_JOIST_ARTICLE_JSONLD = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Above-Joist Deck Drainage: How Integrated Systems Keep the Space Below Dry",
+    "description": (
+        "An in-depth guide to above-joist deck drainage systems, how they differ "
+        "from below-joist retrofit systems, and why integrated above-joist "
+        "drainage is the right choice for new deck construction."
+    ),
+    "image": f"{SITE_ORIGIN}/assets/img/og.jpg",
+    "author": {"@type": "Organization", "name": "AmeriDex", "url": SITE_ORIGIN},
+    "publisher": {"@id": f"{SITE_ORIGIN}/#organization"},
+    "mainEntityOfPage": f"{SITE_ORIGIN}/above-joist-deck-drainage.html",
+    "inLanguage": "en-US",
+}
+
+
+def page_above_joist_drainage():
+    faq_html = "\n        ".join(
+        f'<details class="faq-item"><summary>{q}</summary><p>{a}</p></details>'
+        for q, a in ABOVE_JOIST_FAQ
+    )
+    body = f'''
+<main id="main">
+
+  <!-- Pillar hero -->
+  <section class="section-pad bg-navy" style="color:#fff;">
+    <div class="container" style="max-width:880px;text-align:center;">
+      <p class="kicker" style="color:#cdb795;font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.15em;font-size:0.85rem;margin-bottom:1rem;">The Definitive Guide</p>
+      <h1 style="color:#fff;font-size:clamp(2rem,4vw,3.2rem);line-height:1.15;margin-bottom:1.25rem;">Above-Joist Deck Drainage Systems Explained</h1>
+      <p style="font-size:1.1rem;line-height:1.7;color:#e6e9ee;">Above-joist deck drainage stops every drop of rain at the walking surface, before it ever reaches the joists. This guide explains how the system works, why builders specify it on new deck construction, and how it compares to below-joist retrofit drainage.</p>
+    </div>
+  </section>
+
+  <!-- Article body -->
+  <article class="section-pad bg-white">
+    <div class="container" style="max-width:780px;font-size:1.05rem;line-height:1.75;color:var(--navy);">
+
+      <h2 style="color:var(--navy);margin-top:0;">What is an above-joist deck drainage system?</h2>
+      <p>An above-joist deck drainage system is a waterproofing assembly where the watertight layer is built into the deck surface itself. The drainage layer sits on top of the joists, between every deck board, instead of being hung underneath the framing as a separate accessory. When rain hits the deck, water never makes it past the surface. It is shed off the front and sides of the deck like water on the roof of a house.</p>
+      <p>The AmeriDex system is the integrated above-joist deck drainage system. Cellular PVC deck boards lock onto the Dexerdry seal, an automotive-grade TPE gasket that ships between every board. The result is one continuous, finished surface that diverts 100% of the rain off the deck. The space under the deck stays dry, the joists stay dry, and the fasteners stay dry.</p>
+
+      <h2 style="color:var(--navy);">Why above-joist drainage protects the structure</h2>
+      <p>Standard wood and most composite deck boards leave a small gap between every board. That gap is intentional. It lets water drain off the surface so the boards do not stay wet. The trade-off is that every drop of rain that lands on the deck falls through those gaps onto the joists and beams below. Wood framing then dries slowly because it is shaded by the deck surface above. Over years, that wet-dry cycle is what causes joist rot, ledger failure, and fastener corrosion.</p>
+      <p>An above-joist drainage system removes that wet-dry cycle from the framing entirely. The water-diverting seal between the boards closes the gap. Rain hits the deck, runs across the surface, and is shed off the edge, the same way water runs off a metal or shingle roof. The structure underneath never gets wet, so it never has to dry out, which is why the framing in an integrated above-joist deck stays sound for the life of the structure.</p>
+
+      <h2 style="color:var(--navy);">The integrated AmeriDex system: board plus seal</h2>
+      <p>An above-joist drainage system is only as good as the connection between the board and the seal. AmeriDex solves that with a tongue-and-groove board profile that locks mechanically onto the Dexerdry TPE seal. The boards do not just sit on top of a flashing tape or membrane. They engage the seal as part of the install, so there is no field-applied caulking or sealant to fail.</p>
+      <ul style="padding-left:1.25rem;line-height:1.8;">
+        <li><strong>Boards:</strong> Cellular PVC with a proprietary ASA cap. They will not rot, splinter, or warp, they hold a Class A flame spread rating under ASTM E84, and they ship in 12 ft, 16 ft, and 20 ft lengths in seven colors.</li>
+        <li><strong>Seal:</strong> Dexerdry, an automotive-grade TPE (thermoplastic elastomer) gasket. The same material category used in car door and window seals. It is engineered to flex through years of thermal cycling without cracking or losing its watertight fit.</li>
+        <li><strong>Substructure:</strong> Conventional 16 inches on-center joist layout for residential applications. No special sub-framing, sleepers, or pitch tray is required.</li>
+        <li><strong>Fasteners:</strong> Starborn epoxy-coated screws or stainless screws and plugs.</li>
+        <li><strong>Warranty:</strong> 25-Year Residential Limited / 10-Year Limited Commercial.</li>
+      </ul>
+
+      <h2 style="color:var(--navy);">Above-joist vs below-joist drainage at a glance</h2>
+      <p>Above-joist and below-joist drainage solve the same homeowner goal, a dry space under the deck, with completely different engineering. The short version is that above-joist systems are built into a new deck from the joists up, and below-joist systems are added to an existing deck from underneath after the boards are already in place. <a href="above-joist-vs-below-joist-deck-drainage.html">The full comparison page</a> walks through framing impact, installation labor, long-term maintenance, and aesthetic finish in detail.</p>
+      <p>The headline difference is what happens to the framing. Above-joist systems keep the joists dry. Below-joist systems do not. Below-joist drainage relies on a tray, panel, or membrane hung beneath the joists to catch water that has already fallen through the deck surface. The framing gets wet on every storm. Over the life of the deck, that is the difference between a structure that stays sound and a structure that has to be inspected for rot.</p>
+
+      <h2 style="color:var(--navy);">Why above-joist drainage is the right call for new construction</h2>
+      <p>If you are building a deck from scratch, you are already setting joists. Adding an integrated above-joist system at that stage is a single-trade install. The deck builder lays joists, drops in the seal, and screws down the boards. There is no second trade hanging panels underneath, no separate downspout system, no inspection ports cut into a finished tray ceiling. The system is also invisible from below because there is nothing hanging from the joists. Builders can finish the underside however the homeowner wants, including beadboard, T&G, drywall, or a fully open ceiling, because the framing is dry.</p>
+      <p>For homeowners, the long-term math is straightforward. The space under the deck becomes a real, all-weather room. The structure does not need to be inspected for hidden water damage every spring. The under-deck ceiling stays clean and consistent because nothing is staining through from above. And because AmeriDex carries a 25-year residential limited warranty on the deck board system, the surface that does the waterproofing is also the surface that is warranted.</p>
+
+      <h2 style="color:var(--navy);">When above-joist drainage is not the right fit</h2>
+      <p>AmeriDex is for new deck construction only. The Dexerdry seal has to be placed between every board as the deck is built, so the system cannot be retrofitted onto a deck that already exists without first removing the existing boards. If you have a finished deck and you do not want to tear up the surface, a below-joist retrofit system is the only option. It will keep the patio space below dry, but the framing will get wet on every storm. That is the unavoidable trade-off of any retrofit drainage assembly.</p>
+
+      <h2 style="color:var(--navy);">How to specify AmeriDex on a new build</h2>
+      <p>Specifying AmeriDex on a new deck is a three step process. First, request <a href="samples-request.html">free samples</a> to see all seven PVC colors in person. Second, share your project dimensions through the <a href="get-a-free-quote.html">free quote form</a> so a regional dealer can return a written quote with board count, accessories, and lead time. Third, after install, <a href="warranty-registration.html">register the warranty</a> in minutes to activate the 25-year residential coverage. Builders working in commercial or multifamily applications should reach the AmeriDex team directly through the <a href="contact-us.html">contact page</a> for project takeoffs.</p>
+
+    </div>
+  </article>
+
+  <!-- FAQ -->
+  <section class="section-pad bg-cream" id="faq">
+    <div class="container" style="max-width:880px;">
+      <div class="section-head reveal">
+        <h2 style="color:var(--navy)">Above-Joist Deck Drainage FAQ</h2>
+        <p>The questions builders, dealers, and homeowners ask most about above-joist drainage systems.</p>
+      </div>
+      <div class="faq-list reveal">
+        {faq_html}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-pad bg-navy">
+    <div class="container" style="text-align:center;">
+      <h2 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:1.5rem;">Specifying AmeriDex on a new deck?</h2>
+      <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
+        <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Get a Free Quote</a>
+        <a class="btn btn-outline-white btn-lg" href="how-system-works.html">See How the System Works</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+'''
+    return head(
+        "Above-Joist Deck Drainage Systems: The Definitive Guide | AmeriDex",
+        "Above-joist deck drainage stops rain at the surface so joists, beams, and the space below stay dry. Learn how integrated above-joist drainage works and why builders specify it on new construction.",
+        canonical="above-joist-deck-drainage.html",
+        keywords="above-joist deck drainage, above joist deck drainage system, integrated deck drainage, water diverting system for deck, dry space under deck, under deck drainage system, PVC deck drainage, AmeriDex, Dexerdry",
+        og_type="article",
+        extra_jsonld=[
+            ABOVE_JOIST_ARTICLE_JSONLD,
+            ABOVE_JOIST_FAQ_JSONLD,
+            PRODUCT_JSONLD,
+            breadcrumb_schema(("Home", ""), ("Above-Joist Deck Drainage", "above-joist-deck-drainage.html")),
+        ],
+    ) + header("above-joist-deck-drainage.html") + body + footer()
+
+
+# ----------------------------------------------------------------------
+# SEO COMPARISON PAGE: Above-Joist vs Below-Joist (no brand names)
+# ----------------------------------------------------------------------
+ABOVE_VS_BELOW_FAQ = [
+    (
+        "What is the difference between above-joist and below-joist deck drainage?",
+        "Above-joist drainage stops water at the walking surface of the deck, before it ever reaches the joists. Below-joist drainage catches water after it has already passed through the deck boards, in a tray or panel hung underneath the framing. Above-joist drainage keeps the structure dry. Below-joist drainage only protects the patio space below.",
+    ),
+    (
+        "Which type lasts longer?",
+        "Above-joist systems generally last longer because the framing they sit on stays dry. Below-joist trays and panels tend to age faster because they are constantly wet, exposed to debris, and stained by water that has already run across the deck surface above.",
+    ),
+    (
+        "Is below-joist drainage cheaper to install?",
+        "Below-joist systems can have a lower up-front material cost, but the total installed cost is closer than it looks because they require a separate trade visit, additional flashing detail at the ledger, and a downspout system to carry collected water away. They are still the right answer when an existing deck cannot be torn up. For new construction, an integrated above-joist system is one trade and one install.",
+    ),
+    (
+        "Can either system be installed on an existing deck?",
+        "Below-joist systems are designed for retrofit and can be added under an existing deck. Integrated above-joist systems cannot be retrofitted because the water-diverting seal has to be placed between every board as the deck is built. They are specified on new construction.",
+    ),
+    (
+        "Which system gives a better finished ceiling under the deck?",
+        "Above-joist systems give the cleanest under-deck ceiling because nothing is hung from the joists. The framing is dry, so the homeowner can finish the underside however they want, including beadboard, drywall, or a fully open ceiling. Below-joist tray panels are visible from underneath and can stain over time.",
+    ),
+]
+
+ABOVE_VS_BELOW_FAQ_JSONLD = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": q,
+            "acceptedAnswer": {"@type": "Answer", "text": a},
+        }
+        for q, a in ABOVE_VS_BELOW_FAQ
+    ],
+}
+
+ABOVE_VS_BELOW_ARTICLE_JSONLD = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Above-Joist vs Below-Joist Deck Drainage: A Builder's Comparison",
+    "description": (
+        "A side-by-side comparison of above-joist and below-joist deck drainage "
+        "systems for builders, dealers, and homeowners specifying a dry space "
+        "under the deck."
+    ),
+    "image": f"{SITE_ORIGIN}/assets/img/og.jpg",
+    "author": {"@type": "Organization", "name": "AmeriDex", "url": SITE_ORIGIN},
+    "publisher": {"@id": f"{SITE_ORIGIN}/#organization"},
+    "mainEntityOfPage": f"{SITE_ORIGIN}/above-joist-vs-below-joist-deck-drainage.html",
+    "inLanguage": "en-US",
+}
+
+
+def page_above_joist_vs_below_joist():
+    faq_html = "\n        ".join(
+        f'<details class="faq-item"><summary>{q}</summary><p>{a}</p></details>'
+        for q, a in ABOVE_VS_BELOW_FAQ
+    )
+    body = f'''
+<main id="main">
+
+  <!-- Hero -->
+  <section class="section-pad bg-navy" style="color:#fff;">
+    <div class="container" style="max-width:880px;text-align:center;">
+      <p class="kicker" style="color:#cdb795;font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.15em;font-size:0.85rem;margin-bottom:1rem;">Builder Comparison</p>
+      <h1 style="color:#fff;font-size:clamp(2rem,4vw,3.2rem);line-height:1.15;margin-bottom:1.25rem;">Above-Joist vs Below-Joist Deck Drainage</h1>
+      <p style="font-size:1.1rem;line-height:1.7;color:#e6e9ee;">Two engineering approaches, one homeowner goal. Here is a head-to-head comparison of how above-joist and below-joist deck drainage systems are built, what they protect, and which one is right for new construction versus retrofit.</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <article class="section-pad bg-white">
+    <div class="container" style="max-width:780px;font-size:1.05rem;line-height:1.75;color:var(--navy);">
+
+      <h2 style="color:var(--navy);margin-top:0;">The core engineering difference</h2>
+      <p>Every deck drainage system has the same goal: a dry space under the deck. The two ways to get there are fundamentally different.</p>
+      <ul style="padding-left:1.25rem;line-height:1.8;">
+        <li><strong>Above-joist drainage</strong> places the watertight layer at the walking surface of the deck. Water never reaches the framing. The system is integrated into the deck boards as the deck is built. <a href="above-joist-deck-drainage.html">Read the full above-joist drainage explainer</a>.</li>
+        <li><strong>Below-joist drainage</strong> places the watertight layer beneath the framing as a tray, panel, or membrane assembly. Water runs through the deck boards, soaks the joists, and is collected below. The system is hung underneath an existing or new deck after the boards are in place.</li>
+      </ul>
+      <p>The first approach keeps the structure dry. The second approach keeps the patio space below dry while the framing gets wet on every storm. That single distinction drives most of the comparisons that follow.</p>
+
+      <h2 style="color:var(--navy);">Side-by-side comparison</h2>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.98rem;margin:1rem 0;">
+          <thead>
+            <tr style="background:var(--navy);color:#fff;">
+              <th style="text-align:left;padding:0.7rem 0.9rem;border:1px solid var(--navy);">Attribute</th>
+              <th style="text-align:left;padding:0.7rem 0.9rem;border:1px solid var(--navy);">Above-Joist (Integrated)</th>
+              <th style="text-align:left;padding:0.7rem 0.9rem;border:1px solid var(--navy);">Below-Joist (Retrofit)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;"><strong>Where the water stops</strong></td><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;">At the deck surface</td><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;">Below the joists</td></tr>
+            <tr><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;"><strong>Joists stay dry</strong></td><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;">Yes</td><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;">No</td></tr>
+            <tr><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;"><strong>Application</strong></td><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;">New construction only</td><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;">New or retrofit</td></tr>
+            <tr><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;"><strong>Trades involved</strong></td><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;">One: deck builder</td><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;">Two: deck builder plus drainage installer</td></tr>
+            <tr><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;"><strong>Visible from below</strong></td><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;">No, framing is dry and can be finished any way</td><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;">Yes, tray or panel ceiling is part of the look</td></tr>
+            <tr><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;"><strong>Long-term maintenance</strong></td><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;">Surface cleaning only</td><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;">Tray cleanout, debris removal, periodic flashing inspection</td></tr>
+            <tr><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;"><strong>Risk of joist rot over time</strong></td><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;">Removed by design</td><td style="padding:0.7rem 0.9rem;border:1px solid #d8dde3;">Same as a standard wet-framed deck</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style="color:var(--navy);">When above-joist wins</h2>
+      <p>If the deck is being built from scratch, an integrated above-joist drainage system is the right call. The framing stays dry for the life of the structure. The install is a single trade. The under-deck ceiling can be finished any way the homeowner wants because there is nothing hanging from the joists. And the surface that does the waterproofing is also the surface that carries the deck warranty, so the homeowner is not splitting coverage between a board manufacturer and a separate drainage manufacturer.</p>
+
+      <h2 style="color:var(--navy);">When below-joist still makes sense</h2>
+      <p>A below-joist retrofit system is the right answer when the deck already exists and the homeowner does not want to tear up the surface to rebuild it. It will keep the patio space below dry on rainy days. The trade-off is that the framing will continue to get wet on every storm, which is the same condition any standard deck has had since the day it was built. The retrofit system simply adds a dry zone underneath.</p>
+
+      <h2 style="color:var(--navy);">How AmeriDex fits in</h2>
+      <p>AmeriDex is the integrated above-joist deck drainage system. Cellular PVC deck boards lock onto the Dexerdry TPE seal so 100% of the rain is diverted off the deck and the framing stays dry. It is engineered for new construction with a conventional 16 inches on-center joist layout, no special sub-framing, and a 25-year residential limited warranty. <a href="how-system-works.html">Walk through how the system works step by step</a>, <a href="samples-request.html">request free samples in all seven colors</a>, or <a href="get-a-free-quote.html">submit your project for a free quote</a>.</p>
+
+    </div>
+  </article>
+
+  <!-- FAQ -->
+  <section class="section-pad bg-cream" id="faq">
+    <div class="container" style="max-width:880px;">
+      <div class="section-head reveal">
+        <h2 style="color:var(--navy)">Above-Joist vs Below-Joist FAQ</h2>
+      </div>
+      <div class="faq-list reveal">
+        {faq_html}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-pad bg-navy">
+    <div class="container" style="text-align:center;">
+      <h2 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:1.5rem;">Building a new deck?</h2>
+      <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
+        <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Get a Free Quote</a>
+        <a class="btn btn-outline-white btn-lg" href="above-joist-deck-drainage.html">Read the Above-Joist Guide</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+'''
+    return head(
+        "Above-Joist vs Below-Joist Deck Drainage: Builder's Comparison | AmeriDex",
+        "Compare above-joist and below-joist deck drainage systems side by side: how each one is built, which keeps your joists dry, and which is right for new construction vs retrofit.",
+        canonical="above-joist-vs-below-joist-deck-drainage.html",
+        keywords="above-joist vs below-joist deck drainage, above joist vs below joist drainage, deck drainage comparison, integrated deck drainage vs retrofit, under deck drainage system, dry space under deck",
+        og_type="article",
+        extra_jsonld=[
+            ABOVE_VS_BELOW_ARTICLE_JSONLD,
+            ABOVE_VS_BELOW_FAQ_JSONLD,
+            breadcrumb_schema(("Home", ""), ("Above-Joist vs Below-Joist Deck Drainage", "above-joist-vs-below-joist-deck-drainage.html")),
+        ],
+    ) + header("above-joist-vs-below-joist-deck-drainage.html") + body + footer()
+
+
+# ----------------------------------------------------------------------
 # WRITE
 # ----------------------------------------------------------------------
 PAGES = {
-    "index.html":                   page_index,
-    "how-system-works.html":        page_how_it_works,
-    "gallery.html":                 page_gallery,
-    "get-a-free-quote.html":        page_quote,
-    "contact-us.html":              page_contact,
-    "samples-request.html":         page_samples,
-    "warranty-registration.html":   page_warranty,
+    "index.html":                                       page_index,
+    "how-system-works.html":                            page_how_it_works,
+    "gallery.html":                                     page_gallery,
+    "get-a-free-quote.html":                            page_quote,
+    "contact-us.html":                                  page_contact,
+    "samples-request.html":                             page_samples,
+    "warranty-registration.html":                       page_warranty,
+    "above-joist-deck-drainage.html":                   page_above_joist_drainage,
+    "above-joist-vs-below-joist-deck-drainage.html":    page_above_joist_vs_below_joist,
 }
 
 

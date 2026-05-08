@@ -19,7 +19,8 @@ Disallow: /
 User-agent: CCBot
 Disallow: /
 
-User-agent: Google-Extended
-Disallow: /
+# Google-Extended (Gemini, AI Overviews) is allowed so AmeriDex content can
+# surface in AI search experiences. Remove the Disallow above (CCBot/etc.)
+# if you also want to allow OpenAI / Anthropic / Common Crawl training.
 
 Sitemap: https://www.ameridex.com/sitemap.xml
