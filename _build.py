@@ -20,6 +20,7 @@ NAV_LINKS = [
     ("How System Works",     "how-system-works.html"),
     ("Instructional Videos", "https://www.youtube.com/channel/UC3Fz0TEKbLpQZefnYQNCxmg"),
     ("Gallery",              "gallery.html"),
+    ("About",                "about.html"),
     ("Where to Buy",         "where-to-buy.html"),
     ("Get a Free Quote",     "get-a-free-quote.html"),
     ("Contact Us",           "contact-us.html"),
@@ -39,16 +40,74 @@ DEFAULT_DESCRIPTION = (
 )
 # Default Organization-level JSON-LD that ships on every page so search
 # engines build a knowledge-graph entity for the brand.
+# Person schemas for the founders. Linked into the Organization via 'founder'.
+FOUNDER_ARDOLINA = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": f"{SITE_ORIGIN}/#founder-ardolina",
+    "name": "John Ardolina",
+    "jobTitle": "Co-Founder",
+    "hasOccupation": [
+        {"@type": "Occupation", "name": "Carpenter"},
+        {"@type": "Occupation", "name": "Founder, Dexerdry, Inc."},
+    ],
+    "description": (
+        "Co-founder of AmeriDex and founder of Dexerdry, Inc. A carpenter by "
+        "trade who developed the patented above-joist water-diverting seal at "
+        "the heart of the AmeriDex deck system."
+    ),
+    "knowsAbout": [
+        "above-joist deck drainage",
+        "water-diverting deck seals",
+        "thermoplastic elastomer (TPE) gaskets",
+        "deck waterproofing engineering",
+        "deck construction",
+        "carpentry",
+    ],
+    "worksFor": {"@id": f"{SITE_ORIGIN}/#organization"},
+}
+
+FOUNDER_MURPHY = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": f"{SITE_ORIGIN}/#founder-murphy",
+    "name": "Jim Murphy",
+    "jobTitle": "Co-Founder",
+    "description": (
+        "Co-founder of AmeriDex with deep manufacturing experience in cellular PVC "
+        "and building products production. Leads the manufacturing side of the "
+        "business, including the AmeriDex plant in Linden, New Jersey."
+    ),
+    "knowsAbout": [
+        "cellular PVC manufacturing",
+        "building products production",
+        "deck board extrusion",
+        "plant operations",
+    ],
+    "worksFor": {"@id": f"{SITE_ORIGIN}/#organization"},
+}
+
 ORG_JSONLD = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": f"{SITE_ORIGIN}/#organization",
     "name": "AmeriDex",
+    "alternateName": [
+        "Ameri Dex",
+        "AmeriDex Dryspace",
+        "AmeriDex Decking System",
+        "AmeriDex Deck Drainage",
+    ],
     "legalName": LEGAL_NAME,
     "url": SITE_ORIGIN,
     "logo": f"{SITE_ORIGIN}/assets/img/logo.png",
     "image": f"{SITE_ORIGIN}/assets/img/og.jpg",
     "description": DEFAULT_DESCRIPTION,
+    "foundingDate": "2023",
+    "founder": [
+        {"@id": f"{SITE_ORIGIN}/#founder-ardolina"},
+        {"@id": f"{SITE_ORIGIN}/#founder-murphy"},
+    ],
     "telephone": "+1-800-217-9206",
     "email": "sales@ameridex.com",
     "address": {
@@ -59,7 +118,18 @@ ORG_JSONLD = {
         "postalCode": "08724",
         "addressCountry": "US",
     },
-    "sameAs": ["https://www.facebook.com/ameridexdryspace/"],
+    "sameAs": [
+        "https://www.facebook.com/ameridexdryspace/",
+        "https://www.youtube.com/channel/UC3Fz0TEKbLpQZefnYQNCxmg",
+    ],
+    "knowsAbout": [
+        "above-joist deck drainage",
+        "under deck drainage system",
+        "cellular PVC decking",
+        "integrated water-diverting deck seal",
+        "new deck construction",
+        "dry under-deck living space",
+    ],
     "areaServed": "US",
     "slogan": "Protect The Space Under Your Deck.",
 }
@@ -637,7 +707,7 @@ def page_index():
       <div class="reveal" style="font-size:1.03rem;line-height:1.7;color:var(--navy);">
         <p>An <strong>above-joist deck drainage system</strong> stops water at the walking surface. The waterproofing happens between the boards, on top of the joists, before a single drop reaches the framing. AmeriDex is built this way. Cellular PVC deck boards lock onto the Dexerdry TPE seal as the deck is installed, so 100% of the rain is diverted off the deck and away from the structure.</p>
         <p>Below-joist, retrofit drainage systems are different. They are tray, panel, or membrane assemblies hung underneath an existing deck after the boards are already in place. Water still falls through the gaps in the deck boards, soaks the joists and beams, and is caught in a tray below. Over time, those wet joists can rot, fasteners can corrode, and stains can bleed through onto the panels.</p>
-        <p>If you are building a new deck and you want a real <strong>dry space under the deck</strong>, integrated above-joist drainage is the only way to keep your framing dry for the life of the structure. <a href="above-joist-vs-below-joist-deck-drainage.html">See the full above-joist vs below-joist comparison</a>, or read the deeper <a href="above-joist-deck-drainage.html">above-joist deck drainage explainer</a> to understand why the AmeriDex water-diverting system is engineered the way it is.</p>
+        <p>If you are building a new deck and you want a real <strong>dry space under the deck</strong>, integrated above-joist drainage is the only way to keep your framing dry for the life of the structure. <a href="above-joist-vs-below-joist-deck-drainage.html">See the full above-joist vs below-joist comparison</a>, read the deeper <a href="above-joist-deck-drainage.html">above-joist deck drainage explainer</a>, or learn <a href="about.html">about AmeriDex and the patented Dexerdry seal</a> behind the system.</p>
       </div>
     </div>
   </section>
@@ -811,6 +881,7 @@ def page_how_it_works():
       <ul class="reveal" style="font-size:1.03rem;line-height:1.8;color:var(--navy);list-style:disc;padding-left:1.25rem;">
         <li><a href="above-joist-deck-drainage.html">What is an above-joist deck drainage system?</a></li>
         <li><a href="above-joist-vs-below-joist-deck-drainage.html">Above-joist vs below-joist deck drainage: a builder's comparison</a></li>
+        <li><a href="about.html">About AmeriDex: the engineering origin behind the system</a></li>
       </ul>
     </div>
   </section>
@@ -1828,6 +1899,111 @@ def page_above_joist_vs_below_joist():
 
 
 # ----------------------------------------------------------------------
+# ABOUT PAGE: brand entity + engineering origin
+# ----------------------------------------------------------------------
+ABOUT_ARTICLE_JSONLD = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About AmeriDex",
+    "description": (
+        "AmeriDex is an American-made above-joist deck drainage system from "
+        "A & M Building Products, manufactured in Linden, New Jersey. "
+        "Co-founded by John Ardolina and Jim Murphy."
+    ),
+    "url": f"{SITE_ORIGIN}/about.html",
+    "about": {"@id": f"{SITE_ORIGIN}/#organization"},
+    "mainEntity": {"@id": f"{SITE_ORIGIN}/#organization"},
+    "inLanguage": "en-US",
+}
+
+
+def page_about():
+    body = f'''
+<main id="main">
+
+  <!-- Hero -->
+  <section class="section-pad bg-navy" style="color:#fff;">
+    <div class="container" style="max-width:880px;text-align:center;">
+      <p class="kicker" style="color:#cdb795;font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.15em;font-size:0.85rem;margin-bottom:1rem;">About AmeriDex</p>
+      <h1 style="color:#fff;font-size:clamp(2rem,4vw,3.2rem);line-height:1.15;margin-bottom:1.25rem;">An American Deck System, Engineered Around a Patented Seal.</h1>
+      <p style="font-size:1.1rem;line-height:1.7;color:#e6e9ee;">AmeriDex is the integrated above-joist deck drainage system from A &amp; M Building Products. Cellular PVC deck boards are manufactured in Linden, New Jersey and lock onto the patented Dexerdry seal so 100% of the rain is diverted off the deck.</p>
+    </div>
+  </section>
+
+  <!-- Story body -->
+  <article class="section-pad bg-white">
+    <div class="container" style="max-width:780px;font-size:1.05rem;line-height:1.75;color:var(--navy);">
+
+      <h2 style="color:var(--navy);margin-top:0;">From the jobsite to a patented system</h2>
+      <p>AmeriDex started on a jobsite. John Ardolina, a carpenter by trade, spent years building decks and watching the same problem repeat itself. Every storm, water ran through the gaps in the deck boards and soaked the joists below. The framing slowly rotted, the fasteners slowly corroded, and the customer never saw any of it until the deck was already failing. The fix needed to happen at the surface, not underneath. That is the engineering insight that became Dexerdry, the patented above-joist water-diverting seal that sits between every deck board.</p>
+      <p>AmeriDex is the next step. It pairs that seal with a purpose-built cellular PVC deck board so the entire system, board and seal, ships and installs as one assembly. Two companies, one engineered system, one warranty.</p>
+
+      <h2 style="color:var(--navy);">The seal: Dexerdry, Inc.</h2>
+      <p>John founded Dexerdry, Inc. in 2014 to commercialize the seal he had been developing on the jobsite. Dexerdry uses an above-joist water-diverting gasket made of automotive-grade TPE (thermoplastic elastomer), the same material category used in car door and window seals. Dexerdry, Inc. holds <a href="https://patents.google.com/patent/US7028437B2/en" target="_blank" rel="noopener">U.S. Patent 7,028,437</a> for the above-joist, integrated deck-gutter system. The seal ships on a roll, sits between every deck board, and locks the watertight layer at the deck surface itself, before water can ever reach the framing below.</p>
+
+      <h2 style="color:var(--navy);">The board and the brand: A &amp; M Building Products and AmeriDex</h2>
+      <p>A &amp; M Building Products was founded in 2023 to bring the seal and a purpose-built deck board to market under one brand. That brand is AmeriDex. The boards are premium cellular PVC with a proprietary ASA cap, manufactured in Linden, New Jersey, and they are profiled to lock mechanically onto the Dexerdry seal as the deck is built. The headquarters and warehouse operations are based at 1129A Industrial Parkway in Brick, New Jersey.</p>
+      <p>The result is a single integrated deck system that ships as one product, installs as one trade, and is warranted as one assembly. There is no separate drainage manufacturer, no field-applied sealant, no second trade hanging trays underneath, and no split warranty.</p>
+
+      <h2 style="color:var(--navy);">The founders</h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:1.5rem;margin:1.25rem 0 1.5rem;">
+        <div style="border-left:4px solid var(--red);padding:0.4rem 0 0.4rem 1.1rem;">
+          <h3 style="color:var(--navy);margin:0 0 0.35rem;font-size:1.15rem;">John Ardolina, Co-Founder</h3>
+          <p style="margin:0;">John is a carpenter by trade. He spent years on jobsites watching deck framing get soaked on every storm and built Dexerdry, Inc. in 2014 to solve it. Dexerdry holds the patent on the above-joist water-diverting seal that gives the AmeriDex deck its dry-framing performance. John brings the seal IP, the material science work behind the TPE gasket, and more than a decade of operating history at Dexerdry, Inc. into AmeriDex.</p>
+        </div>
+        <div style="border-left:4px solid var(--red);padding:0.4rem 0 0.4rem 1.1rem;">
+          <h3 style="color:var(--navy);margin:0 0 0.35rem;font-size:1.15rem;">Jim Murphy, Co-Founder</h3>
+          <p style="margin:0;">Jim leads the manufacturing side of the business and brings extensive experience in cellular PVC and building products production. He runs the AmeriDex deck board plant in Linden, New Jersey, where the boards are extruded, capped, profiled to mate with the Dexerdry seal, and packaged for dealers and builders.</p>
+        </div>
+      </div>
+
+      <h2 style="color:var(--navy);">Made in the USA</h2>
+      <p>Every AmeriDex deck board is manufactured in Linden, New Jersey. The Dexerdry seal that ships between every board is also produced in the USA. Headquarters, sales, and warehousing operate out of Brick, New Jersey. The system is engineered, manufactured, and supported entirely on-shore.</p>
+
+      <h2 style="color:var(--navy);">Built for new construction, warranted as one system</h2>
+      <p>AmeriDex is engineered for new deck construction only. The Dexerdry seal has to be installed between every board as the deck is built, so the system cannot be retrofitted on an existing deck without removing the existing surface. For new construction, that constraint is what unlocks the rest of the value: dry framing for the life of the structure, a single-trade install on conventional 16 inches on-center joists, and a 25-Year Residential Limited / 10-Year Limited Commercial warranty on the integrated board and seal system.</p>
+
+      <h2 style="color:var(--navy);">Where to take it next</h2>
+      <ul style="padding-left:1.25rem;line-height:1.8;">
+        <li><a href="how-system-works.html">See how the AmeriDex system works</a> in technical detail, including the cross-section, install sequence, and FAQ.</li>
+        <li><a href="above-joist-deck-drainage.html">Read the above-joist deck drainage explainer</a> for the engineering reasoning behind keeping the water at the surface.</li>
+        <li><a href="samples-request.html">Request free samples</a> to see all seven cellular PVC colors in person.</li>
+        <li><a href="get-a-free-quote.html">Submit a project for a free quote</a> if you are specifying AmeriDex on a new deck.</li>
+        <li><a href="contact-us.html">Contact the team</a> directly for commercial, multifamily, or dealer inquiries.</li>
+      </ul>
+
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="section-pad bg-navy">
+    <div class="container" style="text-align:center;">
+      <h2 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:1.5rem;">Want AmeriDex on your next deck?</h2>
+      <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
+        <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Get a Free Quote</a>
+        <a class="btn btn-outline-white btn-lg" href="samples-request.html">Order Samples</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+'''
+    return head(
+        "About AmeriDex | Made in the USA Above-Joist Deck Drainage",
+        "AmeriDex is the integrated above-joist deck drainage system from A & M Building Products, made in Linden, NJ. Co-founded by John Ardolina (Dexerdry, Inc.) and Jim Murphy (manufacturing).",
+        canonical="about.html",
+        keywords="about AmeriDex, AmeriDex company, A & M Building Products, Dexerdry Inc, John Ardolina, Jim Murphy, made in USA deck system, Linden NJ deck manufacturer, Brick NJ",
+        og_type="article",
+        extra_jsonld=[
+            ABOUT_ARTICLE_JSONLD,
+            FOUNDER_ARDOLINA,
+            FOUNDER_MURPHY,
+            breadcrumb_schema(("Home", ""), ("About", "about.html")),
+        ],
+    ) + header("about.html") + body + footer()
+
+
+# ----------------------------------------------------------------------
 # WRITE
 # ----------------------------------------------------------------------
 PAGES = {
@@ -1838,6 +2014,7 @@ PAGES = {
     "contact-us.html":                                  page_contact,
     "samples-request.html":                             page_samples,
     "warranty-registration.html":                       page_warranty,
+    "about.html":                                       page_about,
     "above-joist-deck-drainage.html":                   page_above_joist_drainage,
     "above-joist-vs-below-joist-deck-drainage.html":    page_above_joist_vs_below_joist,
 }
