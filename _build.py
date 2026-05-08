@@ -1932,39 +1932,80 @@ def page_about():
 
   <!-- Story body -->
   <article class="section-pad bg-white">
-    <div class="container" style="max-width:780px;font-size:1.05rem;line-height:1.75;color:var(--navy);">
+    <div class="container about-body" style="max-width:780px;font-size:1.05rem;line-height:1.75;color:var(--navy);">
 
-      <h2 style="color:var(--navy);margin-top:0;">From the jobsite to a patented system</h2>
+      <style>
+        .about-body h2 {{
+          color: var(--navy);
+          font-size: clamp(1.5rem, 2.4vw, 1.95rem);
+          line-height: 1.25;
+          font-weight: 700;
+          margin: 3rem 0 1rem;
+          letter-spacing: -0.01em;
+        }}
+        .about-body h2:first-child {{ margin-top: 0; }}
+        .about-body h2::after {{
+          content: "";
+          display: block;
+          width: 56px;
+          height: 3px;
+          background: var(--red);
+          margin-top: 0.65rem;
+        }}
+        .about-body p {{ margin: 0 0 1.15rem; }}
+        .about-body p:last-child {{ margin-bottom: 0; }}
+        .about-body ul {{ margin: 1.25rem 0 0; padding-left: 1.25rem; line-height: 1.8; }}
+        .about-body ul li {{ margin-bottom: 0.55rem; }}
+        .about-body .founders-grid {{
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          margin: 0.75rem 0 0.5rem;
+        }}
+        .about-body .founders-grid > div {{
+          border-left: 4px solid var(--red);
+          padding: 0.4rem 0 0.4rem 1.1rem;
+        }}
+        .about-body .founders-grid h3 {{
+          color: var(--navy);
+          margin: 0 0 0.45rem;
+          font-size: 1.2rem;
+          font-weight: 700;
+        }}
+        .about-body .founders-grid p {{ margin: 0; }}
+      </style>
+
+      <h2>From the jobsite to a patented system</h2>
       <p>AmeriDex started on a jobsite. John Ardolina, a carpenter by trade, spent years building decks and watching the same problem repeat itself. Every storm, water ran through the gaps in the deck boards and soaked the joists below. The framing slowly rotted, the fasteners slowly corroded, and the customer never saw any of it until the deck was already failing. The fix needed to happen at the surface, not underneath. That is the engineering insight that became Dexerdry, the patented above-joist water-diverting seal that sits between every deck board.</p>
       <p>AmeriDex is the next step. It pairs that seal with a purpose-built cellular PVC deck board so the entire system, board and seal, ships and installs as one assembly. Two companies, one engineered system, one warranty.</p>
 
-      <h2 style="color:var(--navy);">The seal: Dexerdry, Inc.</h2>
+      <h2>The seal: Dexerdry, Inc.</h2>
       <p>John founded Dexerdry, Inc. in 2014 to commercialize the seal he had been developing on the jobsite. Dexerdry uses an above-joist water-diverting gasket made of automotive-grade TPE (thermoplastic elastomer), the same material category used in car door and window seals. Dexerdry, Inc. holds <a href="https://patents.google.com/patent/US7028437B2/en" target="_blank" rel="noopener">U.S. Patent 7,028,437</a> for the above-joist, integrated deck-gutter system. The seal ships on a roll, sits between every deck board, and locks the watertight layer at the deck surface itself, before water can ever reach the framing below.</p>
 
-      <h2 style="color:var(--navy);">The board and the brand: A &amp; M Building Products and AmeriDex</h2>
+      <h2>The board and the brand: A &amp; M Building Products and AmeriDex</h2>
       <p>A &amp; M Building Products was founded in 2023 to bring the seal and a purpose-built deck board to market under one brand. That brand is AmeriDex. The boards are premium cellular PVC with a proprietary ASA cap, manufactured in Linden, New Jersey, and they are profiled to lock mechanically onto the Dexerdry seal as the deck is built. The headquarters and warehouse operations are based at 1129A Industrial Parkway in Brick, New Jersey.</p>
       <p>The result is a single integrated deck system that ships as one product, installs as one trade, and is warranted as one assembly. There is no separate drainage manufacturer, no field-applied sealant, no second trade hanging trays underneath, and no split warranty.</p>
 
-      <h2 style="color:var(--navy);">The founders</h2>
-      <div style="display:grid;grid-template-columns:1fr;gap:1.5rem;margin:1.25rem 0 1.5rem;">
-        <div style="border-left:4px solid var(--red);padding:0.4rem 0 0.4rem 1.1rem;">
-          <h3 style="color:var(--navy);margin:0 0 0.35rem;font-size:1.15rem;">John Ardolina, Co-Founder</h3>
-          <p style="margin:0;">John is a carpenter by trade. He spent years on jobsites watching deck framing get soaked on every storm and built Dexerdry, Inc. in 2014 to solve it. Dexerdry holds the patent on the above-joist water-diverting seal that gives the AmeriDex deck its dry-framing performance. John brings the seal IP, the material science work behind the TPE gasket, and more than a decade of operating history at Dexerdry, Inc. into AmeriDex.</p>
+      <h2>The founders</h2>
+      <div class="founders-grid">
+        <div>
+          <h3>John Ardolina, Co-Founder</h3>
+          <p>John is a carpenter by trade. He spent years on jobsites watching deck framing get soaked on every storm and built Dexerdry, Inc. in 2014 to solve it. Dexerdry holds the patent on the above-joist water-diverting seal that gives the AmeriDex deck its dry-framing performance. John brings the seal IP, the material science work behind the TPE gasket, and more than a decade of operating history at Dexerdry, Inc. into AmeriDex.</p>
         </div>
-        <div style="border-left:4px solid var(--red);padding:0.4rem 0 0.4rem 1.1rem;">
-          <h3 style="color:var(--navy);margin:0 0 0.35rem;font-size:1.15rem;">Jim Murphy, Co-Founder</h3>
-          <p style="margin:0;">Jim leads the manufacturing side of the business and brings extensive experience in cellular PVC and building products production. He runs the AmeriDex deck board plant in Linden, New Jersey, where the boards are extruded, capped, profiled to mate with the Dexerdry seal, and packaged for dealers and builders.</p>
+        <div>
+          <h3>Jim Murphy, Co-Founder</h3>
+          <p>Jim leads the manufacturing side of the business and brings extensive experience in cellular PVC and building products production. He runs the AmeriDex deck board plant in Linden, New Jersey, where the boards are extruded, capped, profiled to mate with the Dexerdry seal, and packaged for dealers and builders.</p>
         </div>
       </div>
 
-      <h2 style="color:var(--navy);">Made in the USA</h2>
+      <h2>Made in the USA</h2>
       <p>Every AmeriDex deck board is manufactured in Linden, New Jersey. The Dexerdry seal that ships between every board is also produced in the USA. Headquarters, sales, and warehousing operate out of Brick, New Jersey. The system is engineered, manufactured, and supported entirely on-shore.</p>
 
-      <h2 style="color:var(--navy);">Built for new construction, warranted as one system</h2>
+      <h2>Built for new construction, warranted as one system</h2>
       <p>AmeriDex is engineered for new deck construction only. The Dexerdry seal has to be installed between every board as the deck is built, so the system cannot be retrofitted on an existing deck without removing the existing surface. For new construction, that constraint is what unlocks the rest of the value: dry framing for the life of the structure, a single-trade install on conventional 16 inches on-center joists, and a 25-Year Residential Limited / 10-Year Limited Commercial warranty on the integrated board and seal system.</p>
 
-      <h2 style="color:var(--navy);">Where to take it next</h2>
-      <ul style="padding-left:1.25rem;line-height:1.8;">
+      <h2>Where to take it next</h2>
+      <ul>
         <li><a href="how-system-works.html">See how the AmeriDex system works</a> in technical detail, including the cross-section, install sequence, and FAQ.</li>
         <li><a href="above-joist-deck-drainage.html">Read the above-joist deck drainage explainer</a> for the engineering reasoning behind keeping the water at the surface.</li>
         <li><a href="samples-request.html">Request free samples</a> to see all seven cellular PVC colors in person.</li>
