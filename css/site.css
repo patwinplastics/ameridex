@@ -2606,3 +2606,222 @@ section { position: relative; }
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+
+/* ===========================================================
+   Neuro-conversion components (added 2026-05-09)
+   =========================================================== */
+
+/* Hero microproof strip just below the kicker */
+.hero-microproof {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin: 1rem 0 1.25rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
+}
+.hero-microproof-dot {
+  opacity: 0.55;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Felt-loss section: navy background, two-column on desktop */
+.felt-loss {
+  color: #fff;
+}
+.felt-loss-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .felt-loss-grid { grid-template-columns: 1.05fr 1fr; gap: 3rem; }
+}
+.felt-loss-copy h2 {
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.1;
+  font-size: clamp(1.6rem, 2.4vw, 2.25rem);
+  margin: 0 0 1rem;
+}
+.felt-loss-copy p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.04rem;
+  line-height: 1.65;
+  margin: 0 0 0.9rem;
+}
+.felt-loss-kicker {
+  font-weight: 700;
+  color: #fff !important;
+}
+.felt-loss-art {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0A2A4E;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+.felt-loss-art svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.felt-loss-caption {
+  background: rgba(0, 0, 0, 0.35);
+  margin: 0;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.82);
+  letter-spacing: 0.02em;
+}
+
+/* Homeowner testimonial card */
+.testimonial-wrap {
+  display: flex;
+  justify-content: center;
+}
+.testimonial-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  background: #fff;
+  border: 1px solid var(--divider, #e5e2da);
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-width: 880px;
+  width: 100%;
+  box-shadow: 0 6px 18px rgba(10, 42, 78, 0.06);
+}
+@media (min-width: 720px) {
+  .testimonial-card {
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+}
+.testimonial-photo {
+  aspect-ratio: 1 / 1;
+  background: #f1ede2;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.testimonial-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.testimonial-photo-placeholder {
+  color: rgba(10, 42, 78, 0.45);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+.testimonial-eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.55rem;
+}
+.testimonial-body blockquote {
+  margin: 0 0 0.85rem;
+  color: var(--navy);
+  font-size: 1.12rem;
+  line-height: 1.55;
+  font-weight: 500;
+}
+.testimonial-attr {
+  margin: 0;
+  color: var(--charcoal, #2a2a2a);
+  font-size: 0.95rem;
+}
+.testimonial-attr strong { color: var(--navy); }
+.testimonial-note {
+  margin: 0.6rem 0 0;
+  color: rgba(10, 42, 78, 0.55);
+  font-size: 0.78rem;
+  font-style: italic;
+}
+/* Hide the placeholder note in production once a real testimonial replaces the slot:
+   simply remove the .testimonial-placeholder class from the card. */
+.testimonial-placeholder .testimonial-photo {
+  border: 1px dashed rgba(10, 42, 78, 0.25);
+}
+
+/* Reciprocity (free samples) two-up */
+.reciprocity-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .reciprocity-grid { grid-template-columns: 1.1fr 1fr; gap: 3rem; }
+}
+.reciprocity-copy h2 {
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+.reciprocity-copy p {
+  color: var(--navy);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  margin: 0 0 0.9rem;
+}
+.reciprocity-strong { font-weight: 700; }
+.reciprocity-art img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(10, 42, 78, 0.12);
+}
+
+/* Quote-form reassurance block (insula relief: pre-empt the three loudest objections) */
+.quote-reassure {
+  margin: 0 0 1.5rem;
+  padding: 1.1rem 1.25rem 1.25rem;
+  background: #f5f9fc;
+  border: 1px solid #d8e3ee;
+  border-left: 4px solid var(--navy);
+  border-radius: 10px;
+}
+.quote-reassure h3 {
+  margin: 0 0 0.6rem;
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+.quote-reassure ol {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--navy);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+.quote-reassure li { margin-bottom: 0.35rem; }
+.quote-reassure li:last-child { margin-bottom: 0; }
