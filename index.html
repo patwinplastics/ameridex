@@ -235,66 +235,188 @@
         <a class="btn btn-red btn-lg" href="how-system-works.html">See how AmeriDex stops it</a>
       </div>
       <div class="felt-loss-art" aria-hidden="true">
-        <!-- TODO: replace with a real photo of water-damaged joists at /assets/img/wet-joists.jpg -->
-        <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cross-section: rain falling through gaps in a typical deck and soaking the joists below">
+        <!-- 3/4 isometric: rain falling through deck-board gaps and rotting the joists below. iso skew uses a 30deg projection: x' = x + 0.5y, y' = 0.866y. -->
+        <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Isometric view of a typical deck: rain pours through the gaps between boards and stains the joists black underneath">
           <defs>
             <linearGradient id="flSky" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#0d3360"/>
-              <stop offset="100%" stop-color="#0A2A4E"/>
+              <stop offset="0%" stop-color="#0e3a6e"/>
+              <stop offset="55%" stop-color="#0A2A4E"/>
+              <stop offset="100%" stop-color="#06203d"/>
             </linearGradient>
-            <linearGradient id="flBoard" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#7a5538"/>
-              <stop offset="100%" stop-color="#553a26"/>
+            <linearGradient id="flBoardTop" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8a6242"/>
+              <stop offset="100%" stop-color="#6a4a30"/>
             </linearGradient>
-            <linearGradient id="flJoist" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id="flBoardEdge" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#5a3e28"/>
+              <stop offset="100%" stop-color="#3b281a"/>
+            </linearGradient>
+            <linearGradient id="flJoistTop" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stop-color="#3a2a1c"/>
-              <stop offset="100%" stop-color="#1c130a"/>
+              <stop offset="100%" stop-color="#241810"/>
             </linearGradient>
-            <pattern id="flRot" width="6" height="6" patternUnits="userSpaceOnUse">
-              <circle cx="1" cy="1" r="0.7" fill="#0a0703" opacity="0.55"/>
-              <circle cx="4" cy="3" r="0.5" fill="#0a0703" opacity="0.4"/>
-            </pattern>
+            <linearGradient id="flJoistSide" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#221610"/>
+              <stop offset="100%" stop-color="#0e0805"/>
+            </linearGradient>
+            <linearGradient id="flWetStain" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#000" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+            </linearGradient>
+            <radialGradient id="flGroundShadow" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0%" stop-color="#000" stop-opacity="0.45"/>
+              <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+            </radialGradient>
           </defs>
-          <rect width="320" height="220" fill="url(#flSky)"/>
-          <!-- rain -->
-          <g stroke="#6fb0e8" stroke-width="1.4" stroke-linecap="round" opacity="0.7">
-            <line x1="30"  y1="10" x2="22"  y2="50"/><line x1="70"  y1="6"  x2="62"  y2="46"/>
-            <line x1="110" y1="14" x2="102" y2="54"/><line x1="150" y1="4"  x2="142" y2="44"/>
-            <line x1="190" y1="12" x2="182" y2="52"/><line x1="230" y1="6"  x2="222" y2="46"/>
-            <line x1="270" y1="14" x2="262" y2="54"/><line x1="300" y1="4"  x2="292" y2="44"/>
+
+          <!-- background -->
+          <rect width="480" height="320" fill="url(#flSky)"/>
+
+          <!-- background rain (behind everything), angled with iso direction -->
+          <g stroke="#7fbce8" stroke-width="1.2" stroke-linecap="round" opacity="0.55">
+            <line x1="40"  y1="6"   x2="24"  y2="40"/>
+            <line x1="95"  y1="-2"  x2="79"  y2="32"/>
+            <line x1="160" y1="10"  x2="144" y2="44"/>
+            <line x1="225" y1="-4"  x2="209" y2="30"/>
+            <line x1="290" y1="8"   x2="274" y2="42"/>
+            <line x1="355" y1="-2"  x2="339" y2="32"/>
+            <line x1="420" y1="12"  x2="404" y2="46"/>
           </g>
-          <!-- deck boards with gaps -->
+          <g stroke="#a8d2f0" stroke-width="1.4" stroke-linecap="round" opacity="0.7">
+            <line x1="60"  y1="30"  x2="44"  y2="64"/>
+            <line x1="130" y1="22"  x2="114" y2="56"/>
+            <line x1="200" y1="34"  x2="184" y2="68"/>
+            <line x1="270" y1="24"  x2="254" y2="58"/>
+            <line x1="340" y1="32"  x2="324" y2="66"/>
+            <line x1="400" y1="22"  x2="384" y2="56"/>
+          </g>
+
+          <!-- JOISTS first (drawn behind boards). Three parallel joists running front-to-back (into the picture), perpendicular to the boards.
+               Each joist gets: top face (parallelogram), front side face, receding side face. Joist top sits at y=210 (front) / y=190 (back).
+               Joist tops extend up high enough that the bottoms of the deck boards rest on top of them. -->
           <g>
-            <rect x="0"   y="70" width="60"  height="22" fill="url(#flBoard)"/>
-            <rect x="66"  y="70" width="60"  height="22" fill="url(#flBoard)"/>
-            <rect x="132" y="70" width="60"  height="22" fill="url(#flBoard)"/>
-            <rect x="198" y="70" width="60"  height="22" fill="url(#flBoard)"/>
-            <rect x="264" y="70" width="60"  height="22" fill="url(#flBoard)"/>
+            <!-- ground shadows beneath joists -->
+            <ellipse cx="130" cy="302" rx="58" ry="7" fill="url(#flGroundShadow)"/>
+            <ellipse cx="240" cy="302" rx="58" ry="7" fill="url(#flGroundShadow)"/>
+            <ellipse cx="350" cy="302" rx="58" ry="7" fill="url(#flGroundShadow)"/>
+
+            <!-- JOIST 1 (left) -->
+            <polygon points="100,210  116,210  154,188  138,188" fill="url(#flJoistTop)"/>
+            <polygon points="100,210  116,210  154,188  138,188" fill="#000" opacity="0.7"/>
+            <polygon points="100,210  116,210  116,297  100,297" fill="url(#flJoistSide)"/>
+            <polygon points="116,210  154,188  154,275  116,297" fill="#1a110a"/>
+            <polygon points="100,210  116,210  116,285  100,285" fill="url(#flWetStain)"/>
+            <g stroke="#000" stroke-width="0.5" opacity="0.5">
+              <line x1="103" y1="225" x2="103" y2="290"/>
+              <line x1="108" y1="220" x2="108" y2="294"/>
+              <line x1="113" y1="228" x2="113" y2="288"/>
+            </g>
+
+            <!-- JOIST 2 (middle) -->
+            <polygon points="210,210  226,210  264,188  248,188" fill="url(#flJoistTop)"/>
+            <polygon points="210,210  226,210  264,188  248,188" fill="#000" opacity="0.72"/>
+            <polygon points="210,210  226,210  226,297  210,297" fill="url(#flJoistSide)"/>
+            <polygon points="226,210  264,188  264,275  226,297" fill="#1a110a"/>
+            <polygon points="210,210  226,210  226,285  210,285" fill="url(#flWetStain)"/>
+            <g stroke="#000" stroke-width="0.5" opacity="0.5">
+              <line x1="213" y1="225" x2="213" y2="290"/>
+              <line x1="218" y1="220" x2="218" y2="294"/>
+              <line x1="223" y1="228" x2="223" y2="288"/>
+            </g>
+
+            <!-- JOIST 3 (right) -->
+            <polygon points="320,210  336,210  374,188  358,188" fill="url(#flJoistTop)"/>
+            <polygon points="320,210  336,210  374,188  358,188" fill="#000" opacity="0.7"/>
+            <polygon points="320,210  336,210  336,297  320,297" fill="url(#flJoistSide)"/>
+            <polygon points="336,210  374,188  374,275  336,297" fill="#1a110a"/>
+            <polygon points="320,210  336,210  336,285  320,285" fill="url(#flWetStain)"/>
+            <g stroke="#000" stroke-width="0.5" opacity="0.5">
+              <line x1="323" y1="225" x2="323" y2="290"/>
+              <line x1="328" y1="220" x2="328" y2="294"/>
+              <line x1="333" y1="228" x2="333" y2="288"/>
+            </g>
           </g>
-          <!-- water dripping through gaps -->
-          <g stroke="#6fb0e8" stroke-width="1.6" stroke-linecap="round" opacity="0.85">
-            <line x1="63"  y1="92" x2="63"  y2="130"/>
-            <line x1="129" y1="92" x2="129" y2="130"/>
-            <line x1="195" y1="92" x2="195" y2="130"/>
-            <line x1="261" y1="92" x2="261" y2="130"/>
-          </g>
-          <!-- joists, blackened on top -->
+
+          <!-- DECK BOARDS in 3/4 iso, drawn in front of joists. Top face (parallelogram) + front edge (thin rect for thickness).
+               Boards are spaced apart with visible navy gaps so you can see rain falling through. Bottom of boards sits at y ~ 175,
+               which lands them ON TOP of the joist tops at y=210 (with a small visual overhang). -->
           <g>
-            <rect x="30"  y="110" width="36" height="80" fill="url(#flJoist)"/>
-            <rect x="30"  y="110" width="36" height="14" fill="#000" opacity="0.55"/>
-            <rect x="30"  y="110" width="36" height="80" fill="url(#flRot)"/>
-            <rect x="110" y="110" width="36" height="80" fill="url(#flJoist)"/>
-            <rect x="110" y="110" width="36" height="14" fill="#000" opacity="0.55"/>
-            <rect x="110" y="110" width="36" height="80" fill="url(#flRot)"/>
-            <rect x="190" y="110" width="36" height="80" fill="url(#flJoist)"/>
-            <rect x="190" y="110" width="36" height="14" fill="#000" opacity="0.55"/>
-            <rect x="190" y="110" width="36" height="80" fill="url(#flRot)"/>
-            <rect x="270" y="110" width="36" height="80" fill="url(#flJoist)"/>
-            <rect x="270" y="110" width="36" height="14" fill="#000" opacity="0.55"/>
-            <rect x="270" y="110" width="36" height="80" fill="url(#flRot)"/>
+            <!-- BOARD 1 (back) -->
+            <polygon points="40,140  360,140  386,125  66,125" fill="url(#flBoardTop)"/>
+            <polygon points="40,140  360,140  360,150  40,150" fill="url(#flBoardEdge)"/>
+            <g stroke="#5e4128" stroke-width="0.7" opacity="0.5" fill="none">
+              <line x1="55"  y1="138" x2="375" y2="127"/>
+              <line x1="50"  y1="134" x2="370" y2="129"/>
+              <line x1="60"  y1="131"  x2="380" y2="126"/>
+            </g>
+
+            <!-- BOARD 2 (middle) -->
+            <polygon points="40,170  360,170  386,155  66,155" fill="url(#flBoardTop)"/>
+            <polygon points="40,170  360,170  360,180  40,180" fill="url(#flBoardEdge)"/>
+            <g stroke="#5e4128" stroke-width="0.7" opacity="0.5" fill="none">
+              <line x1="55"  y1="168" x2="375" y2="157"/>
+              <line x1="58"  y1="164" x2="378" y2="159"/>
+              <line x1="50"  y1="161" x2="370" y2="156"/>
+            </g>
+
+            <!-- BOARD 3 (front) -->
+            <polygon points="40,200  360,200  386,185  66,185" fill="url(#flBoardTop)"/>
+            <polygon points="40,200  360,200  360,210  40,210" fill="url(#flBoardEdge)"/>
+            <g stroke="#5e4128" stroke-width="0.7" opacity="0.5" fill="none">
+              <line x1="55"  y1="198" x2="375" y2="187"/>
+              <line x1="50"  y1="194" x2="370" y2="189"/>
+              <line x1="60"  y1="191" x2="380" y2="186"/>
+            </g>
+          </g>
+
+          <!-- WATER through the gaps: streaks visible inside the navy slivers between boards.
+               Gap 1 (between boards 1 and 2): y=150 to y=155. Gap 2 (between 2 and 3): y=180 to y=185. -->
+          <g stroke="#cfe5f5" stroke-width="2" stroke-linecap="round" opacity="0.95">
+            <!-- streaks visible inside gap 1 -->
+            <line x1="108" y1="149" x2="108" y2="156"/>
+            <line x1="218" y1="149" x2="218" y2="156"/>
+            <line x1="328" y1="149" x2="328" y2="156"/>
+            <!-- streaks visible inside gap 2 -->
+            <line x1="108" y1="179" x2="108" y2="186"/>
+            <line x1="218" y1="179" x2="218" y2="186"/>
+            <line x1="328" y1="179" x2="328" y2="186"/>
+          </g>
+          <!-- Heavier streaks emerging BELOW the front board edge, dripping onto joists. This is the money shot. -->
+          <g stroke="#cfe5f5" stroke-width="2.2" stroke-linecap="round" opacity="0.95">
+            <line x1="108" y1="212" x2="108" y2="232"/>
+            <line x1="218" y1="212" x2="218" y2="232"/>
+            <line x1="328" y1="212" x2="328" y2="232"/>
+          </g>
+          <!-- Splash highlights right where water meets the joist front face -->
+          <g fill="#e6f1fa" opacity="0.95">
+            <ellipse cx="108" cy="234" rx="6" ry="1.8"/>
+            <ellipse cx="218" cy="234" rx="6" ry="1.8"/>
+            <ellipse cx="328" cy="234" rx="6" ry="1.8"/>
+          </g>
+          <!-- Wet/black rot stain bleeding down the front face of each joist (starting just under board 3's bottom edge). -->
+          <g>
+            <rect x="100" y="210" width="16" height="60" fill="#000" opacity="0.55"/>
+            <rect x="210" y="210" width="16" height="60" fill="#000" opacity="0.55"/>
+            <rect x="320" y="210" width="16" height="60" fill="#000" opacity="0.55"/>
+            <!-- soft fade to bottom -->
+            <rect x="100" y="210" width="16" height="80" fill="url(#flWetStain)"/>
+            <rect x="210" y="210" width="16" height="80" fill="url(#flWetStain)"/>
+            <rect x="320" y="210" width="16" height="80" fill="url(#flWetStain)"/>
+          </g>
+
+          <!-- callout labels (subtle, cream chip with navy text) -->
+          <g font-family="Inter, sans-serif" font-size="10" font-weight="600">
+            <g>
+              <rect x="394" y="160" width="82" height="18" rx="9" fill="#F4EFE3"/>
+              <text x="435" y="173" fill="#0A2A4E" text-anchor="middle">Deck boards</text>
+            </g>
+            <g>
+              <rect x="394" y="240" width="82" height="18" rx="9" fill="#F4EFE3"/>
+              <text x="435" y="253" fill="#0A2A4E" text-anchor="middle">Wet joists</text>
+            </g>
           </g>
         </svg>
-        <p class="felt-loss-caption">Typical deck after 10 to 12 NJ-shore winters. Composite boards above. Black joists below.</p>
+        <p class="felt-loss-caption">A typical deck after a few NJ-shore winters. Rain falls through the gaps. Joists go black from the top down.</p>
       </div>
     </div>
   </section>
@@ -381,23 +503,7 @@
     </div>
   </section>
 
-  <!-- Homeowner story (mirror neurons + unity + oxytocin). Replace the placeholder block with a real homeowner. -->
-  <!-- TODO: drop a real homeowner photo at /assets/img/testimonials/homeowner-1.jpg, set name/town/year, and remove the .testimonial-placeholder class. -->
-  <section class="section-pad bg-cream reveal">
-    <div class="container testimonial-wrap">
-      <div class="testimonial-card testimonial-placeholder">
-        <div class="testimonial-photo" aria-hidden="true">
-          <span class="testimonial-photo-placeholder">Homeowner photo</span>
-        </div>
-        <div class="testimonial-body">
-          <span class="testimonial-eyebrow">A real AmeriDex homeowner</span>
-          <blockquote>“We almost went with a tray system. I am so glad we did not. Three winters in, the joists are dry, the kids' toys live under there year-round, and we got our basement back from the storage bins.”</blockquote>
-          <p class="testimonial-attr"><strong>Homeowner Name</strong>, Town, NJ · AmeriDex deck installed Spring 2023</p>
-          <p class="testimonial-note">Placeholder — replace with a real homeowner story before sharing this page publicly.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Homeowner testimonial slot intentionally removed until a real homeowner is sourced. Drop a real story here later. -->
 
   <!-- Lifestyle -->
   <section class="section-pad bg-cream">
