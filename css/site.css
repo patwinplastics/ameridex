@@ -126,6 +126,62 @@ img { max-width: 100%; display: block; }
 
 .btn-lg { padding: 1.15rem 2rem; font-size: 1rem; }
 
+/* ===== Persistent trust topbar ===== */
+/* Slim navy-deep bar above the sticky header on every page. Anchors two
+   conversion signals into the user's first glance: the warranty terms and
+   the no-cost commitment level. Reads as one centered line on desktop;
+   collapses with a softer spacing on narrow viewports. The bar itself does
+   not stick - only the main header sticks - so it scrolls away after the
+   first viewport and yields room back to content. */
+.trust-topbar {
+  background: var(--navy-deep);
+  color: rgba(255,255,255,0.92);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.trust-topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  padding: 0.45rem 0;
+  min-height: 32px;
+}
+.trust-topbar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+}
+.trust-topbar-icon {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  color: var(--red);
+}
+.trust-topbar-sep {
+  color: rgba(255,255,255,0.35);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+.trust-topbar-thin {
+  color: rgba(255,255,255,0.55);
+  font-weight: 500;
+}
+@media (max-width: 540px) {
+  .trust-topbar { font-size: 0.65rem; letter-spacing: 0.04em; }
+  .trust-topbar-inner { gap: 0.55rem; padding: 0.4rem 0; }
+  .trust-topbar-sep { display: none; }
+}
+@media (max-width: 380px) {
+  .trust-topbar { display: none; }
+}
+
 /* ===== Header ===== */
 .site-header {
   position: sticky;

@@ -407,6 +407,32 @@ def head(title, description=DEFAULT_DESCRIPTION, *, canonical="", keywords="",
 '''
 
 
+def trust_topbar():
+    """Slim persistent trust strip that sits above the sticky header on every
+    page. Two reassurance items so the bar stays scannable in one glance:
+      (1) the warranty terms (concrete, not vague)
+      (2) the no-cost commitment level (kills the 'is this going to cost me
+          just to ask' objection before the visitor reaches the hero CTA)
+    Reads as a single line on desktop; collapses to two stacked lines below
+    540px and hides entirely below 380px to leave room for the hamburger.
+    """
+    return '''
+<div class="trust-topbar" role="note" aria-label="AmeriDex trust signals">
+  <div class="container trust-topbar-inner">
+    <span class="trust-topbar-item">
+      <svg class="trust-topbar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m8.5 12 2.5 2.5L16 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      25-yr residential <span class="trust-topbar-thin">/</span> 10-yr commercial warranty
+    </span>
+    <span class="trust-topbar-sep" aria-hidden="true">·</span>
+    <span class="trust-topbar-item">
+      <svg class="trust-topbar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      Free quote <span class="trust-topbar-thin">+</span> free samples
+    </span>
+  </div>
+</div>
+'''
+
+
 def header(active_path):
     """Sticky navy header with full nav + utilities + mobile menu."""
     nav_items = []
@@ -426,7 +452,9 @@ def header(active_path):
     nav_html = "\n".join(nav_items)
     mobile_html = "\n".join(mobile_items)
 
-    return f'''
+    topbar = trust_topbar()
+
+    return f'''{topbar}
 <header class="site-header">
   <div class="container site-header-inner">
     <a href="index.html" aria-label="AmeriDex home" class="block">
@@ -438,8 +466,8 @@ def header(active_path):
     </nav>
 
     <div class="site-header-cta">
-      <a href="samples-request.html" class="outline-link" style="color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;border:1.5px solid rgba(255,255,255,0.4);border-radius:999px;padding:0.5rem 0.85rem;">Order Samples</a>
-      <a href="get-a-free-quote.html" style="background:var(--red);color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;border-radius:999px;padding:0.55rem 1rem;">Get a Free Quote</a>
+      <a href="samples-request.html" class="outline-link" style="color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;border:1.5px solid rgba(255,255,255,0.4);border-radius:999px;padding:0.5rem 0.85rem;">Request samples</a>
+      <a href="get-a-free-quote.html" style="background:var(--red);color:#fff;font-family:var(--font-display);font-weight:700;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;border-radius:999px;padding:0.55rem 1rem;">Start my project</a>
     </div>
 
     <button class="hamburger" aria-label="Open menu" aria-controls="mobile-menu">
@@ -457,11 +485,11 @@ def header(active_path):
   </div>
   <nav class="container" aria-label="Mobile">
 {mobile_html}
-    <a href="samples-request.html">Order Samples</a>
+    <a href="samples-request.html">Request samples</a>
     <a href="warranty-registration.html">Register Warranty</a>
   </nav>
   <div class="mobile-cta container">
-    <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Get a Free Quote</a>
+    <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Start my project</a>
     <a class="btn btn-outline-white btn-lg" href="{DEALER_PORTAL_URL}" target="_blank" rel="noopener">Dealer Portal</a>
   </div>
 </div>
@@ -619,7 +647,7 @@ def page_index():
         <h1>The Integrated Above-Joist Deck Drainage System.</h1>
         <p class="kicker">AmeriDex is the American-made above-joist deck drainage system. Cellular PVC boards lock onto the Dexerdry seal so 100% of rain is diverted off the deck, protecting your framing and creating a dry, finished living space below.</p>
         <div class="hero-cta">
-          <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Get a Free Quote</a>
+          <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Start my project</a>
           <a class="btn btn-outline-white btn-lg" href="how-system-works.html">See How it Works</a>
         </div>
         <a class="hero-pdf-link" href="pdfs/ameridex-installation.pdf" target="_blank" rel="noopener">
@@ -730,7 +758,7 @@ def page_index():
         </div>
       </div>
       <div style="text-align:center;margin-top:2.25rem;" class="reveal">
-        <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Get a Free Quote</a>
+        <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Start my project</a>
       </div>
     </div>
   </section>
@@ -891,8 +919,8 @@ def page_how_it_works():
     <div class="container" style="text-align:center;">
       <h2 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:1.5rem;">Ready to build with AmeriDex?</h2>
       <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
-        <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Get a Free Quote</a>
-        <a class="btn btn-outline-white btn-lg" href="samples-request.html">Order Samples</a>
+        <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Start my project</a>
+        <a class="btn btn-outline-white btn-lg" href="samples-request.html">Request samples</a>
       </div>
     </div>
   </section>
@@ -1717,7 +1745,7 @@ def page_above_joist_drainage():
     <div class="container" style="text-align:center;">
       <h2 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:1.5rem;">Specifying AmeriDex on a new deck?</h2>
       <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
-        <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Get a Free Quote</a>
+        <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Start my project</a>
         <a class="btn btn-outline-white btn-lg" href="how-system-works.html">See How the System Works</a>
       </div>
     </div>
@@ -1876,7 +1904,7 @@ def page_above_joist_vs_below_joist():
     <div class="container" style="text-align:center;">
       <h2 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:1.5rem;">Building a new deck?</h2>
       <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
-        <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Get a Free Quote</a>
+        <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Start my project</a>
         <a class="btn btn-outline-white btn-lg" href="above-joist-deck-drainage.html">Read the Above-Joist Guide</a>
       </div>
     </div>
@@ -2021,8 +2049,8 @@ def page_about():
     <div class="container" style="text-align:center;">
       <h2 style="color:#fff;font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:1.5rem;">Want AmeriDex on your next deck?</h2>
       <div style="display:flex;gap:0.85rem;justify-content:center;flex-wrap:wrap;">
-        <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Get a Free Quote</a>
-        <a class="btn btn-outline-white btn-lg" href="samples-request.html">Order Samples</a>
+        <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Start my project</a>
+        <a class="btn btn-outline-white btn-lg" href="samples-request.html">Request samples</a>
       </div>
     </div>
   </section>
