@@ -4,6 +4,26 @@ This is the v2 rebuild that matches the live ameridex.com structure, copy, and
 imagery. The site is pure static HTML/CSS/JS - no build step required to serve.
 The `_build.py` helper is optional and regenerates all pages from shared partials.
 
+> WARNING: `_build.py` has drifted behind the production HTML.
+>
+> The live `index.html` (and several others) carry phase-1 neuro-conversion
+> additions that were applied directly to the HTML and never back-ported into
+> the build script:
+>   - hero copy rewrite ("Build the deck. Keep the space underneath.")
+>   - felt-loss section ("This is happening above your head right now")
+>   - testimonial slot, reciprocity grid, scarcity band, why-bullets row with
+>     the CAD-rendered dexerdry-cross-section icon
+>   - quote-reassure aside on `get-a-free-quote.html`
+>   - first-person hero CTAs on index ("Get my free quote", "Ship my free samples")
+>   - persistent trust topbar inserted above the header on every page
+>   - sitewide CTA verb sweep ("Start my project" / "Request samples")
+>
+> Running `python3 _build.py` today will overwrite all of these. Before any
+> future build run, port the page-specific additions into the relevant
+> `page_*` functions in `_build.py`. The build script already contains the
+> trust topbar partial (`trust_topbar()`) and the renamed header/mobile CTA
+> labels, so those WILL be preserved on a rebuild.
+
 ## Pages built (7)
 
 1. `index.html` - Home (hero with real photo, deck colors grid, trust strip,
