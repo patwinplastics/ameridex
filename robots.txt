@@ -1,26 +1,10 @@
 # AmeriDex.com - robots.txt
-# All search engines welcome.
+# All search engines and AI assistants welcome.
+# Allowing AI bots (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, etc.)
+# so AmeriDex content can surface in AI search experiences and AI Overviews.
 
 User-agent: *
 Allow: /
 Disallow: /pdfs/internal/
-
-# Block common AI scrapers from training on the site (optional, conservative).
-# Comment these lines out if you want to allow AI training.
-User-agent: GPTBot
-Disallow: /
-
-User-agent: ClaudeBot
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-# Google-Extended (Gemini, AI Overviews) is allowed so AmeriDex content can
-# surface in AI search experiences. Remove the Disallow above (CCBot/etc.)
-# if you also want to allow OpenAI / Anthropic / Common Crawl training.
 
 Sitemap: https://www.ameridex.com/sitemap.xml
