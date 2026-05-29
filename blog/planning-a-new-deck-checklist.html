@@ -43,15 +43,18 @@
   <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/blog-engage.css">
 
   <script src="https://cdn.tailwindcss.com" defer></script>
   <script defer src="../js/site.js"></script>
   <script defer src="../js/dealer-routing.js"></script>
+  <script defer src="../js/blog-checklist.js"></script>
 
   <!-- Structured data (schema.org / JSON-LD) -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://www.ameridex.com/#organization","name":"AmeriDex","legalName":"A & M Building Products","url":"https://www.ameridex.com","logo":"https://www.ameridex.com/assets/img/logo.png","telephone":"+1-800-217-9206","email":"sales@ameridex.com","address":{"@type":"PostalAddress","streetAddress":"1129A Industrial Parkway","addressLocality":"Brick","addressRegion":"NJ","postalCode":"08724","addressCountry":"US"},"sameAs":["https://www.facebook.com/ameridexdryspace/","https://www.youtube.com/channel/UC3Fz0TEKbLpQZefnYQNCxmg"]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Planning a New Deck: A Pre-Construction Checklist","description":"Deck decisions get expensive after the joists go up. A step-by-step pre-construction checklist covering use, layout, framing, drainage, materials, lighting, and warranty before you build.","image":"https://www.ameridex.com/assets/img/og.jpg","author":{"@type":"Organization","name":"AmeriDex","url":"https://www.ameridex.com"},"publisher":{"@id":"https://www.ameridex.com/#organization"},"datePublished":"2026-05-29","dateModified":"2026-05-29","mainEntityOfPage":"https://www.ameridex.com/blog/planning-a-new-deck-checklist.html","inLanguage":"en-US"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ameridex.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.ameridex.com/blog.html"},{"@type":"ListItem","position":3,"name":"Planning a New Deck Checklist","item":"https://www.ameridex.com/blog/planning-a-new-deck-checklist.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Pre-Construction Deck Planning Checklist","itemListOrder":"https://schema.org/ItemListOrderAscending","numberOfItems":7,"itemListElement":[{"@type":"ListItem","position":1,"name":"Nail down how you will use the space"},{"@type":"ListItem","position":2,"name":"Confirm layout, size, and permits"},{"@type":"ListItem","position":3,"name":"Get the framing right"},{"@type":"ListItem","position":4,"name":"Decide on drainage before the boards go down"},{"@type":"ListItem","position":5,"name":"Choose your boards and seal"},{"@type":"ListItem","position":6,"name":"Plan fasteners, lighting, and the under-deck finish"},{"@type":"ListItem","position":7,"name":"Line up the warranty and the quote"}]}</script>
   <style>
     /* Scoped blog article rhythm + media. Does not touch global styles. */
     .blog-article p { margin: 0 0 1.35rem; }
@@ -166,40 +169,118 @@
     </div>
   </section>
 
+  <!-- Sticky progress bar -->
+  <div class="blog-progress" data-checklist-bar="planning">
+    <div class="blog-progress-inner">
+      <div class="blog-progress-track"><div class="blog-progress-fill"></div></div>
+      <div class="blog-progress-meta">
+        <span data-checklist-count>0 of 7 done</span>
+        <button type="button" class="blog-progress-reset" data-checklist-reset="planning">Reset</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Article body -->
   <article class="section-pad bg-white">
     <div class="blog-article container" style="max-width:780px;font-size:1.05rem;line-height:1.75;color:var(--navy);">
 
-      
-      <p>The most expensive deck decisions are the ones you make after the framing is already up. Layout, drainage, and material choices are cheap and easy on paper, and costly to change once joists are set and boards are down. This checklist walks through the decisions in the order they actually matter, so nothing critical gets locked in before you have thought it through.</p>
+      <p>The most expensive deck decisions are the ones you make after the framing is already up. Layout, drainage, and material choices are cheap and easy on paper, and costly to change once joists are set and boards are down. Work through the seven steps below in order, and check each one off as you lock it in. Nothing critical gets decided before you have thought it through.</p>
+
       <figure class="blog-lead-figure">
         <img src="../assets/img/gallery/05-deck-installed.jpg" alt="A new two-story deck with a finished, dry living space underneath">
       </figure>
 
+      <div class="blog-callout key">
+        <span class="blog-callout-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2h6c0-.8.4-1.5 1-2A7 7 0 0 0 12 2z"/></svg>
+        </span>
+        <div class="blog-callout-body">
+          <span class="blog-callout-title">Read this first</span>
+          <p>One decision drives almost all the others: whether you want to use the space under the deck. Answer that early and steps 3 through 6 fall into place. Leave it for later and you may be tearing out finished work.</p>
+        </div>
+      </div>
 
-      <h2 style="color:var(--navy);">1. Nail down how you will use the space</h2>
-      <p>Before anyone talks materials, decide what the deck is for. An entertaining deck wants a different size and traffic flow than a quiet lounge. And critically, decide whether you want to use the space underneath. If the deck is raised and you want a dry room, kitchen, or storage below, that decision has to be made now, because it determines the drainage system, and the drainage system has to be designed in from the joists up.</p>
+      <!-- Interactive step checklist -->
+      <div class="blog-steps" data-checklist="planning">
 
-      <h2 style="color:var(--navy);">2. Confirm layout, size, and permits</h2>
-      <p>Sketch the footprint, the stair locations, and where the deck attaches to the house. Check setbacks and height limits with your local building department early, since these can force layout changes. Most jurisdictions require a permit for a deck above a certain height, and the inspection schedule will shape your build timeline.</p>
+        <div class="blog-step">
+          <div class="blog-step-num">1</div>
+          <h3 class="blog-step-head">Nail down how you will use the space</h3>
+          <div class="blog-step-body">
+            <p>Before anyone talks materials, decide what the deck is for. An entertaining deck wants a different size and traffic flow than a quiet lounge. And critically, decide whether you want to use the space underneath. If the deck is raised and you want a dry room, kitchen, or storage below, that decision has to be made now, because it determines the drainage system, and the drainage system has to be designed in from the joists up.</p>
+          </div>
+          <label class="blog-step-check"><input type="checkbox" data-step="1"> Mark as decided</label>
+        </div>
 
-      <h2 style="color:var(--navy);">3. Get the framing right</h2>
-      <p>Framing is the part you cannot see later, so get it right the first time. For most residential decks, that means joists 16 inches on-center, properly flashed ledger attachment to the house, and footings sized for your soil and frost depth. If you are installing an integrated above-joist drainage system, confirm the framing layout it expects. AmeriDex installs on a conventional 16-inch on-center layout with no special sub-framing or pitch trays required.</p>
+        <div class="blog-step">
+          <div class="blog-step-num">2</div>
+          <h3 class="blog-step-head">Confirm layout, size, and permits</h3>
+          <div class="blog-step-body">
+            <p>Sketch the footprint, the stair locations, and where the deck attaches to the house. Check setbacks and height limits with your local building department early, since these can force layout changes. Most jurisdictions require a permit for a deck above a certain height, and the inspection schedule will shape your build timeline.</p>
+          </div>
+          <label class="blog-step-check"><input type="checkbox" data-step="2"> Mark as decided</label>
+        </div>
 
-      <h2 style="color:var(--navy);">4. Decide on drainage before the boards go down</h2>
-      <p>This is the decision that is impossible to reverse cheaply. There are two paths. A below-joist system is a retrofit tray hung under the framing, added after the deck is built, that keeps the patio below dry but lets the framing get wet on every storm. An above-joist system builds the watertight layer into the deck surface itself, so rain never reaches the joists. If you want dry framing and a usable space underneath, the choice has to be above-joist, and it has to be specified now. The <a href="../above-joist-vs-below-joist-deck-drainage.html">above-joist vs below-joist comparison</a> lays out the trade-offs.</p>
+        <div class="blog-step">
+          <div class="blog-step-num">3</div>
+          <h3 class="blog-step-head">Get the framing right</h3>
+          <div class="blog-step-body">
+            <p>Framing is the part you cannot see later, so get it right the first time. For most residential decks, that means joists 16 inches on-center, properly flashed ledger attachment to the house, and footings sized for your soil and frost depth. If you are installing an integrated above-joist drainage system, confirm the framing layout it expects. AmeriDex installs on a conventional 16-inch on-center layout with no special sub-framing or pitch trays required.</p>
+          </div>
+          <label class="blog-step-check"><input type="checkbox" data-step="3"> Mark as decided</label>
+        </div>
 
-      <h2 style="color:var(--navy);">5. Choose your boards and seal</h2>
-      <p>Material is where look, maintenance, and lifespan are set. Cellular PVC with a hard ASA cap resists rot, splintering, and warping, holds its color, and carries a Class A flame spread rating. With AmeriDex, the boards do double duty: they lock onto the Dexerdry TPE seal as they are installed, so the same surface that you walk on is the surface that does the waterproofing. Order <a href="../samples-request.html">free samples</a> early so you can see the colors in daylight against your house before you commit.</p>
+        <div class="blog-step">
+          <div class="blog-step-num">4</div>
+          <h3 class="blog-step-head">Decide on drainage before the boards go down</h3>
+          <div class="blog-step-body">
+            <p>This is the decision that is impossible to reverse cheaply. There are two paths. A below-joist system is a retrofit tray hung under the framing, added after the deck is built, that keeps the patio below dry but lets the framing get wet on every storm. An above-joist system builds the watertight layer into the deck surface itself, so rain never reaches the joists. If you want dry framing and a usable space underneath, the choice has to be above-joist, and it has to be specified now. The <a href="../above-joist-vs-below-joist-deck-drainage.html">above-joist vs below-joist comparison</a> lays out the trade-offs.</p>
+          </div>
+          <label class="blog-step-check"><input type="checkbox" data-step="4"> Mark as decided</label>
+        </div>
 
-      <h2 style="color:var(--navy);">6. Plan fasteners, lighting, and the under-deck finish</h2>
-      <p>Decide on hidden fasteners or face screws, and if you want lighting or a finished ceiling under the deck, plan the runs now. A dry under-deck space lets you finish the ceiling with beadboard or tongue-and-groove and add lighting or a fan, but only if the framing overhead stays dry, which again comes back to the drainage decision in step 4.</p>
+        <div class="blog-step">
+          <div class="blog-step-num">5</div>
+          <h3 class="blog-step-head">Choose your boards and seal</h3>
+          <div class="blog-step-body">
+            <p>Material is where look, maintenance, and lifespan are set. Cellular PVC with a hard ASA cap resists rot, splintering, and warping, holds its color, and carries a Class A flame spread rating. With AmeriDex, the boards do double duty: they lock onto the Dexerdry TPE seal as they are installed, so the same surface that you walk on is the surface that does the waterproofing. Order <a href="../samples-request.html">free samples</a> early so you can see the colors in daylight against your house before you commit.</p>
+          </div>
+          <label class="blog-step-check"><input type="checkbox" data-step="5"> Mark as decided</label>
+        </div>
 
-      <h2 style="color:var(--navy);">7. Line up the warranty and the quote</h2>
-      <p>Finally, understand what is warranted and for how long before you buy. AmeriDex carries a 25-year residential limited and 10-year limited commercial warranty, and registration takes a few minutes after install. To pull it all together, <a href="../get-a-free-quote.html">start a free quote</a> with your dimensions and a regional dealer will return board counts, accessories, and lead time, usually within a business day or two.</p>
+        <div class="blog-step">
+          <div class="blog-step-num">6</div>
+          <h3 class="blog-step-head">Plan fasteners, lighting, and the under-deck finish</h3>
+          <div class="blog-step-body">
+            <p>Decide on hidden fasteners or face screws, and if you want lighting or a finished ceiling under the deck, plan the runs now. A dry under-deck space lets you finish the ceiling with beadboard or tongue-and-groove and add lighting or a fan, but only if the framing overhead stays dry, which again comes back to the drainage decision in step 4.</p>
+          </div>
+          <label class="blog-step-check"><input type="checkbox" data-step="6"> Mark as decided</label>
+        </div>
 
-      <p>Build the deck once, build it dry, and the space under it becomes a room instead of a problem. For the homeowner view of why that matters, see <a href="../keep-under-deck-dry.html">keeping the space under your deck dry</a>.</p>
+        <div class="blog-step">
+          <div class="blog-step-num">7</div>
+          <h3 class="blog-step-head">Line up the warranty and the quote</h3>
+          <div class="blog-step-body">
+            <p>Finally, understand what is warranted and for how long before you buy. AmeriDex carries a 25-year residential limited and 10-year limited commercial warranty, and registration takes a few minutes after install. To pull it all together, <a href="../get-a-free-quote.html">start a free quote</a> with your dimensions and a regional dealer will return board counts, accessories, and lead time, usually within a business day or two.</p>
+          </div>
+          <label class="blog-step-check"><input type="checkbox" data-step="7"> Mark as decided</label>
+        </div>
 
+      </div>
+
+      <div class="blog-pullquote">
+        <p>Build the deck once, build it dry, and the space under it becomes a room instead of a problem.</p>
+      </div>
+
+      <div class="blog-callout tip">
+        <span class="blog-callout-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </span>
+        <div class="blog-callout-body">
+          <span class="blog-callout-title">Next step</span>
+          <p>Checked off all seven? For the homeowner view of why a dry under-deck space is worth planning around, see <a href="../keep-under-deck-dry.html">keeping the space under your deck dry</a>.</p>
+        </div>
+      </div>
 
     </div>
   </article>

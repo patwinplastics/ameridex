@@ -50,6 +50,33 @@ Blog files:
 A "Blog" link was added to the primary nav, mobile menu, and footer sitemap
 on every root page directly in the HTML (not via _build.py).
 
+### Blog engagement components (added 2026-05-29)
+
+Reusable styling lives in `css/blog-engage.css`; interactive checklist logic
+in `js/blog-checklist.js`. Link both in any post `<head>` after `site.css` /
+`site.js`. All components are scoped and built to beat the Tailwind CDN
+preflight, so reuse the exact class names. Available pieces:
+
+- Numbered step cards: `.blog-steps` wrapper with `.blog-step` cards, each a
+  `.blog-step-num` badge, an `h3.blog-step-head`, and a `.blog-step-body`.
+  Add `.idea` to a step for an image-friendly card with no checkbox.
+- Interactive checklist: put `data-checklist="<id>"` on `.blog-steps`, give
+  each card a `<label class="blog-step-check"><input type="checkbox"
+  data-step="N"> Mark as decided</label>`, and add a sticky progress bar with
+  `data-checklist-bar="<id>"` containing `.blog-progress-fill`,
+  `[data-checklist-count]`, and a `[data-checklist-reset="<id>"]` button.
+  Progress persists in localStorage per page. Bar sticks at `top:69px`
+  (just under the ~70px sticky site header).
+- Callout boxes: `.blog-callout` with modifier `.key` (navy/gold),
+  `.tip` (green), or `.warn` (red). Inner `.blog-callout-icon` (inline SVG)
+  + `.blog-callout-body` with a `.blog-callout-title` label.
+- Pull-quote: `.blog-pullquote` with a single `<p>` inside.
+- Do/Don't grid: `.blog-dodont` with two `.blog-dodont-col` columns,
+  `.do` (green) and `.dont` (red), each an `h4` + `ul`.
+
+If a post is an ordered checklist, also add an `ItemList` JSON-LD block (see
+`planning-a-new-deck-checklist.html`) for SEO.
+
 ## Pages built (7)
 
 1. `index.html` - Home (hero with real photo, deck colors grid, trust strip,

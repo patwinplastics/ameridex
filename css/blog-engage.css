@@ -1,0 +1,303 @@
+/* AmeriDex blog engagement components.
+   Reusable, scoped under .blog-article. Built to beat Tailwind CDN preflight
+   where needed (uses !important on layout-critical rules only).
+   Palette pulled from site.css: --navy, --red. Gold accent #cdb795. */
+
+:root {
+  --blog-gold: #cdb795;
+  --blog-ink: #0a2a4e;
+  --blog-line: #e6e9ee;
+  --blog-soft: #f5f7fa;
+}
+
+/* ---------- Progress bar (sticks just under the sticky site header) ---------- */
+.blog-progress {
+  position: sticky;
+  top: 69px;
+  z-index: 20;
+  background: #fff;
+  border-top: 1px solid var(--blog-line);
+  border-bottom: 1px solid var(--blog-line);
+  padding: 0.7rem 0;
+  box-shadow: 0 6px 14px rgba(10, 42, 78, 0.05);
+}
+.blog-progress-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.blog-progress-track {
+  flex: 1;
+  height: 8px;
+  background: var(--blog-soft);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.blog-progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--red), #d4452f);
+  border-radius: 999px;
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.blog-progress-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  white-space: nowrap;
+}
+.blog-progress-meta [data-checklist-count] { font-weight: 800; }
+.blog-progress-reset {
+  background: none;
+  border: 0;
+  color: #8a95a3;
+  font-size: 0.78rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  padding: 0;
+}
+.blog-progress-reset:hover { color: var(--red); }
+
+/* ---------- Numbered step cards ---------- */
+.blog-steps { margin: 2.5rem 0; }
+.blog-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 1.1rem 1.25rem;
+  align-items: start;
+  background: #fff;
+  border: 1px solid var(--blog-line);
+  border-radius: 16px;
+  padding: 1.6rem 1.6rem 1.5rem;
+  margin: 0 0 1.1rem;
+  box-shadow: 0 6px 18px rgba(10, 42, 78, 0.06);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+.blog-step:hover {
+  border-color: #cfd6df;
+  box-shadow: 0 12px 30px rgba(10, 42, 78, 0.1);
+  transform: translateY(-2px);
+}
+.blog-step-num {
+  grid-row: 1 / span 2;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: var(--navy);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background 0.3s ease;
+}
+.blog-step-num svg {
+  width: 30px;
+  height: 30px;
+  stroke: var(--blog-gold);
+}
+.blog-step-head {
+  align-self: center;
+  margin: 0 !important;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.15rem, 2vw, 1.4rem) !important;
+  line-height: 1.25 !important;
+  color: var(--navy) !important;
+  padding: 0 !important;
+}
+.blog-step-body { grid-column: 2; }
+.blog-step-body p { margin: 0 0 0.9rem !important; }
+.blog-step-body p:last-child { margin-bottom: 0 !important; }
+.blog-step-body img {
+  display: block !important;
+  width: 100% !important;
+  height: auto;
+  border-radius: 10px;
+  margin: 0.4rem 0 0;
+  box-shadow: 0 8px 22px rgba(10, 42, 78, 0.1);
+}
+/* idea card variant: no checkbox, image-friendly */
+.blog-step.idea { padding-bottom: 1.6rem; }
+
+/* Interactive check control */
+.blog-step-check {
+  grid-column: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #8a95a3;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+.blog-step-check input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #c3ccd6;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+  flex: 0 0 auto;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.blog-step-check input:checked {
+  background: var(--red);
+  border-color: var(--red);
+}
+.blog-step-check input:checked::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 11px;
+  border: solid #fff;
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+.blog-step-check:hover { color: var(--navy); }
+
+/* Done state */
+.blog-step.is-done {
+  border-color: #bcd9c4;
+  background: #f4faf6;
+}
+.blog-step.is-done .blog-step-num { background: #2e7d4f; }
+.blog-step.is-done .blog-step-check { color: #2e7d4f; }
+
+/* ---------- Callout boxes ---------- */
+.blog-callout {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 1rem;
+  align-items: start;
+  border-radius: 14px;
+  padding: 1.25rem 1.4rem;
+  margin: 2rem 0;
+  border: 1px solid var(--blog-line);
+  background: var(--blog-soft);
+}
+.blog-callout-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+.blog-callout-icon svg { width: 24px; height: 24px; }
+.blog-callout-body { align-self: center; }
+.blog-callout-body p { margin: 0 !important; }
+.blog-callout-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 0.3rem !important;
+  display: block;
+}
+
+/* Key / insight (navy + gold) */
+.blog-callout.key { background: #f3f6fb; border-color: #d8e2ef; }
+.blog-callout.key .blog-callout-icon { background: var(--navy); }
+.blog-callout.key .blog-callout-icon svg { stroke: var(--blog-gold); }
+.blog-callout.key .blog-callout-title { color: var(--navy); }
+
+/* Tip (green) */
+.blog-callout.tip { background: #f0f8f3; border-color: #c9e6d4; }
+.blog-callout.tip .blog-callout-icon { background: #2e7d4f; }
+.blog-callout.tip .blog-callout-icon svg { stroke: #fff; }
+.blog-callout.tip .blog-callout-title { color: #1f6b41; }
+
+/* Warning (red) */
+.blog-callout.warn { background: #fdf2f0; border-color: #f3cfc8; }
+.blog-callout.warn .blog-callout-icon { background: var(--red); }
+.blog-callout.warn .blog-callout-icon svg { stroke: #fff; }
+.blog-callout.warn .blog-callout-title { color: var(--red-dark, #b13a28); }
+
+/* ---------- Pull quote ---------- */
+.blog-pullquote {
+  position: relative;
+  margin: 2.75rem 0;
+  padding: 0.25rem 0 0.25rem 1.75rem;
+  border-left: 4px solid var(--blog-gold);
+}
+.blog-pullquote p {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem) !important;
+  line-height: 1.35 !important;
+  color: var(--navy) !important;
+  margin: 0 !important;
+}
+
+/* ---------- Do / Don't grid ---------- */
+.blog-dodont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2.25rem 0;
+}
+.blog-dodont-col {
+  border-radius: 14px;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid var(--blog-line);
+}
+.blog-dodont-col h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem !important;
+  letter-spacing: 0.02em;
+}
+.blog-dodont-col h4 svg { width: 20px; height: 20px; }
+.blog-dodont-col ul { margin: 0 !important; padding-left: 1.1rem; }
+.blog-dodont-col li { margin-bottom: 0.5rem; line-height: 1.6; }
+.blog-dodont-col li:last-child { margin-bottom: 0; }
+.blog-dodont .do { background: #f0f8f3; border-color: #c9e6d4; }
+.blog-dodont .do h4 { color: #1f6b41; }
+.blog-dodont .do h4 svg { stroke: #2e7d4f; }
+.blog-dodont .dont { background: #fdf2f0; border-color: #f3cfc8; }
+.blog-dodont .dont h4 { color: #b13a28; }
+.blog-dodont .dont h4 svg { stroke: var(--red); }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+  .blog-step {
+    grid-template-columns: 52px 1fr;
+    padding: 1.3rem 1.2rem;
+    gap: 0.85rem 1rem;
+  }
+  .blog-step-num { width: 52px; height: 52px; font-size: 1.4rem; border-radius: 12px; }
+  .blog-dodont { grid-template-columns: 1fr; }
+  .blog-pullquote { padding-left: 1.25rem; }
+  .blog-progress-meta { font-size: 0.72rem; gap: 0.6rem; }
+}
