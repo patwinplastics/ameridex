@@ -24,6 +24,32 @@ The `_build.py` helper is optional and regenerates all pages from shared partial
 > trust topbar partial (`trust_topbar()`) and the renamed header/mobile CTA
 > labels, so those WILL be preserved on a rebuild.
 
+## Blog (added 2026-05-29, hand-built, NOT in _build.py)
+
+The blog is a static hub. `_build.py` does NOT know about it, so a future
+build run will not touch or regenerate these files, but it also will not
+recreate them if deleted. To add a new post:
+
+1. Copy any file in `blog/` as the template (it carries the full site chrome:
+   trust topbar, header, mobile menu, footer, JSON-LD).
+2. From inside `blog/`, all shared links use a `../` prefix
+   (`../css/site.css`, `../index.html`, `../blog.html`, etc.).
+3. Swap the `<title>`, meta description/keywords, OG/Twitter tags, the
+   `BlogPosting` + `BreadcrumbList` JSON-LD, the hero kicker/H1/lead, the
+   article body, and the CTA heading.
+4. Add a card for it in `blog.html` (the post list `grid-3`) and add a
+   `<loc>` entry in `sitemap.xml`.
+5. Brand rules still apply: no em-dash, relative links only.
+
+Blog files:
+- `blog.html` (index/landing)
+- `blog/under-deck-living-space-ideas.html`
+- `blog/why-decks-rot-from-the-top-down.html`
+- `blog/planning-a-new-deck-checklist.html`
+
+A "Blog" link was added to the primary nav, mobile menu, and footer sitemap
+on every root page directly in the HTML (not via _build.py).
+
 ## Pages built (7)
 
 1. `index.html` - Home (hero with real photo, deck colors grid, trust strip,

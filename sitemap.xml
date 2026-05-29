@@ -62,6 +62,30 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.ameridex.com/blog.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/blog/under-deck-living-space-ideas.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/blog/why-decks-rot-from-the-top-down.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/blog/planning-a-new-deck-checklist.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.ameridex.com/get-a-free-quote.html</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
