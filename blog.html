@@ -48,6 +48,16 @@
   <!-- Tailwind CDN is a progressive enhancement only - all critical styling is in site.css -->
   <script src="https://cdn.tailwindcss.com" defer></script>
 
+  <style>
+    .blog-card-thumb {
+      width: 100%; height: 200px; object-fit: cover;
+      border-radius: 8px; margin-bottom: 1.1rem; display: block;
+    }
+    .blog-card-thumb.contain {
+      object-fit: contain; background: #f4f1ea; padding: 0.5rem;
+    }
+  </style>
+
   <script defer src="js/site.js"></script>
 
   <!-- Dealer routing: My Store chip, suggestion banner, IP-based suggestion, form stamping. -->
@@ -146,6 +156,7 @@
       <div class="grid-3 reveal" style="gap:2rem;">
 
         <article class="card" style="display:flex;flex-direction:column;">
+          <a href="blog/under-deck-living-space-ideas.html"><img class="blog-card-thumb" src="assets/img/gallery/06-deck-finished.jpg" alt="Finished outdoor living space under an AmeriDex deck" loading="lazy"></a>
           <p class="kicker" style="color:var(--red);font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.12em;font-size:0.72rem;margin-bottom:0.5rem;">Outdoor Living</p>
           <h3 style="color:var(--navy);margin-top:0;"><a href="blog/under-deck-living-space-ideas.html" style="color:inherit;text-decoration:none;">5 Ways to Turn the Space Under Your Deck Into a Living Space</a></h3>
           <p style="flex:1;">A dry under-deck slab opens up real square footage. Five ideas, from a covered outdoor kitchen to a shaded play zone, plus what each one needs from the deck above.</p>
@@ -154,6 +165,7 @@
         </article>
 
         <article class="card" style="display:flex;flex-direction:column;">
+          <a href="blog/why-decks-rot-from-the-top-down.html"><img class="blog-card-thumb contain" src="assets/img/system-anatomy.jpg" alt="Diagram of the AmeriDex above-joist drainage system" loading="lazy"></a>
           <p class="kicker" style="color:var(--red);font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.12em;font-size:0.72rem;margin-bottom:0.5rem;">How It Works</p>
           <h3 style="color:var(--navy);margin-top:0;"><a href="blog/why-decks-rot-from-the-top-down.html" style="color:inherit;text-decoration:none;">Why Decks Rot From the Top Down (and How to Stop It)</a></h3>
           <p style="flex:1;">Most deck failure starts at the gaps between the boards, not at the posts. Here is the wet-dry cycle that destroys framing, and how above-joist drainage breaks it.</p>
@@ -162,6 +174,7 @@
         </article>
 
         <article class="card" style="display:flex;flex-direction:column;">
+          <a href="blog/planning-a-new-deck-checklist.html"><img class="blog-card-thumb" src="assets/img/gallery/05-deck-installed.jpg" alt="A new two-story deck with dry living space underneath" loading="lazy"></a>
           <p class="kicker" style="color:var(--red);font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.12em;font-size:0.72rem;margin-bottom:0.5rem;">Planning</p>
           <h3 style="color:var(--navy);margin-top:0;"><a href="blog/planning-a-new-deck-checklist.html" style="color:inherit;text-decoration:none;">Planning a New Deck: A Pre-Construction Checklist</a></h3>
           <p style="flex:1;">Decisions get expensive after the joists go up. A step-by-step checklist covering layout, framing, drainage, materials, and warranty before you build.</p>
