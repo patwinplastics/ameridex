@@ -20,6 +20,7 @@ NAV_LINKS = [
     ("How System Works",     "how-system-works.html"),
     ("Instructional Videos", "https://www.youtube.com/channel/UC3Fz0TEKbLpQZefnYQNCxmg"),
     ("Gallery",              "gallery.html"),
+    ("Blog",                 "blog.html"),
     ("About",                "about.html"),
     ("Where to Buy",         "where-to-buy.html"),
     ("Get a Free Quote",     "get-a-free-quote.html"),
