@@ -491,7 +491,7 @@ def header(active_path):
   </nav>
   <div class="mobile-cta container">
     <a class="btn btn-red btn-lg" href="get-a-free-quote.html">Start my project</a>
-    <a class="btn btn-outline-white btn-lg" href="{DEALER_PORTAL_URL}" target="_blank" rel="noopener">Dealer Portal</a>
+    <a class="btn btn-outline-white btn-lg" href="{DEALER_PORTAL_URL}" target="_blank" rel="noopener nofollow">Dealer Portal</a>
   </div>
 </div>
 '''
@@ -542,7 +542,7 @@ def footer():
     <div class="footer-col footer-logo-block">
       <img src="assets/img/logo.png" alt="AmeriDex">
       <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-top:0.25rem;">Authorized dealers, log in to manage orders.</p>
-      <a href="{DEALER_PORTAL_URL}" target="_blank" rel="noopener" class="footer-portal-pill">Dealer Portal</a>
+      <a href="{DEALER_PORTAL_URL}" target="_blank" rel="noopener nofollow" class="footer-portal-pill">Dealer Portal</a>
     </div>
 
   </div>
@@ -551,7 +551,7 @@ def footer():
   </div>
 </footer>
 
-<a class="dealer-pill" href="{DEALER_PORTAL_URL}" target="_blank" rel="noopener" aria-label="AmeriDex Dealer Portal (opens new tab)">
+<a class="dealer-pill" href="{DEALER_PORTAL_URL}" target="_blank" rel="noopener nofollow" aria-label="AmeriDex Dealer Portal (opens new tab)">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
   AmeriDex Dealer Portal
 </a>
@@ -1294,7 +1294,7 @@ def page_contact():
           </div>
           <div>
             <h4>Dealer Portal</h4>
-            <p><a href="https://dealerportal.ameridex.com" target="_blank" rel="noopener">dealerportal.ameridex.com</a><br>For authorized AmeriDex dealers and installers.</p>
+            <p><a href="https://dealerportal.ameridex.com" target="_blank" rel="noopener nofollow">dealerportal.ameridex.com</a><br>For authorized AmeriDex dealers and installers.</p>
           </div>
         </div>
       </div>
