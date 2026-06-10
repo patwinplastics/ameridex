@@ -3,6 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '431677712006030');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=431677712006030&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
   <title>Register Your AmeriDex Warranty | 25-Year Dryspace Warranty</title>
   <meta name="description" content="Register your AmeriDex Dryspace purchase to activate the 25-year residential limited warranty. Submit proof of purchase and project details in minutes.">
   <meta name="keywords" content="AmeriDex warranty registration, deck warranty registration, PVC decking warranty, 25 year deck warranty">
@@ -333,6 +350,19 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
   AmeriDex Dealer Portal
 </a>
+  <!-- Meta Pixel Lead event on form submit -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof fbq !== 'function') return;
+    document.querySelectorAll('form').forEach(function (form) {
+      form.addEventListener('submit', function () {
+        fbq('track', 'Lead');
+      });
+    });
+  });
+  </script>
+  <!-- End Meta Pixel Lead event -->
+
 
 </body>
 </html>
