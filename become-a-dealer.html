@@ -61,6 +61,15 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/site.css">
 
+  <!-- Page-scoped: the dealer application form sits on a navy panel, so its labels,
+       heading and helper text must be light. Scoped to #apply so no other form changes. -->
+  <style>
+    #apply .form label { color: rgba(255,255,255,0.92); }
+    #apply .form h3 { color: #fff; }
+    #apply .form .helper { color: rgba(255,255,255,0.7); }
+    #apply .form select option { color: var(--charcoal); }
+  </style>
+
   <script src="https://cdn.tailwindcss.com" defer></script>
   <script defer src="js/site.js"></script>
   <!-- Dealer routing kept site-consistent. This is a dealer-RECRUITMENT page; the store-picker
@@ -349,7 +358,7 @@
           <form class="form" id="dealerForm" action="https://formspree.io/f/xwvjnoel" method="POST">
             <input type="hidden" name="_subject" value="New AmeriDex Dealer Application">
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <h3 style="color:var(--navy);">Apply to become a dealer</h3>
+            <h3>Apply to become a dealer</h3>
             <div class="form-row form-row-2">
               <div>
                 <label for="name">Your name</label>
@@ -471,8 +480,8 @@
     }).then(function (res) {
       if (res.ok) {
         if (window.fbq) { fbq('track', 'Lead', { content_name: 'Dealer Application' }); }
-        form.innerHTML = '<h3 style="color:var(--navy);">Application received.</h3>' +
-          '<p class="helper" style="font-size:1.02rem;">Thank you. We\'ll be in touch shortly with your dealer pricing, samples, and territory availability.</p>';
+        form.innerHTML = '<h3 style="color:#fff;">Application received.</h3>' +
+          '<p class="helper" style="font-size:1.02rem;color:rgba(255,255,255,0.8);">Thank you. We\'ll be in touch shortly with your dealer pricing, samples, and territory availability.</p>';
       } else {
         throw new Error('Submit failed');
       }
