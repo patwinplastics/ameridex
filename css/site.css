@@ -1468,11 +1468,31 @@ section { position: relative; }
 }
 .why-bullet {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.why-bullet img {
-  width: 100%;
+/* Fixed-height icon zone so every icon occupies the same vertical band and
+   all captions share a common baseline, regardless of each icon's height. */
+.why-bullet .why-icon {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.65rem;
+}
+.why-bullet .why-icon img {
+  height: auto;
+  max-height: 80px;
+  width: auto;
   max-width: 130px;
-  margin: 0 auto 0.65rem;
+  margin: 0;
+  display: block;
+}
+.why-bullet .why-icon svg {
+  height: 72px;
+  width: 96px;
+  margin: 0;
   display: block;
 }
 .why-bullet .label {
