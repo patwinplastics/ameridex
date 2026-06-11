@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Render the PVC-vs-composite cross-section diagram as a crisp SVG -> PNG."""
-import subprocess, os
+"""Render the PVC-vs-composite deck-board cross-section diagram as crisp SVG -> PNG."""
+import subprocess, random
 
 NAVY   = "#0A2A4E"
 NAVYD  = "#071F3A"
 RED    = "#D6263A"
 GOLD   = "#CDB795"
+GOLDD  = "#B8A270"
 CREAM  = "#EFEAE0"
 OFFW   = "#F7F5F0"
 INK    = "#1A1A1A"
@@ -13,50 +14,71 @@ GREY   = "#6B7785"
 LINE   = "#E5E1D8"
 GREEN  = "#2E7D5B"
 
-W, H = 1600, 920
+W, H = 1600, 1040
+
+def rounded_board_path(x, y, w, h, r_top, r_bot):
+    """Deck-board cross-section: eased (rounded) top corners, slightly eased bottom."""
+    return (f'M {x} {y+r_top} '
+            f'Q {x} {y} {x+r_top} {y} '
+            f'L {x+w-r_top} {y} '
+            f'Q {x+w} {y} {x+w} {y+r_top} '
+            f'L {x+w} {y+h-r_bot} '
+            f'Q {x+w} {y+h} {x+w-r_bot} {y+h} '
+            f'L {x+r_bot} {y+h} '
+            f'Q {x} {y+h} {x} {y+h-r_bot} Z')
 
 def board_pvc(x, y, w, h):
-    """Solid cellular PVC board: uniform fill, ASA cap top strip, no internal layers."""
+    """Solid cellular PVC deck board: wide profile, eased top, ASA cap wear layer, uniform core."""
     parts = []
-    # ASA cap (top thin strip) - gold
-    cap_h = 16
-    parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{cap_h}" rx="6" fill="{GOLD}"/>')
-    parts.append(f'<rect x="{x}" y="{y+cap_h-6}" width="{w}" height="6" fill="{GOLD}"/>')
-    # solid PVC core - one uniform material, subtle cellular dots
-    parts.append(f'<rect x="{x}" y="{y+cap_h}" width="{w}" height="{h-cap_h}" rx="6" fill="#E9EEF3" stroke="{NAVY}" stroke-width="2"/>')
-    # uniform "cellular" texture: faint even dots, signalling homogeneous core
+    rt, rb = 22, 8
+    cap_h = 22
+    # full board body (solid PVC) - light cool grey
+    parts.append(f'<path d="{rounded_board_path(x,y,w,h,rt,rb)}" fill="#E9EEF3" stroke="{NAVY}" stroke-width="2.5"/>')
+    # ASA cap as a thin top wear layer that follows the eased top
+    cap_path = (f'M {x} {y+cap_h} '
+                f'L {x} {y+rt} Q {x} {y} {x+rt} {y} '
+                f'L {x+w-rt} {y} Q {x+w} {y} {x+w} {y+rt} '
+                f'L {x+w} {y+cap_h} Z')
+    parts.append(f'<path d="{cap_path}" fill="{GOLD}"/>')
+    parts.append(f'<line x1="{x}" y1="{y+cap_h}" x2="{x+w}" y2="{y+cap_h}" stroke="{GOLDD}" stroke-width="2"/>')
+    # top-face sheen highlight (gives 3D board read)
+    parts.append(f'<rect x="{x+rt}" y="{y+3}" width="{w-2*rt}" height="5" rx="2.5" fill="#FFFFFF" opacity="0.5"/>')
+    # uniform cellular texture below the cap -> homogeneous solid core
     dots = []
-    import random
     random.seed(7)
-    for gx in range(int(x)+26, int(x+w)-18, 34):
-        for gy in range(int(y+cap_h)+26, int(y+h)-18, 30):
-            dots.append(f'<circle cx="{gx}" cy="{gy}" r="3.4" fill="#CBD6E0"/>')
+    for gx in range(int(x)+30, int(x+w)-22, 40):
+        for gy in range(int(y+cap_h)+26, int(y+h)-16, 30):
+            dots.append(f'<circle cx="{gx}" cy="{gy}" r="3.2" fill="#CBD6E0"/>')
     parts.append("".join(dots))
     return "".join(parts)
 
 def board_composite(x, y, w, h):
-    """Capped composite: polymer cap shell + visible wood-fiber core inside."""
+    """Capped composite deck board: wide profile, eased top, polymer cap shell, wood-fiber core, open bottom."""
     parts = []
-    cap = 10
-    # outer polymer cap (3-sided: top, left, right; bottom open)
-    parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="6" fill="{GOLD}" opacity="0.55"/>')
-    # wood-fiber core (inset), warm brown with streaks
-    cx, cy, cw, ch = x+cap, y+cap, w-2*cap, h-cap  # bottom NOT capped -> open
-    parts.append(f'<rect x="{cx}" y="{cy}" width="{cw}" height="{ch}" fill="#A9743B"/>')
-    # wood-fiber streaks
+    rt, rb = 22, 8
+    cap = 12
+    # outer polymer cap shell following board profile
+    parts.append(f'<path d="{rounded_board_path(x,y,w,h,rt,rb)}" fill="{GOLD}" opacity="0.6"/>')
+    # wood-fiber core inset on top/left/right, OPEN at the bottom (3-sided cap)
+    cx, cy, cw, ch = x+cap, y+cap, w-2*cap, h-cap
+    parts.append(f'<path d="{rounded_board_path(cx,cy,cw,ch,rt-6,0)}" fill="#A9743B"/>')
+    # wood-fiber streaks (horizontal grain inside the core)
     streaks = []
-    import random
     random.seed(11)
-    for i in range(70):
-        sx = random.uniform(cx+6, cx+cw-30)
-        sy = random.uniform(cy+6, cy+ch-6)
-        ln = random.uniform(14, 40)
+    for _ in range(120):
+        sx = random.uniform(cx+8, cx+cw-44)
+        sy = random.uniform(cy+10, cy+ch-6)
+        ln = random.uniform(20, 60)
         op = random.uniform(0.18, 0.5)
         col = random.choice(["#7E5326", "#C68A4C", "#6B451F"])
         streaks.append(f'<rect x="{sx:.0f}" y="{sy:.0f}" width="{ln:.0f}" height="3" rx="1.5" fill="{col}" opacity="{op:.2f}"/>')
     parts.append("".join(streaks))
-    # thin cap outline so the shell reads clearly
-    parts.append(f'<path d="M {x} {y+h} L {x} {y} L {x+w} {y} L {x+w} {y+h}" fill="none" stroke="#B8A270" stroke-width="3"/>')
+    # cap outline (drawn on 3 sides only: left, top, right) to show open underside
+    parts.append(f'<path d="M {x} {y+h-rb} L {x} {y+rt} Q {x} {y} {x+rt} {y} '
+                 f'L {x+w-rt} {y} Q {x+w} {y} {x+w} {y+rt} L {x+w} {y+h-rb}" '
+                 f'fill="none" stroke="{GOLDD}" stroke-width="3"/>')
+    # top-face sheen
+    parts.append(f'<rect x="{x+rt}" y="{y+3}" width="{w-2*rt}" height="5" rx="2.5" fill="#FFFFFF" opacity="0.35"/>')
     return "".join(parts)
 
 def label(x, y, text, color=NAVY, size=30, weight=700, anchor="start"):
@@ -64,7 +86,6 @@ def label(x, y, text, color=NAVY, size=30, weight=700, anchor="start"):
             f'font-size="{size}" font-weight="{weight}" fill="{color}" text-anchor="{anchor}">{text}</text>')
 
 def tag(x, y, text, color):
-    """small uppercase kicker"""
     return (f'<text x="{x}" y="{y}" font-family="Archivo, Arial, sans-serif" font-size="20" '
             f'font-weight="800" letter-spacing="2" fill="{color}" text-anchor="middle">{text}</text>')
 
@@ -75,9 +96,13 @@ def chip(cx, cy, text, ok):
             '<path d="M -6 -6 L 6 6 M 6 -6 L -6 6" fill="none" stroke="white" stroke-width="3.2" stroke-linecap="round"/>')
     return (f'<g transform="translate({cx},{cy})">'
             f'<circle cx="0" cy="0" r="15" fill="{col}"/>'
-            f'<g transform="translate(0,0)">{icon}</g>'
+            f'<g>{icon}</g>'
             f'<text x="26" y="7" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="500" fill="{INK}">{text}</text>'
             f'</g>')
+
+def breach_dot(cx, cy):
+    return (f'<g><circle cx="{cx}" cy="{cy}" r="13" fill="{RED}"/>'
+            f'<text x="{cx}" y="{cy+7}" font-family="Archivo, Arial, sans-serif" font-size="22" font-weight="800" fill="white" text-anchor="middle">!</text></g>')
 
 svg = []
 svg.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">')
@@ -88,77 +113,66 @@ svg.append(f'<rect x="0" y="0" width="{W}" height="118" fill="{NAVY}"/>')
 svg.append(tag(W/2, 46, "AMERIDEX MATERIALS", GOLD))
 svg.append(f'<text x="{W/2}" y="90" font-family="Archivo, Arial, sans-serif" font-size="40" font-weight="800" fill="#FFFFFF" text-anchor="middle">What is inside the board: cellular PVC vs composite</text>')
 
-# --- LEFT: cellular PVC ---
-lx, by, bw, bh = 200, 250, 380, 360
-svg.append(board_pvc(lx, by, bw, bh))
-svg.append(label(lx+bw/2, 215, "CELLULAR PVC (AMERIDEX)", NAVY, 27, 800, "middle"))
+# board geometry (wide deck-board cross-sections, stacked)
+BX, BW, BH = 130, 760, 150
+TOP_Y = 215
+BOT_Y = 560
+
+# ===== TOP: CELLULAR PVC =====
+svg.append(label(BX, TOP_Y-22, "CELLULAR PVC  (AMERIDEX)", NAVY, 27, 800))
+svg.append(label(BX+BW+10, TOP_Y-22, "wins", GREEN, 24, 800))
+svg.append(board_pvc(BX, TOP_Y, BW, BH))
 # ASA cap callout
-svg.append(f'<line x1="{lx+bw+10}" y1="{by+8}" x2="{lx+bw+70}" y2="{by+8}" stroke="{GREY}" stroke-width="2"/>')
-svg.append(label(lx+bw+80, by+15, "Proprietary ASA cap", GREY, 22, 600))
-svg.append(label(lx+bw+80, by+45, "Solid PVC core, all the", GREY, 22, 400))
-svg.append(label(lx+bw+80, by+72, "way through", GREY, 22, 400))
-# cut edge note
-svg.append(f'<line x1="{lx}" y1="{by+bh+18}" x2="{lx+bw}" y2="{by+bh+18}" stroke="{GREEN}" stroke-width="3"/>')
-svg.append(label(lx+bw/2, by+bh+52, "A cut edge is just more PVC", GREEN, 22, 700, "middle"))
-# chips
-cyl = by+bh+105
-svg.append(chip(lx+10, cyl,      "No wood, no organic filler", True))
-svg.append(chip(lx+10, cyl+44,   "Will not rot or feed mold", True))
-svg.append(chip(lx+10, cyl+88,   "Lighter, easier to handle", True))
+svg.append(f'<line x1="{BX+BW}" y1="{TOP_Y+11}" x2="{BX+BW+40}" y2="{TOP_Y+11}" stroke="{GREY}" stroke-width="2"/>')
+svg.append(label(BX+BW+50, TOP_Y+6, "Proprietary ASA cap", GREY, 21, 700))
+svg.append(label(BX+BW+50, TOP_Y+33, "(thin wear layer)", GREY, 19, 400))
+# solid-core callout
+svg.append(f'<line x1="{BX+BW}" y1="{TOP_Y+BH-30}" x2="{BX+BW+40}" y2="{TOP_Y+BH-30}" stroke="{GREY}" stroke-width="2"/>')
+svg.append(label(BX+BW+50, TOP_Y+BH-35, "Solid PVC core,", GREY, 21, 700))
+svg.append(label(BX+BW+50, TOP_Y+BH-9, "all the way through", GREY, 19, 400))
+# green cut-edge note under board
+svg.append(f'<line x1="{BX}" y1="{TOP_Y+BH+16}" x2="{BX+BW}" y2="{TOP_Y+BH+16}" stroke="{GREEN}" stroke-width="3"/>')
+svg.append(label(BX, TOP_Y+BH+46, "A cut edge is just more PVC", GREEN, 22, 700))
 
-# --- RIGHT: composite ---
-rx = 1020
-svg.append(board_composite(rx, by, bw, bh))
-svg.append(label(rx+bw/2, 215, "CAPPED COMPOSITE", NAVY, 27, 800, "middle"))
-# core callout (placed inside the board to avoid the center 'vs' badge)
-svg.append(f'<rect x="{rx+bw-250}" y="{by+bh-94}" width="232" height="74" rx="8" fill="#FFFFFF" opacity="0.92"/>')
-svg.append(label(rx+bw-234, by+bh-62, "Wood-fiber core", "#7E5326", 22, 800))
-svg.append(label(rx+bw-234, by+bh-34, "under the cap", "#7E5326", 22, 500))
-# breach markers (red) on the cap
-def breach(cx, cy, txt):
-    return (f'<g><circle cx="{cx}" cy="{cy}" r="13" fill="{RED}"/>'
-            f'<text x="{cx}" y="{cy+7}" font-family="Archivo, Arial, sans-serif" font-size="22" font-weight="800" fill="white" text-anchor="middle">!</text></g>'
-            + label(cx+22, cy+7, txt, RED, 20, 700))
-# top scratch breach
-svg.append(breach(rx+90, by+6, "scratch"))
-# bottom open (3-sided) breach
-svg.append(f'<line x1="{rx+10}" y1="{by+bh}" x2="{rx+bw-10}" y2="{by+bh}" stroke="{RED}" stroke-width="4" stroke-dasharray="8 6"/>')
-svg.append(label(rx+bw/2, by+bh+34, "Open underside on 3-sided caps", RED, 21, 700, "middle"))
-svg.append(label(rx+bw/2, by+bh+60, "Cut ends expose the wood", RED, 21, 700, "middle"))
-# chips
-svg.append(chip(rx+10, cyl,      "Organic wood fiber inside", False))
-svg.append(chip(rx+10, cyl+44,   "Absorbs moisture where breached", False))
-svg.append(chip(rx+10, cyl+88,   "Heavier, holds heat longer", False))
+# ===== BOTTOM: CAPPED COMPOSITE =====
+svg.append(label(BX, BOT_Y-22, "CAPPED COMPOSITE", NAVY, 27, 800))
+svg.append(board_composite(BX, BOT_Y, BW, BH))
+# scratch breach on top cap
+svg.append(breach_dot(BX+230, BOT_Y-2))
+svg.append(label(BX+230+22, BOT_Y+5, "scratch breaks the cap", RED, 20, 700))
+# wood-fiber core callout
+svg.append(f'<line x1="{BX+BW}" y1="{BOT_Y+BH/2}" x2="{BX+BW+40}" y2="{BOT_Y+BH/2}" stroke="{GREY}" stroke-width="2"/>')
+svg.append(label(BX+BW+50, BOT_Y+BH/2-4, "Wood-fiber core", "#7E5326", 21, 800))
+svg.append(label(BX+BW+50, BOT_Y+BH/2+22, "under the cap", "#7E5326", 19, 500))
+# open-bottom breach
+svg.append(f'<line x1="{BX+10}" y1="{BOT_Y+BH}" x2="{BX+BW-10}" y2="{BOT_Y+BH}" stroke="{RED}" stroke-width="5" stroke-dasharray="9 7"/>')
+svg.append(breach_dot(BX+30, BOT_Y+BH))
+svg.append(label(BX, BOT_Y+BH+46, "Open underside on 3-sided caps  ·  cut ends expose the wood", RED, 22, 700))
 
-# center divider
-svg.append(f'<line x1="{W/2}" y1="170" x2="{W/2}" y2="{H-40}" stroke="{LINE}" stroke-width="2"/>')
-svg.append(f'<circle cx="{W/2}" cy="{by+bh/2}" r="34" fill="{NAVY}"/>')
-svg.append(f'<text x="{W/2}" y="{by+bh/2+9}" font-family="Archivo, Arial, sans-serif" font-size="26" font-weight="800" fill="white" text-anchor="middle">vs</text>')
+# ===== chips row =====
+CYL = 820
+svg.append(chip(BX+10, CYL,      "No wood, no organic filler", True))
+svg.append(chip(BX+10, CYL+46,   "Will not rot or feed mold", True))
+svg.append(chip(BX+10, CYL+92,   "Lighter, easier to handle", True))
+RCX = 850
+svg.append(chip(RCX, CYL,      "Organic wood fiber inside", False))
+svg.append(chip(RCX, CYL+46,   "Absorbs moisture where breached", False))
+svg.append(chip(RCX, CYL+92,   "Heavier, holds heat longer", False))
+# subtle divider between chip columns
+svg.append(f'<line x1="{RCX-40}" y1="{CYL-26}" x2="{RCX-40}" y2="{CYL+108}" stroke="{LINE}" stroke-width="2"/>')
 
 # footer caption
-svg.append(f'<text x="40" y="{H-18}" font-family="Inter, Arial, sans-serif" font-size="20" fill="{GREY}" text-anchor="start">Cellular PVC has no wood to protect, which is why it wins on moisture, weight, cut edges, and lifespan.</text>')
-svg.append(f'<text x="{W-40}" y="{H-18}" font-family="Archivo, Arial, sans-serif" font-size="20" font-weight="700" fill="{NAVY}" text-anchor="end">ameridex.com</text>')
+svg.append(f'<text x="40" y="{H-20}" font-family="Inter, Arial, sans-serif" font-size="20" fill="{GREY}" text-anchor="start">Cellular PVC has no wood to protect, which is why it wins on moisture, weight, cut edges, and lifespan.</text>')
+svg.append(f'<text x="{W-40}" y="{H-20}" font-family="Archivo, Arial, sans-serif" font-size="20" font-weight="700" fill="{NAVY}" text-anchor="end">ameridex.com</text>')
+
 svg.append('</svg>')
 
 svg_str = "".join(svg)
 with open("assets/img/pvc-vs-composite-core.svg", "w") as f:
     f.write(svg_str)
 
-# convert to PNG at 2x for crispness
-out = "assets/img/pvc-vs-composite-core.jpg"
-# try rsvg-convert, then inkscape, then cairosvg
-ok = False
-for cmd in (["rsvg-convert","-w","1600","-h","920","assets/img/pvc-vs-composite-core.svg","-o","assets/img/_tmp.png"],):
-    try:
-        subprocess.run(cmd, check=True)
-        ok = True
-    except Exception as e:
-        print("rsvg failed:", e)
-if not ok:
-    try:
-        import cairosvg
-        cairosvg.svg2png(url="assets/img/pvc-vs-composite-core.svg", write_to="assets/img/_tmp.png", output_width=1600, output_height=920)
-        ok = True
-    except Exception as e:
-        print("cairosvg failed:", e)
-print("rendered_png" if ok else "NO_RENDERER")
+import cairosvg
+cairosvg.svg2png(url="assets/img/pvc-vs-composite-core.svg",
+                 write_to="assets/img/_tmp.png",
+                 output_width=1600, output_height=1040)
+print("rendered_png")
