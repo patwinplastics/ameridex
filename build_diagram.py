@@ -28,26 +28,43 @@ def rounded_board_path(x, y, w, h, r_top, r_bot):
             f'Q {x} {y+h} {x} {y+h-r_bot} Z')
 
 def board_pvc(x, y, w, h):
-    """Solid cellular PVC deck board: wide profile, eased top, ASA cap wear layer, uniform core."""
+    """Solid cellular PVC deck board with an ASA cap that wraps the top, both full
+    sides, and ~1 inch under each edge (center underside bare). Wide eased profile."""
     parts = []
     rt, rb = 22, 8
-    cap_h = 22
+    ct = 16          # cap thickness (visual)
+    under = 110      # how far the cap wraps under each edge (~1 inch, to scale)
     # full board body (solid PVC) - light cool grey
     parts.append(f'<path d="{rounded_board_path(x,y,w,h,rt,rb)}" fill="#E9EEF3" stroke="{NAVY}" stroke-width="2.5"/>')
-    # ASA cap as a thin top wear layer that follows the eased top
-    cap_path = (f'M {x} {y+cap_h} '
-                f'L {x} {y+rt} Q {x} {y} {x+rt} {y} '
-                f'L {x+w-rt} {y} Q {x+w} {y} {x+w} {y+rt} '
-                f'L {x+w} {y+cap_h} Z')
-    parts.append(f'<path d="{cap_path}" fill="{GOLD}"/>')
-    parts.append(f'<line x1="{x}" y1="{y+cap_h}" x2="{x+w}" y2="{y+cap_h}" stroke="{GOLDD}" stroke-width="2"/>')
+    # ASA cap as a wrapping shell: top + both sides + ~1in under each edge.
+    # Outer edge follows the board profile; inner edge is offset inward by ct,
+    # leaving the center underside uncapped (a gap of bare PVC).
+    cap = (
+        # outer boundary, clockwise from bottom-left-under-stop
+        f'M {x+under} {y+h} '
+        f'L {x+rb} {y+h} Q {x} {y+h} {x} {y+h-rb} '            # outer: bottom-left corner
+        f'L {x} {y+rt} Q {x} {y} {x+rt} {y} '                  # up left side to top-left ease
+        f'L {x+w-rt} {y} Q {x+w} {y} {x+w} {y+rt} '            # across top to top-right ease
+        f'L {x+w} {y+h-rb} Q {x+w} {y+h} {x+w-rb} {y+h} '      # down right side, bottom-right corner
+        f'L {x+w-under} {y+h} '                                # under-wrap stop on right
+        f'L {x+w-under} {y+h-ct} '                             # step up to inner underside
+        f'L {x+w-ct} {y+h-ct} '                                # inner underside (right) toward side
+        f'L {x+w-ct} {y+rt} Q {x+w-ct} {y+ct} {x+w-rt} {y+ct} '# inner: right side up to inner top ease
+        f'L {x+rt} {y+ct} Q {x+ct} {y+ct} {x+ct} {y+rt} '      # inner top across to inner top-left ease
+        f'L {x+ct} {y+h-ct} '                                  # inner left side down
+        f'L {x+under} {y+h-ct} Z'                              # inner underside (left), close
+    )
+    parts.append(f'<path d="{cap}" fill="{GOLD}" stroke="{GOLDD}" stroke-width="1.5"/>')
     # top-face sheen highlight (gives 3D board read)
     parts.append(f'<rect x="{x+rt}" y="{y+3}" width="{w-2*rt}" height="5" rx="2.5" fill="#FFFFFF" opacity="0.5"/>')
-    # uniform cellular texture below the cap -> homogeneous solid core
+    # tiny markers showing where the underside wrap stops on each side
+    for ux in (x+under, x+w-under):
+        parts.append(f'<line x1="{ux}" y1="{y+h-ct}" x2="{ux}" y2="{y+h+10}" stroke="{GOLDD}" stroke-width="2" stroke-dasharray="3 3"/>')
+    # uniform cellular texture in the core -> homogeneous solid PVC
     dots = []
     random.seed(7)
-    for gx in range(int(x)+30, int(x+w)-22, 40):
-        for gy in range(int(y+cap_h)+26, int(y+h)-16, 30):
+    for gx in range(int(x)+34, int(x+w)-24, 42):
+        for gy in range(int(y+ct)+24, int(y+h)-14, 30):
             dots.append(f'<circle cx="{gx}" cy="{gy}" r="3.2" fill="#CBD6E0"/>')
     parts.append("".join(dots))
     return "".join(parts)
@@ -125,7 +142,8 @@ svg.append(board_pvc(BX, TOP_Y, BW, BH))
 # ASA cap callout
 svg.append(f'<line x1="{BX+BW}" y1="{TOP_Y+11}" x2="{BX+BW+40}" y2="{TOP_Y+11}" stroke="{GREY}" stroke-width="2"/>')
 svg.append(label(BX+BW+50, TOP_Y+6, "Proprietary ASA cap", GREY, 21, 700))
-svg.append(label(BX+BW+50, TOP_Y+33, "(thin wear layer)", GREY, 19, 400))
+svg.append(label(BX+BW+50, TOP_Y+33, "wraps top, sides, and", GREY, 19, 400))
+svg.append(label(BX+BW+50, TOP_Y+56, "~1 in. under each edge", GREY, 19, 400))
 # solid-core callout
 svg.append(f'<line x1="{BX+BW}" y1="{TOP_Y+BH-30}" x2="{BX+BW+40}" y2="{TOP_Y+BH-30}" stroke="{GREY}" stroke-width="2"/>')
 svg.append(label(BX+BW+50, TOP_Y+BH-35, "Solid PVC core,", GREY, 21, 700))
