@@ -2012,6 +2012,12 @@ section { position: relative; }
   background: var(--navy-deep);
 }
 .dealer-pill svg { width: 14px; height: 14px; }
+.dealer-pill.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  pointer-events: none;
+}
 @media (max-width: 480px) {
   .dealer-pill { display: none; }
 }

@@ -99,6 +99,18 @@
   }
   if (colorPicks.length) updateColorState();
 
+  // ===== Floating dealer pill: hide when footer is in view so it never covers footer links =====
+  var floatingPill = document.querySelector('.dealer-pill');
+  var siteFooter = document.querySelector('.site-footer') || document.querySelector('footer');
+  if (floatingPill && siteFooter && 'IntersectionObserver' in window) {
+    var pillObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        floatingPill.classList.toggle('is-hidden', entry.isIntersecting);
+      });
+    }, { rootMargin: '0px 0px -40px 0px' });
+    pillObserver.observe(siteFooter);
+  }
+
   // ===== Warranty form: prefill today's date in signature_date if empty =====
   const sigDate = document.querySelector('input[name="signature_date"]');
   if (sigDate && !sigDate.value) {
