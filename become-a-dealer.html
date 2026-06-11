@@ -68,6 +68,26 @@
     #apply .form h3 { color: #fff; }
     #apply .form .helper { color: rgba(255,255,255,0.7); }
     #apply .form select option { color: var(--charcoal); }
+
+    /* Clickable color swatches */
+    .swatch-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); gap:1rem; margin:1.25rem auto 0; max-width:880px; }
+    .swatch-btn { appearance:none; background:none; border:0; padding:0; cursor:pointer; text-align:center; font:inherit; display:block; }
+    .swatch-btn img { width:100%; height:84px; object-fit:cover; border-radius:8px; border:1px solid rgba(10,42,78,0.12); transition:transform .18s ease, box-shadow .18s ease; display:block; }
+    .swatch-btn span { display:block; font-size:0.82rem; color:var(--navy); margin-top:0.4rem; font-weight:600; }
+    .swatch-btn:hover img, .swatch-btn:focus-visible img { transform:translateY(-3px); box-shadow:0 10px 24px rgba(10,42,78,0.22); }
+    .swatch-btn:focus-visible { outline:3px solid var(--red); outline-offset:3px; border-radius:10px; }
+
+    /* Lightbox */
+    .lightbox { position:fixed; inset:0; z-index:9999; display:none; align-items:center; justify-content:center; padding:1.25rem; background:rgba(8,20,38,0.88); }
+    .lightbox.open { display:flex; }
+    .lightbox-inner { position:relative; max-width:760px; width:100%; background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,0.5); animation:lbpop .2s ease; }
+    @keyframes lbpop { from { transform:scale(.96); opacity:0; } to { transform:scale(1); opacity:1; } }
+    .lightbox-inner img { width:100%; height:auto; display:block; }
+    .lightbox-cap { display:flex; align-items:center; gap:0.6rem; padding:1rem 1.25rem; }
+    .lightbox-cap h4 { font-family:var(--font-display); font-weight:800; color:var(--navy); margin:0; font-size:1.15rem; }
+    .lightbox-tag { font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:0.2rem 0.6rem; border-radius:999px; background:var(--navy); color:#fff; }
+    .lightbox-close { position:absolute; top:0.6rem; right:0.6rem; width:40px; height:40px; border-radius:999px; border:0; background:rgba(8,20,38,0.6); color:#fff; font-size:1.4rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+    .lightbox-close:hover { background:var(--red); }
   </style>
 
   <script src="https://cdn.tailwindcss.com" defer></script>
@@ -309,14 +329,15 @@
       </div>
 
       <p style="text-align:center;font-family:var(--font-display);font-weight:700;color:var(--navy);margin-top:2.5rem;letter-spacing:0.04em;">Seven deck colors your customers can choose from.</p>
-      <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:1rem;margin-top:1.25rem;max-width:880px;margin-left:auto;margin-right:auto;">
-        <figure style="margin:0;text-align:center;"><img src="assets/img/swatches-flat/driftwood.png" alt="Driftwood deck color" loading="lazy" style="width:100%;height:84px;object-fit:cover;border-radius:8px;border:1px solid rgba(10,42,78,0.12);"><figcaption style="font-size:0.82rem;color:var(--navy);margin-top:0.4rem;font-weight:600;">Driftwood</figcaption></figure>
-        <figure style="margin:0;text-align:center;"><img src="assets/img/swatches-flat/khaki.png" alt="Khaki deck color" loading="lazy" style="width:100%;height:84px;object-fit:cover;border-radius:8px;border:1px solid rgba(10,42,78,0.12);"><figcaption style="font-size:0.82rem;color:var(--navy);margin-top:0.4rem;font-weight:600;">Khaki</figcaption></figure>
-        <figure style="margin:0;text-align:center;"><img src="assets/img/swatches-flat/slate.png" alt="Slate deck color" loading="lazy" style="width:100%;height:84px;object-fit:cover;border-radius:8px;border:1px solid rgba(10,42,78,0.12);"><figcaption style="font-size:0.82rem;color:var(--navy);margin-top:0.4rem;font-weight:600;">Slate</figcaption></figure>
-        <figure style="margin:0;text-align:center;"><img src="assets/img/swatches-flat/beachwood.png" alt="Beachwood deck color" loading="lazy" style="width:100%;height:84px;object-fit:cover;border-radius:8px;border:1px solid rgba(10,42,78,0.12);"><figcaption style="font-size:0.82rem;color:var(--navy);margin-top:0.4rem;font-weight:600;">Beachwood</figcaption></figure>
-        <figure style="margin:0;text-align:center;"><img src="assets/img/swatches-flat/chestnut.png" alt="Chestnut deck color" loading="lazy" style="width:100%;height:84px;object-fit:cover;border-radius:8px;border:1px solid rgba(10,42,78,0.12);"><figcaption style="font-size:0.82rem;color:var(--navy);margin-top:0.4rem;font-weight:600;">Chestnut</figcaption></figure>
-        <figure style="margin:0;text-align:center;"><img src="assets/img/swatches-flat/redwood.png" alt="Redwood deck color" loading="lazy" style="width:100%;height:84px;object-fit:cover;border-radius:8px;border:1px solid rgba(10,42,78,0.12);"><figcaption style="font-size:0.82rem;color:var(--navy);margin-top:0.4rem;font-weight:600;">Redwood</figcaption></figure>
-        <figure style="margin:0;text-align:center;"><img src="assets/img/swatches-flat/hazelnut.png" alt="Hazelnut deck color" loading="lazy" style="width:100%;height:84px;object-fit:cover;border-radius:8px;border:1px solid rgba(10,42,78,0.12);"><figcaption style="font-size:0.82rem;color:var(--navy);margin-top:0.4rem;font-weight:600;">Hazelnut</figcaption></figure>
+      <p style="text-align:center;color:var(--charcoal);font-size:0.9rem;margin-top:0.35rem;">Click any color to see it up close.</p>
+      <div class="swatch-row reveal">
+        <button type="button" class="swatch-btn" data-full="assets/img/swatches/driftwood.png" data-name="Driftwood" data-tag="Solid"><img src="assets/img/swatches-flat/driftwood.png" alt="Driftwood deck color" loading="lazy"><span>Driftwood</span></button>
+        <button type="button" class="swatch-btn" data-full="assets/img/swatches/khaki.png" data-name="Khaki" data-tag="Solid"><img src="assets/img/swatches-flat/khaki.png" alt="Khaki deck color" loading="lazy"><span>Khaki</span></button>
+        <button type="button" class="swatch-btn" data-full="assets/img/swatches/slate.png" data-name="Slate" data-tag="Solid"><img src="assets/img/swatches-flat/slate.png" alt="Slate deck color" loading="lazy"><span>Slate</span></button>
+        <button type="button" class="swatch-btn" data-full="assets/img/swatches/beachwood.png" data-name="Beachwood" data-tag="Variegated"><img src="assets/img/swatches-flat/beachwood.png" alt="Beachwood deck color" loading="lazy"><span>Beachwood</span></button>
+        <button type="button" class="swatch-btn" data-full="assets/img/swatches/chestnut.png" data-name="Chestnut" data-tag="Variegated"><img src="assets/img/swatches-flat/chestnut.png" alt="Chestnut deck color" loading="lazy"><span>Chestnut</span></button>
+        <button type="button" class="swatch-btn" data-full="assets/img/swatches/redwood.png" data-name="Redwood" data-tag="Variegated"><img src="assets/img/swatches-flat/redwood.png" alt="Redwood deck color" loading="lazy"><span>Redwood</span></button>
+        <button type="button" class="swatch-btn" data-full="assets/img/swatches/hazelnut.png" data-name="Hazelnut" data-tag="Variegated"><img src="assets/img/swatches-flat/hazelnut.png" alt="Hazelnut deck color" loading="lazy"><span>Hazelnut</span></button>
       </div>
     </div>
   </section>
@@ -410,6 +431,18 @@
 
 </main>
 
+<!-- Color lightbox -->
+<div class="lightbox" id="colorLightbox" role="dialog" aria-modal="true" aria-label="Deck color preview" aria-hidden="true">
+  <div class="lightbox-inner">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close color preview">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-cap">
+      <h4 id="lightboxName"></h4>
+      <span class="lightbox-tag" id="lightboxTag"></span>
+    </div>
+  </div>
+</div>
+
 <footer class="site-footer">
   <div class="container footer-grid">
 
@@ -490,6 +523,43 @@
       alert('Something went wrong. Please call 1-800-217-9206 or email sales@ameridex.com.');
     });
   });
+})();
+
+// Color swatch lightbox
+(function () {
+  var lb = document.getElementById('colorLightbox');
+  if (!lb) return;
+  var lbImg = document.getElementById('lightboxImg');
+  var lbName = document.getElementById('lightboxName');
+  var lbTag = document.getElementById('lightboxTag');
+  var closeBtn = document.getElementById('lightboxClose');
+  var lastFocused = null;
+
+  function open(btn) {
+    lastFocused = btn;
+    var name = btn.getAttribute('data-name');
+    lbImg.setAttribute('src', btn.getAttribute('data-full'));
+    lbImg.setAttribute('alt', 'AmeriDex ' + name + ' deck board color');
+    lbName.textContent = name;
+    lbTag.textContent = btn.getAttribute('data-tag') || '';
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function close() {
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  document.querySelectorAll('.swatch-btn').forEach(function (b) {
+    b.addEventListener('click', function () { open(b); });
+  });
+  closeBtn.addEventListener('click', close);
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && lb.classList.contains('open')) close(); });
 })();
 </script>
 
