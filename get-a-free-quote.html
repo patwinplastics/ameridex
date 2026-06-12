@@ -390,6 +390,19 @@
   </script>
   <!-- End Meta Pixel Lead event -->
 
+  <!-- Google Ads conversion on form submit -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof gtag !== 'function') return;
+    document.querySelectorAll('form').forEach(function (form) {
+      form.addEventListener('submit', function () {
+        gtag('event', 'ads_conversion_Request_quote_1', {});
+      });
+    });
+  });
+  </script>
+  <!-- End Google Ads conversion -->
+
 
 </body>
 </html>
