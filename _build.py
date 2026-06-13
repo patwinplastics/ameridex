@@ -186,27 +186,15 @@ PRODUCT_JSONLD = {
     ],
     "material": "Cellular PVC with proprietary ASA cap; TPE seal",
     "audience": {"@type": "Audience", "audienceType": "Builders, contractors, dealers, homeowners building new decks"},
-    "offers": {
-        "@type": "AggregateOffer",
-        "availability": "https://schema.org/InStock",
-        "priceCurrency": "USD",
-        "offerCount": 7,
-        "priceSpecification": {
-            "@type": "PriceSpecification",
-            "priceCurrency": "USD",
-            "description": "Pricing varies by deck size, color, and accessories. Request a free quote.",
-        },
-        "seller": {"@id": f"{SITE_ORIGIN}/#organization"},
-        "url": f"{SITE_ORIGIN}/get-a-free-quote.html",
-    },
-    "hasMerchantReturnPolicy": {
-        "@type": "MerchantReturnPolicy",
-        "applicableCountry": "US",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays": 30,
-        "returnMethod": "https://schema.org/ReturnByMail",
-        "returnFees": "https://schema.org/ReturnShippingFees",
-    },
+    # NOTE: No "offers", "review", or "aggregateRating" is published here on purpose.
+    # AmeriDex is sold by written quote only, with no public price list, no reviews,
+    # and no aggregate rating to cite. Google's Product rich result requires a valid
+    # price (or review/rating); an AggregateOffer without lowPrice/highPrice/price was
+    # being flagged as invalid in Search Console ("Missing field lowPrice" and "Either
+    # offers, review, or aggregateRating should be specified"). Rather than invent a
+    # price, we keep this as plain descriptive Product structured data and forgo Product
+    # rich-result eligibility. hasMerchantReturnPolicy is also removed because it only
+    # belongs alongside a valid Offer/AggregateOffer.
 }
 
 # FAQ content used both as JSON-LD and rendered as a real DOM section on how-it-works.
