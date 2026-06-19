@@ -46,6 +46,9 @@ Blog files:
 - `blog/under-deck-living-space-ideas.html`
 - `blog/why-decks-rot-from-the-top-down.html`
 - `blog/planning-a-new-deck-checklist.html`
+- `blog/cellular-pvc-vs-composite-decking.html`
+- `blog/choosing-the-right-ameridex-color.html`
+- `blog/nj-shore-deck-guide.html` (added 2026-06-19)
 
 A "Blog" link was added to the primary nav, mobile menu, and footer sitemap
 on every root page directly in the HTML (not via _build.py).
