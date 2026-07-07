@@ -86,6 +86,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.ameridex.com/blog/above-joist-vs-below-joist-buyer-guide.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ameridex.com/assets/img/blog/above-vs-below-hero.jpg</image:loc>
+      <image:caption>A finished cellular PVC deck with a dry, usable living space underneath after rain</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.ameridex.com/blog/installing-ameridex-pro-guide.html</loc>
     <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
