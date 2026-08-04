@@ -109,8 +109,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.ameridex.com/assets/img/blog/nj-shore-dryspace.jpg</image:loc>
-      <image:caption>A raised coastal deck keeping the space underneath dry during a storm</image:caption>
+      <image:loc>https://www.ameridex.com/assets/img/blog/storm-deck-hero.jpg</image:loc>
+      <image:caption>Wind-driven rain sheeting across a coastal deck during a storm at the Jersey Shore</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ameridex.com/assets/img/blog/storm-dryspace.jpg</image:loc>
+      <image:caption>A dry, usable living space under a raised deck during a heavy coastal storm</image:caption>
     </image:image>
   </url>
   <url>
