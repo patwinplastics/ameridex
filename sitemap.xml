@@ -99,9 +99,19 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/blog.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/blog/prepare-deck-for-hurricane-season.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ameridex.com/assets/img/blog/nj-shore-dryspace.jpg</image:loc>
+      <image:caption>A raised coastal deck keeping the space underneath dry during a storm</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ameridex.com/blog/how-to-clean-pvc-deck-boards.html</loc>
