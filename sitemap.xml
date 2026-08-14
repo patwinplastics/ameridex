@@ -99,9 +99,19 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/blog.html</loc>
-    <lastmod>2026-08-04</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/blog/retrofit-deck-drainage-existing-deck.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ameridex.com/assets/img/blog/existing-deck-contractor-hero.jpg</image:loc>
+      <image:caption>Contractor checking the pitch of existing deck joists during a re-deck, with new AmeriDex cellular PVC deck boards stacked alongside</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ameridex.com/blog/prepare-deck-for-hurricane-season.html</loc>
