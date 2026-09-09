@@ -99,9 +99,19 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/blog.html</loc>
-    <lastmod>2026-08-14</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/blog/fall-deck-maintenance-checklist.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ameridex.com/assets/img/blog/fall-deck-maintenance-hero.jpg</image:loc>
+      <image:caption>Homeowner clearing wet fall leaves off deck boards with a leaf blower before winter</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ameridex.com/blog/retrofit-deck-drainage-existing-deck.html</loc>
