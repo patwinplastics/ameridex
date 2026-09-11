@@ -612,12 +612,37 @@ def cross_section_svg():
 def swatch_grid_v2_html():
     cards = []
     for name, slug, kind, label in SWATCHES:
-        cards.append(f'''      <div class="swatch-card-v2 reveal">
+        cards.append(f'''      <button type="button" class="swatch-card-v2 reveal" data-swatch-trigger data-name="{name}" data-slug="{slug}" data-kind="{kind}" data-label="{label}" aria-haspopup="dialog" aria-label="View the {name} color swatch up close">
         <img src="assets/img/swatches/{slug}.png" alt="AmeriDex {name} cellular PVC deck board color sample" loading="lazy">
         <h3>{name}</h3>
         <span class="tag-pill {kind}">{label}</span>
-      </div>''')
+        <span class="swatch-zoom-hint" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+          View closer
+        </span>
+      </button>''')
     return "\n".join(cards)
+
+
+def swatch_modal_html():
+    """Shared lightbox that shows a large swatch image + name/tag when a
+    deck board color card is clicked. Markup lives once here; site.js wires
+    up any [data-swatch-trigger] on the page to populate and open it."""
+    return '''
+<div class="swatch-modal" id="swatch-modal" role="dialog" aria-modal="true" aria-labelledby="swatch-modal-title" aria-hidden="true">
+  <div class="swatch-modal-backdrop" data-swatch-close></div>
+  <div class="swatch-modal-panel">
+    <button type="button" class="swatch-modal-close" data-swatch-close aria-label="Close color swatch preview">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <img class="swatch-modal-img" id="swatch-modal-img" src="" alt="">
+    <div class="swatch-modal-info">
+      <h3 id="swatch-modal-title"></h3>
+      <span class="tag-pill" id="swatch-modal-tag"></span>
+    </div>
+  </div>
+</div>
+'''
 
 
 # ----------------------------------------------------------------------
@@ -665,6 +690,8 @@ def page_index():
       </div>
     </div>
   </section>
+
+  {swatch_modal_html()}
 
   {trust_strip_white()}
 

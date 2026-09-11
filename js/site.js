@@ -120,4 +120,50 @@
     const dd = String(t.getDate()).padStart(2, '0');
     sigDate.value = yyyy + '-' + mm + '-' + dd;
   }
+
+  // ===== Deck board color swatch modal =====
+  // Clicking a deck board card on the "Deck Board Colors" grid opens a
+  // lightbox with a large image of that color's swatch/texture.
+  const swatchModal = document.getElementById('swatch-modal');
+  if (swatchModal) {
+    const swatchModalImg = document.getElementById('swatch-modal-img');
+    const swatchModalTitle = document.getElementById('swatch-modal-title');
+    const swatchModalTag = document.getElementById('swatch-modal-tag');
+    let lastSwatchTrigger = null;
+
+    function openSwatchModal(trigger) {
+      const name = trigger.getAttribute('data-name') || '';
+      const slug = trigger.getAttribute('data-slug') || '';
+      const kind = trigger.getAttribute('data-kind') || '';
+      const label = trigger.getAttribute('data-label') || '';
+      swatchModalImg.src = 'assets/img/swatches/' + slug + '.png';
+      swatchModalImg.alt = 'AmeriDex ' + name + ' cellular PVC deck board color and texture close-up';
+      swatchModalTitle.textContent = name;
+      swatchModalTag.textContent = label;
+      swatchModalTag.className = 'tag-pill' + (kind ? ' ' + kind : '');
+      lastSwatchTrigger = trigger;
+      swatchModal.classList.add('open');
+      swatchModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      const closeBtn = swatchModal.querySelector('.swatch-modal-close');
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeSwatchModal() {
+      swatchModal.classList.remove('open');
+      swatchModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastSwatchTrigger) lastSwatchTrigger.focus();
+    }
+
+    document.querySelectorAll('[data-swatch-trigger]').forEach((card) => {
+      card.addEventListener('click', () => openSwatchModal(card));
+    });
+    swatchModal.querySelectorAll('[data-swatch-close]').forEach((el) => {
+      el.addEventListener('click', closeSwatchModal);
+    });
+    document.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape' && swatchModal.classList.contains('open')) closeSwatchModal();
+    });
+  }
 })();
