@@ -613,7 +613,7 @@ def swatch_grid_v2_html():
     cards = []
     for name, slug, kind, label in SWATCHES:
         cards.append(f'''      <button type="button" class="swatch-card-v2 reveal" data-swatch-trigger data-name="{name}" data-slug="{slug}" data-kind="{kind}" data-label="{label}" aria-haspopup="dialog" aria-label="View the {name} color swatch up close">
-        <img src="assets/img/swatches-flat/{slug}.jpg" alt="AmeriDex {name} cellular PVC deck board close-up color and texture sample" loading="lazy">
+        <img src="assets/img/swatches/{slug}.png" alt="AmeriDex {name} cellular PVC deck board color sample" loading="lazy">
         <h3>{name}</h3>
         <span class="tag-pill {kind}">{label}</span>
         <span class="swatch-zoom-hint" aria-hidden="true">
