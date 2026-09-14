@@ -136,7 +136,7 @@
       const slug = trigger.getAttribute('data-slug') || '';
       const kind = trigger.getAttribute('data-kind') || '';
       const label = trigger.getAttribute('data-label') || '';
-      swatchModalImg.src = 'assets/img/swatches/' + slug + '.png';
+      swatchModalImg.src = 'assets/img/swatches-flat/' + slug + '.jpg';
       swatchModalImg.alt = 'AmeriDex ' + name + ' cellular PVC deck board color and texture close-up';
       swatchModalTitle.textContent = name;
       swatchModalTag.textContent = label;
