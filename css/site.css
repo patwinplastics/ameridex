@@ -21,6 +21,10 @@
 }
 
 /* Contain wide comparison tables without hiding page content on phones. */
+.site-header .site-nav { min-width: 0; flex-wrap: wrap; justify-content: flex-end; }
+@media (max-width: 1099px) {
+  .site-header .hamburger { display: inline-flex !important; }
+}
 .comparison-scroll { overflow-x: auto; max-width: 100%; margin: 1.5rem 0; }
 .comparison-scroll table { min-width: 660px; width: 100%; border-collapse: collapse; }
 .comparison-scroll th, .comparison-scroll td { padding: 1rem; text-align: left; vertical-align: top; border: 1px solid var(--divider); }

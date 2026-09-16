@@ -34,7 +34,8 @@
 .hero-intro { color:#d9e0e8; margin:25px 0 29px; font-size:15px; line-height:1.8; max-width:425px; }
 .actions { display:flex; gap:12px; flex-wrap:wrap; }
 .hero-fit { font-size:11px; color:#b9c7d7; margin-top:22px; }
-.hero-photo { position:relative; min-width:0; overflow:hidden; }
+.hero-photo { position:relative; inset:auto; min-width:0; overflow:hidden; }
+.home-v2 .hero-photo::after { content:none; }
 .hero-photo>img { height:100%; width:100%; object-fit:cover; object-position:55% center; }
 .photo-note { position:absolute; bottom:24px; right:24px; background:#0a2a4edb; border-left:2px solid #e8d7ba; padding:14px 20px; font-size:12px; line-height:1.7; }
 .photo-note span { display:block; }
