@@ -2954,3 +2954,12 @@ section { position: relative; }
 }
 .quote-reassure li { margin-bottom: 0.35rem; }
 .quote-reassure li:last-child { margin-bottom: 0; }
+
+/* Keep inherited dealer and comparison content within the shared shell. */
+.article-table-scroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.article-table-scroll:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+@media(max-width:700px){
+  .dealer-content-grid{grid-template-columns:minmax(0,1fr)!important}
+  .dealer-content-grid .ad-dealer-actions{display:flex;flex-direction:column;align-items:stretch}
+  .dealer-content-grid .btn{max-width:100%;white-space:normal;text-align:center}
+}

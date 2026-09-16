@@ -1,0 +1,19 @@
+/* Canonical footer: isolated from inherited page and article styles. */
+.shared-footer.home-footer{--foot-bg:#f7f5f0;--foot-ink:#0a2a4e;--foot-muted:#546475;--foot-line:#dcdedb;box-sizing:border-box;background:var(--foot-bg);color:var(--foot-ink);padding:60px max(6vw,24px) 25px;margin:0;border:0;font-family:Inter,system-ui,sans-serif;font-size:14px;line-height:1.5;text-align:left;width:100%}
+.shared-footer *{box-sizing:border-box}
+.shared-footer .footer-main{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:30px;max-width:1400px;margin:auto}
+.shared-footer .footer-identity>a{display:inline-block}
+.shared-footer .footer-identity img{display:block;width:172px;height:auto;max-width:100%}
+.shared-footer .footer-identity p{font-size:12px;line-height:1.7;color:var(--foot-muted);margin:20px 0 0}
+.shared-footer .footer-main h2{font-family:Archivo,Inter,sans-serif;font-size:13px;font-weight:700;line-height:1.4;margin:10px 0 20px;color:var(--foot-ink);letter-spacing:0;text-transform:none}
+.shared-footer a{color:var(--foot-muted);text-decoration:none}
+.shared-footer .footer-main>div>a:not(:has(img)){display:block;font-size:12px;line-height:1.6;font-weight:400;margin:12px 0;padding:0}
+.shared-footer a:hover{text-decoration:underline;text-underline-offset:4px}
+.shared-footer :focus-visible{outline:3px solid #d6263a;outline-offset:4px}
+.shared-footer .footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px;max-width:1400px;margin:45px auto 0;padding-top:22px;border-top:1px solid var(--foot-line);font-size:10px;color:var(--foot-muted)}
+.shared-footer .footer-bottom{text-align:left}
+.shared-footer .footer-bottom nav{display:flex;flex-wrap:wrap;gap:10px 20px}
+body[data-theme=dark] .shared-footer{--foot-bg:#102c43;--foot-ink:#f6f4ef;--foot-muted:#c5d0d9;--foot-line:#3b5362}
+body[data-theme=dark] .shared-footer .footer-identity>a{background:#f7f5f0;padding:6px 10px;border-radius:4px}
+@media(max-width:700px){.shared-footer.home-footer{padding:40px 24px 25px}.shared-footer .footer-main{grid-template-columns:1fr 1fr;gap:25px}.shared-footer .footer-identity{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:20px}.shared-footer .footer-identity img{width:125px}.shared-footer .footer-identity p{margin:0;font-size:11px}.shared-footer .footer-main h2{margin-bottom:16px}.shared-footer .footer-bottom>span:first-child{flex-basis:100%}}
+@media(max-width:360px){.shared-footer .footer-identity{display:block}.shared-footer .footer-identity p{margin-top:16px}}

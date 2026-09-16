@@ -12,6 +12,7 @@
       img.alt = name + ' cellular PVC decking texture close-up';
       document.getElementById('color-dialog-title').textContent = name;
       document.getElementById('color-dialog-sample').href = 'samples-request.html?color=' + encodeURIComponent(name);
+      document.getElementById('color-dialog-plan').href = 'plan-your-project.html?color=' + encodeURIComponent(name);
       dialog.showModal();
       document.body.style.overflow = 'hidden';
     });
