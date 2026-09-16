@@ -15,17 +15,32 @@
   function openMenu() {
     if (!mobileMenu) return;
     mobileMenu.classList.add('open');
+    if (hamburger) hamburger.setAttribute('aria-expanded', 'true');
+    mobileMenu.inert = false;
+    if (mobileClose) mobileClose.focus();
     document.body.style.overflow = 'hidden';
   }
   function closeMenu() {
     if (!mobileMenu) return;
     mobileMenu.classList.remove('open');
+    if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.inert = true;
     document.body.style.overflow = '';
   }
   if (hamburger) hamburger.addEventListener('click', openMenu);
   if (mobileClose) mobileClose.addEventListener('click', closeMenu);
   if (mobileMenu) {
+    mobileMenu.inert = true;
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', ev => {
+      if (!mobileMenu.classList.contains('open')) return;
+      if (ev.key === 'Escape') { closeMenu(); if (hamburger) hamburger.focus(); }
+      if (ev.key === 'Tab') {
+        const items = Array.from(mobileMenu.querySelectorAll('a,button')).filter(el => el.getClientRects().length);
+        if (ev.shiftKey && document.activeElement === items[0]) { ev.preventDefault(); items[items.length - 1].focus(); }
+        else if (!ev.shiftKey && document.activeElement === items[items.length - 1]) { ev.preventDefault(); items[0].focus(); }
+      }
+    });
   }
 
   // ===== Reveal on scroll =====
@@ -77,6 +92,7 @@
   const colorCounter = document.querySelector('.color-pick-counter');
   const hiddenColors = document.querySelector('input[name="selected_colors"]');
   function updateColorState() {
+    colorPicks.forEach(el => el.setAttribute('aria-pressed', String(el.classList.contains('selected'))));
     const selected = Array.from(document.querySelectorAll('.color-pick.selected'))
       .map(el => el.getAttribute('data-color'));
     if (colorCounter) colorCounter.textContent = selected.length + (selected.length === 1 ? ' color selected' : ' colors selected');
@@ -97,7 +113,13 @@
       updateColorState();
     });
   }
-  if (colorPicks.length) updateColorState();
+  if (colorPicks.length) {
+    const requestedColor = (qs.get('color') || '').toLowerCase();
+    colorPicks.forEach(el => {
+      if ((el.getAttribute('data-color') || '').toLowerCase() === requestedColor) el.classList.add('selected');
+    });
+    updateColorState();
+  }
 
   // ===== Floating dealer pill: hide when footer is in view so it never covers footer links =====
   var floatingPill = document.querySelector('.dealer-pill');

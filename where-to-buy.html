@@ -111,11 +111,11 @@
     <p style="font-family:var(--font-display);font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin:0 0 0.5rem;">Find a Dealer</p>
     <h1 style="font-family:var(--font-display);color:var(--navy);font-size:2.25rem;line-height:1.15;margin:0 0 0.75rem;">Where to Buy AmeriDex</h1>
     <p style="font-size:1.05rem;color:#444;line-height:1.55;margin:0 0 0.5rem;">
-      AmeriDex is sold and installed through authorized regional dealers. Enter your ZIP code and we will connect you with the dealer that serves your area.
+      Enter your ZIP code to check listed dealer coverage. If your area is not listed, AmeriDex can help you explore sourcing options.
     </p>
 
     <form class="ad-zip-form" id="ad-zip-form" novalidate>
-      <input type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" name="zip" id="ad-zip-input" placeholder="ZIP code" aria-label="ZIP code" required>
+      <input type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="[0-9]{5}" name="zip" id="ad-zip-input" placeholder="5-digit ZIP code" aria-label="ZIP code" aria-describedby="ad-zip-result" required>
       <button type="submit" class="btn btn-red btn-lg">Find Dealer</button>
     </form>
 
@@ -123,7 +123,7 @@
 
     <div id="ad-all-dealers" style="margin-top:3rem;">
       <h2 style="font-family:var(--font-display);color:var(--navy);font-size:1.25rem;margin:0 0 0.75rem;">All Authorized Dealers</h2>
-      <p style="color:#555;font-size:0.95rem;margin:0 0 1rem;">If you don't see your area below, contact AmeriDex directly and we'll help you source the system.</p>
+      <p style="color:#555;font-size:0.95rem;margin:0 0 1rem;">Do not see your area? <a href="contact-us.html">Get sourcing help from AmeriDex</a>. We will review your location and project before confirming availability.</p>
       <div id="ad-dealer-list" style="display:grid;gap:1rem;"></div>
     </div>
   </div>

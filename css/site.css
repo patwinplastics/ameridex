@@ -20,6 +20,16 @@
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+/* Contain wide comparison tables without hiding page content on phones. */
+.comparison-scroll { overflow-x: auto; max-width: 100%; margin: 1.5rem 0; }
+.comparison-scroll table { min-width: 660px; width: 100%; border-collapse: collapse; }
+.comparison-scroll th, .comparison-scroll td { padding: 1rem; text-align: left; vertical-align: top; border: 1px solid var(--divider); }
+.comparison-scroll th { background: var(--navy); color: white; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
 * { box-sizing: border-box; }
 
 html {
@@ -2500,6 +2510,7 @@ section { position: relative; }
 }
 .ad-zip-form input {
   flex: 1;
+  min-width: 0;
   padding: 0.85rem 1rem;
   border: 1px solid var(--divider);
   border-radius: 10px;
@@ -2509,6 +2520,10 @@ section { position: relative; }
 .ad-zip-form input:focus {
   outline: 3px solid var(--red);
   outline-offset: 1px;
+}
+@media (max-width: 540px) {
+  .ad-zip-form { flex-direction: column; width: 100%; }
+  .ad-zip-form input, .ad-zip-form button { width: 100%; box-sizing: border-box; }
 }
 .ad-no-match {
   background: var(--cream);
