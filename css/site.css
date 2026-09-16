@@ -22,6 +22,16 @@
 
 /* Contain wide comparison tables without hiding page content on phones. */
 .site-header .site-nav { min-width: 0; flex-wrap: wrap; justify-content: flex-end; }
+/* Keep reading content visible even if animation observation is delayed. */
+.js .reveal { opacity: 1 !important; transform: none !important; }
+.guide-content h1 { font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.12; margin: .8rem 0 1.3rem; color: var(--navy); }
+.guide-content h2 { font-size: clamp(1.4rem, 2.4vw, 2rem); line-height: 1.2; margin: 1.8rem 0 1rem; color: var(--navy); }
+.guide-content h3 { font-size: 1.2rem; line-height: 1.3; margin: 1.5rem 0 .8rem; }
+.guide-content p { font-size: 1rem; line-height: 1.8; margin: .9rem 0; }
+.guide-content p a:not(.btn) { text-decoration: underline; text-underline-offset: 3px; }
+.guide-content li { line-height: 1.8; margin: .5rem 0; }
+.guide-content .btn { margin-top: .7rem; }
+.mobile-menu .mobile-menu-close { display: inline-flex !important; }
 @media (max-width: 1099px) {
   .site-header .hamburger { display: inline-flex !important; }
 }
