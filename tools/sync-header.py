@@ -25,6 +25,8 @@ for p in root.rglob('*.html'):
             el[attr]=prefix+value
             if attr=='href' and u.path==p.relative_to(root).as_posix() and not u.fragment and 'brand' not in el.get('class',[]):
                 el['aria-current']='page'
+            elif attr=='href' and u.path=='blog.html' and p.relative_to(root).parts[0]=='blog':
+                el['aria-current']='location'
     skip=s.select_one('a.skip-link')
     if skip: skip.insert_after(header)
     else: s.body.insert(0,header)

@@ -23,5 +23,5 @@
     if (e.key === 'Escape' && !menu.hidden) { close(); button.focus(); }
   });
   document.addEventListener('click', e => { if (!menu.hidden && !header.contains(e.target)) close(); });
-  matchMedia('(min-width:851px)').addEventListener('change', e => { if(e.matches) close(); });
+  matchMedia('(min-width:1101px)').addEventListener('change', e => { if(e.matches) close(); });
 })();

@@ -143,3 +143,33 @@
 }
 @media(max-width:360px) { .hero-copy h1 { font-size:37px; }.hero-copy .actions { flex-direction:column; width:100%; }.color-card img { height:100px; }.color-sample-card { padding:12px; }.color-sample-card>p { font-size:20px; } }
 @media(prefers-reduced-motion:reduce) { .home-v2 *, .home-v2 *:before, .home-v2 *:after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+/* Prominent education destination, above the project-planning section. */
+.home-v2 .learning-feature{max-width:none;background:#0a2a4e;color:#fff;padding:76px max(6vw,24px);margin-bottom:80px}
+.learning-feature-inner{max-width:1408px;margin:auto}
+.learning-feature-top{display:flex;align-items:flex-end;justify-content:space-between;gap:45px;margin-bottom:42px}
+.home-v2 .learning-feature .eyebrow{color:#e8d7ba}
+.home-v2 .learning-feature h2{font-size:clamp(42px,4.5vw,64px);line-height:1.04;letter-spacing:-.04em;color:#fff}
+.learning-feature-intro{max-width:650px;font-size:17px;line-height:1.75;color:#d1dce6;margin-top:23px}
+.learning-feature-top>.action{flex-shrink:0;margin-bottom:5px}
+.learning-feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.learning-feature-card{display:flex;flex-direction:column;min-width:0;background:#f7f5f0;color:#0a2a4e!important;border-radius:5px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.learning-feature-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #0002}
+.learning-feature-image{height:225px;background:#ebe8e0;display:flex;align-items:center;justify-content:center}
+.learning-feature-image img{width:100%;height:100%;object-fit:contain}
+.learning-feature-image.seal-image img{padding:24px;mix-blend-mode:multiply}
+.learning-feature-copy{display:flex;flex-direction:column;align-items:flex-start;padding:28px;flex:1}
+.home-v2 .learning-feature-copy .eyebrow{color:#ad2637;font-size:10px}
+.learning-feature-copy h3{font-size:29px;line-height:1.14;letter-spacing:-.025em;color:#0a2a4e}
+.learning-feature-copy>p:not(.eyebrow){font-size:14px;color:#526375;line-height:1.75;margin:17px 0 22px}
+.learning-feature-copy .text-link{margin-top:auto;font-size:12px;gap:12px}
+.learning-guide-label{height:225px;background:#e8d7ba;color:#0a2a4e;padding:30px;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;border-bottom:1px solid #d6c4a7}
+.learning-guide-label>span:first-child{font:700 22px/1.25 var(--font-display);letter-spacing:.02em;align-self:flex-end}
+.learning-guide-label>span:last-child{font-size:32px}
+.learning-feature-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:32px;padding-top:24px;border-top:1px solid #456079}
+.learning-feature-bottom p{font-size:14px;color:#d1dce6}
+.learning-feature-bottom .text-link{color:#fff}
+.learning-feature :focus-visible{outline:3px solid #e8d7ba;outline-offset:5px}
+@media(max-width:1100px){.learning-feature-top{align-items:flex-start;flex-direction:column;gap:25px}.learning-feature-copy{padding:23px}.learning-feature-copy h3{font-size:25px}.learning-guide-label{padding:25px}.learning-feature-image,.learning-guide-label{height:190px}}
+@media(max-width:750px){.home-v2 .learning-feature{padding:55px 22px;margin-bottom:58px}.home-v2 .learning-feature h2{font-size:43px}.learning-feature-intro{font-size:15px}.learning-feature-grid{grid-template-columns:1fr;gap:24px}.learning-feature-image,.learning-guide-label{height:210px}.learning-feature-copy{padding:26px}.learning-feature-copy h3{font-size:29px}.learning-feature-bottom{align-items:flex-start;flex-direction:column}.learning-feature-top>.action{width:100%}}
+@media(max-width:360px){.home-v2 .learning-feature h2{font-size:37px}.learning-feature-top>.action{font-size:12px;padding:15px 12px}}
