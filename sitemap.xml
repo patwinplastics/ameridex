@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ameridex.com/</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-09-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -13,6 +13,16 @@
     <image:image>
       <image:loc>https://www.ameridex.com/assets/img/og.jpg</image:loc>
       <image:caption>AmeriDex Dryspace System brand image</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/waterproof-decking.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.ameridex.com/assets/img/diagrams/dexerdry-cross-section.png</image:loc>
+      <image:caption>AmeriDex waterproof decking cross-section with the Dexerdry seal between boards</image:caption>
     </image:image>
   </url>
   <url>
