@@ -184,3 +184,15 @@ Update the URL in `_build.py` (constant `DEALER_PORTAL_URL`) and rerun
 - Wire up Formspree endpoint (4 forms, see above).
 - Confirm the exact deck board lengths offered (currently shown as 12 / 16 /
   20 ft on `how-system-works.html`; there is a TODO comment in that file).
+
+## Lead capture (added 2026-10-18)
+
+- `js/lead-capture.js` + `css/lead-capture.css` power `form[data-lead-form]` blocks. They POST to the
+  AmeriDex Formspree inbox (`xreljrrd`) via fetch and fire `gtag('event','generate_lead',{form_type})`
+  plus the Meta Pixel `Lead` event.
+- `tools/add-lead-capture.py` (idempotent) inserts: the Project Planning Guide download on
+  `blog/planning-a-new-deck-checklist.html#guide-download`, the "Send Me This Estimate" form inside the
+  cost-page calculator, a free-samples card in every blog post, and role / project / timeline fields on
+  the sample and quote forms. Run it after adding a new blog post.
+- Guide PDF: `pdfs/ameridex-project-planning-guide.pdf` (cover image `assets/img/planning-guide-cover.jpg`).
+- Header phone link lives in `components/site-header.html`; footer email in `components/site-footer.html`.

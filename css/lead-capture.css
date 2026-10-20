@@ -1,0 +1,35 @@
+/* Lead capture blocks: planning guide, calculator estimate, blog sample card. */
+.lc-card { box-sizing:border-box; background:#fff; border:1.5px solid rgba(10,42,78,.14); border-top:4px solid #D6263A; border-radius:14px; padding:clamp(1.25rem,3vw,1.9rem); margin:2rem 0; box-shadow:0 12px 30px rgba(10,42,78,.08); color:#1d2a36; text-align:left; }
+.lc-card * { box-sizing:border-box; }
+#guide-download, #estimate-capture { scroll-margin-top:170px; }
+.lc-card .lc-eyebrow { font-family:var(--font-display,'Archivo',sans-serif); font-weight:700; font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:#D6263A; margin:0 0 .35rem; }
+.lc-card h2, .lc-card h3 { font-family:var(--font-display,'Archivo',sans-serif); color:#0A2A4E; font-size:clamp(1.3rem,2.4vw,1.7rem); line-height:1.15; margin:0 0 .5rem; font-weight:800; }
+.lc-card p { margin:0 0 1rem; line-height:1.6; color:#3c4854; }
+.lc-split { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.35fr); gap:clamp(1rem,3vw,2rem); align-items:start; }
+.lc-cover { width:100%; border-radius:8px; display:block; box-shadow:0 8px 22px rgba(10,42,78,.18); }
+.lc-grid { display:grid; grid-template-columns:1fr 1fr; gap:.8rem 1rem; }
+.lc-grid .lc-full { grid-column:1 / -1; }
+.lc-card label { display:block; font-weight:600; font-size:.88rem; color:#0A2A4E; margin-bottom:.3rem; }
+.lc-card input[type=email], .lc-card input[type=text], .lc-card select { width:100%; padding:.7rem .8rem; border:1.5px solid #c9d0d7; border-radius:8px; font:inherit; font-size:1rem; background:#fff; color:#1d2a36; }
+.lc-card input:focus, .lc-card select:focus { outline:3px solid rgba(214,38,58,.35); border-color:#D6263A; }
+.lc-card .lc-check { display:flex; gap:.6rem; align-items:flex-start; font-weight:500; font-size:.92rem; color:#3c4854; }
+.lc-card .lc-check input { margin-top:.25rem; width:18px; height:18px; flex:0 0 auto; }
+.lc-card .lc-btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; background:#D6263A; color:#fff; border:0; border-radius:6px; padding:.95rem 1.6rem; font-family:var(--font-display,'Archivo',sans-serif); font-weight:700; font-size:1rem; cursor:pointer; text-decoration:none; }
+.lc-card .lc-btn:hover { background:#b91e30; color:#fff; }
+.lc-card .lc-btn[disabled] { opacity:.7; cursor:wait; }
+.lc-card .lc-btn-outline { background:transparent; color:#0A2A4E; border:1.5px solid #0A2A4E; }
+.lc-card .lc-btn-outline:hover { background:#0A2A4E; color:#fff; }
+.lc-card .lc-fine { font-size:.82rem; color:#5b6672; margin:.7rem 0 0; }
+.lc-card .lc-status { color:#B91C1C; font-weight:700; font-size:.92rem; margin:.6rem 0 0; min-height:1px; }
+.lc-card .lc-success { outline:none; }
+.lc-card .lc-actions { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:.4rem; }
+.lc-card .lc-hp { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+.lc-sample { display:grid; grid-template-columns:minmax(0,180px) minmax(0,1fr); gap:1.25rem; align-items:center; border-top-color:#0A2A4E; }
+.lc-sample img { width:100%; border-radius:8px; display:block; }
+.lc-sample p { margin-bottom:.8rem; }
+@media (max-width:720px) {
+  .lc-split, .lc-sample { grid-template-columns:1fr; }
+  .lc-split .lc-cover { max-width:220px; }
+  .lc-sample img { max-width:180px; }
+  .lc-grid { grid-template-columns:1fr; }
+}
