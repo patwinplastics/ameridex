@@ -255,4 +255,28 @@
       <image:caption>Free 3D AmeriDex Deck Visualizer showing the Dexerdry above-joist drainage seal that keeps the space under your deck dry</image:caption>
     </image:image>
   </url>
+  <url>
+    <loc>https://www.ameridex.com/become-a-dealer.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/contractor-resources.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/plan-your-project.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/blog/dexerdry-automotive-grade-tpe-seal.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
