@@ -72,7 +72,7 @@
 <!-- Structured data (schema.org / JSON-LD) -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://www.ameridex.com/#organization","name":"AmeriDex","alternateName":["Ameri Dex","AmeriDex Dryspace","AmeriDex Decking System","AmeriDex Deck Drainage"],"legalName":"A & M Building Products","url":"https://www.ameridex.com","logo":"https://www.ameridex.com/assets/img/logo.png","image":"https://www.ameridex.com/assets/img/og.jpg","description":"AmeriDex is the integrated above-joist deck drainage system. PVC deck boards lock onto a Dexerdry seal at install, sending rain off the deck and creating a dry, finished under-deck living space. Made in the USA.","foundingDate":"2023","founder":[{"@id":"https://www.ameridex.com/#founder-ardolina"},{"@id":"https://www.ameridex.com/#founder-murphy"}],"telephone":"+1-800-217-9206","email":"sales@ameridex.com","address":{"@type":"PostalAddress","streetAddress":"1129A Industrial Parkway","addressLocality":"Brick","addressRegion":"NJ","postalCode":"08724","addressCountry":"US"},"sameAs":["https://www.facebook.com/ameridexdryspace/","https://www.youtube.com/channel/UC3Fz0TEKbLpQZefnYQNCxmg"],"knowsAbout":["above-joist deck drainage","under deck drainage system","cellular PVC decking","integrated water-diverting deck seal","new deck construction","dry under-deck living space"],"areaServed":"US","slogan":"Protect The Space Under Your Deck."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ameridex.com/"},{"@type":"ListItem","position":2,"name":"Get a Free Quote","item":"https://www.ameridex.com/get-a-free-quote.html"}]}</script>
-<link href="css/phase3.css" rel="stylesheet"/><script defer="True" src="js/project-flow.js"></script><link href="css/header.css" rel="stylesheet"/><script defer="True" src="js/header.js"></script><link href="css/footer.css" rel="stylesheet"/><link href="css/tailwind.css" rel="stylesheet"/></head>
+<link href="css/phase3.css" rel="stylesheet"/><script defer="True" src="js/project-flow.js"></script><link href="css/header.css" rel="stylesheet"/><script defer="True" src="js/header.js"></script><link href="css/footer.css" rel="stylesheet"/><link href="css/tailwind.css" rel="stylesheet"/><script defer="" src="js/form-submit.js"></script></head>
 <body><header class="home-header shared-header">
 <a aria-label="AmeriDex home" class="brand" href="index.html"><img alt="AmeriDex" height="134" src="assets/img/logo.png" width="800"/></a>
 <nav aria-label="Primary navigation" class="home-nav">
@@ -126,7 +126,7 @@
 <span class="step-connector"></span>
 <span class="step-pill"><span class="num">3</span> Contact</span>
 </div>
-<form action="https://formspree.io/f/xaqzdzjb" class="form" enctype="multipart/form-data" method="POST">
+<form action="https://formspree.io/f/xaqzdzjb" class="form" data-ads-event="ads_conversion_Request_quote_1" data-ajax-submit="" data-lead-name="Quote Request" data-thanks="thanks-quote.html" enctype="multipart/form-data" method="POST">
 <input name="form_type" type="hidden" value="quote"/>
 <div class="form-section" data-dealer-hide="">
 <h3>1. Project Basics</h3>
@@ -255,29 +255,5 @@
 </div>
 <div class="footer-bottom"><span>© 2026 AmeriDex. All rights reserved.</span><nav aria-label="Legal and warranty"><a href="how-system-works.html#warranty">Limited warranty</a><a href="warranty-registration.html">Register warranty</a><a href="privacy-policy.html">Privacy policy</a><a href="terms-and-conditions.html">Terms &amp; conditions</a></nav><span>Made in the USA.</span></div>
 </footer>
-<!-- Meta Pixel Lead event on form submit -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    if (typeof fbq !== 'function') return;
-    document.querySelectorAll('form').forEach(function (form) {
-      form.addEventListener('submit', function () {
-        fbq('track', 'Lead');
-      });
-    });
-  });
-  </script>
-<!-- End Meta Pixel Lead event -->
-<!-- Google Ads conversion on form submit -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    if (typeof gtag !== 'function') return;
-    document.querySelectorAll('form').forEach(function (form) {
-      form.addEventListener('submit', function () {
-        gtag('event', 'ads_conversion_Request_quote_1', {});
-      });
-    });
-  });
-  </script>
-<!-- End Google Ads conversion -->
 </body>
 </html>
