@@ -15,6 +15,8 @@ for p in root.rglob('*.html'):
     s=BeautifulSoup(p.read_text(),'html.parser')
     if not s.body or not s.head: continue
     prefix='../'*(len(p.relative_to(root).parts)-1)
+    # 404.html is served at any missing path, so its links must be root-relative.
+    if p.relative_to(root).as_posix()=='404.html': prefix='/'
     for old in list(s.select('header.site-header, header.home-header, .trust-topbar, .mobile-menu')):
         old.decompose()
     header=BeautifulSoup(template,'html.parser').header

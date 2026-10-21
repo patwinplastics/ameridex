@@ -12,6 +12,8 @@ for p in root.rglob('*.html'):
     s = BeautifulSoup(p.read_text(), 'html.parser')
     if not s.body or not s.head: continue
     prefix = '../' * (len(p.relative_to(root).parts)-1)
+    # 404.html is served at any missing path, so its links must be root-relative.
+    if p.relative_to(root).as_posix()=='404.html': prefix='/'
     for old in list(s.select('footer.site-footer, footer.home-footer, .dealer-pill')):
         old.decompose()
     footer = BeautifulSoup(template,'html.parser').footer
