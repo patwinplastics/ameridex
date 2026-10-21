@@ -1,0 +1,6 @@
+/* Static replacement for the Tailwind Play CDN script (cdn.tailwindcss.com).
+   The CDN only contributed Tailwind's preflight reset plus a handful of
+   utilities; this file reproduces that output at build time. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

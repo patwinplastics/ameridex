@@ -184,3 +184,19 @@ Update the URL in `_build.py` (constant `DEALER_PORTAL_URL`) and rerun
 - Wire up Formspree endpoint (4 forms, see above).
 - Confirm the exact deck board lengths offered (currently shown as 12 / 16 /
   20 ft on `how-system-works.html`; there is a TODO comment in that file).
+
+## Tailwind (static, replaced the CDN script on 2026-10-21)
+
+Pages used to load the Tailwind Play CDN (`cdn.tailwindcss.com`) at runtime.
+It is now a committed static file, `css/tailwind.css`, linked at the end of
+each page `<head>`. The CDN only contributed Tailwind's preflight reset plus a
+few utilities, so the static build reproduces it exactly (verified with
+before/after full-page screenshots of every page at 390 and 1440 px).
+
+Rebuild after adding pages or new class names, then commit the result:
+
+    tools/build-tailwind.sh
+
+Config lives in `tools/tailwind/` (pinned to tailwindcss 3.4.17, the version
+the CDN served). New pages should link `css/tailwind.css` (with `../` from
+`blog/` or `dealers/`) instead of the CDN script.
