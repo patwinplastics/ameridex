@@ -405,21 +405,26 @@
     var btn = form.querySelector('button[type="submit"]');
     var original = btn ? btn.textContent : '';
     if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; }
+    var accepted = false;
     fetch(form.getAttribute('action'), {
       method: 'POST',
       body: new FormData(form),
       headers: { Accept: 'application/json' }
     }).then(function (res) {
       if (res.ok) {
-        if (window.fbq) { fbq('track', 'Lead', { content_name: 'Dealer Application' }); }
+        accepted = true;
+        try { if (window.fbq) { fbq('track', 'Lead', { content_name: 'Dealer Application' }); } } catch (err) {}
         form.innerHTML = '<h3 style="color:#fff;">Application received.</h3>' +
           '<p class="helper" style="font-size:1.02rem;color:rgba(255,255,255,0.8);">Thank you. We\'ll be in touch shortly with your dealer pricing, samples, and territory availability.</p>';
       } else {
         throw new Error('Submit failed');
       }
     }).catch(function () {
+      // Any failure (network, reCAPTCHA, plan or validation error): fall back to a
+      // normal post to the same Formspree endpoint so the application is not lost.
+      if (accepted) return;
       if (btn) { btn.textContent = original; btn.disabled = false; }
-      alert('Something went wrong. Please call 1-800-217-9206 or email sales@ameridex.com.');
+      HTMLFormElement.prototype.submit.call(form);
     });
   });
 })();
