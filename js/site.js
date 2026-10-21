@@ -65,9 +65,9 @@
     const h1 = document.querySelector('[data-quote-h1]');
     if (h1) h1.textContent = 'Become an AmeriDex Dealer';
     const sub = document.querySelector('[data-quote-sub]');
-    if (sub) sub.textContent = "Tell us about your business. We'll get back to you within one business day.";
+    if (sub) sub.textContent = "Tell us about your business. We'll get back to you within 1-2 business days.";
     const cardSub = document.querySelector('[data-quote-cardsub]');
-    if (cardSub) cardSub.textContent = "Fill out the form below and our dealer team will be in touch within 1 business day.";
+    if (cardSub) cardSub.textContent = "Fill out the form below and our dealer team will be in touch within 1-2 business days.";
     document.querySelectorAll('[data-dealer-hide]').forEach(el => { el.style.display = 'none'; });
     const businessBlock = document.querySelector('[data-dealer-show]');
     if (businessBlock) businessBlock.style.display = '';
