@@ -47,3 +47,10 @@ body[data-theme="dark"] .shared-header .brand { background:#f7f5f0; border-radiu
  .shared-header .header-samples { display:none; }
  .shared-header .theme-switch { padding:9px; }
 }
+/* Tap-to-call and quote button (desktop header). */
+.shared-header .header-phone { font-size:13px; font-weight:700; white-space:nowrap; padding:12px 2px; }
+.shared-header .header-quote { display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--header-ink); color:var(--header-ink); padding:15px 18px; border-radius:4px; font-size:13px; font-weight:700; line-height:1.4; white-space:nowrap; }
+.shared-header .header-quote:hover { background:var(--header-ink); color:var(--header-bg); text-decoration:none; }
+@media(max-width:1300px) { .shared-header .header-phone { display:none; } }
+@media(max-width:1200px) { .shared-header .header-quote { padding:11px 13px; } }
+@media(max-width:1100px) { .shared-header .header-quote { display:none; } }

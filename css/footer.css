@@ -17,3 +17,16 @@ body[data-theme=dark] .shared-footer{--foot-bg:#102c43;--foot-ink:#f6f4ef;--foot
 body[data-theme=dark] .shared-footer .footer-identity>a{background:#f7f5f0;padding:6px 10px;border-radius:4px}
 @media(max-width:700px){.shared-footer.home-footer{padding:40px 24px 25px}.shared-footer .footer-main{grid-template-columns:1fr 1fr;gap:25px}.shared-footer .footer-identity{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:20px}.shared-footer .footer-identity img{width:125px}.shared-footer .footer-identity p{margin:0;font-size:11px}.shared-footer .footer-main h2{margin-bottom:16px}.shared-footer .footer-bottom>span:first-child{flex-basis:100%}}
 @media(max-width:360px){.shared-footer .footer-identity{display:block}.shared-footer .footer-identity p{margin-top:16px}}
+/* Mobile sticky action bar: shown where the desktop nav collapses, hidden on lead-form pages. */
+.shared-footer .mobile-cta-bar{display:none}
+@media(max-width:1100px){
+.shared-footer .mobile-cta-bar{display:grid;grid-template-columns:0.8fr 1.1fr 1.1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:100;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:#f7f5f0;border-top:1px solid #dcdedb;box-shadow:0 -6px 16px #0a2a4e1f;font-family:Inter,system-ui,sans-serif}
+.shared-footer .mobile-cta-bar a{display:flex;align-items:center;justify-content:center;min-height:44px;margin:0;padding:0 6px;border-radius:4px;font-size:14px;font-weight:700;line-height:1.2;text-align:center;text-decoration:none;white-space:nowrap}
+.shared-footer .mobile-cta-bar .mcta-call{border:1px solid #0a2a4e;color:#0a2a4e;background:#fff}
+.shared-footer .mobile-cta-bar .mcta-samples{background:#d6263a;color:#fff}
+.shared-footer .mobile-cta-bar .mcta-quote{background:#0a2a4e;color:#fff}
+body{padding-bottom:calc(60px + env(safe-area-inset-bottom))}
+body:has(form[action*="formspree.io"]){padding-bottom:0}
+body:has(form[action*="formspree.io"]) .shared-footer .mobile-cta-bar{display:none}
+}
+@media(max-width:340px){.shared-footer .mobile-cta-bar a{font-size:13px}}
