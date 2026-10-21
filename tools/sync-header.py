@@ -32,9 +32,10 @@ for p in root.rglob('*.html'):
     skip=s.select_one('a.skip-link')
     if skip: skip.insert_after(header)
     else: s.body.insert(0,header)
-    for el in list(s.select('link[href$="css/header.css"],script[src$="js/header.js"]')): el.decompose()
+    for el in list(s.select('link[href$="css/header.css"],script[src$="js/header.js"],script[src$="js/track-clicks.js"]')): el.decompose()
     s.head.append(s.new_tag('link',rel='stylesheet',href=prefix+'css/header.css'))
     s.head.append(s.new_tag('script',src=prefix+'js/header.js',defer=True))
+    s.head.append(s.new_tag('script',src=prefix+'js/track-clicks.js',defer=True))
     p.write_text(str(s))
     count+=1
 print(f'Synchronized shared navigation across {count} pages.')
