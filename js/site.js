@@ -74,6 +74,12 @@
     const formType = document.querySelector('input[name="form_type"]');
     if (formType && formType.value === 'quote') formType.value = 'quote_dealer_inquiry';
   }
+  // ?zip=12345 (from Where to Buy) pre-fills an empty ZIP field on lead forms.
+  const qsZip = (qs.get('zip') || '').trim();
+  if (/^\d{5}$/.test(qsZip)) {
+    const zipField = document.querySelector('form[action*="formspree.io"] input[name="zip"]');
+    if (zipField && !zipField.value) zipField.value = qsZip;
+  }
 
   // ===== Samples request: size radio cards (visual selection) =====
   document.querySelectorAll('.size-radio').forEach(card => {

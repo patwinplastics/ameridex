@@ -233,7 +233,7 @@
           '<div class="ad-no-match" style="margin-top:1.25rem;">' +
           '<h4>No listed dealer matched that ZIP.</h4>' +
           '<p style="margin:0 0 0.75rem;color:#444;">AmeriDex will handle your request directly. Browse the full dealer list below if you\'d like to source through a specific location anyway.</p>' +
-          '<a class="btn btn-red" href="get-a-free-quote.html">Continue with AmeriDex</a> ' +
+          '<a class="btn btn-red" href="get-a-free-quote.html?zip=' + encodeURIComponent(zip) + '">Continue with AmeriDex</a> ' +
           '<a class="btn btn-outline" href="contact-us.html?reason=no-dealer&zip=' + encodeURIComponent(zip) + '" style="margin-left:0.5rem;">Contact AmeriDex</a>' +
           '</div>';
       }
