@@ -71,6 +71,8 @@
     document.querySelectorAll('[data-dealer-hide]').forEach(el => { el.style.display = 'none'; });
     const businessBlock = document.querySelector('[data-dealer-show]');
     if (businessBlock) businessBlock.style.display = '';
+    const formType = document.querySelector('input[name="form_type"]');
+    if (formType && formType.value === 'quote') formType.value = 'quote_dealer_inquiry';
   }
 
   // ===== Samples request: size radio cards (visual selection) =====
