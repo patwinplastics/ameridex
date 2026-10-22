@@ -96,3 +96,11 @@ body[data-theme="dark"] .crumbs li, body[data-theme="dark"] .crumbs [aria-curren
   .shared-header .home-nav { gap:8px; }
   .shared-header .header-actions { gap:8px; }
 }
+
+/* Room for the Install help item (Oct 2026). On laptop widths the Dark/Light
+   switch steps aside (it stays in the mobile header) so all nav items, the
+   phone number and both buttons fit on one row without horizontal scroll. */
+@media(max-width:1700px) and (min-width:1101px) { .shared-header .theme-switch { display:none; } }
+@media(max-width:1500px) and (min-width:1101px) { .shared-header:has(.ad-store-chip) .header-quote { display:none; } }
+@media(max-width:1660px) and (min-width:1521px) { .shared-header .home-nav { gap:16px; } .shared-header.home-header { gap:20px; } }
+@media(max-width:1960px) and (min-width:1101px) { .shared-header:has(.ad-store-chip) .header-phone, .shared-header:has(.ad-store-chip) .theme-switch { display:none; } }

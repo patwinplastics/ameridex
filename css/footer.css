@@ -43,6 +43,7 @@ body:has(form[action*="formspree.io"]) .shared-footer .mobile-cta-bar{display:no
 .shared-footer .fh-samples{background:#d6263a;color:#fff!important}
 .shared-footer .fh-quote{background:#0a2a4e;color:#fff!important}
 .shared-footer .fh-call{border:1px solid #0a2a4e;color:#0a2a4e!important;background:#fff}
+.shared-footer .fh-install{border:1px solid #0a2a4e;color:#0a2a4e!important;background:transparent}.shared-footer .fh-install:hover{background:#fff}
 .shared-footer .fh-samples:hover{background:#b91e30}.shared-footer .fh-quote:hover{background:#123c69}
 body.home-v2 .shared-footer .footer-help,body:has(form[action*="formspree.io"]) .shared-footer .footer-help{display:none}
 @media(max-width:900px){.shared-footer .footer-help{grid-template-columns:1fr}}
