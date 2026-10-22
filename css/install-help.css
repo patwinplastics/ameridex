@@ -1,0 +1,40 @@
+/* DexerDry install help page. Scoped to .ih so it cannot affect other pages. */
+.ih-search{background:#fff;border:1px solid var(--p3-line);border-radius:6px;padding:26px;margin-top:30px;box-shadow:0 10px 30px rgba(10,42,78,.06)}
+.ih-search label{display:block;font:700 15px/1.3 Archivo,Inter,sans-serif;margin-bottom:10px;color:var(--p3-ink)}
+.ih-field{position:relative}
+.ih-field input{width:100%;font:500 18px/1.4 Inter,system-ui,sans-serif;padding:16px 48px 16px 18px;border:2px solid #0a2a4e;border-radius:5px;background:#fff;color:#0a2a4e;-webkit-appearance:none;appearance:none}
+.ih-field input:focus{outline:3px solid #d6263a;outline-offset:2px}
+.ih-field input::-webkit-search-cancel-button{display:none}
+.ih-clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);border:0;background:transparent;font:700 22px/1 Inter,sans-serif;color:#526375;cursor:pointer;padding:6px 10px;border-radius:4px}
+.ih-hint{font-size:13px;color:var(--p3-muted);margin:10px 0 0!important}
+.ih-hint button{border:0;background:none;padding:0;font:inherit;color:#0a2a4e;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.ih-cats{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0;border:0}
+.ih-cats legend{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#61717c;margin-bottom:8px;padding:0;width:100%}
+.ih-chip{border:1px solid #bac4cd;background:#fff;color:#0a2a4e;border-radius:999px;padding:7px 14px;font:600 13px/1.3 Inter,system-ui,sans-serif;cursor:pointer;text-transform:capitalize}
+.ih-chip[aria-pressed="true"]{background:#0a2a4e;border-color:#0a2a4e;color:#fff}
+.ih-chip .n{opacity:.7;font-weight:500;margin-left:4px}
+.ih-status{font-size:14px;color:var(--p3-muted);margin:0 0 14px!important;min-height:1.4em}
+.ih-list{display:flex;flex-direction:column;gap:10px}
+.ih-item{background:#fff;border:1px solid var(--p3-line);border-radius:5px}
+.ih-item[open]{border-color:#0a2a4e;box-shadow:0 6px 22px rgba(10,42,78,.08)}
+.ih-item summary{list-style:none;cursor:pointer;padding:18px 54px 18px 20px;position:relative;display:block}
+.ih-item summary::-webkit-details-marker{display:none}
+.ih-item summary::after{content:"+";position:absolute;right:20px;top:18px;font:700 22px/1 Inter,sans-serif;color:#d6263a}
+.ih-item[open] summary::after{content:"\2212"}
+.ih-item summary:focus-visible{outline:3px solid #d6263a;outline-offset:-3px;border-radius:5px}
+.ih-q{display:block;font:700 18px/1.3 Archivo,Inter,sans-serif;color:#0a2a4e}
+.ih-short{display:block;font-size:15px;color:var(--p3-muted);margin-top:6px}
+.ih-cat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#61717c;margin-top:8px}
+.ih-body{padding:0 20px 20px;border-top:1px solid var(--p3-line);margin:0 20px 0 20px;padding:16px 0 18px}
+.ih-body p{font-size:15px;margin:0 0 12px}
+.ih-watch{display:inline-flex;align-items:center;gap:8px;font:700 14px/1.4 Inter,sans-serif;color:#b91e30!important;text-decoration:none}
+.ih-watch:hover{text-decoration:underline}
+.ih-watch small{font-weight:500;color:var(--p3-muted)}
+.ih-more{margin-top:16px}
+.ih-empty{background:#fff;border:1px dashed #bac4cd;border-radius:5px;padding:24px}
+.ih-empty h3{font-size:20px}
+.ih-note{font-size:13px}
+@media(max-width:700px){.ih-search{padding:18px}.ih-field input{font-size:17px;padding:14px 44px 14px 14px}.ih-q{font-size:16.5px}.ih-item summary{padding:16px 46px 16px 16px}.ih-item summary::after{right:16px;top:16px}.ih-body{margin:0 16px}.p3-intro{padding:40px 0 30px}}
+.ih .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.ih-watch{flex-wrap:wrap;column-gap:8px;row-gap:2px}
+@media(max-width:700px){.ih-cats{min-width:0;max-width:100%;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px;scrollbar-width:thin}.ih-cats legend{position:sticky;left:0}.ih-chip{flex:0 0 auto}.ih-watch small{flex-basis:100%}}
