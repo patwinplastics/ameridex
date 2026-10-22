@@ -159,6 +159,20 @@
           font-weight: 700;
         }
         .about-body .founders-grid p { margin: 0; }
+        .about-body .team-photo {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr);
+          gap: 1rem;
+          margin: 1.25rem 0 1.75rem;
+          max-width: 100%;
+        }
+        .about-body .team-photo picture { display: block; max-width: 420px; width: 100%; margin: 0 auto; }
+        .about-body .team-photo img {
+          display: block; width: 100%; height: auto;
+          border-radius: 12px;
+          box-shadow: 0 12px 34px rgba(10,42,78,0.16);
+        }
+        .about-body .team-photo figcaption { max-width: 420px; width: 100%; margin: 0 auto; text-align: center; font-size: 0.95rem; line-height: 1.5; color: var(--navy); }
       </style>
 <h2>A quick hello</h2>
 <p>Thanks for stopping by. If you are here, you probably have a deck, or a deck you want to build, and a space underneath that could be so much more than a wet patch of pavers. That is exactly the problem we started this company to solve.</p>
@@ -173,6 +187,13 @@
 <p>The result is a single integrated deck system that ships as one product, installs as one trade, and is warranted as one assembly. There is no separate drainage manufacturer, no field-applied sealant, no second trade hanging trays underneath, and no split warranty.</p>
 <h2 id="team">Meet the team</h2>
 <p>AmeriDex is run by people with deep roots in decks, framing, and building products.</p>
+<figure class="team-photo">
+<picture>
+<source sizes="(max-width: 460px) 92vw, 420px" srcset="assets/img/team/ameridex-team-trade-show-600.webp 600w, assets/img/team/ameridex-team-trade-show-900.webp 900w" type="image/webp"/>
+<img alt="AmeriDex founders John Ardolina and Jim Murphy at a trade show booth with the Dexerdry display" decoding="async" height="890" loading="lazy" sizes="(max-width: 460px) 92vw, 420px" src="assets/img/team/ameridex-team-trade-show-600.jpg" srcset="assets/img/team/ameridex-team-trade-show-600.jpg 600w, assets/img/team/ameridex-team-trade-show-900.jpg 900w" width="600"/>
+</picture>
+<figcaption>Founders, John Ardolina on the left and Jim Murphy on the right.</figcaption>
+</figure>
 <div class="founders-grid">
 <div>
 <h3>John Ardolina, Co-Founder</h3>
