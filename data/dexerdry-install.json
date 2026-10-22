@@ -895,7 +895,7 @@
    "answer_html": "<p><strong>Early, before rain or debris gets into the holes.</strong></p>",
    "keywords": [
     "plugs",
-    "cortex",
+    "starborn",
     "rain"
    ],
    "category": "fastening",
@@ -2319,7 +2319,7 @@
    "num": "qa-083",
    "question": "What do I drive the screws with?",
    "alt_questions": [
-    "Which bit do I use for the Cortex screws?"
+    "Which bit do I use for the Starborn screws?"
    ],
    "short_answer": "Use an impact driver with the bit supplied in the box of screws.",
    "answer": "Use an impact driver with the bit supplied in the box of screws. Video 08, 2:28.",
@@ -2328,7 +2328,7 @@
     "impact driver",
     "bit",
     "screws",
-    "cortex"
+    "starborn"
    ],
    "category": "fastening",
    "video_url": "https://www.youtube.com/watch?v=HY7UuQr2yV8&t=148s",
@@ -2347,16 +2347,16 @@
    "question": "What screws and plugs are used?",
    "alt_questions": [
     "Which screws for DexerDry?",
-    "Is Cortex required?"
+    "Which screws are required for the warranty?"
    ],
-   "short_answer": "The videos use top mount screws with color matched plugs, shown as the TimberTech Cortex Hidden Fastening System; the PDF recommends Cortex or approved top mount deck screws.",
-   "answer": "The videos use top mount screws with color matched plugs, shown as the TimberTech Cortex Hidden Fastening System; the PDF recommends Cortex or approved top mount deck screws. This gives the hidden fastener look (Video 04, 4:50; Video 09, 0:12). Will King's crew uses a 2 1/2 inch Cortex box (Video 11, visual 3:52). The FAQ also names Starborn as an option.",
-   "answer_html": "<p><strong>The videos use top mount screws with color matched plugs, shown as the TimberTech Cortex Hidden Fastening System; the PDF recommends Cortex or approved top mount deck screws.</strong></p><p>This gives the hidden fastener look (Video 04, 4:50; Video 09, 0:12). Will King's crew uses a 2 1/2 inch Cortex box (Video 11, visual 3:52). The FAQ also names Starborn as an option.</p>",
+   "short_answer": "Use top mount screws with color matched plugs: Starborn epoxy-coated screws or stainless steel screws and plugs.",
+   "answer": "Use top mount screws with color matched plugs: Starborn epoxy-coated screws or stainless steel screws and plugs. Hidden fastener clips cannot be used, because the DexerDry flange sits in the board groove. The plugs give a clean, finished look (Video 04, 4:50; Video 09, 0:12). AmeriDex warranty coverage requires these approved fasteners, so use them as specified.",
+   "answer_html": "<p><strong>Use top mount screws with color matched plugs: Starborn epoxy-coated screws or stainless steel screws and plugs.</strong></p><p>Hidden fastener clips cannot be used, because the DexerDry flange sits in the board groove. The plugs give a clean, finished look (Video 04, 4:50; Video 09, 0:12). AmeriDex warranty coverage requires these approved fasteners, so use them as specified.</p>",
    "keywords": [
-    "cortex",
+    "starborn",
     "screws",
     "plugs",
-    "starborn",
+    "stainless",
     "top mount"
    ],
    "category": "fastening",
