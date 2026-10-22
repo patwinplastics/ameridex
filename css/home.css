@@ -166,6 +166,17 @@
 .learning-guide-label{height:225px;background:#e8d7ba;color:#0a2a4e;padding:30px;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;border-bottom:1px solid #d6c4a7}
 .learning-guide-label>span:first-child{font:700 22px/1.25 var(--font-display);letter-spacing:.02em;align-self:flex-end}
 .learning-guide-label>span:last-child{font-size:32px}
+.learning-latest-card{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);background:#f7f5f0;color:#0a2a4e!important;border-radius:5px;overflow:hidden;margin-bottom:24px;transition:transform .2s,box-shadow .2s}
+.learning-latest-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #0002}
+.learning-latest-image{min-height:320px;background:#ebe8e0}
+.learning-latest-image img{width:100%;height:100%;object-fit:cover;display:block}
+.learning-latest-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:40px 44px}
+.home-v2 .learning-latest-copy .eyebrow{color:#ad2637;font-size:10px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.learning-latest-badge{background:#ad2637;color:#fff;padding:4px 9px;border-radius:3px;letter-spacing:.12em}
+.learning-latest-copy h3{font-size:clamp(26px,2.4vw,34px);line-height:1.14;letter-spacing:-.025em;color:#0a2a4e;margin-top:6px}
+.learning-latest-copy>p:not(.eyebrow){font-size:15px;color:#526375;line-height:1.75;margin:17px 0 24px}
+.learning-latest-copy .text-link{font-size:12px;gap:12px}
+@media(max-width:900px){.learning-latest-sep{display:none}.learning-latest-card{grid-template-columns:1fr}.learning-latest-image{min-height:0;height:240px}.learning-latest-copy{padding:26px}}
 .learning-feature-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:32px;padding-top:24px;border-top:1px solid #456079}
 .learning-feature-bottom p{font-size:14px;color:#d1dce6}
 .learning-feature-bottom .text-link{color:#fff}
