@@ -2970,3 +2970,18 @@ section { position: relative; }
   .dealer-content-grid .ad-dealer-actions{display:flex;flex-direction:column;align-items:stretch}
   .dealer-content-grid .btn{max-width:100%;white-space:normal;text-align:center}
 }
+
+/* ==========================================================================
+   Round 2 (Oct 2026): narrow-phone overflow guards
+   Grid children and form controls may shrink below their intrinsic width,
+   and wide data tables scroll inside their own box instead of the page.
+   ========================================================================== */
+.grid-2 > *, .grid-3 > *, .form-row > *, .form-section, .form-card, .form { min-width: 0; }
+.form input, .form select, .form textarea { max-width: 100%; min-width: 0; box-sizing: border-box; }
+.form input[type="date"], .form input[type="file"] { width: 100%; }
+@media (max-width: 700px) {
+  main table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+.form { grid-template-columns: minmax(0, 1fr); }
+.form > * { min-width: 0; }
+.form .btn { max-width: 100%; white-space: normal; text-align: center; }

@@ -54,3 +54,29 @@ body[data-theme="dark"] .shared-header .brand { background:#f7f5f0; border-radiu
 @media(max-width:1300px) { .shared-header .header-phone { display:none; } }
 @media(max-width:1200px) { .shared-header .header-quote { padding:11px 13px; } }
 @media(max-width:1100px) { .shared-header .header-quote { display:none; } }
+/* Dealer "My Store" chip mounted in the action row by js/dealer-routing.js. */
+.shared-header .ad-store-chip { margin-left:0; }
+.shared-header .ad-store-chip-button { color:#0a2a4e; }
+.shared-header .ad-store-chip-pop { color:#0a2a4e; }
+.shared-header .ad-store-chip-pop a { color:#0a2a4e; }
+/* Below 1100px the chip stays hidden (css/site.css) and the dealer banner shows instead. */
+/* Visible breadcrumb trail, rendered from JSON-LD by tools/sync-breadcrumbs.py. */
+.crumbs { background:#f7f5f0; border-top:1px solid #dcdedb; border-bottom:1px solid #dcdedb; padding:10px max(4vw,24px); font-family:'Inter',system-ui,sans-serif; font-size:13px; line-height:1.5; }
+.crumbs ol { list-style:none; margin:0 auto; padding:0; display:flex; flex-wrap:wrap; align-items:center; gap:4px 0; max-width:1450px; }
+.crumbs li { display:inline-flex; align-items:center; color:#4f5b63; min-width:0; }
+.crumbs li + li::before { content:"/"; margin:0 9px; color:#8a949a; }
+.crumbs a { color:#0a2a4e; text-decoration:underline; text-underline-offset:3px; font-weight:600; }
+.crumbs a:hover { color:#b91e30; }
+.crumbs [aria-current="page"] { color:#4f5b63; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:60vw; }
+body[data-theme="dark"] .crumbs { background:#102c43; border-color:#3b5362; }
+body[data-theme="dark"] .crumbs a { color:#f6f4ef; }
+body[data-theme="dark"] .crumbs li, body[data-theme="dark"] .crumbs [aria-current="page"] { color:#bfccd3; }
+@media(max-width:620px) { .crumbs { padding:8px 16px; font-size:12px; } }
+/* Make room for the chip so the action row never pushes past the viewport. */
+@media(max-width:1640px) { .shared-header:has(.ad-store-chip) .header-phone { display:none; } }
+@media(max-width:1360px) { .shared-header:has(.ad-store-chip) .theme-switch { display:none; } .shared-header:has(.ad-store-chip) .home-nav { gap:14px; } }
+@media(max-width:1250px) { .shared-header:has(.ad-store-chip) .header-quote { display:none; } }
+/* Laptop widths (1200-1420): tighten spacing so the full action row fits. */
+@media(max-width:1420px) and (min-width:1101px) { .shared-header.home-header { gap:20px; } .shared-header .home-nav { gap:16px; } .shared-header .header-actions { gap:10px; } }
+@media(max-width:1300px) and (min-width:1101px) { .shared-header .home-nav { gap:13px; } .shared-header .brand img { width:180px; } }
+@media(max-width:1640px) and (min-width:1101px) { .shared-header:has(.ad-store-chip).home-header { gap:20px; } .shared-header:has(.ad-store-chip) .home-nav { gap:16px; } .shared-header:has(.ad-store-chip) .header-actions { gap:10px; } }

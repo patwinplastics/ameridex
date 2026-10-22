@@ -190,7 +190,10 @@
     if (existing) existing.parentNode.removeChild(existing);
     if (!dealer) return;
 
-    var header = document.querySelector('.site-header .site-header-inner');
+    // Mount point: the shared header's action row (every page since the
+    // shared-header rollout). Falls back to the legacy .site-header markup.
+    var header = document.querySelector('.shared-header .header-actions') ||
+                 document.querySelector('.site-header .site-header-inner');
     if (!header) return;
 
     var isSuggested = state === 'suggested';
@@ -240,7 +243,7 @@
         '<div class="ad-store-chip-pop-actions">' + popActions + '</div>' +
       '</div>';
 
-    var cta = header.querySelector('.site-header-cta');
+    var cta = header.querySelector('.site-header-cta') || header.firstElementChild;
     if (cta) header.insertBefore(wrap, cta); else header.appendChild(wrap);
 
     var btn = wrap.querySelector('.ad-store-chip-button');

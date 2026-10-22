@@ -211,3 +211,16 @@ requires the usual steps: add `blog/<slug>.html` and its card in `blog.html`
 go to the card listed first. Do not hand-edit the block between the
 `LATEST-POST:START` and `LATEST-POST:END` markers in `index.html`. If a card
 can't be parsed, the script stops the deploy and leaves the live site as is.
+
+## Round 2 additions (Oct 2026)
+
+- Visible breadcrumbs: `tools/sync-breadcrumbs.py` renders a trail right after
+  `<main>` from each page's `BreadcrumbList` JSON-LD, between
+  `<!-- BREADCRUMB:START -->` / `<!-- BREADCRUMB:END -->`. It also runs during the
+  Pages deploy (called from `tools/update_homepage_latest_post.py`), so a new post
+  only needs correct BreadcrumbList JSON-LD. Run order when syncing locally:
+  `sync-header.py`, `sync-footer.py`, then `sync-breadcrumbs.py`.
+- Footer template now opens with a "Questions about your deck? Talk to us." help
+  band (samples, quote, call). Hidden on the homepage and on Formspree form pages.
+- Homepage: goal picker (#start), "What happens after you ask for a quote"
+  (#what-happens), people/contact section, four extra FAQs (also in FAQPage JSON-LD).

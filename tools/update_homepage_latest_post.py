@@ -132,5 +132,19 @@ def main():
         print(f"Homepage already features: {newest['title']} ({newest['date_text']})")
 
 
+def refresh_breadcrumbs():
+    """Also runs in the Pages deploy: rebuild visible breadcrumbs from each
+    page's JSON-LD so a post copied from a template never ships a stale trail.
+    Best effort only; a failure here must never block the deploy."""
+    try:
+        import runpy
+        runpy.run_path(str(ROOT / "tools" / "sync-breadcrumbs.py"), run_name="__main__")
+    except SystemExit:
+        pass
+    except Exception as exc:  # pragma: no cover
+        print(f"breadcrumb refresh skipped: {exc}")
+
+
 if __name__ == "__main__":
     main()
+    refresh_breadcrumbs()

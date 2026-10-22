@@ -30,3 +30,21 @@ body:has(form[action*="formspree.io"]){padding-bottom:0}
 body:has(form[action*="formspree.io"]) .shared-footer .mobile-cta-bar{display:none}
 }
 @media(max-width:340px){.shared-footer .mobile-cta-bar a{font-size:13px}}
+
+/* Pre-footer help band: consistent next step at the end of every page. Hidden on the
+   homepage (it ends with its own CTA) and on lead-form pages (no distractions). */
+.shared-footer .footer-help{display:grid;grid-template-columns:minmax(0,1.4fr) auto;gap:28px;align-items:center;margin:-60px calc(-1 * max(6vw,24px)) 50px;padding:38px max(6vw,24px);background:#efeae0;border-bottom:1px solid #dcdedb;color:#0a2a4e}
+.shared-footer .footer-help h2{font-family:Archivo,Inter,sans-serif;font-weight:800;font-size:clamp(22px,2.2vw,30px);line-height:1.2;letter-spacing:-.02em;margin:6px 0 10px;color:#0a2a4e}
+.shared-footer .footer-help-kicker{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#ad2637}
+.shared-footer .footer-help-copy>p:not(.footer-help-kicker){font-size:15px;line-height:1.7;color:#3f4b54;margin:0}
+.shared-footer .footer-help-copy a{color:#0a2a4e;font-weight:700;text-decoration:underline;text-underline-offset:3px;display:inline;margin:0}
+.shared-footer .footer-help-actions{display:flex;flex-wrap:wrap;gap:10px}
+.shared-footer .footer-help-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;margin:0;padding:0 18px;border-radius:4px;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap}
+.shared-footer .fh-samples{background:#d6263a;color:#fff!important}
+.shared-footer .fh-quote{background:#0a2a4e;color:#fff!important}
+.shared-footer .fh-call{border:1px solid #0a2a4e;color:#0a2a4e!important;background:#fff}
+.shared-footer .fh-samples:hover{background:#b91e30}.shared-footer .fh-quote:hover{background:#123c69}
+body.home-v2 .shared-footer .footer-help,body:has(form[action*="formspree.io"]) .shared-footer .footer-help{display:none}
+@media(max-width:900px){.shared-footer .footer-help{grid-template-columns:1fr}}
+@media(max-width:700px){.shared-footer .footer-help{margin:-40px -24px 36px;padding:30px 24px}}
+@media(max-width:620px){.shared-footer .footer-help-actions{flex-direction:column;align-items:stretch}}

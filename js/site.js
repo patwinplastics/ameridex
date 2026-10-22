@@ -69,6 +69,7 @@
     const cardSub = document.querySelector('[data-quote-cardsub]');
     if (cardSub) cardSub.textContent = "Fill out the form below and our dealer team will be in touch within 1-2 business days.";
     document.querySelectorAll('[data-dealer-hide]').forEach(el => { el.style.display = 'none'; });
+    document.querySelectorAll('[data-dealer-only]').forEach(el => { el.style.display = ''; });
     const businessBlock = document.querySelector('[data-dealer-show]');
     if (businessBlock) businessBlock.style.display = '';
     const formType = document.querySelector('input[name="form_type"]');
