@@ -24,6 +24,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Feature newest blog post on homepage
+        run: python3 tools/update_homepage_latest_post.py
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

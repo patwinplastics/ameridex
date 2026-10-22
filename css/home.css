@@ -170,6 +170,7 @@
 .learning-latest-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #0002}
 .learning-latest-image{min-height:320px;background:#ebe8e0}
 .learning-latest-image img{width:100%;height:100%;object-fit:cover;display:block}
+.learning-latest-image.is-diagram img{object-fit:contain;padding:24px;mix-blend-mode:multiply}
 .learning-latest-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:40px 44px}
 .home-v2 .learning-latest-copy .eyebrow{color:#ad2637;font-size:10px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .learning-latest-badge{background:#ad2637;color:#fff;padding:4px 9px;border-radius:3px;letter-spacing:.12em}
