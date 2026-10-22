@@ -1,5 +1,13 @@
-/* Single behavior controller for navigation on every static page. */
+/* Single behavior controller for navigation on every static page.
+   CONTRACTOR_PORTAL_URL is the one address for every Contractor portal link.
+   The script applies it to each a[data-contractor-portal]. The href in the
+   markup matches this value so the link still works if the script does not run. */
 (() => {
+  const CONTRACTOR_PORTAL_URL = "https://contractors.ameridex.com";
+  document.querySelectorAll("a[data-contractor-portal]").forEach((link) => {
+    link.href = CONTRACTOR_PORTAL_URL;
+  });
+
   const header = document.querySelector('.shared-header');
   if (!header) return;
   const theme = header.querySelector('.theme-switch');
