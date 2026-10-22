@@ -927,32 +927,6 @@
    }
   },
   {
-   "id": "full-picture-frame-warranty",
-   "num": "qa-034",
-   "question": "Does a full picture frame void the warranty?",
-   "alt_questions": [
-    "Can I picture frame a DexerDry deck?",
-    "What voids the DexerDry warranty?"
-   ],
-   "short_answer": "Yes, a full picture frame (perimeter boards with the deck boards cut short inside it) voids the DexerDry warranty because it dams water.",
-   "answer": "Yes, a full picture frame (perimeter boards with the deck boards cut short inside it) voids the DexerDry warranty because it dams water. Use the DexerDry picture frame detail instead. It gives the same look with a 1/8 inch drainage gap, and every board still overhangs the framing by 1 3/8 inch.",
-   "answer_html": "<p><strong>Yes, a full picture frame (perimeter boards with the deck boards cut short inside it) voids the DexerDry warranty because it dams water.</strong></p><p>Use the DexerDry picture frame detail instead. It gives the same look with a 1/8 inch drainage gap, and every board still overhangs the framing by 1 3/8 inch.</p>",
-   "keywords": [
-    "picture frame",
-    "warranty",
-    "dam"
-   ],
-   "category": "picture frame",
-   "video_url": "https://www.youtube.com/watch?v=U-MtC09b29U&t=211s",
-   "video_title": "Installing Dexerdry",
-   "timestamp_label": "3:31",
-   "source_video": {
-    "title": "Installing Dexerdry",
-    "url": "https://www.youtube.com/watch?v=U-MtC09b29U",
-    "timestamp": "3:31"
-   }
-  },
-  {
    "id": "fascia-blocks",
    "num": "qa-035",
    "question": "How are fascia boards bumped out?",
@@ -2358,8 +2332,8 @@
     "Does the picture frame help drainage?"
    ],
    "short_answer": "It gives you a picture frame look while still letting water run off the deck through the drainage gap.",
-   "answer": "It gives you a picture frame look while still letting water run off the deck through the drainage gap. It is optional and cost effective, and unlike a full picture frame it keeps the warranty intact.",
-   "answer_html": "<p><strong>It gives you a picture frame look while still letting water run off the deck through the drainage gap.</strong></p><p>It is optional and cost effective, and unlike a full picture frame it keeps the warranty intact.</p>",
+   "answer": "It gives you a picture frame look while still letting water run off the deck through the drainage gap. It is optional and cost effective.",
+   "answer_html": "<p><strong>It gives you a picture frame look while still letting water run off the deck through the drainage gap.</strong></p><p>It is optional and cost effective.</p>",
    "keywords": [
     "picture frame",
     "look",
