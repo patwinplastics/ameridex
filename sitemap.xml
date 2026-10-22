@@ -109,9 +109,19 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/blog.html</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/blog/water-dripping-through-deck-boards.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ameridex.com/assets/img/gallery/07-deck-railing.jpg</image:loc>
+      <image:caption>Paver patio lounge below a white elevated deck with stone-faced stairs</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ameridex.com/blog/fall-deck-maintenance-checklist.html</loc>
