@@ -80,3 +80,19 @@ body[data-theme="dark"] .crumbs li, body[data-theme="dark"] .crumbs [aria-curren
 @media(max-width:1420px) and (min-width:1101px) { .shared-header.home-header { gap:20px; } .shared-header .home-nav { gap:16px; } .shared-header .header-actions { gap:10px; } }
 @media(max-width:1300px) and (min-width:1101px) { .shared-header .home-nav { gap:13px; } .shared-header .brand img { width:180px; } }
 @media(max-width:1640px) and (min-width:1101px) { .shared-header:has(.ad-store-chip).home-header { gap:20px; } .shared-header:has(.ad-store-chip) .home-nav { gap:16px; } .shared-header:has(.ad-store-chip) .header-actions { gap:10px; } }
+/* Room for the Contractors item without pushing the action buttons off screen.
+   The phone number hides a little earlier so the nav still fits on one row. */
+@media(max-width:1360px) { .shared-header .header-phone { display:none; } }
+@media(max-width:1520px) and (min-width:1101px) {
+  .shared-header .home-nav { gap:12px; }
+}
+@media(max-width:1400px) and (min-width:1241px) {
+  .shared-header.home-header { gap:14px; }
+  .shared-header .home-nav { gap:10px; }
+}
+@media(max-width:1240px) and (min-width:1101px) {
+  .shared-header.home-header { gap:12px; padding-left:16px; padding-right:16px; }
+  .shared-header .brand img { width:150px; }
+  .shared-header .home-nav { gap:8px; }
+  .shared-header .header-actions { gap:8px; }
+}

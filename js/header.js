@@ -1,5 +1,7 @@
 /* Single behavior controller for navigation on every static page.
    CONTRACTOR_PORTAL_URL is the one address for every Contractor portal link.
+   The portal sign-in screen is also where a contractor applies. There is
+   no separate apply path or hash, so both actions use this address.
    The script applies it to each a[data-contractor-portal]. The href in the
    markup matches this value so the link still works if the script does not run. */
 (() => {
