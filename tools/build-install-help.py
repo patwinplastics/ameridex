@@ -17,13 +17,19 @@ DATA = ROOT / 'data/dexerdry-install.json'
 START, END = '<!-- INSTALL-HELP:START -->', '<!-- INSTALL-HELP:END -->'
 LD_RE = re.compile(r'(<script id="ih-faq-jsonld" type="application/ld\+json">).*?(</script>)', re.S)
 ALLOWED = re.compile(r'</?(p|strong)>')
+VIDEO_PREFIX = re.compile(r'^Video\s*\d+[:.\s-]*')
+INTERNAL = ('source_notes', 'conflict_note', 'needs_review', 'mentions_screw_brand', 'also_source')
 
 data = json.loads(DATA.read_text())
 items = list(data['qa'])
 for q in items:
+    for k in INTERNAL:
+        if k in q:
+            sys.exit(f'internal-only field {k} found in {q["id"]}; strip it from the public JSON')
+    q['video_title'] = VIDEO_PREFIX.sub('', q['video_title'])
     for k in ('question', 'short_answer', 'answer', 'answer_html'):
-        if '\u2014' in q[k]:
-            sys.exit(f'em dash found in {q["id"]}.{k}; replace it before building')
+        if '\u2014' in q[k] or '\u2013' in q[k]:
+            sys.exit(f'em or en dash found in {q["id"]}.{k}; replace it before building')
     leftover = ALLOWED.sub('', q['answer_html'])
     if '<' in leftover:
         sys.exit(f'unexpected HTML in {q["id"]}.answer_html; only p and strong are allowed')
