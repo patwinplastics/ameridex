@@ -200,3 +200,14 @@ Rebuild after adding pages or new class names, then commit the result:
 Config lives in `tools/tailwind/` (pinned to tailwindcss 3.4.17, the version
 the CDN served). New pages should link `css/tailwind.css` (with `../` from
 `blog/` or `dealers/`) instead of the CDN script.
+
+## Homepage "Newest Article" card (automatic)
+
+The featured card at the top of the homepage Learning Center section is
+generated from `blog.html` by `tools/update_homepage_latest_post.py`. The
+Pages deploy workflow runs it before every deploy, so publishing a post only
+requires the usual steps: add `blog/<slug>.html` and its card in `blog.html`
+(with a `Month D, YYYY` date line). The card with the newest date wins; ties
+go to the card listed first. Do not hand-edit the block between the
+`LATEST-POST:START` and `LATEST-POST:END` markers in `index.html`. If a card
+can't be parsed, the script stops the deploy and leaves the live site as is.
