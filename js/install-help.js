@@ -1,4 +1,4 @@
-/* DexerDry install help: instant answer search. Vanilla JS, no dependencies.
+/* Dexerdry install help: instant answer search. Vanilla JS, no dependencies.
  * Data: data/dexerdry-install.json (same file tools/build-install-help.py renders
  * into the page). If the JSON cannot be fetched, search falls back to the answers
  * already in the page. Deep links: ?q=search+words and #answer-id.

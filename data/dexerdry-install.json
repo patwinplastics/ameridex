@@ -1,8 +1,8 @@
 {
- "product": "DexerDry coilable weatherproof deck flange (above joist dry zone system)",
+ "product": "Dexerdry coilable weatherproof deck flange (above joist dry zone system)",
  "version": "1.3",
  "updated": "2026-10-22",
- "note": "Public copy for the DexerDry install help page. Internal review fields are omitted.",
+ "note": "Public copy for the Dexerdry install help page. Internal review fields are omitted.",
  "categories": [
   "planning",
   "framing",
@@ -25,15 +25,15 @@
   {
    "id": "what-is-dexerdry",
    "num": "qa-001",
-   "question": "What is DexerDry?",
+   "question": "What is Dexerdry?",
    "alt_questions": [
-    "What is DexerDry made for?",
-    "What does DexerDry do?",
-    "How does a DexerDry deck keep the area underneath dry?"
+    "What is Dexerdry made for?",
+    "What does Dexerdry do?",
+    "How does a Dexerdry deck keep the area underneath dry?"
    ],
-   "short_answer": "DexerDry is a flexible weather strip, called a flange, that fits into the side grooves of grooved deck boards to create a DRY ZONE under your deck.",
-   "answer": "DexerDry is a flexible weather strip, called a flange, that fits into the side grooves of grooved deck boards to create a DRY ZONE under your deck. Rain sheds off the top of the deck instead of dripping through the gaps between boards, which helps keep the area under the deck, porch or balcony dry. It comes on a roll and is cut to the length of each board. It is not rubber; it is a thermoplastic material.",
-   "answer_html": "<p><strong>DexerDry is a flexible weather strip, called a flange, that fits into the side grooves of grooved deck boards to create a DRY ZONE under your deck.</strong></p><p>Rain sheds off the top of the deck instead of dripping through the gaps between boards, which helps keep the area under the deck, porch or balcony dry. It comes on a roll and is cut to the length of each board. It is not rubber; it is a thermoplastic material.</p>",
+   "short_answer": "Dexerdry is a flexible weather strip, called a flange, that fits into the side grooves of grooved deck boards to create a DRY ZONE under your deck.",
+   "answer": "Dexerdry is a flexible weather strip, called a flange, that fits into the side grooves of grooved deck boards to create a DRY ZONE under your deck. Rain sheds off the top of the deck instead of dripping through the gaps between boards, which helps keep the area under the deck, porch or balcony dry. It comes on a roll and is cut to the length of each board. It is not rubber; it is a thermoplastic material.",
+   "answer_html": "<p><strong>Dexerdry is a flexible weather strip, called a flange, that fits into the side grooves of grooved deck boards to create a DRY ZONE under your deck.</strong></p><p>Rain sheds off the top of the deck instead of dripping through the gaps between boards, which helps keep the area under the deck, porch or balcony dry. It comes on a roll and is cut to the length of each board. It is not rubber; it is a thermoplastic material.</p>",
    "keywords": [
     "what is dexerdry",
     "flange",
@@ -54,14 +54,14 @@
   {
    "id": "not-under-joist-channel",
    "num": "qa-002",
-   "question": "Is DexerDry a channel or trough under the joists?",
+   "question": "Is Dexerdry a channel or trough under the joists?",
    "alt_questions": [
-    "Does DexerDry go under the joists like an under-deck drainage system?",
-    "Is DexerDry a trough or ceiling system?"
+    "Does Dexerdry go under the joists like an under-deck drainage system?",
+    "Is Dexerdry a trough or ceiling system?"
    ],
-   "short_answer": "No, DexerDry is not installed under the joists; it sits on top of the framing, in the grooves between the deck boards.",
-   "answer": "No, DexerDry is not installed under the joists; it sits on top of the framing, in the grooves between the deck boards. Water sheds off the top of the deck and leaves at the board ends, past the drip edge, and through planned drainage gaps into gutters. Nothing hangs below the joists.",
-   "answer_html": "<p><strong>No, DexerDry is not installed under the joists; it sits on top of the framing, in the grooves between the deck boards.</strong></p><p>Water sheds off the top of the deck and leaves at the board ends, past the drip edge, and through planned drainage gaps into gutters. Nothing hangs below the joists.</p>",
+   "short_answer": "No, Dexerdry is not installed under the joists; it sits on top of the framing, in the grooves between the deck boards.",
+   "answer": "No, Dexerdry is not installed under the joists; it sits on top of the framing, in the grooves between the deck boards. Water sheds off the top of the deck and leaves at the board ends, past the drip edge, and through planned drainage gaps into gutters. Nothing hangs below the joists.",
+   "answer_html": "<p><strong>No, Dexerdry is not installed under the joists; it sits on top of the framing, in the grooves between the deck boards.</strong></p><p>Water sheds off the top of the deck and leaves at the board ends, past the drip edge, and through planned drainage gaps into gutters. Nothing hangs below the joists.</p>",
    "keywords": [
     "under deck",
     "joists",
@@ -84,7 +84,7 @@
    "num": "qa-003",
    "question": "Where does the water go?",
    "alt_questions": [
-    "How does water drain off a DexerDry deck?",
+    "How does water drain off a Dexerdry deck?",
     "If water does not go through the boards, where does it go?"
    ],
    "short_answer": "Water runs across the top of the boards and sheds off the overhanging ends past the drip edge.",
@@ -110,15 +110,15 @@
   {
    "id": "choose-flange-profile",
    "num": "qa-004",
-   "question": "Which DexerDry flange do I use?",
+   "question": "Which Dexerdry flange do I use?",
    "alt_questions": [
-    "Is there a DexerDry for my deck boards?",
-    "Does one DexerDry fit all decking brands?",
-    "How do I pick the right DexerDry profile?"
+    "Is there a Dexerdry for my deck boards?",
+    "Does one Dexerdry fit all decking brands?",
+    "How do I pick the right Dexerdry profile?"
    ],
-   "short_answer": "Use the DexerDry profile made for your deck board brand, because every manufacturer's groove is a different size.",
-   "answer": "Use the DexerDry profile made for your deck board brand, because every manufacturer's groove is a different size. The correct flange fits snug in the groove; the wrong one fits loose and leaves a gap. New profiles are added over time, so check dexerdry.com for the profile that matches your boards.",
-   "answer_html": "<p><strong>Use the DexerDry profile made for your deck board brand, because every manufacturer's groove is a different size.</strong></p><p>The correct flange fits snug in the groove; the wrong one fits loose and leaves a gap. New profiles are added over time, so check dexerdry.com for the profile that matches your boards.</p>",
+   "short_answer": "Use the Dexerdry profile made for your deck board brand, because every manufacturer's groove is a different size.",
+   "answer": "Use the Dexerdry profile made for your deck board brand, because every manufacturer's groove is a different size. The correct flange fits snug in the groove; the wrong one fits loose and leaves a gap. New profiles are added over time, so check dexerdry.com for the profile that matches your boards.",
+   "answer_html": "<p><strong>Use the Dexerdry profile made for your deck board brand, because every manufacturer's groove is a different size.</strong></p><p>The correct flange fits snug in the groove; the wrong one fits loose and leaves a gap. New profiles are added over time, so check dexerdry.com for the profile that matches your boards.</p>",
    "keywords": [
     "profile",
     "brand",
@@ -139,15 +139,15 @@
   {
    "id": "compatible-brands",
    "num": "qa-005",
-   "question": "Which decking brands does DexerDry fit?",
+   "question": "Which decking brands does Dexerdry fit?",
    "alt_questions": [
-    "Does DexerDry work with Trex?",
+    "Does Dexerdry work with Trex?",
     "Does it fit TimberTech or Azek?",
-    "What decking brands is DexerDry made for?"
+    "What decking brands is Dexerdry made for?"
    ],
-   "short_answer": "DexerDry profiles are made for grooved boards from brands including Azek/TimberTech, Trex, Fiberon, Deckorators, MoistureShield and Wolf.",
-   "answer": "DexerDry profiles are made for grooved boards from brands including Azek/TimberTech, Trex, Fiberon, Deckorators, MoistureShield and Wolf. Always match the profile to your specific board, and check dexerdry.com for the current list.",
-   "answer_html": "<p><strong>DexerDry profiles are made for grooved boards from brands including Azek/TimberTech, Trex, Fiberon, Deckorators, MoistureShield and Wolf.</strong></p><p>Always match the profile to your specific board, and check dexerdry.com for the current list.</p>",
+   "short_answer": "Dexerdry profiles are made for grooved boards from brands including Azek/TimberTech, Trex, Fiberon, Deckorators, MoistureShield and Wolf.",
+   "answer": "Dexerdry profiles are made for grooved boards from brands including Azek/TimberTech, Trex, Fiberon, Deckorators, MoistureShield and Wolf. Always match the profile to your specific board, and check dexerdry.com for the current list.",
+   "answer_html": "<p><strong>Dexerdry profiles are made for grooved boards from brands including Azek/TimberTech, Trex, Fiberon, Deckorators, MoistureShield and Wolf.</strong></p><p>Always match the profile to your specific board, and check dexerdry.com for the current list.</p>",
    "keywords": [
     "brands",
     "trex",
@@ -173,7 +173,7 @@
    "num": "qa-006",
    "question": "What slope does the deck need?",
    "alt_questions": [
-    "How much pitch does a DexerDry deck need?",
+    "How much pitch does a Dexerdry deck need?",
     "Do I need to slope the deck?"
    ],
    "short_answer": "Slope the deck 1/8 inch per foot, away from the house.",
@@ -199,7 +199,7 @@
    "num": "qa-007",
    "question": "What is the maximum joist spacing?",
    "alt_questions": [
-    "Can I frame joists at 24 inches on center with DexerDry?",
+    "Can I frame joists at 24 inches on center with Dexerdry?",
     "What joist spacing is required?"
    ],
    "short_answer": "Joists must never be more than 16 inches on center.",
@@ -276,14 +276,14 @@
   {
    "id": "strip-lengths",
    "num": "qa-010",
-   "question": "What lengths can DexerDry be used in?",
+   "question": "What lengths can Dexerdry be used in?",
    "alt_questions": [
-    "How long are DexerDry strips?",
-    "What lengths does DexerDry come in?"
+    "How long are Dexerdry strips?",
+    "What lengths does Dexerdry come in?"
    ],
-   "short_answer": "DexerDry is used in 12, 16 and 20 ft lengths, matching most deck boards.",
-   "answer": "DexerDry is used in 12, 16 and 20 ft lengths, matching most deck boards. It comes on a continuous roll and you cut it to the length of each deck board.",
-   "answer_html": "<p><strong>DexerDry is used in 12, 16 and 20 ft lengths, matching most deck boards.</strong></p><p>It comes on a continuous roll and you cut it to the length of each deck board.</p>",
+   "short_answer": "Dexerdry is used in 12, 16 and 20 ft lengths, matching most deck boards.",
+   "answer": "Dexerdry is used in 12, 16 and 20 ft lengths, matching most deck boards. It comes on a continuous roll and you cut it to the length of each deck board.",
+   "answer_html": "<p><strong>Dexerdry is used in 12, 16 and 20 ft lengths, matching most deck boards.</strong></p><p>It comes on a continuous roll and you cut it to the length of each deck board.</p>",
    "keywords": [
     "lengths",
     "12 ft",
@@ -303,15 +303,15 @@
   {
    "id": "no-splicing-or-gluing",
    "num": "qa-011",
-   "question": "Can I splice or glue DexerDry mid run?",
+   "question": "Can I splice or glue Dexerdry mid run?",
    "alt_questions": [
-    "Can I join two pieces of DexerDry?",
+    "Can I join two pieces of Dexerdry?",
     "Can I butt joint deck boards in the middle of a run?",
     "Can I splice the strip?"
    ],
-   "short_answer": "No, never splice, glue or caulk DexerDry flange ends together; always install it in one continuous run.",
-   "answer": "No, never splice, glue or caulk DexerDry flange ends together; always install it in one continuous run. Deck boards also cannot be seamed in the middle of a run. If your deck is wider than 20 ft, split it with a gutter seam or a center board instead.",
-   "answer_html": "<p><strong>No, never splice, glue or caulk DexerDry flange ends together; always install it in one continuous run.</strong></p><p>Deck boards also cannot be seamed in the middle of a run. If your deck is wider than 20 ft, split it with a gutter seam or a center board instead.</p>",
+   "short_answer": "No, never splice, glue or caulk Dexerdry flange ends together; always install it in one continuous run.",
+   "answer": "No, never splice, glue or caulk Dexerdry flange ends together; always install it in one continuous run. Deck boards also cannot be seamed in the middle of a run. If your deck is wider than 20 ft, split it with a gutter seam or a center board instead.",
+   "answer_html": "<p><strong>No, never splice, glue or caulk Dexerdry flange ends together; always install it in one continuous run.</strong></p><p>Deck boards also cannot be seamed in the middle of a run. If your deck is wider than 20 ft, split it with a gutter seam or a center board instead.</p>",
    "keywords": [
     "splice",
     "glue",
@@ -336,9 +336,9 @@
     "How long should the frieze board be?",
     "How far past the deck should the frieze board go?"
    ],
-   "short_answer": "Make the frieze board 3 inches longer than the framing on each side if you are building the DexerDry picture frame.",
-   "answer": "Make the frieze board 3 inches longer than the framing on each side if you are building the DexerDry picture frame. Without the picture frame, it should extend at least 1 3/8 inch past the framing on both sides for proper drainage.",
-   "answer_html": "<p><strong>Make the frieze board 3 inches longer than the framing on each side if you are building the DexerDry picture frame.</strong></p><p>Without the picture frame, it should extend at least 1 3/8 inch past the framing on both sides for proper drainage.</p>",
+   "short_answer": "Make the frieze board 3 inches longer than the framing on each side if you are building the Dexerdry picture frame.",
+   "answer": "Make the frieze board 3 inches longer than the framing on each side if you are building the Dexerdry picture frame. Without the picture frame, it should extend at least 1 3/8 inch past the framing on both sides for proper drainage.",
+   "answer_html": "<p><strong>Make the frieze board 3 inches longer than the framing on each side if you are building the Dexerdry picture frame.</strong></p><p>Without the picture frame, it should extend at least 1 3/8 inch past the framing on both sides for proper drainage.</p>",
    "keywords": [
     "frieze board",
     "overhang",
@@ -363,9 +363,9 @@
     "What board do I use for the frieze board?",
     "Can I make my own frieze board?"
    ],
-   "short_answer": "Use a 5/4 x 4 inch PVC trim board with a groove routed to match your DexerDry profile.",
-   "answer": "Use a 5/4 x 4 inch PVC trim board with a groove routed to match your DexerDry profile. It can be taller than 4 inches, and a length of decking can also be used. Keep it straight against the house, shim where needed, and flash it at the top so the siding laps over it.",
-   "answer_html": "<p><strong>Use a 5/4 x 4 inch PVC trim board with a groove routed to match your DexerDry profile.</strong></p><p>It can be taller than 4 inches, and a length of decking can also be used. Keep it straight against the house, shim where needed, and flash it at the top so the siding laps over it.</p>",
+   "short_answer": "Use a 5/4 x 4 inch PVC trim board with a groove routed to match your Dexerdry profile.",
+   "answer": "Use a 5/4 x 4 inch PVC trim board with a groove routed to match your Dexerdry profile. It can be taller than 4 inches, and a length of decking can also be used. Keep it straight against the house, shim where needed, and flash it at the top so the siding laps over it.",
+   "answer_html": "<p><strong>Use a 5/4 x 4 inch PVC trim board with a groove routed to match your Dexerdry profile.</strong></p><p>It can be taller than 4 inches, and a length of decking can also be used. Keep it straight against the house, shim where needed, and flash it at the top so the siding laps over it.</p>",
    "keywords": [
     "frieze board",
     "pvc trim",
@@ -412,14 +412,14 @@
   {
    "id": "cutting-the-strip",
    "num": "qa-015",
-   "question": "What do I cut DexerDry with?",
+   "question": "What do I cut Dexerdry with?",
    "alt_questions": [
-    "How do I cut DexerDry?",
+    "How do I cut Dexerdry?",
     "What tool cuts the flange?"
    ],
-   "short_answer": "Cut DexerDry with a PVC pipe cutter or ratcheting PVC conduit cutter.",
-   "answer": "Cut DexerDry with a PVC pipe cutter or ratcheting PVC conduit cutter. These give a clean, precise cut. Cut each piece to the length of its deck board.",
-   "answer_html": "<p><strong>Cut DexerDry with a PVC pipe cutter or ratcheting PVC conduit cutter.</strong></p><p>These give a clean, precise cut. Cut each piece to the length of its deck board.</p>",
+   "short_answer": "Cut Dexerdry with a PVC pipe cutter or ratcheting PVC conduit cutter.",
+   "answer": "Cut Dexerdry with a PVC pipe cutter or ratcheting PVC conduit cutter. These give a clean, precise cut. Cut each piece to the length of its deck board.",
+   "answer_html": "<p><strong>Cut Dexerdry with a PVC pipe cutter or ratcheting PVC conduit cutter.</strong></p><p>These give a clean, precise cut. Cut each piece to the length of its deck board.</p>",
    "keywords": [
     "cut",
     "pvc pipe cutter",
@@ -548,13 +548,13 @@
    "num": "qa-020",
    "question": "How much of the flange do I caulk?",
    "alt_questions": [
-    "How much caulk goes on the DexerDry ends?",
+    "How much caulk goes on the Dexerdry ends?",
     "How do I caulk the flange?",
     "Do I caulk all four corners?"
    ],
-   "short_answer": "Thoroughly caulk at least 1 inch of each end of every DexerDry piece, and 1 1/2 to 2 inches at the ledger on perpendicular decks.",
-   "answer": "Thoroughly caulk at least 1 inch of each end of every DexerDry piece, and 1 1/2 to 2 inches at the ledger on perpendicular decks. Work the caulk into the fins on the top, bottom and outer edge, and caulk all four corners. Caulk each row as you install it.",
-   "answer_html": "<p><strong>Thoroughly caulk at least 1 inch of each end of every DexerDry piece, and 1 1/2 to 2 inches at the ledger on perpendicular decks.</strong></p><p>Work the caulk into the fins on the top, bottom and outer edge, and caulk all four corners. Caulk each row as you install it.</p>",
+   "short_answer": "Thoroughly caulk at least 1 inch of each end of every Dexerdry piece, and 1 1/2 to 2 inches at the ledger on perpendicular decks.",
+   "answer": "Thoroughly caulk at least 1 inch of each end of every Dexerdry piece, and 1 1/2 to 2 inches at the ledger on perpendicular decks. Work the caulk into the fins on the top, bottom and outer edge, and caulk all four corners. Caulk each row as you install it.",
+   "answer_html": "<p><strong>Thoroughly caulk at least 1 inch of each end of every Dexerdry piece, and 1 1/2 to 2 inches at the ledger on perpendicular decks.</strong></p><p>Work the caulk into the fins on the top, bottom and outer edge, and caulk all four corners. Caulk each row as you install it.</p>",
    "keywords": [
     "caulk",
     "corners",
@@ -579,9 +579,9 @@
     "Should I put caulk in the board grooves?",
     "Where exactly does the caulk go?"
    ],
-   "short_answer": "Caulk the DexerDry flange itself, not the grooves of the deck boards.",
-   "answer": "Caulk the DexerDry flange itself, not the grooves of the deck boards. Caulk put in the grooves can get pushed out when the flange goes in, leaving hidden gaps that let water wick in.",
-   "answer_html": "<p><strong>Caulk the DexerDry flange itself, not the grooves of the deck boards.</strong></p><p>Caulk put in the grooves can get pushed out when the flange goes in, leaving hidden gaps that let water wick in.</p>",
+   "short_answer": "Caulk the Dexerdry flange itself, not the grooves of the deck boards.",
+   "answer": "Caulk the Dexerdry flange itself, not the grooves of the deck boards. Caulk put in the grooves can get pushed out when the flange goes in, leaving hidden gaps that let water wick in.",
+   "answer_html": "<p><strong>Caulk the Dexerdry flange itself, not the grooves of the deck boards.</strong></p><p>Caulk put in the grooves can get pushed out when the flange goes in, leaving hidden gaps that let water wick in.</p>",
    "keywords": [
     "caulk",
     "grooves",
@@ -602,7 +602,7 @@
    "num": "qa-022",
    "question": "Which caulk should I use?",
    "alt_questions": [
-    "What caulk should I use with DexerDry?",
+    "What caulk should I use with Dexerdry?",
     "Can I use silicone?",
     "Is Lexel OK?"
    ],
@@ -634,9 +634,9 @@
     "Do I need a special tool?",
     "Is the BlueClaw required?"
    ],
-   "short_answer": "Use the DexerDry BlueClaw compression tool or the DeckWise Hardwood Wrench.",
-   "answer": "Use the DexerDry BlueClaw compression tool or the DeckWise Hardwood Wrench. Proper compression is extremely important, so use one of these two tools (sold separately). The BlueClaw is not mandatory, but it was made to work with DexerDry and gives consistent compression. Do not use a hammer and chisel.",
-   "answer_html": "<p><strong>Use the DexerDry BlueClaw compression tool or the DeckWise Hardwood Wrench.</strong></p><p>Proper compression is extremely important, so use one of these two tools (sold separately). The BlueClaw is not mandatory, but it was made to work with DexerDry and gives consistent compression. Do not use a hammer and chisel.</p>",
+   "short_answer": "Use the Dexerdry BlueClaw compression tool or the DeckWise Hardwood Wrench.",
+   "answer": "Use the Dexerdry BlueClaw compression tool or the DeckWise Hardwood Wrench. Proper compression is extremely important, so use one of these two tools (sold separately). The BlueClaw is not mandatory, but it was made to work with Dexerdry and gives consistent compression. Do not use a hammer and chisel.",
+   "answer_html": "<p><strong>Use the Dexerdry BlueClaw compression tool or the DeckWise Hardwood Wrench.</strong></p><p>Proper compression is extremely important, so use one of these two tools (sold separately). The BlueClaw is not mandatory, but it was made to work with Dexerdry and gives consistent compression. Do not use a hammer and chisel.</p>",
    "keywords": [
     "compression",
     "blueclaw",
@@ -661,9 +661,9 @@
     "Can I use a chisel to cinch the boards?",
     "I saw a hammer and chisel used, is that OK?"
    ],
-   "short_answer": "No, do not use a hammer and chisel to compress DexerDry.",
-   "answer": "No, do not use a hammer and chisel to compress DexerDry. Use the BlueClaw or the DeckWise Hardwood Wrench to get proper, even compression.",
-   "answer_html": "<p><strong>No, do not use a hammer and chisel to compress DexerDry.</strong></p><p>Use the BlueClaw or the DeckWise Hardwood Wrench to get proper, even compression.</p>",
+   "short_answer": "No, do not use a hammer and chisel to compress Dexerdry.",
+   "answer": "No, do not use a hammer and chisel to compress Dexerdry. Use the BlueClaw or the DeckWise Hardwood Wrench to get proper, even compression.",
+   "answer_html": "<p><strong>No, do not use a hammer and chisel to compress Dexerdry.</strong></p><p>Use the BlueClaw or the DeckWise Hardwood Wrench to get proper, even compression.</p>",
    "keywords": [
     "hammer",
     "chisel",
@@ -712,7 +712,7 @@
    "question": "What is the joist sled?",
    "alt_questions": [
     "How do I use the BlueClaw near the house wall?",
-    "What is the DexerDry joist sled?"
+    "What is the Dexerdry joist sled?"
    ],
    "short_answer": "The joist sled is a shop-made upside down T, about 20 inches long, that lets the BlueClaw work close to the house.",
    "answer": "The joist sled is a shop-made upside down T, about 20 inches long, that lets the BlueClaw work close to the house. Build it from scrap and use it with the BlueClaw for the first three boards, working from the center of the deck outward.",
@@ -822,12 +822,12 @@
    "num": "qa-030",
    "question": "Can hidden fastener clips be used?",
    "alt_questions": [
-    "Can I use hidden clips with DexerDry?",
-    "How are DexerDry deck boards fastened?"
+    "Can I use hidden clips with Dexerdry?",
+    "How are Dexerdry deck boards fastened?"
    ],
-   "short_answer": "No, DexerDry sits in the groove the clips would use, so boards are fastened with Starborn top mount screws with color matched plugs.",
-   "answer": "No, DexerDry sits in the groove the clips would use, so boards are fastened with Starborn top mount screws with color matched plugs. The plugs give a clean, hidden fastener look.",
-   "answer_html": "<p><strong>No, DexerDry sits in the groove the clips would use, so boards are fastened with Starborn top mount screws with color matched plugs.</strong></p><p>The plugs give a clean, hidden fastener look.</p>",
+   "short_answer": "No, Dexerdry sits in the groove the clips would use, so boards are fastened with Starborn top mount screws with color matched plugs.",
+   "answer": "No, Dexerdry sits in the groove the clips would use, so boards are fastened with Starborn top mount screws with color matched plugs. The plugs give a clean, hidden fastener look.",
+   "answer_html": "<p><strong>No, Dexerdry sits in the groove the clips would use, so boards are fastened with Starborn top mount screws with color matched plugs.</strong></p><p>The plugs give a clean, hidden fastener look.</p>",
    "keywords": [
     "clips",
     "hidden fasteners",
@@ -931,7 +931,7 @@
    "num": "qa-035",
    "question": "How are fascia boards bumped out?",
    "alt_questions": [
-    "How do I install fascia on a DexerDry deck?",
+    "How do I install fascia on a Dexerdry deck?",
     "How far apart are the fascia blocks?"
    ],
    "short_answer": "Install 1 1/2 x 1 1/2 inch blocks every 12 to 16 inches to bump the fascia out.",
@@ -1042,9 +1042,9 @@
     "What size downspout do I need?",
     "How do I route the downspout?"
    ],
-   "short_answer": "DexerDry does not specify a downspout size; size and route it for your project.",
-   "answer": "DexerDry does not specify a downspout size; size and route it for your project. Drill a hole for the downspout in the micro gutter with a hole saw, and check with your builder or local code for sizing and routing.",
-   "answer_html": "<p><strong>DexerDry does not specify a downspout size; size and route it for your project.</strong></p><p>Drill a hole for the downspout in the micro gutter with a hole saw, and check with your builder or local code for sizing and routing.</p>",
+   "short_answer": "Dexerdry does not specify a downspout size; size and route it for your project.",
+   "answer": "Dexerdry does not specify a downspout size; size and route it for your project. Drill a hole for the downspout in the micro gutter with a hole saw, and check with your builder or local code for sizing and routing.",
+   "answer_html": "<p><strong>Dexerdry does not specify a downspout size; size and route it for your project.</strong></p><p>Drill a hole for the downspout in the micro gutter with a hole saw, and check with your builder or local code for sizing and routing.</p>",
    "keywords": [
     "downspout",
     "size"
@@ -1065,11 +1065,11 @@
    "question": "How do I handle a deck over 20 ft?",
    "alt_questions": [
     "My deck is wider than 20 feet, what do I do?",
-    "How do I build a 24 or 40 foot DexerDry deck?"
+    "How do I build a 24 or 40 foot Dexerdry deck?"
    ],
    "short_answer": "Split it into smaller decks with a seam gutter or a center board with a gutter on each side.",
-   "answer": "Split it into smaller decks with a seam gutter or a center board with a gutter on each side. Boards and DexerDry max out at 20 ft and cannot be spliced, so frame a 3 to 3 1/4 inch gap for a micro gutter, or use a center board, and gap the decking about 1/4 inch at the gutter.",
-   "answer_html": "<p><strong>Split it into smaller decks with a seam gutter or a center board with a gutter on each side.</strong></p><p>Boards and DexerDry max out at 20 ft and cannot be spliced, so frame a 3 to 3 1/4 inch gap for a micro gutter, or use a center board, and gap the decking about 1/4 inch at the gutter.</p>",
+   "answer": "Split it into smaller decks with a seam gutter or a center board with a gutter on each side. Boards and Dexerdry max out at 20 ft and cannot be spliced, so frame a 3 to 3 1/4 inch gap for a micro gutter, or use a center board, and gap the decking about 1/4 inch at the gutter.",
+   "answer_html": "<p><strong>Split it into smaller decks with a seam gutter or a center board with a gutter on each side.</strong></p><p>Boards and Dexerdry max out at 20 ft and cannot be spliced, so frame a 3 to 3 1/4 inch gap for a micro gutter, or use a center board, and gap the decking about 1/4 inch at the gutter.</p>",
    "keywords": [
     "over 20 ft",
     "wide deck",
@@ -1118,7 +1118,7 @@
    "question": "How many center boards does a 60 ft deck need?",
    "alt_questions": [
     "How many center boards does a big deck need?",
-    "Can I build a 60 foot DexerDry deck?"
+    "Can I build a 60 foot Dexerdry deck?"
    ],
    "short_answer": "A 60 ft wide deck needs two center boards; repeat a center board every 20 ft.",
    "answer": "A 60 ft wide deck needs two center boards; repeat a center board every 20 ft. One center board with two gutters gives you a 40 ft wide deck.",
@@ -1143,12 +1143,12 @@
    "num": "qa-043",
    "question": "How are inside corners done?",
    "alt_questions": [
-    "How do I do an inside corner with DexerDry?",
-    "How do I miter DexerDry at a corner?"
+    "How do I do an inside corner with Dexerdry?",
+    "How do I miter Dexerdry at a corner?"
    ],
-   "short_answer": "Miter the frieze board at the corner, cut the DexerDry strip at the same angle, and caulk and flash every frieze board joint.",
-   "answer": "Miter the frieze board at the corner, cut the DexerDry strip at the same angle, and caulk and flash every frieze board joint. Where two decks meet at a corner, add a gutter where they intersect. Do not glue or caulk DexerDry flange ends together.",
-   "answer_html": "<p><strong>Miter the frieze board at the corner, cut the DexerDry strip at the same angle, and caulk and flash every frieze board joint.</strong></p><p>Where two decks meet at a corner, add a gutter where they intersect. Do not glue or caulk DexerDry flange ends together.</p>",
+   "short_answer": "Miter the frieze board at the corner, cut the Dexerdry strip at the same angle, and caulk and flash every frieze board joint.",
+   "answer": "Miter the frieze board at the corner, cut the Dexerdry strip at the same angle, and caulk and flash every frieze board joint. Where two decks meet at a corner, add a gutter where they intersect. Do not glue or caulk Dexerdry flange ends together.",
+   "answer_html": "<p><strong>Miter the frieze board at the corner, cut the Dexerdry strip at the same angle, and caulk and flash every frieze board joint.</strong></p><p>Where two decks meet at a corner, add a gutter where they intersect. Do not glue or caulk Dexerdry flange ends together.</p>",
    "keywords": [
     "inside corner",
     "miter",
@@ -1170,7 +1170,7 @@
    "question": "How do I test the deck?",
    "alt_questions": [
     "How do I know the deck is working?",
-    "How do I water test a DexerDry deck?"
+    "How do I water test a Dexerdry deck?"
    ],
    "short_answer": "Run water over the finished deck; it should flow across the boards and off the edge.",
    "answer": "Run water over the finished deck; it should flow across the boards and off the edge. Check that water sheds off the ends and drains through any gutter gaps.",
@@ -1192,14 +1192,14 @@
   {
    "id": "power-washing",
    "num": "qa-045",
-   "question": "Can I power wash a DexerDry deck?",
+   "question": "Can I power wash a Dexerdry deck?",
    "alt_questions": [
-    "Can I pressure wash a DexerDry deck?",
+    "Can I pressure wash a Dexerdry deck?",
     "Will a power washer damage the flange?"
    ],
-   "short_answer": "No, do not power wash; clean DexerDry with simple soap and water.",
-   "answer": "No, do not power wash; clean DexerDry with simple soap and water. Avoid solvents, abrasive cleaners and aggressive cleaning products, which can damage the product and void the warranty. A broom handles most everyday cleaning.",
-   "answer_html": "<p><strong>No, do not power wash; clean DexerDry with simple soap and water.</strong></p><p>Avoid solvents, abrasive cleaners and aggressive cleaning products, which can damage the product and void the warranty. A broom handles most everyday cleaning.</p>",
+   "short_answer": "No, do not power wash; clean Dexerdry with simple soap and water.",
+   "answer": "No, do not power wash; clean Dexerdry with simple soap and water. Avoid solvents, abrasive cleaners and aggressive cleaning products, which can damage the product and void the warranty. A broom handles most everyday cleaning.",
+   "answer_html": "<p><strong>No, do not power wash; clean Dexerdry with simple soap and water.</strong></p><p>Avoid solvents, abrasive cleaners and aggressive cleaning products, which can damage the product and void the warranty. A broom handles most everyday cleaning.</p>",
    "keywords": [
     "power wash",
     "pressure wash",
@@ -1220,12 +1220,12 @@
    "num": "qa-046",
    "question": "Should I use joist tape?",
    "alt_questions": [
-    "Do I need joist tape with DexerDry?",
-    "Is joist tape a waste on a DexerDry deck?"
+    "Do I need joist tape with Dexerdry?",
+    "Is joist tape a waste on a Dexerdry deck?"
    ],
    "short_answer": "Use joist tape as a flashing overlap at the house on perpendicular decks.",
-   "answer": "Use joist tape as a flashing overlap at the house on perpendicular decks. Elsewhere, DexerDry keeps water on top of the boards. Follow your local code and builder's practice for any other joist protection.",
-   "answer_html": "<p><strong>Use joist tape as a flashing overlap at the house on perpendicular decks.</strong></p><p>Elsewhere, DexerDry keeps water on top of the boards. Follow your local code and builder's practice for any other joist protection.</p>",
+   "answer": "Use joist tape as a flashing overlap at the house on perpendicular decks. Elsewhere, Dexerdry keeps water on top of the boards. Follow your local code and builder's practice for any other joist protection.",
+   "answer_html": "<p><strong>Use joist tape as a flashing overlap at the house on perpendicular decks.</strong></p><p>Elsewhere, Dexerdry keeps water on top of the boards. Follow your local code and builder's practice for any other joist protection.</p>",
    "keywords": [
     "joist tape"
    ],
@@ -1244,7 +1244,7 @@
    "num": "qa-047",
    "question": "Can I put a ceiling under the deck?",
    "alt_questions": [
-    "Can I install a wood ceiling under a DexerDry deck?",
+    "Can I install a wood ceiling under a Dexerdry deck?",
     "Do I need to vent under the deck?",
     "Can I add a soffit under the deck?"
    ],
@@ -1270,10 +1270,10 @@
   {
    "id": "install-time",
    "num": "qa-048",
-   "question": "Does DexerDry take longer to install?",
+   "question": "Does Dexerdry take longer to install?",
    "alt_questions": [
-    "How long does DexerDry take to install?",
-    "Is DexerDry slower than a regular deck?",
+    "How long does Dexerdry take to install?",
+    "Is Dexerdry slower than a regular deck?",
     "Is it faster than an under-deck drainage system?"
    ],
    "short_answer": "It takes longer than a standard deck because of the extra steps, but builders find it comparable to installing an under-deck drainage system.",
@@ -1299,7 +1299,7 @@
    "num": "qa-049",
    "question": "What order should I watch the install videos in?",
    "alt_questions": [
-    "Which DexerDry video should I watch first?",
+    "Which Dexerdry video should I watch first?",
     "Where are the installation videos?"
    ],
    "short_answer": "Start with Installing Coilable Dexerdry, then Installing Dexerdry, Drip Edge, Decks That Span Over 20 ft Parts 1 and 2, and Perpendicular and Inside Corners.",
@@ -1325,13 +1325,13 @@
    "num": "qa-050",
    "question": "What roll sizes are available?",
    "alt_questions": [
-    "How big is a roll of DexerDry?",
+    "How big is a roll of Dexerdry?",
     "How much does one box cover?",
     "How many feet in a roll?"
    ],
-   "short_answer": "DexerDry comes on a 240 ft continuous roll, about 120 sq ft of deck, plus a smaller roll of about 50 ft for finishing a project.",
-   "answer": "DexerDry comes on a 240 ft continuous roll, about 120 sq ft of deck, plus a smaller roll of about 50 ft for finishing a project. Check dexerdry.com for current roll sizes before ordering.",
-   "answer_html": "<p><strong>DexerDry comes on a 240 ft continuous roll, about 120 sq ft of deck, plus a smaller roll of about 50 ft for finishing a project.</strong></p><p>Check dexerdry.com for current roll sizes before ordering.</p>",
+   "short_answer": "Dexerdry comes on a 240 ft continuous roll, about 120 sq ft of deck, plus a smaller roll of about 50 ft for finishing a project.",
+   "answer": "Dexerdry comes on a 240 ft continuous roll, about 120 sq ft of deck, plus a smaller roll of about 50 ft for finishing a project. Check dexerdry.com for current roll sizes before ordering.",
+   "answer_html": "<p><strong>Dexerdry comes on a 240 ft continuous roll, about 120 sq ft of deck, plus a smaller roll of about 50 ft for finishing a project.</strong></p><p>Check dexerdry.com for current roll sizes before ordering.</p>",
    "keywords": [
     "roll size",
     "240 ft",
@@ -1352,14 +1352,14 @@
   {
    "id": "coilable-next-generation",
    "num": "qa-051",
-   "question": "What is coilable DexerDry and how is it different from the original?",
+   "question": "What is coilable Dexerdry and how is it different from the original?",
    "alt_questions": [
-    "Is coiled DexerDry new?",
-    "Does coilable DexerDry install the same way?"
+    "Is coiled Dexerdry new?",
+    "Does coilable Dexerdry install the same way?"
    ],
-   "short_answer": "Coilable DexerDry is the newer, flexible version that comes on a roll and installs the same way, with most of the same tools, as the original.",
-   "answer": "Coilable DexerDry is the newer, flexible version that comes on a roll and installs the same way, with most of the same tools, as the original. Because it is flexible, it depends on proper compression between boards to seal.",
-   "answer_html": "<p><strong>Coilable DexerDry is the newer, flexible version that comes on a roll and installs the same way, with most of the same tools, as the original.</strong></p><p>Because it is flexible, it depends on proper compression between boards to seal.</p>",
+   "short_answer": "Coilable Dexerdry is the newer, flexible version that comes on a roll and installs the same way, with most of the same tools, as the original.",
+   "answer": "Coilable Dexerdry is the newer, flexible version that comes on a roll and installs the same way, with most of the same tools, as the original. Because it is flexible, it depends on proper compression between boards to seal.",
+   "answer_html": "<p><strong>Coilable Dexerdry is the newer, flexible version that comes on a roll and installs the same way, with most of the same tools, as the original.</strong></p><p>Because it is flexible, it depends on proper compression between boards to seal.</p>",
    "keywords": [
     "coilable",
     "coiled",
@@ -1380,14 +1380,14 @@
   {
    "id": "why-compression",
    "num": "qa-052",
-   "question": "Why does DexerDry have to be compressed?",
+   "question": "Why does Dexerdry have to be compressed?",
    "alt_questions": [
     "What does tight is right mean?",
     "Will it leak if the boards are not tight?"
    ],
-   "short_answer": "Coiled DexerDry is flexible and depends on tight compression between boards to seal, so tight is right.",
-   "answer": "Coiled DexerDry is flexible and depends on tight compression between boards to seal, so tight is right. If the flange is not properly compressed and caulked where shown, the deck will leak. Use a recommended compression tool on every board.",
-   "answer_html": "<p><strong>Coiled DexerDry is flexible and depends on tight compression between boards to seal, so tight is right.</strong></p><p>If the flange is not properly compressed and caulked where shown, the deck will leak. Use a recommended compression tool on every board.</p>",
+   "short_answer": "Coiled Dexerdry is flexible and depends on tight compression between boards to seal, so tight is right.",
+   "answer": "Coiled Dexerdry is flexible and depends on tight compression between boards to seal, so tight is right. If the flange is not properly compressed and caulked where shown, the deck will leak. Use a recommended compression tool on every board.",
+   "answer_html": "<p><strong>Coiled Dexerdry is flexible and depends on tight compression between boards to seal, so tight is right.</strong></p><p>If the flange is not properly compressed and caulked where shown, the deck will leak. Use a recommended compression tool on every board.</p>",
    "keywords": [
     "compression",
     "tight is right",
@@ -1407,7 +1407,7 @@
   {
    "id": "hardwood-wrench-use",
    "num": "qa-053",
-   "question": "How do I use the DeckWise Hardwood Wrench with DexerDry?",
+   "question": "How do I use the DeckWise Hardwood Wrench with Dexerdry?",
    "alt_questions": [
     "What does the deck wrench do?",
     "Can the Hardwood Wrench be used left handed?"
@@ -1437,11 +1437,11 @@
    "num": "qa-054",
    "question": "Can I use a Stanley Board Bender?",
    "alt_questions": [
-    "Is the Stanley Board Bender OK for DexerDry?"
+    "Is the Stanley Board Bender OK for Dexerdry?"
    ],
-   "short_answer": "Use the BlueClaw or the DeckWise Hardwood Wrench; those are the compression tools DexerDry recommends.",
-   "answer": "Use the BlueClaw or the DeckWise Hardwood Wrench; those are the compression tools DexerDry recommends. Proper compression is critical, so stick with a recommended tool.",
-   "answer_html": "<p><strong>Use the BlueClaw or the DeckWise Hardwood Wrench; those are the compression tools DexerDry recommends.</strong></p><p>Proper compression is critical, so stick with a recommended tool.</p>",
+   "short_answer": "Use the BlueClaw or the DeckWise Hardwood Wrench; those are the compression tools Dexerdry recommends.",
+   "answer": "Use the BlueClaw or the DeckWise Hardwood Wrench; those are the compression tools Dexerdry recommends. Proper compression is critical, so stick with a recommended tool.",
+   "answer_html": "<p><strong>Use the BlueClaw or the DeckWise Hardwood Wrench; those are the compression tools Dexerdry recommends.</strong></p><p>Proper compression is critical, so stick with a recommended tool.</p>",
    "keywords": [
     "stanley",
     "board bender",
@@ -1465,9 +1465,9 @@
     "Can I use a BoWrench?",
     "Is any board straightening tool OK?"
    ],
-   "short_answer": "Use only the recommended compression tools: the DexerDry BlueClaw or the DeckWise Hardwood Wrench.",
-   "answer": "Use only the recommended compression tools: the DexerDry BlueClaw or the DeckWise Hardwood Wrench. Other tools may not give the even compression DexerDry needs.",
-   "answer_html": "<p><strong>Use only the recommended compression tools: the DexerDry BlueClaw or the DeckWise Hardwood Wrench.</strong></p><p>Other tools may not give the even compression DexerDry needs.</p>",
+   "short_answer": "Use only the recommended compression tools: the Dexerdry BlueClaw or the DeckWise Hardwood Wrench.",
+   "answer": "Use only the recommended compression tools: the Dexerdry BlueClaw or the DeckWise Hardwood Wrench. Other tools may not give the even compression Dexerdry needs.",
+   "answer_html": "<p><strong>Use only the recommended compression tools: the Dexerdry BlueClaw or the DeckWise Hardwood Wrench.</strong></p><p>Other tools may not give the even compression Dexerdry needs.</p>",
    "keywords": [
     "bowrench",
     "cam tool",
@@ -1492,9 +1492,9 @@
     "Who makes the BlueClaw?",
     "What does the BlueClaw do?"
    ],
-   "short_answer": "The BlueClaw is DexerDry's own compression tool, designed to press deck boards tight against the DexerDry flange.",
-   "answer": "The BlueClaw is DexerDry's own compression tool, designed to press deck boards tight against the DexerDry flange. It hooks the joist, and its large plate presses a 2x beater board to push the board tight. It is sold separately.",
-   "answer_html": "<p><strong>The BlueClaw is DexerDry's own compression tool, designed to press deck boards tight against the DexerDry flange.</strong></p><p>It hooks the joist, and its large plate presses a 2x beater board to push the board tight. It is sold separately.</p>",
+   "short_answer": "The BlueClaw is Dexerdry's own compression tool, designed to press deck boards tight against the Dexerdry flange.",
+   "answer": "The BlueClaw is Dexerdry's own compression tool, designed to press deck boards tight against the Dexerdry flange. It hooks the joist, and its large plate presses a 2x beater board to push the board tight. It is sold separately.",
+   "answer_html": "<p><strong>The BlueClaw is Dexerdry's own compression tool, designed to press deck boards tight against the Dexerdry flange.</strong></p><p>It hooks the joist, and its large plate presses a 2x beater board to push the board tight. It is sold separately.</p>",
    "keywords": [
     "blueclaw",
     "compression tool",
@@ -1565,7 +1565,7 @@
   {
    "id": "first-strip-install",
    "num": "qa-059",
-   "question": "How do I install the first piece of DexerDry?",
+   "question": "How do I install the first piece of Dexerdry?",
    "alt_questions": [
     "How does the first strip go in the frieze board?",
     "How do I seat the flange?"
@@ -1598,8 +1598,8 @@
     "What is a seating block?"
    ],
    "short_answer": "Rout a groove a little larger than needed into a scrap of decking and use it as a block to tap the strip into place.",
-   "answer": "Rout a groove a little larger than needed into a scrap of decking and use it as a block to tap the strip into place. It is handy throughout the job whenever you seat DexerDry against an installed board.",
-   "answer_html": "<p><strong>Rout a groove a little larger than needed into a scrap of decking and use it as a block to tap the strip into place.</strong></p><p>It is handy throughout the job whenever you seat DexerDry against an installed board.</p>",
+   "answer": "Rout a groove a little larger than needed into a scrap of decking and use it as a block to tap the strip into place. It is handy throughout the job whenever you seat Dexerdry against an installed board.",
+   "answer_html": "<p><strong>Rout a groove a little larger than needed into a scrap of decking and use it as a block to tap the strip into place.</strong></p><p>It is handy throughout the job whenever you seat Dexerdry against an installed board.</p>",
    "keywords": [
     "seating block",
     "scrap",
@@ -1618,7 +1618,7 @@
   {
    "id": "why-caulk-ends",
    "num": "qa-061",
-   "question": "Why do the ends of the DexerDry need caulk?",
+   "question": "Why do the ends of the Dexerdry need caulk?",
    "alt_questions": [
     "What happens if I skip caulking the ends?"
    ],
@@ -1751,7 +1751,7 @@
   {
    "id": "strip-on-board-first",
    "num": "qa-066",
-   "question": "Can I put the DexerDry on the board before laying it?",
+   "question": "Can I put the Dexerdry on the board before laying it?",
    "alt_questions": [
     "Can I pre-install the strip on the next board?"
    ],
@@ -1859,8 +1859,8 @@
     "Do the joists need to be flat?"
    ],
    "short_answer": "Plane down any high joists so the framing is flat with no peaks or valleys.",
-   "answer": "Plane down any high joists so the framing is flat with no peaks or valleys. Flat framing is key to how well DexerDry performs.",
-   "answer_html": "<p><strong>Plane down any high joists so the framing is flat with no peaks or valleys.</strong></p><p>Flat framing is key to how well DexerDry performs.</p>",
+   "answer": "Plane down any high joists so the framing is flat with no peaks or valleys. Flat framing is key to how well Dexerdry performs.",
+   "answer_html": "<p><strong>Plane down any high joists so the framing is flat with no peaks or valleys.</strong></p><p>Flat framing is key to how well Dexerdry performs.</p>",
    "keywords": [
     "joists",
     "plane",
@@ -1880,7 +1880,7 @@
   {
    "id": "joist-layout-parallel",
    "num": "qa-071",
-   "question": "How do I lay out the joists for a parallel DexerDry deck?",
+   "question": "How do I lay out the joists for a parallel Dexerdry deck?",
    "alt_questions": [
     "Where should the first joist go?"
    ],
@@ -1964,9 +1964,9 @@
     "Where does the dry zone start?",
     "Do perpendicular decks use a routed frieze board?"
    ],
-   "short_answer": "On a deck with boards parallel to the house, the DRY ZONE starts at a routed frieze board fastened to the house, which holds the first DexerDry strip.",
-   "answer": "On a deck with boards parallel to the house, the DRY ZONE starts at a routed frieze board fastened to the house, which holds the first DexerDry strip. It is a PVC trim board with a groove routed to accept the flange. Flash it at the top so siding laps over it. On perpendicular decks, do not rout board ends into a frieze board; start with a square edge board caulked to the ledger instead.",
-   "answer_html": "<p><strong>On a deck with boards parallel to the house, the DRY ZONE starts at a routed frieze board fastened to the house, which holds the first DexerDry strip.</strong></p><p>It is a PVC trim board with a groove routed to accept the flange. Flash it at the top so siding laps over it. On perpendicular decks, do not rout board ends into a frieze board; start with a square edge board caulked to the ledger instead.</p>",
+   "short_answer": "On a deck with boards parallel to the house, the DRY ZONE starts at a routed frieze board fastened to the house, which holds the first Dexerdry strip.",
+   "answer": "On a deck with boards parallel to the house, the DRY ZONE starts at a routed frieze board fastened to the house, which holds the first Dexerdry strip. It is a PVC trim board with a groove routed to accept the flange. Flash it at the top so siding laps over it. On perpendicular decks, do not rout board ends into a frieze board; start with a square edge board caulked to the ledger instead.",
+   "answer_html": "<p><strong>On a deck with boards parallel to the house, the DRY ZONE starts at a routed frieze board fastened to the house, which holds the first Dexerdry strip.</strong></p><p>It is a PVC trim board with a groove routed to accept the flange. Flash it at the top so siding laps over it. On perpendicular decks, do not rout board ends into a frieze board; start with a square edge board caulked to the ledger instead.</p>",
    "keywords": [
     "frieze board",
     "dry zone",
@@ -1988,11 +1988,11 @@
    "num": "qa-075",
    "question": "How do I join two frieze boards on a long deck?",
    "alt_questions": [
-    "Can I glue DexerDry at the frieze board?"
+    "Can I glue Dexerdry at the frieze board?"
    ],
    "short_answer": "Miter the frieze board seam, glue it with PVC adhesive, and caulk and flash the joint.",
-   "answer": "Miter the frieze board seam, glue it with PVC adhesive, and caulk and flash the joint. Do not glue or caulk DexerDry flange ends together; run each strip continuously.",
-   "answer_html": "<p><strong>Miter the frieze board seam, glue it with PVC adhesive, and caulk and flash the joint.</strong></p><p>Do not glue or caulk DexerDry flange ends together; run each strip continuously.</p>",
+   "answer": "Miter the frieze board seam, glue it with PVC adhesive, and caulk and flash the joint. Do not glue or caulk Dexerdry flange ends together; run each strip continuously.",
+   "answer_html": "<p><strong>Miter the frieze board seam, glue it with PVC adhesive, and caulk and flash the joint.</strong></p><p>Do not glue or caulk Dexerdry flange ends together; run each strip continuously.</p>",
    "keywords": [
     "frieze board",
     "seam",
@@ -2013,7 +2013,7 @@
   {
    "id": "perpendicular-overview",
    "num": "qa-076",
-   "question": "How is a perpendicular DexerDry deck different?",
+   "question": "How is a perpendicular Dexerdry deck different?",
    "alt_questions": [
     "Boards run away from the house, what changes?"
    ],
@@ -2066,13 +2066,13 @@
   {
    "id": "pocketed-decks",
    "num": "qa-078",
-   "question": "Does DexerDry work on pocketed decks or balconies set into the house?",
+   "question": "Does Dexerdry work on pocketed decks or balconies set into the house?",
    "alt_questions": [
-    "Can I use DexerDry on an inside corner deck?"
+    "Can I use Dexerdry on an inside corner deck?"
    ],
    "short_answer": "Yes, use the perpendicular installation method for pocketed decks, inside corner decks and balconies set into a building.",
-   "answer": "Yes, use the perpendicular installation method for pocketed decks, inside corner decks and balconies set into a building. Never install DexerDry over interior living space.",
-   "answer_html": "<p><strong>Yes, use the perpendicular installation method for pocketed decks, inside corner decks and balconies set into a building.</strong></p><p>Never install DexerDry over interior living space.</p>",
+   "answer": "Yes, use the perpendicular installation method for pocketed decks, inside corner decks and balconies set into a building. Never install Dexerdry over interior living space.",
+   "answer_html": "<p><strong>Yes, use the perpendicular installation method for pocketed decks, inside corner decks and balconies set into a building.</strong></p><p>Never install Dexerdry over interior living space.</p>",
    "keywords": [
     "pocketed",
     "inside corner",
@@ -2223,12 +2223,12 @@
    "num": "qa-084",
    "question": "What screws and plugs should I use?",
    "alt_questions": [
-    "Which screws for DexerDry?",
+    "Which screws for Dexerdry?",
     "Do I need special screws?"
    ],
    "short_answer": "Use Starborn top mount screws with color matched plugs.",
-   "answer": "Use Starborn top mount screws with color matched plugs. Hidden clips cannot be used because DexerDry fills the groove, and the plugs give a clean, hidden fastener look. Follow the screw package for length and pre-drilling.",
-   "answer_html": "<p><strong>Use Starborn top mount screws with color matched plugs.</strong></p><p>Hidden clips cannot be used because DexerDry fills the groove, and the plugs give a clean, hidden fastener look. Follow the screw package for length and pre-drilling.</p>",
+   "answer": "Use Starborn top mount screws with color matched plugs. Hidden clips cannot be used because Dexerdry fills the groove, and the plugs give a clean, hidden fastener look. Follow the screw package for length and pre-drilling.",
+   "answer_html": "<p><strong>Use Starborn top mount screws with color matched plugs.</strong></p><p>Hidden clips cannot be used because Dexerdry fills the groove, and the plugs give a clean, hidden fastener look. Follow the screw package for length and pre-drilling.</p>",
    "keywords": [
     "starborn",
     "screws",
@@ -2300,13 +2300,13 @@
   {
    "id": "picture-frame-how",
    "num": "qa-087",
-   "question": "How do I build the DexerDry picture frame?",
+   "question": "How do I build the Dexerdry picture frame?",
    "alt_questions": [
     "How do I cut the picture frame sides?"
    ],
    "short_answer": "Rip a deck board into two 1 1/2 inch strips for the sides, cut and rout them to fit, and install them with a 1/8 inch drainage gap.",
-   "answer": "Rip a deck board into two 1 1/2 inch strips for the sides, cut and rout them to fit, and install them with a 1/8 inch drainage gap. Measure from the mitered tip of the last board back to the frieze board and deduct 1/8 inch. Rout the end at the frieze board, pre-drill every 12 inches without screwing through the DexerDry, use 1/8 inch spacers where the screws land, and install with 2 1/2 inch screws. Then install the fascia, sides first, then front.",
-   "answer_html": "<p><strong>Rip a deck board into two 1 1/2 inch strips for the sides, cut and rout them to fit, and install them with a 1/8 inch drainage gap.</strong></p><p>Measure from the mitered tip of the last board back to the frieze board and deduct 1/8 inch. Rout the end at the frieze board, pre-drill every 12 inches without screwing through the DexerDry, use 1/8 inch spacers where the screws land, and install with 2 1/2 inch screws. Then install the fascia, sides first, then front.</p>",
+   "answer": "Rip a deck board into two 1 1/2 inch strips for the sides, cut and rout them to fit, and install them with a 1/8 inch drainage gap. Measure from the mitered tip of the last board back to the frieze board and deduct 1/8 inch. Rout the end at the frieze board, pre-drill every 12 inches without screwing through the Dexerdry, use 1/8 inch spacers where the screws land, and install with 2 1/2 inch screws. Then install the fascia, sides first, then front.",
+   "answer_html": "<p><strong>Rip a deck board into two 1 1/2 inch strips for the sides, cut and rout them to fit, and install them with a 1/8 inch drainage gap.</strong></p><p>Measure from the mitered tip of the last board back to the frieze board and deduct 1/8 inch. Rout the end at the frieze board, pre-drill every 12 inches without screwing through the Dexerdry, use 1/8 inch spacers where the screws land, and install with 2 1/2 inch screws. Then install the fascia, sides first, then front.</p>",
    "keywords": [
     "picture frame",
     "rip",
@@ -2327,7 +2327,7 @@
   {
    "id": "picture-frame-benefit",
    "num": "qa-088",
-   "question": "Why use the DexerDry picture frame detail?",
+   "question": "Why use the Dexerdry picture frame detail?",
    "alt_questions": [
     "Does the picture frame help drainage?"
    ],
@@ -2454,7 +2454,7 @@
   {
    "id": "cleaning-routine",
    "num": "qa-093",
-   "question": "How do I clean a DexerDry deck?",
+   "question": "How do I clean a Dexerdry deck?",
    "alt_questions": [
     "Does dirt get stuck in the joints?",
     "What is the best way to clean it?"
@@ -2507,7 +2507,7 @@
   {
    "id": "vibration",
    "num": "qa-095",
-   "question": "Does DexerDry change how the deck feels?",
+   "question": "Does Dexerdry change how the deck feels?",
    "alt_questions": [
     "Is the deck less bouncy?"
    ],
@@ -2533,14 +2533,14 @@
   {
    "id": "material",
    "num": "qa-096",
-   "question": "What is DexerDry made of?",
+   "question": "What is Dexerdry made of?",
    "alt_questions": [
-    "Is DexerDry rubber?",
+    "Is Dexerdry rubber?",
     "Is it durable?"
    ],
-   "short_answer": "DexerDry is not rubber; it is a proprietary thermoplastic blend like those used in the automotive and transportation industries.",
-   "answer": "DexerDry is not rubber; it is a proprietary thermoplastic blend like those used in the automotive and transportation industries. It is durable, lightweight and flexible, and it comes on a roll.",
-   "answer_html": "<p><strong>DexerDry is not rubber; it is a proprietary thermoplastic blend like those used in the automotive and transportation industries.</strong></p><p>It is durable, lightweight and flexible, and it comes on a roll.</p>",
+   "short_answer": "Dexerdry is not rubber; it is a proprietary thermoplastic blend like those used in the automotive and transportation industries.",
+   "answer": "Dexerdry is not rubber; it is a proprietary thermoplastic blend like those used in the automotive and transportation industries. It is durable, lightweight and flexible, and it comes on a roll.",
+   "answer_html": "<p><strong>Dexerdry is not rubber; it is a proprietary thermoplastic blend like those used in the automotive and transportation industries.</strong></p><p>It is durable, lightweight and flexible, and it comes on a roll.</p>",
    "keywords": [
     "material",
     "thermoplastic",
@@ -2561,13 +2561,13 @@
   {
    "id": "protects-framing",
    "num": "qa-097",
-   "question": "Does DexerDry protect the deck framing?",
+   "question": "Does Dexerdry protect the deck framing?",
    "alt_questions": [
     "Will it keep the joists dry?"
    ],
    "short_answer": "Yes, the DRY ZONE above the joists also helps protect the deck framing from the weather.",
-   "answer": "Yes, the DRY ZONE above the joists also helps protect the deck framing from the weather. Running DexerDry and decking in continuous lengths with no seams helps protect the whole substructure.",
-   "answer_html": "<p><strong>Yes, the DRY ZONE above the joists also helps protect the deck framing from the weather.</strong></p><p>Running DexerDry and decking in continuous lengths with no seams helps protect the whole substructure.</p>",
+   "answer": "Yes, the DRY ZONE above the joists also helps protect the deck framing from the weather. Running Dexerdry and decking in continuous lengths with no seams helps protect the whole substructure.",
+   "answer_html": "<p><strong>Yes, the DRY ZONE above the joists also helps protect the deck framing from the weather.</strong></p><p>Running Dexerdry and decking in continuous lengths with no seams helps protect the whole substructure.</p>",
    "keywords": [
     "framing",
     "joists",
@@ -2587,7 +2587,7 @@
   {
    "id": "benefits-uses",
    "num": "qa-098",
-   "question": "What can I use the space under a DexerDry deck for?",
+   "question": "What can I use the space under a Dexerdry deck for?",
    "alt_questions": [
     "What are the benefits of a dry deck?"
    ],
@@ -2613,13 +2613,13 @@
   {
    "id": "balconies",
    "num": "qa-099",
-   "question": "Can DexerDry be used on a balcony?",
+   "question": "Can Dexerdry be used on a balcony?",
    "alt_questions": [
-    "Is DexerDry an alternative to a fiberglass or concrete balcony?"
+    "Is Dexerdry an alternative to a fiberglass or concrete balcony?"
    ],
-   "short_answer": "Yes, DexerDry is a more affordable and faster alternative to fiberglass or concrete balcony construction.",
-   "answer": "Yes, DexerDry is a more affordable and faster alternative to fiberglass or concrete balcony construction. Use the perpendicular method for balconies set into a building, and never install it over interior living space.",
-   "answer_html": "<p><strong>Yes, DexerDry is a more affordable and faster alternative to fiberglass or concrete balcony construction.</strong></p><p>Use the perpendicular method for balconies set into a building, and never install it over interior living space.</p>",
+   "short_answer": "Yes, Dexerdry is a more affordable and faster alternative to fiberglass or concrete balcony construction.",
+   "answer": "Yes, Dexerdry is a more affordable and faster alternative to fiberglass or concrete balcony construction. Use the perpendicular method for balconies set into a building, and never install it over interior living space.",
+   "answer_html": "<p><strong>Yes, Dexerdry is a more affordable and faster alternative to fiberglass or concrete balcony construction.</strong></p><p>Use the perpendicular method for balconies set into a building, and never install it over interior living space.</p>",
    "keywords": [
     "balcony",
     "fiberglass",
@@ -2639,13 +2639,13 @@
   {
    "id": "board-types",
    "num": "qa-100",
-   "question": "Does DexerDry work with PVC and composite boards?",
+   "question": "Does Dexerdry work with PVC and composite boards?",
    "alt_questions": [
     "Can I use it with wood decking?"
    ],
-   "short_answer": "Yes, DexerDry works with grooved PVC and composite deck boards that have a side groove for hidden fasteners.",
-   "answer": "Yes, DexerDry works with grooved PVC and composite deck boards that have a side groove for hidden fasteners. Check dexerdry.com for a profile that matches your board before using any other decking.",
-   "answer_html": "<p><strong>Yes, DexerDry works with grooved PVC and composite deck boards that have a side groove for hidden fasteners.</strong></p><p>Check dexerdry.com for a profile that matches your board before using any other decking.</p>",
+   "short_answer": "Yes, Dexerdry works with grooved PVC and composite deck boards that have a side groove for hidden fasteners.",
+   "answer": "Yes, Dexerdry works with grooved PVC and composite deck boards that have a side groove for hidden fasteners. Check dexerdry.com for a profile that matches your board before using any other decking.",
+   "answer_html": "<p><strong>Yes, Dexerdry works with grooved PVC and composite deck boards that have a side groove for hidden fasteners.</strong></p><p>Check dexerdry.com for a profile that matches your board before using any other decking.</p>",
    "keywords": [
     "pvc",
     "composite",
@@ -2690,13 +2690,13 @@
   {
    "id": "concrete-alternative",
    "num": "qa-102",
-   "question": "Why choose DexerDry instead of a concrete deck?",
+   "question": "Why choose Dexerdry instead of a concrete deck?",
    "alt_questions": [
-    "Concrete vs DexerDry?"
+    "Concrete vs Dexerdry?"
    ],
-   "short_answer": "Builders choose DexerDry because concrete decks are expensive and heavy, and they can crack and let water through to the ceiling below.",
-   "answer": "Builders choose DexerDry because concrete decks are expensive and heavy, and they can crack and let water through to the ceiling below. DexerDry creates a DRY ZONE with standard grooved decking.",
-   "answer_html": "<p><strong>Builders choose DexerDry because concrete decks are expensive and heavy, and they can crack and let water through to the ceiling below.</strong></p><p>DexerDry creates a DRY ZONE with standard grooved decking.</p>",
+   "short_answer": "Builders choose Dexerdry because concrete decks are expensive and heavy, and they can crack and let water through to the ceiling below.",
+   "answer": "Builders choose Dexerdry because concrete decks are expensive and heavy, and they can crack and let water through to the ceiling below. Dexerdry creates a DRY ZONE with standard grooved decking.",
+   "answer_html": "<p><strong>Builders choose Dexerdry because concrete decks are expensive and heavy, and they can crack and let water through to the ceiling below.</strong></p><p>Dexerdry creates a DRY ZONE with standard grooved decking.</p>",
    "keywords": [
     "concrete",
     "alternative"
@@ -2714,13 +2714,13 @@
   {
    "id": "under-deck-system-alternative",
    "num": "qa-103",
-   "question": "How does DexerDry compare to under-deck drainage systems?",
+   "question": "How does Dexerdry compare to under-deck drainage systems?",
    "alt_questions": [
-    "Is DexerDry better than a system between the joists?"
+    "Is Dexerdry better than a system between the joists?"
    ],
-   "short_answer": "DexerDry keeps water on top of the boards, so there is no trough under the joists that can collect debris or hold standing water.",
-   "answer": "DexerDry keeps water on top of the boards, so there is no trough under the joists that can collect debris or hold standing water. Builders also like the cleaner look underneath.",
-   "answer_html": "<p><strong>DexerDry keeps water on top of the boards, so there is no trough under the joists that can collect debris or hold standing water.</strong></p><p>Builders also like the cleaner look underneath.</p>",
+   "short_answer": "Dexerdry keeps water on top of the boards, so there is no trough under the joists that can collect debris or hold standing water.",
+   "answer": "Dexerdry keeps water on top of the boards, so there is no trough under the joists that can collect debris or hold standing water. Builders also like the cleaner look underneath.",
+   "answer_html": "<p><strong>Dexerdry keeps water on top of the boards, so there is no trough under the joists that can collect debris or hold standing water.</strong></p><p>Builders also like the cleaner look underneath.</p>",
    "keywords": [
     "under deck",
     "drainage system",
@@ -2740,7 +2740,7 @@
   {
    "id": "not-precut",
    "num": "qa-104",
-   "question": "Does DexerDry come pre-cut?",
+   "question": "Does Dexerdry come pre-cut?",
    "alt_questions": [
     "Do I get pieces or a roll?"
    ],
@@ -2765,13 +2765,13 @@
   {
    "id": "where-to-buy",
    "num": "qa-105",
-   "question": "Where can I buy DexerDry?",
+   "question": "Where can I buy Dexerdry?",
    "alt_questions": [
     "Can I order it online?"
    ],
-   "short_answer": "You can order DexerDry directly from dexerdry.com and have it shipped to you.",
-   "answer": "You can order DexerDry directly from dexerdry.com and have it shipped to you. It ships to you.",
-   "answer_html": "<p><strong>You can order DexerDry directly from dexerdry.com and have it shipped to you.</strong></p><p>It ships to you.</p>",
+   "short_answer": "You can order Dexerdry directly from dexerdry.com and have it shipped to you.",
+   "answer": "You can order Dexerdry directly from dexerdry.com and have it shipped to you. It ships to you.",
+   "answer_html": "<p><strong>You can order Dexerdry directly from dexerdry.com and have it shipped to you.</strong></p><p>It ships to you.</p>",
    "keywords": [
     "buy",
     "order",
@@ -2791,13 +2791,13 @@
   {
    "id": "made-in-usa",
    "num": "qa-106",
-   "question": "Where is DexerDry made?",
+   "question": "Where is Dexerdry made?",
    "alt_questions": [
-    "Is DexerDry made in the USA?"
+    "Is Dexerdry made in the USA?"
    ],
-   "short_answer": "DexerDry is made in the USA by a small company.",
-   "answer": "DexerDry is made in the USA by a small company. Visit dexerdry.com for company details.",
-   "answer_html": "<p><strong>DexerDry is made in the USA by a small company.</strong></p><p>Visit dexerdry.com for company details.</p>",
+   "short_answer": "Dexerdry is made in the USA by a small company.",
+   "answer": "Dexerdry is made in the USA by a small company. Visit dexerdry.com for company details.",
+   "answer_html": "<p><strong>Dexerdry is made in the USA by a small company.</strong></p><p>Visit dexerdry.com for company details.</p>",
    "keywords": [
     "made in usa",
     "company"
@@ -2819,9 +2819,9 @@
    "alt_questions": [
     "Who can I call with install questions?"
    ],
-   "short_answer": "Yes, DexerDry offers install help, and the owner has walked builders through their installs.",
-   "answer": "Yes, DexerDry offers install help, and the owner has walked builders through their installs. Start with the written instructions and videos at dexerdry.com, then contact DexerDry with questions.",
-   "answer_html": "<p><strong>Yes, DexerDry offers install help, and the owner has walked builders through their installs.</strong></p><p>Start with the written instructions and videos at dexerdry.com, then contact DexerDry with questions.</p>",
+   "short_answer": "Yes, Dexerdry offers install help, and the owner has walked builders through their installs.",
+   "answer": "Yes, Dexerdry offers install help, and the owner has walked builders through their installs. Start with the written instructions and videos at dexerdry.com, then contact Dexerdry with questions.",
+   "answer_html": "<p><strong>Yes, Dexerdry offers install help, and the owner has walked builders through their installs.</strong></p><p>Start with the written instructions and videos at dexerdry.com, then contact Dexerdry with questions.</p>",
    "keywords": [
     "support",
     "help",
@@ -2841,7 +2841,7 @@
   {
    "id": "qr-card",
    "num": "qa-108",
-   "question": "What is the orange card in the DexerDry box?",
+   "question": "What is the orange card in the Dexerdry box?",
    "alt_questions": [
     "Where do I find the instructions?"
    ],
@@ -2892,13 +2892,13 @@
   {
    "id": "will-king-project",
    "num": "qa-110",
-   "question": "Is there a real project built with DexerDry?",
+   "question": "Is there a real project built with Dexerdry?",
    "alt_questions": [
-    "Who uses DexerDry?"
+    "Who uses Dexerdry?"
    ],
-   "short_answer": "Yes, High Cotton Homes used DexerDry on a lake home deck in Alabama, with boards running away from the house, a picture frame and a gutter.",
-   "answer": "Yes, High Cotton Homes used DexerDry on a lake home deck in Alabama, with boards running away from the house, a picture frame and a gutter. The builder used composite decking and the BlueClaw compression tool.",
-   "answer_html": "<p><strong>Yes, High Cotton Homes used DexerDry on a lake home deck in Alabama, with boards running away from the house, a picture frame and a gutter.</strong></p><p>The builder used composite decking and the BlueClaw compression tool.</p>",
+   "short_answer": "Yes, High Cotton Homes used Dexerdry on a lake home deck in Alabama, with boards running away from the house, a picture frame and a gutter.",
+   "answer": "Yes, High Cotton Homes used Dexerdry on a lake home deck in Alabama, with boards running away from the house, a picture frame and a gutter. The builder used composite decking and the BlueClaw compression tool.",
+   "answer_html": "<p><strong>Yes, High Cotton Homes used Dexerdry on a lake home deck in Alabama, with boards running away from the house, a picture frame and a gutter.</strong></p><p>The builder used composite decking and the BlueClaw compression tool.</p>",
    "keywords": [
     "high cotton homes",
     "build show",
@@ -2917,13 +2917,13 @@
   {
    "id": "tv-feature",
    "num": "qa-111",
-   "question": "Was DexerDry on TV?",
+   "question": "Was Dexerdry on TV?",
    "alt_questions": [
-    "Was DexerDry on Bargain Mansions?"
+    "Was Dexerdry on Bargain Mansions?"
    ],
-   "short_answer": "Yes, DexerDry appeared on Bargain Mansions, where it helped keep a patio below a new 600 square foot deck dry.",
-   "answer": "Yes, DexerDry appeared on Bargain Mansions, where it helped keep a patio below a new 600 square foot deck dry. The weather strip fits the board grooves to stop water from dripping onto the patio below.",
-   "answer_html": "<p><strong>Yes, DexerDry appeared on Bargain Mansions, where it helped keep a patio below a new 600 square foot deck dry.</strong></p><p>The weather strip fits the board grooves to stop water from dripping onto the patio below.</p>",
+   "short_answer": "Yes, Dexerdry appeared on Bargain Mansions, where it helped keep a patio below a new 600 square foot deck dry.",
+   "answer": "Yes, Dexerdry appeared on Bargain Mansions, where it helped keep a patio below a new 600 square foot deck dry. The weather strip fits the board grooves to stop water from dripping onto the patio below.",
+   "answer_html": "<p><strong>Yes, Dexerdry appeared on Bargain Mansions, where it helped keep a patio below a new 600 square foot deck dry.</strong></p><p>The weather strip fits the board grooves to stop water from dripping onto the patio below.</p>",
    "keywords": [
     "bargain mansions",
     "tv",
@@ -2942,13 +2942,13 @@
   {
    "id": "strip-colors",
    "num": "qa-112",
-   "question": "What color is DexerDry?",
+   "question": "What color is Dexerdry?",
    "alt_questions": [
-    "Does DexerDry come in colors?"
+    "Does Dexerdry come in colors?"
    ],
-   "short_answer": "DexerDry is typically black; check dexerdry.com for current color options.",
-   "answer": "DexerDry is typically black; check dexerdry.com for current color options. Samples in other colors such as grey and beige have been shown, but availability may vary.",
-   "answer_html": "<p><strong>DexerDry is typically black; check dexerdry.com for current color options.</strong></p><p>Samples in other colors such as grey and beige have been shown, but availability may vary.</p>",
+   "short_answer": "Dexerdry is typically black; check dexerdry.com for current color options.",
+   "answer": "Dexerdry is typically black; check dexerdry.com for current color options. Samples in other colors such as grey and beige have been shown, but availability may vary.",
+   "answer_html": "<p><strong>Dexerdry is typically black; check dexerdry.com for current color options.</strong></p><p>Samples in other colors such as grey and beige have been shown, but availability may vary.</p>",
    "keywords": [
     "color",
     "black",
@@ -3054,8 +3054,8 @@
     "Do I need flashing over the gutter ends?"
    ],
    "short_answer": "Put adhesive flashing tape over the gutter ends and onto the joists.",
-   "answer": "Put adhesive flashing tape over the gutter ends and onto the joists. This is critical because the frieze board, DexerDry and decking seams all land there.",
-   "answer_html": "<p><strong>Put adhesive flashing tape over the gutter ends and onto the joists.</strong></p><p>This is critical because the frieze board, DexerDry and decking seams all land there.</p>",
+   "answer": "Put adhesive flashing tape over the gutter ends and onto the joists. This is critical because the frieze board, Dexerdry and decking seams all land there.",
+   "answer_html": "<p><strong>Put adhesive flashing tape over the gutter ends and onto the joists.</strong></p><p>This is critical because the frieze board, Dexerdry and decking seams all land there.</p>",
    "keywords": [
     "gutter",
     "flashing",
@@ -3232,8 +3232,8 @@
     "What router bit for Deckorators?"
    ],
    "short_answer": "Deckorators decking has a groove 5/32 inch wide by 3/8 inch deep.",
-   "answer": "Deckorators decking has a groove 5/32 inch wide by 3/8 inch deep. Use a router bit that matches your board's groove; DexerDry can help you find the right one.",
-   "answer_html": "<p><strong>Deckorators decking has a groove 5/32 inch wide by 3/8 inch deep.</strong></p><p>Use a router bit that matches your board's groove; DexerDry can help you find the right one.</p>",
+   "answer": "Deckorators decking has a groove 5/32 inch wide by 3/8 inch deep. Use a router bit that matches your board's groove; Dexerdry can help you find the right one.",
+   "answer_html": "<p><strong>Deckorators decking has a groove 5/32 inch wide by 3/8 inch deep.</strong></p><p>Use a router bit that matches your board's groove; Dexerdry can help you find the right one.</p>",
    "keywords": [
     "deckorators",
     "groove size",
@@ -3278,7 +3278,7 @@
   {
    "id": "surface-posts",
    "num": "qa-125",
-   "question": "How do I mount railing posts on a DexerDry deck?",
+   "question": "How do I mount railing posts on a Dexerdry deck?",
    "alt_questions": [
     "Can I through-bolt posts?"
    ],
@@ -3304,9 +3304,9 @@
   {
    "id": "real-deck-examples",
    "num": "qa-126",
-   "question": "Is there a real DexerDry deck example?",
+   "question": "Is there a real Dexerdry deck example?",
    "alt_questions": [
-    "How big can a DexerDry deck be?"
+    "How big can a Dexerdry deck be?"
    ],
    "short_answer": "Yes, one example is a 20 ft by 12 ft deck with boards running away from the house and surface mounted posts.",
    "answer": "Yes, one example is a 20 ft by 12 ft deck with boards running away from the house and surface mounted posts. It shelters kayaks and firewood underneath.",
@@ -3329,9 +3329,9 @@
   {
    "id": "tools-list",
    "num": "qa-127",
-   "question": "What tools do I need to install DexerDry?",
+   "question": "What tools do I need to install Dexerdry?",
    "alt_questions": [
-    "Is there a tool list for DexerDry?"
+    "Is there a tool list for Dexerdry?"
    ],
    "short_answer": "You need a recommended compression tool (BlueClaw or DeckWise Hardwood Wrench), a router with the matching bit, circular saw, table saw, rubber mallet, beater board, PVC pipe cutter, drill or impact driver, caulk gun with clear caulk, tape measure, pencil and safety glasses.",
    "answer": "You need a recommended compression tool (BlueClaw or DeckWise Hardwood Wrench), a router with the matching bit, circular saw, table saw, rubber mallet, beater board, PVC pipe cutter, drill or impact driver, caulk gun with clear caulk, tape measure, pencil and safety glasses. A miter saw, brad nailer, level, power planer, air compressor and a metal brake for gutters are also helpful.",

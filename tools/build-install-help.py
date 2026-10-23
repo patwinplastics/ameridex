@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the DexerDry install help page from data/dexerdry-install.json.
+"""Render the Dexerdry install help page from data/dexerdry-install.json.
 
 Rebuilds two generated parts of dexerdry-install-help.html, so the page works
 without JavaScript and search engines see every answer:
