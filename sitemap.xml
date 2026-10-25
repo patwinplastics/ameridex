@@ -123,6 +123,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.ameridex.com/blog/deck-ledger-flashing.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ameridex.com/assets/img/blog/deck-ledger-flashing.jpg</image:loc>
+      <image:caption>Diagram of a flashed deck ledger where the deck meets the house</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.ameridex.com/blog/water-dripping-through-deck-boards.html</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
