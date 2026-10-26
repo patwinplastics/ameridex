@@ -628,19 +628,18 @@
   {
    "id": "recommended-compression-tools",
    "num": "qa-023",
-   "question": "Which compression tools are recommended?",
+   "question": "Which compression tool is recommended?",
    "alt_questions": [
     "What tool do I use to compress the boards?",
     "Do I need a special tool?",
     "Is the BlueClaw required?"
    ],
-   "short_answer": "Use the Dexerdry BlueClaw compression tool or the DeckWise Hardwood Wrench.",
-   "answer": "Use the Dexerdry BlueClaw compression tool or the DeckWise Hardwood Wrench. Proper compression is extremely important, so use one of these two tools (sold separately). The BlueClaw is not mandatory, but it was made to work with Dexerdry and gives consistent compression. Do not use a hammer and chisel.",
-   "answer_html": "<p><strong>Use the Dexerdry BlueClaw compression tool or the DeckWise Hardwood Wrench.</strong></p><p>Proper compression is extremely important, so use one of these two tools (sold separately). The BlueClaw is not mandatory, but it was made to work with Dexerdry and gives consistent compression. Do not use a hammer and chisel.</p>",
+   "short_answer": "Use the Dexerdry BlueClaw compression tool.",
+   "answer": "Use the Dexerdry BlueClaw compression tool. Proper compression is extremely important, so use the BlueClaw (sold separately). It was made to work with Dexerdry and gives consistent compression. Do not use a hammer and chisel.",
+   "answer_html": "<p><strong>Use the Dexerdry BlueClaw compression tool.</strong></p><p>Proper compression is extremely important, so use the BlueClaw (sold separately). It was made to work with Dexerdry and gives consistent compression. Do not use a hammer and chisel.</p>",
    "keywords": [
     "compression",
     "blueclaw",
-    "hardwood wrench",
     "stanley board bender"
    ],
    "category": "compression tools",
@@ -662,8 +661,8 @@
     "I saw a hammer and chisel used, is that OK?"
    ],
    "short_answer": "No, do not use a hammer and chisel to compress Dexerdry.",
-   "answer": "No, do not use a hammer and chisel to compress Dexerdry. Use the BlueClaw or the DeckWise Hardwood Wrench to get proper, even compression.",
-   "answer_html": "<p><strong>No, do not use a hammer and chisel to compress Dexerdry.</strong></p><p>Use the BlueClaw or the DeckWise Hardwood Wrench to get proper, even compression.</p>",
+   "answer": "No, do not use a hammer and chisel to compress Dexerdry. Use the BlueClaw to get proper, even compression.",
+   "answer_html": "<p><strong>No, do not use a hammer and chisel to compress Dexerdry.</strong></p><p>Use the BlueClaw to get proper, even compression.</p>",
    "keywords": [
     "hammer",
     "chisel",
@@ -1386,8 +1385,8 @@
     "Will it leak if the boards are not tight?"
    ],
    "short_answer": "Coiled Dexerdry is flexible and depends on tight compression between boards to seal, so tight is right.",
-   "answer": "Coiled Dexerdry is flexible and depends on tight compression between boards to seal, so tight is right. If the flange is not properly compressed and caulked where shown, the deck will leak. Use a recommended compression tool on every board.",
-   "answer_html": "<p><strong>Coiled Dexerdry is flexible and depends on tight compression between boards to seal, so tight is right.</strong></p><p>If the flange is not properly compressed and caulked where shown, the deck will leak. Use a recommended compression tool on every board.</p>",
+   "answer": "Coiled Dexerdry is flexible and depends on tight compression between boards to seal, so tight is right. If the flange is not properly compressed and caulked where shown, the deck will leak. Use the BlueClaw on every board.",
+   "answer_html": "<p><strong>Coiled Dexerdry is flexible and depends on tight compression between boards to seal, so tight is right.</strong></p><p>If the flange is not properly compressed and caulked where shown, the deck will leak. Use the BlueClaw on every board.</p>",
    "keywords": [
     "compression",
     "tight is right",
@@ -1407,29 +1406,28 @@
   {
    "id": "hardwood-wrench-use",
    "num": "qa-053",
-   "question": "How do I use the DeckWise Hardwood Wrench with Dexerdry?",
+   "question": "Can I use the DeckWise Hardwood Wrench with Dexerdry?",
    "alt_questions": [
     "What does the deck wrench do?",
-    "Can the Hardwood Wrench be used left handed?"
+    "Can I use a deck wrench instead of the BlueClaw?"
    ],
-   "short_answer": "Lock the wrench onto a joist and it holds the board compressed hands free while you drive the screws.",
-   "answer": "Lock the wrench onto a joist and it holds the board compressed hands free while you drive the screws. It works on single or double joists and can be set up for left or right hand use. On a long board, it can hold one end tight while you compress the center.",
-   "answer_html": "<p><strong>Lock the wrench onto a joist and it holds the board compressed hands free while you drive the screws.</strong></p><p>It works on single or double joists and can be set up for left or right hand use. On a long board, it can hold one end tight while you compress the center.</p>",
+   "short_answer": "Use the Dexerdry BlueClaw; it is the compression tool Dexerdry recommends.",
+   "answer": "Use the Dexerdry BlueClaw; it is the compression tool Dexerdry recommends. Proper compression is critical, so press each board tight with the BlueClaw and a 2x beater board at every joist.",
+   "answer_html": "<p><strong>Use the Dexerdry BlueClaw; it is the compression tool Dexerdry recommends.</strong></p><p>Proper compression is critical, so press each board tight with the BlueClaw and a 2x beater board at every joist.</p>",
    "keywords": [
     "hardwood wrench",
     "deckwise",
     "deck wrench",
-    "hands free",
-    "starborn"
+    "blueclaw"
    ],
    "category": "compression tools",
-   "video_url": "https://www.youtube.com/watch?v=iKtXBfJ2lBg&t=38s",
-   "video_title": "Installing Coilable Dexerdry",
-   "timestamp_label": "0:38",
+   "video_url": "https://www.youtube.com/watch?v=7jqTXMkjpYM&t=0s",
+   "video_title": "Dexerdry BlueClaw Compression Tool Tutorial",
+   "timestamp_label": "0:00",
    "source_video": {
-    "title": "Installing Coilable Dexerdry",
-    "url": "https://www.youtube.com/watch?v=iKtXBfJ2lBg",
-    "timestamp": "0:38"
+    "title": "Dexerdry BlueClaw Compression Tool Tutorial",
+    "url": "https://www.youtube.com/watch?v=7jqTXMkjpYM",
+    "timestamp": "0:00"
    }
   },
   {
@@ -1439,9 +1437,9 @@
    "alt_questions": [
     "Is the Stanley Board Bender OK for Dexerdry?"
    ],
-   "short_answer": "Use the BlueClaw or the DeckWise Hardwood Wrench; those are the compression tools Dexerdry recommends.",
-   "answer": "Use the BlueClaw or the DeckWise Hardwood Wrench; those are the compression tools Dexerdry recommends. Proper compression is critical, so stick with a recommended tool.",
-   "answer_html": "<p><strong>Use the BlueClaw or the DeckWise Hardwood Wrench; those are the compression tools Dexerdry recommends.</strong></p><p>Proper compression is critical, so stick with a recommended tool.</p>",
+   "short_answer": "Use the Dexerdry BlueClaw; it is the compression tool Dexerdry recommends.",
+   "answer": "Use the Dexerdry BlueClaw; it is the compression tool Dexerdry recommends. Proper compression is critical, so stick with the BlueClaw.",
+   "answer_html": "<p><strong>Use the Dexerdry BlueClaw; it is the compression tool Dexerdry recommends.</strong></p><p>Proper compression is critical, so stick with the BlueClaw.</p>",
    "keywords": [
     "stanley",
     "board bender",
@@ -1465,9 +1463,9 @@
     "Can I use a BoWrench?",
     "Is any board straightening tool OK?"
    ],
-   "short_answer": "Use only the recommended compression tools: the Dexerdry BlueClaw or the DeckWise Hardwood Wrench.",
-   "answer": "Use only the recommended compression tools: the Dexerdry BlueClaw or the DeckWise Hardwood Wrench. Other tools may not give the even compression Dexerdry needs.",
-   "answer_html": "<p><strong>Use only the recommended compression tools: the Dexerdry BlueClaw or the DeckWise Hardwood Wrench.</strong></p><p>Other tools may not give the even compression Dexerdry needs.</p>",
+   "short_answer": "Use only the recommended compression tool, the Dexerdry BlueClaw.",
+   "answer": "Use only the recommended compression tool, the Dexerdry BlueClaw. Other tools may not give the even compression Dexerdry needs.",
+   "answer_html": "<p><strong>Use only the recommended compression tool, the Dexerdry BlueClaw.</strong></p><p>Other tools may not give the even compression Dexerdry needs.</p>",
    "keywords": [
     "bowrench",
     "cam tool",
@@ -2948,14 +2946,12 @@
    "alt_questions": [
     "Does Dexerdry come in colors?"
    ],
-   "short_answer": "Dexerdry is typically black; check dexerdry.com for current color options.",
-   "answer": "Dexerdry is typically black; check dexerdry.com for current color options. Samples in other colors such as grey and beige have been shown, but availability may vary.",
-   "answer_html": "<p><strong>Dexerdry is typically black; check dexerdry.com for current color options.</strong></p><p>Samples in other colors such as grey and beige have been shown, but availability may vary.</p>",
+   "short_answer": "Dexerdry is black.",
+   "answer": "Dexerdry is black.",
+   "answer_html": "<p><strong>Dexerdry is black.</strong></p>",
    "keywords": [
     "color",
-    "black",
-    "grey",
-    "beige"
+    "black"
    ],
    "category": "product facts",
    "video_url": "https://dexerdry.com/wp-content/uploads/Bargain%20Mansions_ep414_PressScreener_02.01.23%20(1).mp4#t=1233",
@@ -3335,9 +3331,9 @@
    "alt_questions": [
     "Is there a tool list for Dexerdry?"
    ],
-   "short_answer": "You need a recommended compression tool (BlueClaw or DeckWise Hardwood Wrench), a router with the matching bit, circular saw, table saw, rubber mallet, beater board, PVC pipe cutter, drill or impact driver, caulk gun with clear caulk, tape measure, pencil and safety glasses.",
-   "answer": "You need a recommended compression tool (BlueClaw or DeckWise Hardwood Wrench), a router with the matching bit, circular saw, table saw, rubber mallet, beater board, PVC pipe cutter, drill or impact driver, caulk gun with clear caulk, tape measure, pencil and safety glasses. A miter saw, brad nailer, level, power planer, air compressor and a metal brake for gutters are also helpful.",
-   "answer_html": "<p><strong>You need a recommended compression tool (BlueClaw or DeckWise Hardwood Wrench), a router with the matching bit, circular saw, table saw, rubber mallet, beater board, PVC pipe cutter, drill or impact driver, caulk gun with clear caulk, tape measure, pencil and safety glasses.</strong></p><p>A miter saw, brad nailer, level, power planer, air compressor and a metal brake for gutters are also helpful.</p>",
+   "short_answer": "You need the BlueClaw compression tool, a router with the matching bit, circular saw, table saw, rubber mallet, beater board, PVC pipe cutter, drill or impact driver, caulk gun with clear caulk, tape measure, pencil and safety glasses.",
+   "answer": "You need the BlueClaw compression tool, a router with the matching bit, circular saw, table saw, rubber mallet, beater board, PVC pipe cutter, drill or impact driver, caulk gun with clear caulk, tape measure, pencil and safety glasses. A miter saw, brad nailer, level, power planer, air compressor and a metal brake for gutters are also helpful.",
+   "answer_html": "<p><strong>You need the BlueClaw compression tool, a router with the matching bit, circular saw, table saw, rubber mallet, beater board, PVC pipe cutter, drill or impact driver, caulk gun with clear caulk, tape measure, pencil and safety glasses.</strong></p><p>A miter saw, brad nailer, level, power planer, air compressor and a metal brake for gutters are also helpful.</p>",
    "keywords": [
     "tools",
     "tool list",
