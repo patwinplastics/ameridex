@@ -137,38 +137,6 @@
    }
   },
   {
-   "id": "compatible-brands",
-   "num": "qa-005",
-   "question": "Which decking brands does Dexerdry fit?",
-   "alt_questions": [
-    "Does Dexerdry work with Trex?",
-    "Does it fit TimberTech or Azek?",
-    "What decking brands is Dexerdry made for?"
-   ],
-   "short_answer": "Dexerdry profiles are made for grooved boards from brands including Azek/TimberTech, Trex, Fiberon, Deckorators, MoistureShield and Wolf.",
-   "answer": "Dexerdry profiles are made for grooved boards from brands including Azek/TimberTech, Trex, Fiberon, Deckorators, MoistureShield and Wolf. Always match the profile to your specific board, and check dexerdry.com for the current list.",
-   "answer_html": "<p><strong>Dexerdry profiles are made for grooved boards from brands including Azek/TimberTech, Trex, Fiberon, Deckorators, MoistureShield and Wolf.</strong></p><p>Always match the profile to your specific board, and check dexerdry.com for the current list.</p>",
-   "keywords": [
-    "brands",
-    "trex",
-    "timbertech",
-    "azek",
-    "fiberon",
-    "deckorators",
-    "moistureshield",
-    "wolf"
-   ],
-   "category": "product facts",
-   "video_url": "https://www.youtube.com/watch?v=iKtXBfJ2lBg&t=289s",
-   "video_title": "Installing Coilable Dexerdry",
-   "timestamp_label": "4:49",
-   "source_video": {
-    "title": "Installing Coilable Dexerdry",
-    "url": "https://www.youtube.com/watch?v=iKtXBfJ2lBg",
-    "timestamp": "4:49"
-   }
-  },
-  {
    "id": "deck-slope",
    "num": "qa-006",
    "question": "What slope does the deck need?",
