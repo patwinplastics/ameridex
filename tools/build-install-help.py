@@ -26,7 +26,8 @@ for q in items:
     for k in INTERNAL:
         if k in q:
             sys.exit(f'internal-only field {k} found in {q["id"]}; strip it from the public JSON')
-    q['video_title'] = VIDEO_PREFIX.sub('', q['video_title'])
+    if q.get('video_url'):
+        q['video_title'] = VIDEO_PREFIX.sub('', q['video_title'])
     for k in ('question', 'short_answer', 'answer', 'answer_html'):
         if '\u2014' in q[k] or '\u2013' in q[k]:
             sys.exit(f'em or en dash found in {q["id"]}.{k}; replace it before building')
@@ -42,9 +43,10 @@ def item_html(q):
         f'<span class="ih-short">{e(q["short_answer"])}</span>'
         f'<span class="ih-cat">{e(q["category"])}</span></summary>'
         f'<div class="ih-body">{q["answer_html"]}'
-        f'<p><a class="ih-watch" href="{e(q["video_url"])}" rel="noopener" target="_blank">'
-        f'&#9654; Watch this step <small>{e(q["video_title"])} at {e(q["timestamp_label"])} (opens in a new tab)</small></a></p>'
-        f'</div></details>'
+        + (f'<p><a class="ih-watch" href="{e(q["video_url"])}" rel="noopener" target="_blank">'
+           f'&#9654; Watch this step <small>{e(q["video_title"])} at {e(q["timestamp_label"])} (opens in a new tab)</small></a></p>'
+           if q.get('video_url') else '')
+        + '</div></details>'
     )
 
 listing = '\n'.join(item_html(q) for q in items)
