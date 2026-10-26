@@ -189,6 +189,26 @@
    }
   },
   {
+   "id": "board-expansion",
+   "num": "qa-134",
+   "question": "How much do AmeriDex boards expand and contract?",
+   "alt_questions": [
+    "Do the boards expand?",
+    "How much do PVC boards move with temperature?"
+   ],
+   "short_answer": "AmeriDex boards move about 1/8 inch over a 20 ft board across normal seasonal temperature swings.",
+   "answer": "AmeriDex boards move about 1/8 inch over a 20 ft board across normal seasonal temperature swings. The movement is lengthwise only, along the length of the board, not side to side.",
+   "answer_html": "<p><strong>AmeriDex boards move about 1/8 inch over a 20 ft board across normal seasonal temperature swings.</strong></p><p>The movement is lengthwise only, along the length of the board, not side to side.</p>",
+   "keywords": [
+    "expansion",
+    "contraction",
+    "movement",
+    "temperature",
+    "thermal"
+   ],
+   "category": "planning"
+  },
+  {
    "id": "blueclaw-end-gap",
    "num": "qa-008",
    "question": "Why leave a 4 inch gap at the end of the framing?",
@@ -267,6 +287,27 @@
     "url": "https://www.youtube.com/watch?v=QW5Ps7P13Pc",
     "timestamp": "0:26"
    }
+  },
+  {
+   "id": "board-lengths",
+   "num": "qa-131",
+   "question": "What lengths do the boards come in?",
+   "alt_questions": [
+    "How long are the deck boards?",
+    "Can I get 25 ft boards?"
+   ],
+   "short_answer": "AmeriDex boards are stocked in 12, 16 and 20 foot lengths.",
+   "answer": "AmeriDex boards are stocked in 12, 16 and 20 foot lengths. Standard runs top out at 20 ft, and custom lengths up to 25 ft are available on request.",
+   "answer_html": "<p><strong>AmeriDex boards are stocked in 12, 16 and 20 foot lengths.</strong></p><p>Standard runs top out at 20 ft, and custom lengths up to 25 ft are available on request.</p>",
+   "keywords": [
+    "lengths",
+    "12 ft",
+    "16 ft",
+    "20 ft",
+    "25 ft",
+    "custom"
+   ],
+   "category": "planning"
   },
   {
    "id": "no-splicing-or-gluing",
@@ -1080,6 +1121,27 @@
    }
   },
   {
+   "id": "butt-joint-gap",
+   "num": "qa-135",
+   "question": "What gap should I leave at butt joints?",
+   "alt_questions": [
+    "Can I butt joint boards mid-run?",
+    "Where do butt joints go?"
+   ],
+   "short_answer": "Butt joints happen only at a center or breaker board, never mid-run.",
+   "answer": "Butt joints happen only at a center or breaker board, never mid-run. Leave a 1/4 inch gap at butt joints.",
+   "answer_html": "<p><strong>Butt joints happen only at a center or breaker board, never mid-run.</strong></p><p>Leave a 1/4 inch gap at butt joints.</p>",
+   "keywords": [
+    "butt joint",
+    "gap",
+    "1/4 inch",
+    "center board",
+    "breaker",
+    "seam"
+   ],
+   "category": "wide decks"
+  },
+  {
    "id": "center-boards-per-deck",
    "num": "qa-042",
    "question": "How many center boards does a 60 ft deck need?",
@@ -1181,6 +1243,68 @@
     "url": "https://www.youtube.com/watch?v=buGbwJ0j5Wo",
     "timestamp": "2:12"
    }
+  },
+  {
+   "id": "color-fade",
+   "num": "qa-138",
+   "question": "Will the color fade?",
+   "alt_questions": [
+    "Do the boards fade?",
+    "Is the color fade-proof?"
+   ],
+   "short_answer": "The ASA cap on every board is designed to resist fading, but no material is fade-proof after years of sun.",
+   "answer": "The ASA cap on every board is designed to resist fading, but no material is fade-proof after years of sun. Boards may lighten a little as they weather, which is normal and not a defect. Under the limited warranty, the color will not fade more than 5 Delta E (CIE) units, a standard measure of color change, after exposure to light and weathering.",
+   "answer_html": "<p><strong>The ASA cap on every board is designed to resist fading, but no material is fade-proof after years of sun.</strong></p><p>Boards may lighten a little as they weather, which is normal and not a defect. Under the limited warranty, the color will not fade more than 5 Delta E (CIE) units, a standard measure of color change, after exposure to light and weathering.</p>",
+   "keywords": [
+    "fade",
+    "fading",
+    "color",
+    "weathering",
+    "delta e",
+    "warranty"
+   ],
+   "category": "cleaning/maintenance"
+  },
+  {
+   "id": "no-stain-or-seal",
+   "num": "qa-139",
+   "question": "Do the boards need to be stained or sealed?",
+   "alt_questions": [
+    "Do I need to seal the deck?",
+    "Can I paint or stain the boards?"
+   ],
+   "short_answer": "No.",
+   "answer": "No. The color and protection are built into the ASA cap, so there is no sanding, staining, sealing or repainting. Putting a sealer or stain on the boards is unnecessary and could affect your warranty, so check your warranty documents first.",
+   "answer_html": "<p><strong>No.</strong></p><p>The color and protection are built into the ASA cap, so there is no sanding, staining, sealing or repainting. Putting a sealer or stain on the boards is unnecessary and could affect your warranty, so check your warranty documents first.</p>",
+   "keywords": [
+    "stain",
+    "seal",
+    "sealer",
+    "paint",
+    "maintenance"
+   ],
+   "category": "cleaning/maintenance"
+  },
+  {
+   "id": "spill-stains",
+   "num": "qa-140",
+   "question": "Will the boards stain from spills or leaves?",
+   "alt_questions": [
+    "How do I get a stain out?",
+    "Do leaves stain the deck?"
+   ],
+   "short_answer": "The boards are made to resist permanent staining from food and drink spills.",
+   "answer": "The boards are made to resist permanent staining from food and drink spills. Clean a spill with soap and water or a mild household cleaner as soon as you see it, and within one week. Rinse leaves off before they sit through a rain, and use an oxygen bleach solution for tannin marks. If a food or drink stain still will not come out, have a professional deck cleaner clean it at your cost; if it is still there after that, you can file a stain claim under the limited warranty within 30 days of the professional cleaning.",
+   "answer_html": "<p><strong>The boards are made to resist permanent staining from food and drink spills.</strong></p><p>Clean a spill with soap and water or a mild household cleaner as soon as you see it, and within one week. Rinse leaves off before they sit through a rain, and use an oxygen bleach solution for tannin marks. If a food or drink stain still will not come out, have a professional deck cleaner clean it at your cost; if it is still there after that, you can file a stain claim under the limited warranty within 30 days of the professional cleaning.</p>",
+   "keywords": [
+    "stains",
+    "spills",
+    "leaves",
+    "tannin",
+    "oxygen bleach",
+    "stain claim"
+   ],
+   "category": "cleaning/maintenance"
   },
   {
    "id": "joist-tape",
@@ -2316,6 +2440,26 @@
    }
   },
   {
+   "id": "picture-frame-or-breaker",
+   "num": "qa-133",
+   "question": "Can I get a picture frame border or a breaker board?",
+   "alt_questions": [
+    "Can I picture frame the deck?",
+    "What is a breaker board?"
+   ],
+   "short_answer": "Yes, both are done with solid edge boards.",
+   "answer": "Yes, both are done with solid edge boards. Picture frame: the Dexerdry picture frame detail uses 1 1/2 inch strips ripped from a deck board. A 1/8 inch drainage gap stays between the board ends and the frame, so you get the framed look while water still runs off the deck. A full picture frame is not used, because perimeter boards capping the board ends would dam the water. Breaker: on decks wider than 20 ft, a solid edge center board (also called a butt board) splits the deck, with a gutter on each side. It is an optional design choice; your builder will lay out the details.",
+   "answer_html": "<p><strong>Yes, both are done with solid edge boards.</strong></p><p><strong>Picture frame:</strong> the Dexerdry picture frame detail uses 1 1/2 inch strips ripped from a deck board. A 1/8 inch drainage gap stays between the board ends and the frame, so you get the framed look while water still runs off the deck. A full picture frame is not used, because perimeter boards capping the board ends would dam the water.</p><p><strong>Breaker:</strong> on decks wider than 20 ft, a solid edge center board (also called a butt board) splits the deck, with a gutter on each side.</p><p>It is an optional design choice; your builder will lay out the details.</p>",
+   "keywords": [
+    "picture frame",
+    "breaker",
+    "border",
+    "solid edge",
+    "center board"
+   ],
+   "category": "picture frame"
+  },
+  {
    "id": "will-king-picture-frame",
    "num": "qa-089",
    "question": "Can the picture frame gap drain into a gutter?",
@@ -2445,6 +2589,26 @@
    }
   },
   {
+   "id": "mold-mildew",
+   "num": "qa-141",
+   "question": "Can mold or mildew grow on AmeriDex?",
+   "alt_questions": [
+    "How do I clean mold off the deck?",
+    "Does PVC get mildew?"
+   ],
+   "short_answer": "Mold cannot feed on PVC itself.",
+   "answer": "Mold cannot feed on PVC itself. It can grow on pollen, dirt or leaf debris left on the surface in shady, damp spots. Clean it off with 1 cup of oxygen bleach per gallon of warm water: let it sit 5 minutes, scrub lightly, then rinse.",
+   "answer_html": "<p><strong>Mold cannot feed on PVC itself.</strong></p><p>It can grow on pollen, dirt or leaf debris left on the surface in shady, damp spots. Clean it off with 1 cup of oxygen bleach per gallon of warm water: let it sit 5 minutes, scrub lightly, then rinse.</p>",
+   "keywords": [
+    "mold",
+    "mildew",
+    "oxygen bleach",
+    "shade",
+    "cleaning"
+   ],
+   "category": "cleaning/maintenance"
+  },
+  {
    "id": "heavy-rain",
    "num": "qa-094",
    "question": "What happens in a heavy rain or if I flood it with a hose?",
@@ -2523,6 +2687,27 @@
     "url": "https://www.youtube.com/watch?v=5EFlBEsr0mI",
     "timestamp": "0:36"
    }
+  },
+  {
+   "id": "board-material",
+   "num": "qa-129",
+   "question": "What are AmeriDex deck boards made of?",
+   "alt_questions": [
+    "What are the deck boards made of?",
+    "Is there wood in AmeriDex boards?"
+   ],
+   "short_answer": "AmeriDex boards are cellular PVC with a proprietary ASA cap and a wood-grain finish.",
+   "answer": "AmeriDex boards are cellular PVC with a proprietary ASA cap and a wood-grain finish. There is no wood fiber anywhere in the board, so a cut edge is just more PVC, with nothing to rot, swell or feed mold. The boards are made in Linden, New Jersey.",
+   "answer_html": "<p><strong>AmeriDex boards are cellular PVC with a proprietary ASA cap and a wood-grain finish.</strong></p><p>There is no wood fiber anywhere in the board, so a cut edge is just more PVC, with nothing to rot, swell or feed mold. The boards are made in Linden, New Jersey.</p>",
+   "keywords": [
+    "boards",
+    "pvc",
+    "cellular pvc",
+    "asa cap",
+    "material",
+    "wood fiber"
+   ],
+   "category": "product facts"
   },
   {
    "id": "protects-framing",
@@ -2631,6 +2816,26 @@
    }
   },
   {
+   "id": "pvc-vs-composite-wood",
+   "num": "qa-142",
+   "question": "How does PVC compare with composite and wood?",
+   "alt_questions": [
+    "Is PVC better than composite?",
+    "PVC vs wood decking?"
+   ],
+   "short_answer": "Cellular PVC has no wood fiber at all, so it does not swell, rot or feed mold, and it needs no pre-drilling.",
+   "answer": "Wood needs sealing every year or two and can rot. Composite blends wood fiber with plastic under a cap. That fiber can absorb water at cuts, scratches or uncapped faces. Cellular PVC has no wood fiber at all, so it does not swell, rot or feed mold, and it needs no pre-drilling. PVC does move a bit more with temperature along its length.",
+   "answer_html": "<p><strong>Wood</strong> needs sealing every year or two and can rot.</p><p><strong>Composite</strong> blends wood fiber with plastic under a cap. That fiber can absorb water at cuts, scratches or uncapped faces.</p><p><strong>Cellular PVC</strong> has no wood fiber at all, so it does not swell, rot or feed mold, and it needs no pre-drilling.</p><p>PVC does move a bit more with temperature along its length.</p>",
+   "keywords": [
+    "pvc",
+    "composite",
+    "wood",
+    "comparison",
+    "rot"
+   ],
+   "category": "product facts"
+  },
+  {
    "id": "board-spacing",
    "num": "qa-101",
    "question": "Do I need to space the deck boards?",
@@ -2654,6 +2859,26 @@
     "url": "https://www.youtube.com/watch?v=buGbwJ0j5Wo",
     "timestamp": "1:21"
    }
+  },
+  {
+   "id": "side-to-side-movement",
+   "num": "qa-136",
+   "question": "Do the boards move side to side, and how are they spaced?",
+   "alt_questions": [
+    "Do the boards move sideways?",
+    "Do I need spacers between boards?"
+   ],
+   "short_answer": "No.",
+   "answer": "No. AmeriDex boards move only lengthwise, not side to side. The Dexerdry seal spaces the boards evenly, so no separate spacers are needed.",
+   "answer_html": "<p><strong>No.</strong></p><p>AmeriDex boards move only lengthwise, not side to side. The Dexerdry seal spaces the boards evenly, so no separate spacers are needed.</p>",
+   "keywords": [
+    "side to side",
+    "movement",
+    "spacing",
+    "spacers",
+    "gap"
+   ],
+   "category": "flange install"
   },
   {
    "id": "concrete-alternative",
@@ -2757,6 +2982,126 @@
    }
   },
   {
+   "id": "deck-cost",
+   "num": "qa-143",
+   "question": "How much does AmeriDex cost?",
+   "alt_questions": [
+    "What is the price per lineal foot?",
+    "How do I get a quote?"
+   ],
+   "short_answer": "AmeriDex is priced by the lineal foot of deck board, and that figure covers both the cellular PVC board and the Dexerdry seal, because together they are the drainage system.",
+   "answer": "AmeriDex is priced by the lineal foot of deck board, and that figure covers both the cellular PVC board and the Dexerdry seal, because together they are the drainage system. Use the cost guide calculator for a starting number, then ask for a written quote for exact figures.",
+   "answer_html": "<p><strong>AmeriDex is priced by the lineal foot of deck board, and that figure covers both the cellular PVC board and the Dexerdry seal, because together they are the drainage system.</strong></p><p>Use the cost guide calculator for a starting number, then ask for a written quote for exact figures.</p>",
+   "keywords": [
+    "cost",
+    "price",
+    "lineal foot",
+    "quote",
+    "calculator"
+   ],
+   "category": "product facts"
+  },
+  {
+   "id": "warranty",
+   "num": "qa-144",
+   "question": "What warranty comes with it?",
+   "alt_questions": [
+    "What is the AmeriDex warranty?",
+    "Is there a commercial warranty?"
+   ],
+   "short_answer": "AmeriDex deck boards and accessories carry a 25-year limited residential warranty and a 10-year limited commercial warranty.",
+   "answer": "AmeriDex deck boards and accessories carry a 25-year limited residential warranty and a 10-year limited commercial warranty. It covers manufacturing defects that cause splitting, flaking, rotting or structural defects. Claims are prorated over the warranty term, the remedy is replacement of the defective product, and no claim can exceed the original purchase price. Read the warranty details and remember to register your warranty within 30 days.",
+   "answer_html": "<p><strong>AmeriDex deck boards and accessories carry a 25-year limited residential warranty and a 10-year limited commercial warranty.</strong></p><p>It covers manufacturing defects that cause splitting, flaking, rotting or structural defects. Claims are prorated over the warranty term, the remedy is replacement of the defective product, and no claim can exceed the original purchase price. Read the warranty details and remember to register your warranty within 30 days.</p>",
+   "keywords": [
+    "warranty",
+    "25 year",
+    "10 year",
+    "residential",
+    "commercial",
+    "register"
+   ],
+   "category": "product facts"
+  },
+  {
+   "id": "deck-lifespan",
+   "num": "qa-145",
+   "question": "How long will an AmeriDex deck last?",
+   "alt_questions": [
+    "What is the lifespan of the deck?",
+    "How many years will it last?"
+   ],
+   "short_answer": "We do not publish a lifespan figure.",
+   "answer": "We do not publish a lifespan figure. What we put in writing is the limited warranty: 25 years on residential decks and 10 years on commercial decks, covering manufacturing defects that cause splitting, flaking, rotting or structural defects. Install the boards exactly as the instructions show, since improper installation voids the warranty.",
+   "answer_html": "<p><strong>We do not publish a lifespan figure.</strong></p><p>What we put in writing is the limited warranty: 25 years on residential decks and 10 years on commercial decks, covering manufacturing defects that cause splitting, flaking, rotting or structural defects. Install the boards exactly as the instructions show, since improper installation voids the warranty.</p>",
+   "keywords": [
+    "lifespan",
+    "last",
+    "years",
+    "warranty"
+   ],
+   "category": "product facts"
+  },
+  {
+   "id": "warranty-voids",
+   "num": "qa-146",
+   "question": "What can void the warranty?",
+   "alt_questions": [
+    "What does the warranty not cover?",
+    "What voids the AmeriDex warranty?"
+   ],
+   "short_answer": "The limited warranty is void if the problem comes from improper installation; settling, distortion or collapse of the structure under the deck; abuse, such as shoveling snow or scraping with a metal shovel or other metal object; natural disasters such as floods, tornadoes, earthquakes or hurricanes; paints or other chemicals not recommended by the manufacturer; or extreme heat, including sunlight reflected from Low-E glass.",
+   "answer": "The limited warranty is void if the problem comes from improper installation; settling, distortion or collapse of the structure under the deck; abuse, such as shoveling snow or scraping with a metal shovel or other metal object; natural disasters such as floods, tornadoes, earthquakes or hurricanes; paints or other chemicals not recommended by the manufacturer; or extreme heat, including sunlight reflected from Low-E glass.",
+   "answer_html": "<p><strong>The limited warranty is void if the problem comes from improper installation; settling, distortion or collapse of the structure under the deck; abuse, such as shoveling snow or scraping with a metal shovel or other metal object; natural disasters such as floods, tornadoes, earthquakes or hurricanes; paints or other chemicals not recommended by the manufacturer; or extreme heat, including sunlight reflected from Low-E glass.</strong></p>",
+   "keywords": [
+    "void",
+    "warranty",
+    "exclusions",
+    "improper installation",
+    "shovel",
+    "low-e glass"
+   ],
+   "category": "product facts"
+  },
+  {
+   "id": "warranty-claim",
+   "num": "qa-147",
+   "question": "How do I make a warranty claim?",
+   "alt_questions": [
+    "How do I file a claim?",
+    "Who do I contact about a defect?"
+   ],
+   "short_answer": "Contact us within 30 days of discovering the defect.",
+   "answer": "Contact us within 30 days of discovering the defect. Send proof of purchase showing the purchase date, a description of the problem and photos of the affected area. We may ask for more information or to inspect the deck. If the claim is valid, we replace the defective product.",
+   "answer_html": "<p><strong>Contact us within 30 days of discovering the defect.</strong></p><p>Send proof of purchase showing the purchase date, a description of the problem and photos of the affected area. We may ask for more information or to inspect the deck. If the claim is valid, we replace the defective product.</p>",
+   "keywords": [
+    "claim",
+    "warranty",
+    "defect",
+    "proof of purchase",
+    "photos"
+   ],
+   "category": "product facts"
+  },
+  {
+   "id": "warranty-transfer",
+   "num": "qa-148",
+   "question": "Can I transfer the warranty to a new owner?",
+   "alt_questions": [
+    "Does the warranty transfer if I sell my house?",
+    "Is the warranty transferable?"
+   ],
+   "short_answer": "Yes, one time, within 5 years of the original purchase date.",
+   "answer": "Yes, one time, within 5 years of the original purchase date. The original owner must send us a written request with proof of purchase and proof of the transfer within 60 days of selling the property or transferring the product. The new owner gets the rest of the original warranty term.",
+   "answer_html": "<p><strong>Yes, one time, within 5 years of the original purchase date.</strong></p><p>The original owner must send us a written request with proof of purchase and proof of the transfer within 60 days of selling the property or transferring the product. The new owner gets the rest of the original warranty term.</p>",
+   "keywords": [
+    "transfer",
+    "warranty",
+    "new owner",
+    "sell"
+   ],
+   "category": "product facts"
+  },
+  {
    "id": "made-in-usa",
    "num": "qa-106",
    "question": "Where is Dexerdry made?",
@@ -2779,6 +3124,26 @@
     "url": "https://dexerdry.com/wp-content/uploads/Dexerdry.mp4",
     "timestamp": "10:42"
    }
+  },
+  {
+   "id": "boards-made-where",
+   "num": "qa-149",
+   "question": "Where is AmeriDex made?",
+   "alt_questions": [
+    "Where are AmeriDex boards made?",
+    "Where is AmeriDex located?"
+   ],
+   "short_answer": "Our cellular PVC deck boards are manufactured in Linden, New Jersey, and the Dexerdry seal is also produced in the USA.",
+   "answer": "Our cellular PVC deck boards are manufactured in Linden, New Jersey, and the Dexerdry seal is also produced in the USA. Our headquarters, sales, and warehouse are in Brick, New Jersey.",
+   "answer_html": "<p><strong>Our cellular PVC deck boards are manufactured in Linden, New Jersey, and the Dexerdry seal is also produced in the USA.</strong></p><p>Our headquarters, sales, and warehouse are in Brick, New Jersey.</p>",
+   "keywords": [
+    "made in usa",
+    "linden",
+    "new jersey",
+    "brick",
+    "manufactured"
+   ],
+   "category": "product facts"
   },
   {
    "id": "installer-support",
@@ -2920,6 +3285,51 @@
    "keywords": [
     "color",
     "black"
+   ],
+   "category": "product facts"
+  },
+  {
+   "id": "board-colors",
+   "num": "qa-130",
+   "question": "What colors are available, and which are solid?",
+   "alt_questions": [
+    "What deck board colors are there?",
+    "Which colors are variegated?"
+   ],
+   "short_answer": "There are seven colors.",
+   "answer": "There are seven colors. Driftwood, Khaki and Slate are solid colors. Beachwood, Chestnut, Redwood and Hazelnut are variegated, with streaks that add depth and help hide pollen and leaf marks between cleanings. Screen colors vary, so order free samples to see them in your own light.",
+   "answer_html": "<p><strong>There are seven colors.</strong></p><p>Driftwood, Khaki and Slate are solid colors. Beachwood, Chestnut, Redwood and Hazelnut are variegated, with streaks that add depth and help hide pollen and leaf marks between cleanings. Screen colors vary, so order free samples to see them in your own light.</p>",
+   "keywords": [
+    "colors",
+    "driftwood",
+    "khaki",
+    "slate",
+    "beachwood",
+    "chestnut",
+    "redwood",
+    "hazelnut",
+    "samples"
+   ],
+   "category": "product facts"
+  },
+  {
+   "id": "board-heat",
+   "num": "qa-137",
+   "question": "Do AmeriDex boards get hot in the sun?",
+   "alt_questions": [
+    "Are the boards hot barefoot?",
+    "Which color stays coolest?"
+   ],
+   "short_answer": "Any deck surface warms in direct sun, and color matters most.",
+   "answer": "Any deck surface warms in direct sun, and color matters most. Dark colors like Slate and Redwood absorb more heat and feel warmer underfoot in July. For a barefoot or pool deck, lean toward Driftwood, Khaki, Beachwood or Hazelnut, and leave a sample in the sun to test it.",
+   "answer_html": "<p><strong>Any deck surface warms in direct sun, and color matters most.</strong></p><p>Dark colors like Slate and Redwood absorb more heat and feel warmer underfoot in July. For a barefoot or pool deck, lean toward Driftwood, Khaki, Beachwood or Hazelnut, and leave a sample in the sun to test it.</p>",
+   "keywords": [
+    "heat",
+    "hot",
+    "sun",
+    "barefoot",
+    "pool",
+    "color"
    ],
    "category": "product facts"
   },
@@ -3232,6 +3642,26 @@
     "url": "https://www.youtube.com/watch?v=HY7UuQr2yV8",
     "timestamp": "1:50"
    }
+  },
+  {
+   "id": "grooved-vs-solid-edge",
+   "num": "qa-132",
+   "question": "What is the difference between grooved and solid edge boards?",
+   "alt_questions": [
+    "What is a solid edge board?",
+    "What is a square edge board?"
+   ],
+   "short_answer": "Grooved boards have a groove along each side, and the Dexerdry seal locks into it.",
+   "answer": "Grooved boards have a groove along each side, and the Dexerdry seal locks into it. That is what closes the gap so rain sheds off the surface. Solid edge (square edge) boards have no side groove. You rout a groove only where the seal needs to fit, so they are used at starts, edges, corners and trim.",
+   "answer_html": "<p><strong>Grooved boards have a groove along each side, and the Dexerdry seal locks into it.</strong></p><p>That is what closes the gap so rain sheds off the surface. Solid edge (square edge) boards have no side groove. You rout a groove only where the seal needs to fit, so they are used at starts, edges, corners and trim.</p>",
+   "keywords": [
+    "grooved",
+    "solid edge",
+    "square edge",
+    "groove",
+    "boards"
+   ],
+   "category": "corners"
   },
   {
    "id": "surface-posts",
