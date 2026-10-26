@@ -132,7 +132,7 @@
 <article class="section-pad bg-white">
 <div class="container" style="max-width:780px;font-size:1.05rem;line-height:1.75;color:var(--navy);">
 <h2 style="color:var(--navy);margin-top:0;">How above-joist deck drainage is measured</h2>
-<p>Above-joist drainage is priced by the lineal foot of board, not by the square foot, because the board is the drainage system. A 5.5 inch board face plus the 3/16 inch gasket gap covers 5.6875 inches of deck, so one square foot of deck takes about 2.11 lineal feet of board. Here is what that looks like on four common deck sizes.</p>
+<p>Above-joist drainage is priced by the lineal foot of board, not by the square foot, because the board is the drainage system. A 5.5 inch board face plus the 1/8 inch gasket gap covers 5.625 inches of deck, so one square foot of deck takes about 2.13 lineal feet of board. Here is what that looks like on four common deck sizes.</p>
 <div style="overflow-x:auto;">
 <table style="width:100%;border-collapse:collapse;font-size:0.96rem;margin:1rem 0 1.25rem;">
 <thead>
@@ -146,22 +146,22 @@
 <tr style="border-bottom:1px solid #e5e7eb;">
 <td style="padding:0.7rem 0.85rem;font-weight:700;">12 x 16</td>
 <td style="padding:0.7rem 0.85rem;text-align:right;">192</td>
-<td style="padding:0.7rem 0.85rem;text-align:right;">405</td>
+<td style="padding:0.7rem 0.85rem;text-align:right;">410</td>
 </tr>
 <tr style="border-bottom:1px solid #e5e7eb;background:#FEF6E4;">
 <td style="padding:0.7rem 0.85rem;font-weight:700;">16 x 20</td>
 <td style="padding:0.7rem 0.85rem;text-align:right;">320</td>
-<td style="padding:0.7rem 0.85rem;text-align:right;">675</td>
+<td style="padding:0.7rem 0.85rem;text-align:right;">683</td>
 </tr>
 <tr style="border-bottom:1px solid #e5e7eb;">
 <td style="padding:0.7rem 0.85rem;font-weight:700;">16 x 24</td>
 <td style="padding:0.7rem 0.85rem;text-align:right;">384</td>
-<td style="padding:0.7rem 0.85rem;text-align:right;">810</td>
+<td style="padding:0.7rem 0.85rem;text-align:right;">819</td>
 </tr>
 <tr style="border-bottom:1px solid #e5e7eb;">
 <td style="padding:0.7rem 0.85rem;font-weight:700;">20 x 24</td>
 <td style="padding:0.7rem 0.85rem;text-align:right;">480</td>
-<td style="padding:0.7rem 0.85rem;text-align:right;">1,013</td>
+<td style="padding:0.7rem 0.85rem;text-align:right;">1,024</td>
 </tr>
 </tbody>
 </table>
@@ -279,7 +279,7 @@
 <!-- Deck drainage cost calculator (self-contained, no dependencies) -->
 <script>
 (function () {
-  var LF_PER_SQFT = 2.1099;   // 144 / (5.6875 * 12): 5.5in board face + 3/16in gasket gap
+  var LF_PER_SQFT = 2.1333;   // 144 / (5.625 * 12): 5.5in board face + 1/8in gasket gap
   var PRICE_PER_LF = 8;       // dollars per lineal foot of board, decking plus seal
 
   var form = document.getElementById('deck-calc');
