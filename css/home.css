@@ -253,3 +253,15 @@
 .home-faq .faq-install-card strong{display:block;font-size:16px;line-height:1.3;margin-bottom:4px}
 .home-faq .faq-install-card .fic-desc{display:block;font-size:14px;line-height:1.5;color:#3f4b54}
 .home-faq .faq-install-card .fic-go{display:inline-block;white-space:nowrap;margin-top:8px;font-size:14px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+/* Homepage FAQ groups (#faq) */
+#faq { scroll-margin-top:96px; }
+.home-faq-list .faq-group { font-size:12px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:var(--red); margin:44px 0 6px; line-height:1.5; }
+.home-faq-list .faq-group:first-child { margin-top:0; }
+.home-faq-list .faq-subgroup { font-size:17px; font-weight:700; color:var(--ink); margin:28px 0 4px; line-height:1.4; }
+.home-faq-list .faq-group + .faq-subgroup { margin-top:12px; }
+.home-faq-list details:has(+ .faq-group), .home-faq-list details:has(+ .faq-subgroup) { border-bottom:1px solid var(--line); }
+.home-faq-list details>p:not(:last-child) { padding-bottom:10px; }
+.home-faq-list details>ul { color:var(--muted); font-size:13px; line-height:1.85; margin:0; padding:0 25px 10px 20px; list-style:disc; }
+.home-faq-list details>ul:last-child { padding-bottom:24px; }
+.home-faq-list details>ul li { margin:0 0 4px; }
+.home-faq-list details strong { color:var(--ink); font-weight:600; }
