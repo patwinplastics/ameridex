@@ -2643,14 +2643,16 @@
    "alt_questions": [
     "Can I use it with wood decking?"
    ],
-   "short_answer": "Yes, Dexerdry works with grooved PVC and composite deck boards that have a side groove for hidden fasteners.",
-   "answer": "Yes, Dexerdry works with grooved PVC and composite deck boards that have a side groove for hidden fasteners. Check dexerdry.com for a profile that matches your board before using any other decking.",
-   "answer_html": "<p><strong>Yes, Dexerdry works with grooved PVC and composite deck boards that have a side groove for hidden fasteners.</strong></p><p>Check dexerdry.com for a profile that matches your board before using any other decking.</p>",
+   "short_answer": "Yes, Dexerdry works with grooved PVC and composite deck boards, the kind with a side groove made for hidden clips.",
+   "answer": "Yes, Dexerdry works with grooved PVC and composite deck boards, the kind with a side groove made for hidden clips. Dexerdry fills that groove, so hidden clips or hidden fasteners can't be used with it. Fasten the boards with Starborn face screws and color matched plugs. Check dexerdry.com for a profile that matches your board before using any other decking.",
+   "answer_html": "<p><strong>Yes, Dexerdry works with grooved PVC and composite deck boards, the kind with a side groove made for hidden clips.</strong></p><p>Dexerdry fills that groove, so hidden clips or hidden fasteners can't be used with it. Fasten the boards with Starborn face screws and color matched plugs. Check dexerdry.com for a profile that matches your board before using any other decking.</p>",
    "keywords": [
     "pvc",
     "composite",
     "grooved",
-    "wood"
+    "wood",
+    "hidden clips",
+    "face screws"
    ],
    "category": "product facts",
    "video_url": "https://www.youtube.com/watch?v=buGbwJ0j5Wo&t=9s",
