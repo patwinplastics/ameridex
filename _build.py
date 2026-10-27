@@ -766,13 +766,13 @@ def page_index():
       </div>
       <div class="lifestyle-grid">
         <div class="lifestyle-card reveal">
-          <img src="assets/img/lifestyle/outdoor-kitchen.png" alt="Outdoor Kitchen: covered cooking and dining zone that stays usable in rain">
+          <img src="assets/img/lifestyle/outdoor-kitchen.jpg" alt="Outdoor Kitchen: covered cooking and dining zone that stays usable in rain">
         </div>
         <div class="lifestyle-card reveal">
-          <img src="assets/img/lifestyle/lounge-area.png" alt="Lounge Area: turn the space under your deck into an all-weather living room">
+          <img src="assets/img/lifestyle/lounge-area.jpg" alt="Lounge Area: turn the space under your deck into an all-weather living room">
         </div>
         <div class="lifestyle-card reveal">
-          <img src="assets/img/lifestyle/kids-play-zone.png" alt="Kids Play Zone: give kids a dry place to play, even when the weather does not cooperate">
+          <img src="assets/img/lifestyle/kids-play-zone.jpg" alt="Kids Play Zone: give kids a dry place to play, even when the weather does not cooperate">
         </div>
       </div>
       <div style="text-align:center;margin-top:2.25rem;" class="reveal">
