@@ -29,7 +29,7 @@
    "alt_questions": [
     "What is Dexerdry made for?",
     "What does Dexerdry do?",
-    "How does a Dexerdry deck keep the area underneath dry?"
+    "How does an AmeriDex deck keep the area underneath dry?"
    ],
    "short_answer": "Dexerdry is a flexible weather strip, called a flange, that fits into the side grooves of grooved deck boards to create a DRY ZONE under your deck.",
    "answer": "Dexerdry is a flexible weather strip, called a flange, that fits into the side grooves of grooved deck boards to create a DRY ZONE under your deck. Rain sheds off the top of the deck instead of dripping through the gaps between boards, which helps keep the area under the deck, porch or balcony dry. It comes on a roll and is cut to the length of each board. It is not rubber; it is a thermoplastic material.",
@@ -84,7 +84,7 @@
    "num": "qa-003",
    "question": "Where does the water go?",
    "alt_questions": [
-    "How does water drain off a Dexerdry deck?",
+    "How does water drain off an AmeriDex deck?",
     "If water does not go through the boards, where does it go?"
    ],
    "short_answer": "Water runs across the top of the boards and sheds off the overhanging ends past the drip edge.",
@@ -141,7 +141,7 @@
    "num": "qa-006",
    "question": "What slope does the deck need?",
    "alt_questions": [
-    "How much pitch does a Dexerdry deck need?",
+    "How much pitch does an AmeriDex deck need?",
     "Do I need to slope the deck?"
    ],
    "short_answer": "Slope the deck 1/8 inch per foot, away from the house.",
@@ -831,7 +831,7 @@
    "question": "Can hidden fastener clips be used?",
    "alt_questions": [
     "Can I use hidden clips with Dexerdry?",
-    "How are Dexerdry deck boards fastened?"
+    "How are AmeriDex deck boards fastened?"
    ],
    "short_answer": "No, Dexerdry sits in the groove the clips would use, so boards are fastened with Starborn top mount screws with color matched plugs.",
    "answer": "No, Dexerdry sits in the groove the clips would use, so boards are fastened with Starborn top mount screws with color matched plugs. The plugs give a clean, hidden fastener look.",
@@ -939,7 +939,7 @@
    "num": "qa-035",
    "question": "How are fascia boards bumped out?",
    "alt_questions": [
-    "How do I install fascia on a Dexerdry deck?",
+    "How do I install fascia on an AmeriDex deck?",
     "How far apart are the fascia blocks?"
    ],
    "short_answer": "Install 1 1/2 x 1 1/2 inch blocks every 12 to 16 inches to bump the fascia out.",
@@ -1073,7 +1073,7 @@
    "question": "How do I handle a deck over 20 ft?",
    "alt_questions": [
     "My deck is wider than 20 feet, what do I do?",
-    "How do I build a 24 or 40 foot Dexerdry deck?"
+    "How do I build a 24 or 40 foot AmeriDex deck?"
    ],
    "short_answer": "Split it into smaller decks with a seam gutter or a center board with a gutter on each side.",
    "answer": "Split it into smaller decks with a seam gutter or a center board with a gutter on each side. Boards and Dexerdry max out at 20 ft and cannot be spliced, so frame a 3 to 3 1/4 inch gap for a micro gutter, or use a center board, and gap the decking about 1/4 inch at the gutter.",
@@ -1147,7 +1147,7 @@
    "question": "How many center boards does a 60 ft deck need?",
    "alt_questions": [
     "How many center boards does a big deck need?",
-    "Can I build a 60 foot Dexerdry deck?"
+    "Can I build a 60 foot AmeriDex deck?"
    ],
    "short_answer": "A 60 ft wide deck needs two center boards; repeat a center board every 20 ft.",
    "answer": "A 60 ft wide deck needs two center boards; repeat a center board every 20 ft. One center board with two gutters gives you a 40 ft wide deck.",
@@ -1199,7 +1199,7 @@
    "question": "How do I test the deck?",
    "alt_questions": [
     "How do I know the deck is working?",
-    "How do I water test a Dexerdry deck?"
+    "How do I water test an AmeriDex deck?"
    ],
    "short_answer": "Run water over the finished deck; it should flow across the boards and off the edge.",
    "answer": "Run water over the finished deck; it should flow across the boards and off the edge. Check that water sheds off the ends and drains through any gutter gaps.",
@@ -1221,9 +1221,9 @@
   {
    "id": "power-washing",
    "num": "qa-045",
-   "question": "Can I power wash a Dexerdry deck?",
+   "question": "Can I power wash an AmeriDex deck?",
    "alt_questions": [
-    "Can I pressure wash a Dexerdry deck?",
+    "Can I pressure wash an AmeriDex deck?",
     "Will a power washer damage the flange?"
    ],
    "short_answer": "No, do not power wash; clean Dexerdry with simple soap and water.",
@@ -1312,7 +1312,7 @@
    "question": "Should I use joist tape?",
    "alt_questions": [
     "Do I need joist tape with Dexerdry?",
-    "Is joist tape a waste on a Dexerdry deck?"
+    "Is joist tape a waste on an AmeriDex deck?"
    ],
    "short_answer": "Use joist tape as a flashing overlap at the house on perpendicular decks.",
    "answer": "Use joist tape as a flashing overlap at the house on perpendicular decks. Elsewhere, Dexerdry keeps water on top of the boards. Follow your local code and builder's practice for any other joist protection.",
@@ -1335,7 +1335,7 @@
    "num": "qa-047",
    "question": "Can I put a ceiling under the deck?",
    "alt_questions": [
-    "Can I install a wood ceiling under a Dexerdry deck?",
+    "Can I install a wood ceiling under an AmeriDex deck?",
     "Do I need to vent under the deck?",
     "Can I add a soffit under the deck?"
    ],
@@ -1970,7 +1970,7 @@
   {
    "id": "joist-layout-parallel",
    "num": "qa-071",
-   "question": "How do I lay out the joists for a parallel Dexerdry deck?",
+   "question": "How do I lay out the joists for a parallel AmeriDex deck?",
    "alt_questions": [
     "Where should the first joist go?"
    ],
@@ -2103,7 +2103,7 @@
   {
    "id": "perpendicular-overview",
    "num": "qa-076",
-   "question": "How is a perpendicular Dexerdry deck different?",
+   "question": "How is a perpendicular AmeriDex deck different?",
    "alt_questions": [
     "Boards run away from the house, what changes?"
    ],
@@ -2564,7 +2564,7 @@
   {
    "id": "cleaning-routine",
    "num": "qa-093",
-   "question": "How do I clean a Dexerdry deck?",
+   "question": "How do I clean an AmeriDex deck?",
    "alt_questions": [
     "Does dirt get stuck in the joints?",
     "What is the best way to clean it?"
@@ -2738,7 +2738,7 @@
   {
    "id": "benefits-uses",
    "num": "qa-098",
-   "question": "What can I use the space under a Dexerdry deck for?",
+   "question": "What can I use the space under an AmeriDex deck for?",
    "alt_questions": [
     "What are the benefits of a dry deck?"
    ],
@@ -3666,7 +3666,7 @@
   {
    "id": "surface-posts",
    "num": "qa-125",
-   "question": "How do I mount railing posts on a Dexerdry deck?",
+   "question": "How do I mount railing posts on an AmeriDex deck?",
    "alt_questions": [
     "Can I through-bolt posts?"
    ],
@@ -3692,9 +3692,9 @@
   {
    "id": "real-deck-examples",
    "num": "qa-126",
-   "question": "Is there a real Dexerdry deck example?",
+   "question": "Is there a real AmeriDex deck example?",
    "alt_questions": [
-    "How big can a Dexerdry deck be?"
+    "How big can an AmeriDex deck be?"
    ],
    "short_answer": "Yes, one example is a 20 ft by 12 ft deck with boards running away from the house and surface mounted posts.",
    "answer": "Yes, one example is a 20 ft by 12 ft deck with boards running away from the house and surface mounted posts. It shelters kayaks and firewood underneath.",
