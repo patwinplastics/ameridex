@@ -3064,15 +3064,17 @@
     "How do I file a claim?",
     "Who do I contact about a defect?"
    ],
-   "short_answer": "Contact us within 30 days of discovering the defect.",
-   "answer": "Contact us within 30 days of discovering the defect. Send proof of purchase showing the purchase date, a description of the problem and photos of the affected area. We may ask for more information or to inspect the deck. If the claim is valid, we replace the defective product.",
-   "answer_html": "<p><strong>Contact us within 30 days of discovering the defect.</strong></p><p>Send proof of purchase showing the purchase date, a description of the problem and photos of the affected area. We may ask for more information or to inspect the deck. If the claim is valid, we replace the defective product.</p>",
+   "short_answer": "Mail your claim within 30 days of discovering the defect.",
+   "answer": "Mail your claim within 30 days of discovering the defect to A&M Building Products LLC (AmeriDex), 1129A Industrial Parkway, Brick, NJ 08724. Include proof of purchase showing the purchase date, a description of the problem and photos of the affected area. For questions, email sales@ameridex.com or call 1-800-217-9206. We may ask for more information or to inspect the deck. If the claim is valid, we replace the defective product.",
+   "answer_html": "<p><strong>Mail your claim within 30 days of discovering the defect.</strong></p><p>Mail it to A&amp;M Building Products LLC (AmeriDex), 1129A Industrial Parkway, Brick, NJ 08724. Include proof of purchase showing the purchase date, a description of the problem and photos of the affected area. For questions, email sales@ameridex.com or call 1-800-217-9206. We may ask for more information or to inspect the deck. If the claim is valid, we replace the defective product.</p>",
    "keywords": [
     "claim",
     "warranty",
     "defect",
     "proof of purchase",
-    "photos"
+    "photos",
+    "mail",
+    "address"
    ],
    "category": "product facts"
   },
