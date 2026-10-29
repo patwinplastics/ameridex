@@ -98,6 +98,12 @@ ORG_JSONLD = {
         "AmeriDex Dryspace",
         "AmeriDex Decking System",
         "AmeriDex Deck Drainage",
+        "Ambidex",
+        "AmeriDeck",
+        "Ameri Deck",
+        "Dexter Dry",
+        "Dexedry",
+        "Dexer Dry",
     ],
     "legalName": LEGAL_NAME,
     "url": SITE_ORIGIN,
@@ -169,7 +175,7 @@ PRODUCT_JSONLD = {
     "@type": "Product",
     "@id": f"{SITE_ORIGIN}/#product",
     "name": "AmeriDex",
-    "alternateName": ["AmeriDex PVC Decking", "AmeriDex Above-Joist Drainage"],
+    "alternateName": ["AmeriDex PVC Decking", "AmeriDex Above-Joist Drainage", "Ambidex", "AmeriDeck", "Ameri Deck", "Dexter Dry", "Dexedry", "Dexer Dry"],
     "description": (
         "Integrated above-joist deck drainage system combining cellular PVC deck boards "
         "with the Dexerdry automotive-grade TPE seal. Creates a dry, finished living "
@@ -1643,7 +1649,7 @@ ABOVE_JOIST_FAQ = [
     ),
     (
         "Can an above-joist drainage system be retrofitted onto an existing deck?",
-        "Not without removing the existing deck boards. The integrated water-diverting seal has to be placed between every board as the deck is built. AmeriDex specifically is engineered for new deck construction. If you already have a finished deck and you do not want to tear up the surface, a below-joist retrofit drainage system is the only option, but you will be living with wet framing.",
+        "Not without removing the existing deck boards. The integrated water-diverting seal has to be placed between every board as the deck is built. AmeriDex specifically is engineered for new deck construction. If you are re-decking, AmeriDex can go on the existing framing once the old boards come off, if the framing is sound and already has the pitch AmeriDex needs. Existing framing might not have that pitch, so have a builder check the framing and the pitch first.",
     ),
     (
         "Will above-joist drainage protect my joists from rot?",
@@ -1737,7 +1743,7 @@ def page_above_joist_drainage():
       <p>For homeowners, the long-term math is straightforward. The space under the deck becomes a real, all-weather room. The structure does not need to be inspected for hidden water damage every spring. The under-deck ceiling stays clean and consistent because nothing is staining through from above. And because AmeriDex carries a 25-year residential limited warranty on the deck board system, the surface that does the waterproofing is also the surface that is warranted.</p>
 
       <h2 style="color:var(--navy);">When above-joist drainage is not the right fit</h2>
-      <p>AmeriDex is for new deck construction only. The Dexerdry seal has to be placed between every board as the deck is built, so the system cannot be retrofitted onto a deck that already exists without first removing the existing boards. If you have a finished deck and you do not want to tear up the surface, a below-joist retrofit system is the only option. It will keep the patio space below dry, but the framing will get wet on every storm. That is the unavoidable trade-off of any retrofit drainage assembly.</p>
+      <p>AmeriDex is for new deck construction only. The Dexerdry seal has to be placed between every board as the deck is built, so the system cannot be retrofitted onto a deck that already exists without first removing the existing boards. If you are re-decking, AmeriDex can go on the existing framing once the old boards come off, if the framing is sound and already has the pitch AmeriDex needs. Existing framing might not have that pitch, so have a builder check the framing and the pitch first.</p>
 
       <h2 style="color:var(--navy);">How to specify AmeriDex on a new build</h2>
       <p>Specifying AmeriDex on a new deck is a three step process. First, request <a href="samples-request.html">free samples</a> to see all seven PVC colors in person. Second, share your project dimensions through the <a href="get-a-free-quote.html">free quote form</a> so a regional dealer can return a written quote with board count, accessories, and lead time. Third, after install, <a href="warranty-registration.html">register the warranty</a> in minutes to activate the 25-year residential coverage. Builders working in commercial or multifamily applications should reach the AmeriDex team directly through the <a href="contact-us.html">contact page</a> for project takeoffs.</p>
@@ -1800,11 +1806,11 @@ ABOVE_VS_BELOW_FAQ = [
     ),
     (
         "Is below-joist drainage cheaper to install?",
-        "Below-joist systems can have a lower up-front material cost, but the total installed cost is closer than it looks because they require a separate trade visit, additional flashing detail at the ledger, and a downspout system to carry collected water away. They are still the right answer when an existing deck cannot be torn up. For new construction, an integrated above-joist system is one trade and one install.",
+        "Below-joist systems can have a lower up-front material cost, but the total installed cost is closer than it looks because they require a separate trade visit, additional flashing detail at the ledger, and a downspout system to carry collected water away. For new construction, an integrated above-joist system is one trade and one install.",
     ),
     (
         "Can either system be installed on an existing deck?",
-        "Below-joist systems are designed for retrofit and can be added under an existing deck. Integrated above-joist systems cannot be retrofitted because the water-diverting seal has to be placed between every board as the deck is built. They are specified on new construction.",
+        "Below-joist systems can be added under an existing deck, but the framing keeps getting wet. Integrated above-joist systems cannot go under boards that stay in place, because the water-diverting seal has to be placed between every board as the boards go down. During a re-deck, AmeriDex can go on the existing framing if the framing is sound and already has the pitch AmeriDex needs. Existing framing might not have that pitch, so have a builder check the framing and the pitch first.",
     ),
     (
         "Which system gives a better finished ceiling under the deck?",
@@ -1896,8 +1902,8 @@ def page_above_joist_vs_below_joist():
       <h2 style="color:var(--navy);">When above-joist wins</h2>
       <p>If the deck is being built from scratch, an integrated above-joist drainage system is the right call. The framing stays dry for the life of the structure. The install is a single trade. The under-deck ceiling can be finished any way the homeowner wants because there is nothing hanging from the joists. And the surface that does the waterproofing is also the surface that carries the deck warranty, so the homeowner is not splitting coverage between a board manufacturer and a separate drainage manufacturer.</p>
 
-      <h2 style="color:var(--navy);">When below-joist still makes sense</h2>
-      <p>A below-joist retrofit system is the right answer when the deck already exists and the homeowner does not want to tear up the surface to rebuild it. It will keep the patio space below dry on rainy days. The trade-off is that the framing will continue to get wet on every storm, which is the same condition any standard deck has had since the day it was built. The retrofit system simply adds a dry zone underneath.</p>
+      <h2 style="color:var(--navy);">If the deck already exists</h2>
+      <p>AmeriDex cannot be added under boards that stay in place. During a re-deck, once the old boards come off, it can go on the existing framing if the framing is sound and already has the pitch AmeriDex needs. Existing framing might not have that pitch, so have a builder check the framing and the pitch first.</p>
 
       <h2 style="color:var(--navy);">How AmeriDex fits in</h2>
       <p>AmeriDex is the integrated above-joist deck drainage system. Cellular PVC deck boards lock onto the Dexerdry TPE seal so 100% of the rain is diverted off the deck and the framing stays dry. It is engineered for new construction with a conventional 16 inches on-center joist layout, no special sub-framing, and a 25-year residential limited warranty. <a href="how-system-works.html">Walk through how the system works step by step</a>, <a href="samples-request.html">request free samples in all seven colors</a>, or <a href="get-a-free-quote.html">submit your project for a free quote</a>.</p>
