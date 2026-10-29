@@ -1311,24 +1311,19 @@
    "num": "qa-046",
    "question": "Should I use joist tape?",
    "alt_questions": [
-    "Do I need joist tape with Dexerdry?",
+    "Do I need joist tape on an AmeriDex deck?",
     "Is joist tape a waste on an AmeriDex deck?"
    ],
-   "short_answer": "Use joist tape as a flashing overlap at the house on perpendicular decks.",
-   "answer": "Use joist tape as a flashing overlap at the house on perpendicular decks. Elsewhere, Dexerdry keeps water on top of the boards. Follow your local code and builder's practice for any other joist protection.",
-   "answer_html": "<p><strong>Use joist tape as a flashing overlap at the house on perpendicular decks.</strong></p><p>Elsewhere, Dexerdry keeps water on top of the boards. Follow your local code and builder's practice for any other joist protection.</p>",
+   "short_answer": "No. On an AmeriDex deck you do not need joist tape.",
+   "answer": "No. On an AmeriDex deck you do not need joist tape. The boards lock onto the Dexerdry seal, so rain sheds off the top of the deck instead of dripping onto the joists. The framing and the space below stay dry.",
+   "answer_html": "<p><strong>No. On an AmeriDex deck you do not need joist tape.</strong></p><p>The boards lock onto the Dexerdry seal, so rain sheds off the top of the deck instead of dripping onto the joists. The framing and the space below stay dry.</p>",
    "keywords": [
-    "joist tape"
+    "joist tape",
+    "skip joist tape",
+    "butyl tape",
+    "joist flashing tape"
    ],
-   "category": "framing",
-   "video_url": "https://dexerdry.com/wp-content/uploads/Dexerdry.mp4#t=283",
-   "video_title": "\"As Seen On\" Will King / High Cotton Homes walkthrough",
-   "timestamp_label": "4:43",
-   "source_video": {
-    "title": "\"As Seen On\" Will King / High Cotton Homes walkthrough",
-    "url": "https://dexerdry.com/wp-content/uploads/Dexerdry.mp4",
-    "timestamp": "4:43"
-   }
+   "category": "framing"
   },
   {
    "id": "ceiling-under-deck",
