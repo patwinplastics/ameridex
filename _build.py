@@ -1588,11 +1588,11 @@ def page_warranty():
           <div class="form-section">
             <h3>Purchaser Acknowledgment</h3>
             <p style="font-size:0.92rem;line-height:1.55;color:#333;margin-bottom:1rem;">
-              The AmeriDex Dryspace System Limited Warranty issued by A&amp;M Building Products LLC sets out the terms, conditions, and exclusions that apply to this product. Coverage requires installation per published instructions, including the use of approved fasteners (Starborn epoxy-coated screws or stainless steel screws and plugs), even though fasteners themselves are not warranted under this Limited Warranty.
+              The AmeriDex Limited Warranty issued by A&amp;M Building Products LLC sets out the terms, conditions, and exclusions that apply to this product. Coverage requires installation per published instructions, including the use of approved fasteners (Starborn epoxy-coated screws or stainless steel screws and plugs), even though fasteners themselves are not warranted under this Limited Warranty.
             </p>
             <label class="agree-line">
               <input type="checkbox" name="ack" required>
-              <span>I certify that the information provided is accurate and complete. I acknowledge that I have read and understand the AmeriDex Dryspace System Limited Warranty issued by A&amp;M Building Products LLC, including its terms, conditions, exclusions, and the requirement that fasteners (Starborn epoxy-coated screws or stainless steel screws and plugs) were used as specified, even though fasteners are not warranted under this Limited Warranty.</span>
+              <span>I certify that the information provided is accurate and complete. I acknowledge that I have read and understand the AmeriDex Limited Warranty issued by A&amp;M Building Products LLC, including its terms, conditions, exclusions, and the requirement that fasteners (Starborn epoxy-coated screws or stainless steel screws and plugs) were used as specified, even though fasteners are not warranted under this Limited Warranty.</span>
             </label>
             <div class="form-row form-row-2" style="margin-top:1rem;">
               <div>
