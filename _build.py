@@ -55,7 +55,7 @@ FOUNDER_ARDOLINA = {
     "description": (
         "Co-founder of AmeriDex and founder of Dexerdry, Inc. A carpenter by "
         "trade who developed the patented above-joist water-diverting seal at "
-        "the heart of the AmeriDex deck system."
+        "the heart of every AmeriDex deck."
     ),
     "knowsAbout": [
         "above-joist deck drainage",
@@ -163,12 +163,12 @@ def breadcrumb_schema(*pairs):
     }
 
 
-# Product schema for the AmeriDex Dryspace System (used on homepage and how-it-works)
+# Product schema for AmeriDex (used on homepage and how-it-works)
 PRODUCT_JSONLD = {
     "@context": "https://schema.org",
     "@type": "Product",
     "@id": f"{SITE_ORIGIN}/#product",
-    "name": "AmeriDex Dryspace System",
+    "name": "AmeriDex",
     "alternateName": ["AmeriDex PVC Decking", "AmeriDex Above-Joist Drainage"],
     "description": (
         "Integrated above-joist deck drainage system combining cellular PVC deck boards "
@@ -520,7 +520,7 @@ def footer():
       <ul>
         <li><a href="https://www.facebook.com/ameridexdryspace/" target="_blank" rel="noopener">Facebook</a></li>
       </ul>
-      <p style="margin-top:1rem;color:rgba(255,255,255,0.78);font-size:0.92rem;line-height:1.55;max-width:18rem;">Under-deck dryspace systems that protect and transform outdoor living.</p>
+      <p style="margin-top:1rem;color:rgba(255,255,255,0.78);font-size:0.92rem;line-height:1.55;max-width:18rem;">Under-deck dry space that protects and transforms outdoor living.</p>
       <div class="badge-row">
         <span class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18v14H3z"/><path d="M3 9h18M3 13h18"/></svg>Made in USA</span>
         <span class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 9.4 8 11 4.5-1.6 8-6 8-11V5l-8-3z"/></svg>Warranty</span>
@@ -656,7 +656,7 @@ def page_index():
   <!-- Hero with photo on right, navy gradient overlay -->
   <section class="hero hero-with-photo">
     <div class="hero-photo" aria-hidden="true">
-      <img src="assets/img/hero.jpg" alt="Finished dry living space under an AmeriDex Dryspace deck with lounge and dining furniture" loading="eager" fetchpriority="high" width="1600" height="1066">
+      <img src="assets/img/hero.jpg" alt="Finished dry living space under an AmeriDex deck with lounge and dining furniture" loading="eager" fetchpriority="high" width="1600" height="1066">
     </div>
     <div class="container">
       <div class="hero-content reveal">
@@ -805,7 +805,7 @@ def page_how_it_works():
   <section class="page-hero">
     <div class="container">
       <span class="eyebrow">ENGINEERED FOR DRY SPACE</span>
-      <h1>How the AmeriDex Dryspace System Works</h1>
+      <h1>How AmeriDex Works</h1>
       <p>Integrated PVC decking and Dexerdry seal stop water at the surface and create dry, finished space below.</p>
     </div>
   </section>
@@ -946,7 +946,7 @@ def page_how_it_works():
 </main>
 '''
     return head(
-        "How the AmeriDex Dryspace System Works | Above-Joist Deck Drainage",
+        "How AmeriDex Works | Above-Joist Deck Drainage",
         "See how AmeriDex PVC boards and the Dexerdry TPE seal create a dry under-deck living space. Above-joist drainage, 16 in. o.c. install, 25-year warranty.",
         canonical="how-system-works.html",
         keywords="how under deck drainage works, above joist deck drainage system, Dexerdry seal, integrated deck drainage, PVC deck installation",
@@ -964,7 +964,7 @@ def page_gallery():
 
   <section class="page-hero">
     <div class="container">
-      <h1>AmeriDex Dryspace Showcase</h1>
+      <h1>AmeriDex Showcase</h1>
       <p>See how customers utilized their extra space.</p>
     </div>
   </section>
@@ -1018,8 +1018,8 @@ def page_gallery():
 </main>
 '''
     return head(
-        "Gallery: Real AmeriDex Under-Deck Spaces | Dryspace Showcase",
-        "Real AmeriDex Dryspace installations. See finished under-deck living rooms, outdoor kitchens, fire-pit lounges, and lakeside decks built dry.",
+        "Gallery: Real AmeriDex Under-Deck Spaces | AmeriDex Showcase",
+        "Real AmeriDex installations. See finished under-deck living rooms, outdoor kitchens, fire-pit lounges, and lakeside decks built dry.",
         canonical="gallery.html",
         keywords="under deck drainage gallery, dry space under deck examples, AmeriDex installations, dexerdry deck photos",
         extra_jsonld=[
@@ -1027,8 +1027,8 @@ def page_gallery():
             {
                 "@context": "https://schema.org",
                 "@type": "ImageGallery",
-                "name": "AmeriDex Dryspace Installations",
-                "description": "Real-world AmeriDex Dryspace System under-deck living spaces.",
+                "name": "AmeriDex Installations",
+                "description": "Real-world AmeriDex under-deck living spaces.",
                 "url": f"{SITE_ORIGIN}/gallery.html",
             },
         ],
@@ -1052,7 +1052,7 @@ def page_quote():
       <div class="form-card reveal">
         <div class="form-card-header">
           <h2>AmeriDex Quote Request</h2>
-          <p data-quote-cardsub>Fill out the form below and we will provide a detailed quote for your DrySpace project within 1-2 business days.</p>
+          <p data-quote-cardsub>Fill out the form below and we will provide a detailed quote for your AmeriDex project within 1-2 business days.</p>
         </div>
 
         <div class="step-indicator" aria-hidden="true">
@@ -1195,7 +1195,7 @@ def page_quote():
 '''
     return head(
         "Get a Free AmeriDex Quote | Under-Deck Drainage Pricing",
-        "Request a free AmeriDex Dryspace quote. Share your new deck plans and we will price cellular PVC boards, the Dexerdry seal, and accessories.",
+        "Request a free AmeriDex quote. Share your new deck plans and we will price cellular PVC boards, the Dexerdry seal, and accessories.",
         canonical="get-a-free-quote.html",
         keywords="AmeriDex quote, PVC decking quote, under deck drainage pricing, deck system pricing, get a deck quote",
         extra_jsonld=[
@@ -1213,7 +1213,7 @@ def page_contact():
   <section class="page-hero">
     <div class="container">
       <h1>Contact AmeriDex</h1>
-      <p>Have questions about the AmeriDex dryspace system, products, or installation? Send us a message and we will respond within 1-2 business days.</p>
+      <p>Have questions about AmeriDex, our products, or installation? Send us a message and we will respond within 1-2 business days.</p>
     </div>
   </section>
 
@@ -1321,7 +1321,7 @@ def page_contact():
 '''
     return head(
         "Contact AmeriDex | New Jersey PVC Decking Manufacturer",
-        "Reach the AmeriDex team in Brick, NJ. Call 1-800-217-9206 or email sales@ameridex.com for product, dealer, and Dryspace system questions.",
+        "Reach the AmeriDex team in Brick, NJ. Call 1-800-217-9206 or email sales@ameridex.com for product and dealer questions.",
         canonical="contact-us.html",
         keywords="contact AmeriDex, AmeriDex phone number, AmeriDex Brick NJ, decking manufacturer New Jersey, A and M Building Products",
         extra_jsonld=[
@@ -1476,7 +1476,7 @@ def page_warranty():
   <section class="page-hero">
     <div class="container">
       <span class="eyebrow">A&amp;M BUILDING PRODUCTS LLC</span>
-      <h1>AmeriDex Dryspace System Warranty Registration</h1>
+      <h1>AmeriDex Warranty Registration</h1>
       <p>25-Year Residential / 10-Year Commercial Limited Warranty.</p>
     </div>
   </section>
@@ -1486,7 +1486,7 @@ def page_warranty():
 
       <div class="form-card reveal">
         <div class="note-yellow">
-          <strong>Important.</strong> Registration is required within 30 days of purchase or installation completion (whichever is later) for warranty coverage to take effect. Submit this form to register your AmeriDex Dryspace System installation.
+          <strong>Important.</strong> Registration is required within 30 days of purchase or installation completion (whichever is later) for warranty coverage to take effect. Submit this form to register your AmeriDex installation.
         </div>
 
         <!-- Replace https://formspree.io/f/xreljrrd with your real endpoint. -->
@@ -1619,8 +1619,8 @@ def page_warranty():
 </main>
 '''
     return head(
-        "Register Your AmeriDex Warranty | 25-Year Dryspace Warranty",
-        "Register your AmeriDex Dryspace purchase to activate the 25-year residential limited warranty. Submit proof of purchase and project details in minutes.",
+        "Register Your AmeriDex Warranty | 25-Year Residential, 10-Year Commercial",
+        "Register your AmeriDex purchase to activate the 25-year residential limited warranty. Submit proof of purchase and project details in minutes.",
         canonical="warranty-registration.html",
         keywords="AmeriDex warranty registration, deck warranty registration, PVC decking warranty, 25 year deck warranty",
         extra_jsonld=[
