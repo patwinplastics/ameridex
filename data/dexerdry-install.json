@@ -1493,17 +1493,16 @@
   {
    "id": "hardwood-wrench-use",
    "num": "qa-053",
-   "question": "Can I use the DeckWise Hardwood Wrench with Dexerdry?",
+   "question": "Can I use a deck wrench instead of the BlueClaw?",
    "alt_questions": [
     "What does the deck wrench do?",
-    "Can I use a deck wrench instead of the BlueClaw?"
+    "Can I use a hardwood deck wrench with Dexerdry?"
    ],
    "short_answer": "Use the Dexerdry BlueClaw; it is the compression tool Dexerdry recommends.",
    "answer": "Use the Dexerdry BlueClaw; it is the compression tool Dexerdry recommends. Proper compression is critical, so press each board tight with the BlueClaw and a 2x beater board at every joist.",
    "answer_html": "<p><strong>Use the Dexerdry BlueClaw; it is the compression tool Dexerdry recommends.</strong></p><p>Proper compression is critical, so press each board tight with the BlueClaw and a 2x beater board at every joist.</p>",
    "keywords": [
     "hardwood wrench",
-    "deckwise",
     "deck wrench",
     "blueclaw"
    ],
@@ -3588,17 +3587,17 @@
    }
   },
   {
-   "id": "deckorators-groove",
+   "id": "router-bit-groove",
    "num": "qa-123",
-   "question": "What is the groove size of Deckorators boards?",
+   "question": "What router bit do I need for the board groove?",
    "alt_questions": [
-    "What router bit for Deckorators?"
+    "What groove size do my deck boards need?",
+    "Which router bit matches my board's groove?"
    ],
-   "short_answer": "Deckorators decking has a groove 5/32 inch wide by 3/8 inch deep.",
-   "answer": "Deckorators decking has a groove 5/32 inch wide by 3/8 inch deep. Use a router bit that matches your board's groove; Dexerdry can help you find the right one.",
-   "answer_html": "<p><strong>Deckorators decking has a groove 5/32 inch wide by 3/8 inch deep.</strong></p><p>Use a router bit that matches your board's groove; Dexerdry can help you find the right one.</p>",
+   "short_answer": "Use a router bit that matches your board's groove.",
+   "answer": "Use a router bit that matches your board's groove. Call us and we will help you find the right one.",
+   "answer_html": "<p><strong>Use a router bit that matches your board's groove.</strong></p><p>Call us and we will help you find the right one.</p>",
    "keywords": [
-    "deckorators",
     "groove size",
     "router bit"
    ],
