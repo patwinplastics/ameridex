@@ -278,3 +278,11 @@
 .lgt-arrow{opacity:.7}
 @media(max-width:1000px){.learning-guides-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.learning-guides-grid{grid-template-columns:1fr}}
+
+/* Homepage FAQ: sticky intro column on desktop, samples and contact card */
+.home-faq .faq-contact-card{margin-top:14px}
+.home-faq .faq-contact-card:hover{box-shadow:none}
+.home-faq .faq-contact-card a{color:#0a2a4e}
+.home-faq .faq-contact-card .fic-contact{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:8px;font-size:14px;font-weight:600}
+.home-faq .faq-contact-card .fic-contact a{text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+@media (min-width:901px) and (min-height:760px){.home-faq-intro{position:sticky;top:32px;align-self:start}}
