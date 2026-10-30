@@ -286,3 +286,4 @@
 .home-faq .faq-contact-card .fic-contact{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:8px;font-size:14px;font-weight:600}
 .home-faq .faq-contact-card .fic-contact a{text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 @media (min-width:901px) and (min-height:760px){.home-faq-intro{position:sticky;top:32px;align-self:start}}
+@media (max-width:620px){.home-faq .faq-contact-card{display:none}}
