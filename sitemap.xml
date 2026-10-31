@@ -130,9 +130,19 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/blog.html</loc>
-    <lastmod>2026-10-28</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/blog/deck-slope-for-drainage.html</loc>
+    <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ameridex.com/assets/img/blog/deck-slope-drainage.jpg</image:loc>
+      <image:caption>Diagram of a deck pitched 1/8 inch per foot away from the house, with rain running off the low edge and a dry space below</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ameridex.com/blog/is-joist-tape-worth-it.html</loc>
