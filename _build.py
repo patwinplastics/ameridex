@@ -95,8 +95,6 @@ ORG_JSONLD = {
     "name": "AmeriDex",
     "alternateName": [
         "Ameri Dex",
-        "AmeriDex Dryspace",
-        "AmeriDex Decking System",
         "AmeriDex Deck Drainage",
         "Ambidex",
         "AmeriDeck",
@@ -169,7 +167,8 @@ def breadcrumb_schema(*pairs):
     }
 
 
-# Product schema for AmeriDex (used on homepage and how-it-works)
+# Product schema for AmeriDex. NOT emitted on any page: with no public price, reviews,
+# or ratings, Google flags Product markup as invalid. Kept for reference only.
 PRODUCT_JSONLD = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -795,7 +794,7 @@ def page_index():
         # description is 192 chars; Google may truncate at ~160 but the lead phrase is preserved
         canonical="",
         keywords="above-joist deck drainage, above joist deck drainage system, under deck drainage system, water diverting system for deck, dry space under deck, integrated deck drainage, deck water diverter, PVC deck drainage, AmeriDex, Dexerdry, new deck construction, made in USA deck drainage",
-        extra_jsonld=[PRODUCT_JSONLD, breadcrumb_schema(("Home", ""))],
+        extra_jsonld=[breadcrumb_schema(("Home", ""))],
         extra_head='\n  <link rel="preload" as="image" href="assets/img/hero.jpg" fetchpriority="high">',
     ) + header("index.html") + body + footer()
 
@@ -957,7 +956,6 @@ def page_how_it_works():
         canonical="how-system-works.html",
         keywords="how under deck drainage works, above joist deck drainage system, Dexerdry seal, integrated deck drainage, PVC deck installation",
         extra_jsonld=[
-            PRODUCT_JSONLD,
             FAQ_JSONLD,
             breadcrumb_schema(("Home", ""), ("How System Works", "how-system-works.html")),
         ],
@@ -1786,7 +1784,6 @@ def page_above_joist_drainage():
         extra_jsonld=[
             ABOVE_JOIST_ARTICLE_JSONLD,
             ABOVE_JOIST_FAQ_JSONLD,
-            PRODUCT_JSONLD,
             breadcrumb_schema(("Home", ""), ("Above-Joist Deck Drainage", "above-joist-deck-drainage.html")),
         ],
     ) + header("above-joist-deck-drainage.html") + body + footer()
