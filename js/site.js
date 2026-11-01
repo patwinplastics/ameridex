@@ -1,4 +1,4 @@
-// AmeriDex Dryspace System - site.js
+// AmeriDex - site.js
 // Sticky header, mobile menu, reveal-on-scroll, query-param prefill, samples picker
 
 (function() {
