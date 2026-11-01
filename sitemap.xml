@@ -130,9 +130,19 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/blog.html</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/blog/clear-snow-off-pvc-deck.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ameridex.com/assets/img/blog/clear-snow-pvc-deck.jpg</image:loc>
+      <image:caption>Diagram of snow being pushed off an AmeriDex deck toward the low edge with a plastic shovel, away from the house</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.ameridex.com/blog/deck-slope-for-drainage.html</loc>
