@@ -2,12 +2,26 @@
 """
 AmeriDex.com - page build script.
 
-Emits all 7 HTML pages from shared head/header/footer partials so
-the navigation, head meta, and footer stay in lockstep.
+Emits the pages listed in PAGES from shared head/header/footer partials.
 
-Usage:  python3 _build.py
+SAFE BY DEFAULT. The templates in this file are far behind the live HTML,
+which is hand edited (homepage infographics, FAQ sticky column and samples
+card, SEO and copy fixes, and more). So a plain run never overwrites an
+existing page whose content differs from what the template would generate:
+
+  python3 _build.py                     dry run: report pages that differ,
+                                        write only pages that do not exist yet
+  python3 _build.py --diff              same, and print a unified diff per page
+  python3 _build.py --force FILE [...]  overwrite only the named pages
+  python3 _build.py --force-all         overwrite every page (destroys hand edits)
+
+Pages that already match the template are left alone either way.
+Before using --force, port the hand edits for that page into its page_*
+function, or the live edits are lost. tools/check-build-safe.py runs this
+script in a temporary copy of the repo and fails if any tracked file changes.
+See BUILD_NOTES.md.
 """
-import os, pathlib, textwrap
+import argparse, difflib, os, pathlib, sys, textwrap
 
 ROOT = pathlib.Path(__file__).resolve().parent
 
@@ -2110,12 +2124,55 @@ PAGES = {
 }
 
 
-def main():
+def main(argv=None):
+    ap = argparse.ArgumentParser(
+        description="Build AmeriDex pages. Default is a safe dry run that never "
+                    "overwrites an existing page that differs from its template.")
+    ap.add_argument("--force", nargs="+", metavar="FILE", default=[],
+                    help="overwrite only these pages (names as in PAGES)")
+    ap.add_argument("--force-all", action="store_true",
+                    help="overwrite every page that differs (destroys hand edits)")
+    ap.add_argument("--diff", action="store_true",
+                    help="print a unified diff for each page that differs")
+    args = ap.parse_args(argv)
+
+    unknown = [f for f in args.force if f not in PAGES]
+    if unknown:
+        ap.error("not in PAGES: " + ", ".join(unknown))
+    forced = set(PAGES) if args.force_all else set(args.force)
+
+    skipped, written, same = [], [], []
     for fname, fn in PAGES.items():
         out = ROOT / fname
-        out.write_text(fn(), encoding="utf-8")
-        print(f"wrote {fname} ({out.stat().st_size} bytes)")
+        new = fn()
+        if not out.exists():
+            out.write_text(new, encoding="utf-8")
+            written.append(fname)
+            print(f"wrote new page {fname} ({out.stat().st_size} bytes)")
+            continue
+        cur = out.read_text(encoding="utf-8")
+        if cur == new:
+            same.append(fname)
+            continue
+        if fname in forced:
+            out.write_text(new, encoding="utf-8")
+            written.append(fname)
+            print(f"FORCED overwrite of {fname} ({out.stat().st_size} bytes)")
+            continue
+        skipped.append(fname)
+        if args.diff:
+            sys.stdout.writelines(difflib.unified_diff(
+                cur.splitlines(True), new.splitlines(True),
+                fromfile=f"{fname} (current)", tofile=f"{fname} (template)"))
+
+    print(f"unchanged: {len(same)}, written: {len(written)}, skipped: {len(skipped)}")
+    if skipped:
+        print("WARNING: these pages differ from their templates and were NOT written "
+              "(hand edits kept). Use --diff to see why, or --force FILE to overwrite:")
+        for f in skipped:
+            print(f"  {f}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

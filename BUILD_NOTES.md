@@ -24,6 +24,24 @@ The `_build.py` helper is optional and regenerates all pages from shared partial
 > trust topbar partial (`trust_topbar()`) and the renamed header/mobile CTA
 > labels, so those WILL be preserved on a rebuild.
 
+## Safe build mode (added 2026-11-01)
+
+`_build.py` no longer overwrites hand-edited pages by default.
+
+- `python3 _build.py` is a dry run for existing pages. It generates each page
+  in memory, leaves pages that already match alone, writes only pages that do
+  not exist yet, and prints a WARNING listing every page that differs from its
+  template (all 10 of them today). Nothing hand edited is touched.
+- `python3 _build.py --diff` also prints a unified diff per differing page.
+- `python3 _build.py --force FILE [...]` overwrites only the named pages, and
+  `--force-all` overwrites all of them. Port the hand edits into the page_*
+  function first, or they are lost.
+- `python3 tools/check-build-safe.py` copies the repo to a temp folder, runs
+  `_build.py` in default mode there, and fails if any existing file changes.
+  Run it after editing `_build.py`.
+
+The drift warning above still applies to `--force`.
+
 ## Blog (added 2026-05-29, hand-built, NOT in _build.py)
 
 The blog is a static hub. `_build.py` does NOT know about it, so a future
