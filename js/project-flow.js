@@ -1,7 +1,9 @@
 /* Explicit, allowlisted URL handoffs. No account, storage, PII or network calls. */
 (() => {
   'use strict';
-  const colors = ['Driftwood','Khaki','Slate','Beachwood','Chestnut','Redwood','Hazelnut'];
+  const colors = ['Driftwood','Khaki','Slate','Beachwood','Chestnut','Redwood','Hazelnut',
+    // TrueGrain Premium Collection
+    'New England Birch','Coastal Driftwood','Aged Oak','Embered Taupe','Royal IPE','Tropical Walnut'];
   const types = {new:'New construction',redeck:'Full re-deck',other:'Other / need guidance'};
   const uses = {kitchen:'Outdoor kitchen & dining',lounge:'Lounge & gathering area',storage:'Storage & gear',other:'Another use'};
   const inspirations = {kitchen:'Outdoor kitchen inspiration',lounge:'Under-deck lounge inspiration',twolevel:'Two-level living inspiration'};
@@ -57,7 +59,7 @@
       const preview=document.getElementById('plan-color-preview');
       preview.hidden=!state.color;
       if(state.color){
-        document.getElementById('plan-color-image').src='assets/img/swatches/'+state.color.toLowerCase()+'.png';
+        document.getElementById('plan-color-image').src='assets/img/swatches/'+state.color.toLowerCase().replace(/ /g,'-')+'.png';
         document.getElementById('plan-color-image').alt=state.color+' deck board';
         document.getElementById('plan-color-label').textContent=state.color;
       }

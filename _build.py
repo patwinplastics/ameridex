@@ -253,8 +253,8 @@ HOW_IT_WORKS_FAQ = [
     ),
     (
         "What lengths and colors are available?",
-        "AmeriDex deck boards are available in 12, 16, and 20 foot lengths and in seven PVC "
-        "colors. You can request free samples to see all seven colors in person.",
+        "AmeriDex deck boards are available in 12, 16, and 20 foot lengths and in seven standard "
+        "colors, plus the TrueGrain Premium Collection. You can request free samples to see every color in person.",
     ),
     (
         "What is the AmeriDex warranty?",
@@ -582,6 +582,18 @@ SWATCHES = [
     ("Hazelnut",   "hazelnut",   "variegated", "Variegated"),
 ]
 
+# TrueGrain Premium Collection: AmeriDex premium colors, shown as their own
+# group after the standard seven (never one combined list). No solid or
+# variegated label for these; the tag is just "TrueGrain Premium".
+TRUEGRAIN_SWATCHES = [
+    ("New England Birch",  "new-england-birch",  "premium", "TrueGrain Premium"),
+    ("Coastal Driftwood",  "coastal-driftwood",  "premium", "TrueGrain Premium"),
+    ("Aged Oak",           "aged-oak",           "premium", "TrueGrain Premium"),
+    ("Embered Taupe",      "embered-taupe",      "premium", "TrueGrain Premium"),
+    ("Royal IPE",          "royal-ipe",          "premium", "TrueGrain Premium"),
+    ("Tropical Walnut",    "tropical-walnut",    "premium", "TrueGrain Premium"),
+]
+
 
 def trust_strip_white():
     return '''
@@ -628,9 +640,9 @@ def cross_section_svg():
 '''
 
 
-def swatch_grid_v2_html():
+def swatch_grid_v2_html(swatches=None):
     cards = []
-    for name, slug, kind, label in SWATCHES:
+    for name, slug, kind, label in (SWATCHES if swatches is None else swatches):
         cards.append(f'''      <button type="button" class="swatch-card-v2 reveal" data-swatch-trigger data-name="{name}" data-slug="{slug}" data-kind="{kind}" data-label="{label}" aria-haspopup="dialog" aria-label="View the {name} color swatch up close">
         <img src="assets/img/swatches/{slug}.png" alt="AmeriDex {name} cellular PVC deck board color sample" loading="lazy">
         <h3>{name}</h3>
@@ -703,6 +715,13 @@ def page_index():
       </div>
       <div class="swatch-grid-v2">
 {swatch_grid_v2_html()}
+      </div>
+      <div class="section-head reveal" id="truegrain" style="text-align:center;margin:2.5rem auto 0;">
+        <h3 style="color:var(--navy)">TrueGrain Premium Collection</h3>
+        <p>The top of the line AmeriDex upgrade: an ultra-realistic wood look, built to outlast wood. Ask your dealer or request a quote for TrueGrain pricing.</p>
+      </div>
+      <div class="swatch-grid-v2">
+{swatch_grid_v2_html(TRUEGRAIN_SWATCHES)}
       </div>
       <div class="swatch-cta-row reveal">
         <a class="btn btn-navy btn-lg" href="samples-request.html">Order Color Samples</a>
@@ -1351,7 +1370,7 @@ def page_contact():
 
 def page_samples():
     color_picks = []
-    for name, slug, kind, label in SWATCHES:
+    for name, slug, kind, label in SWATCHES + TRUEGRAIN_SWATCHES:
         color_picks.append(f'''        <button type="button" class="color-pick" data-color="{name}" aria-pressed="false">
           <img src="assets/img/swatches/{slug}.png" alt="AmeriDex {name} cellular PVC deck board color sample" loading="lazy">
           <span>{name}</span>
@@ -1758,7 +1777,7 @@ def page_above_joist_drainage():
       <p>AmeriDex is for new deck construction only. The Dexerdry seal has to be placed between every board as the deck is built, so the system cannot be retrofitted onto a deck that already exists without first removing the existing boards. If you are re-decking, AmeriDex can go on the existing framing once the old boards come off, if the framing is sound and already has the pitch AmeriDex needs. Existing framing might not have that pitch, so have a builder check the framing and the pitch first.</p>
 
       <h2 style="color:var(--navy);">How to specify AmeriDex on a new build</h2>
-      <p>Specifying AmeriDex on a new deck is a three step process. First, request <a href="samples-request.html">free samples</a> to see all seven PVC colors in person. Second, share your project dimensions through the <a href="get-a-free-quote.html">free quote form</a> so a regional dealer can return a written quote with board count, accessories, and lead time. Third, after install, <a href="warranty-registration.html">register the warranty</a> in minutes to activate the 25-year residential coverage. Builders working in commercial or multifamily applications should reach the AmeriDex team directly through the <a href="contact-us.html">contact page</a> for project takeoffs.</p>
+      <p>Specifying AmeriDex on a new deck is a three step process. First, request <a href="samples-request.html">free samples</a> to see the seven standard colors and the TrueGrain Premium Collection in person. Second, share your project dimensions through the <a href="get-a-free-quote.html">free quote form</a> so a regional dealer can return a written quote with board count, accessories, and lead time. Third, after install, <a href="warranty-registration.html">register the warranty</a> in minutes to activate the 25-year residential coverage. Builders working in commercial or multifamily applications should reach the AmeriDex team directly through the <a href="contact-us.html">contact page</a> for project takeoffs.</p>
 
     </div>
   </article>
