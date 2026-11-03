@@ -718,7 +718,7 @@ def page_index():
       </div>
       <div class="section-head reveal" id="truegrain" style="text-align:center;margin:2.5rem auto 0;">
         <h3 style="color:var(--navy)">TrueGrain Premium Collection</h3>
-        <p>The top of the line AmeriDex upgrade: an ultra-realistic wood look, built to outlast wood. Ask your dealer or request a quote for TrueGrain pricing.</p>
+        <p>The top of the line AmeriDex upgrade: an ultra-realistic wood look, built to outlast wood. Ask your dealer or <a href="get-a-free-quote.html?collection=truegrain">request a quote</a> for TrueGrain pricing.</p>
       </div>
       <div class="swatch-grid-v2">
 {swatch_grid_v2_html(TRUEGRAIN_SWATCHES)}

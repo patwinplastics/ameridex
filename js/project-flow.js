@@ -131,6 +131,26 @@
       form.addEventListener('input',sync);form.addEventListener('change',sync);refresh();
     }
   }
+  // TrueGrain Premium Collection on the quote form. ?collection=truegrain
+  // preselects the collection prompt (color left open) unless ?color= already
+  // chose a color, and scrolls to the field. The hidden "collection" field is
+  // stamped whenever a TrueGrain option is selected so sales sees the interest.
+  const quoteColor=document.getElementById('quote-color');
+  if(quoteColor){
+    const tgGroup=[...quoteColor.querySelectorAll('optgroup')].find(g=>/TrueGrain/.test(g.label));
+    const tgField=quoteColor.form && quoteColor.form.querySelector('input[name=collection]');
+    const stamp=()=>{
+      const opt=quoteColor.selectedOptions[0];
+      const isTg=Boolean(tgGroup && opt && opt.parentElement===tgGroup);
+      if(tgField)tgField.value=isTg ? 'TrueGrain Premium Collection' : '';
+    };
+    if(qs.get('collection')==='truegrain' && tgGroup){
+      if(!quoteColor.value){quoteColor.value=tgGroup.querySelector('option').value;quoteColor.dispatchEvent(new Event('change',{bubbles:true}));}
+      const field=quoteColor.closest('.project-field')||quoteColor;
+      requestAnimationFrame(()=>field.scrollIntoView({block:'center'}));
+    }
+    quoteColor.addEventListener('change',stamp);stamp();
+  }
   const calculator=document.getElementById('deck-calc');
   const handoff=document.getElementById('calc-to-quote');
   if(calculator&&handoff){
