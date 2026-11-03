@@ -3290,11 +3290,12 @@
    "question": "What colors are available, and which are solid?",
    "alt_questions": [
     "What deck board colors are there?",
-    "Which colors are variegated?"
+    "Which colors are variegated?",
+    "What is the TrueGrain Premium Collection?"
    ],
-   "short_answer": "There are seven colors.",
-   "answer": "There are seven colors. Driftwood, Khaki and Slate are solid colors. Beachwood, Chestnut, Redwood and Hazelnut are variegated, with streaks that add depth and help hide pollen and leaf marks between cleanings. Screen colors vary, so order free samples to see them in your own light.",
-   "answer_html": "<p><strong>There are seven colors.</strong></p><p>Driftwood, Khaki and Slate are solid colors. Beachwood, Chestnut, Redwood and Hazelnut are variegated, with streaks that add depth and help hide pollen and leaf marks between cleanings. Screen colors vary, so order free samples to see them in your own light.</p>",
+   "short_answer": "There are seven standard colors, plus the TrueGrain Premium Collection.",
+   "answer": "There are seven standard colors, plus the TrueGrain Premium Collection. Driftwood, Khaki and Slate are solid colors. Beachwood, Chestnut, Redwood and Hazelnut are variegated, with streaks that add depth and help hide pollen and leaf marks between cleanings. The TrueGrain Premium Collection is the top of the line upgrade, with an ultra-realistic wood look in six colors: New England Birch, Coastal Driftwood, Aged Oak, Embered Taupe, Royal IPE and Tropical Walnut. Screen colors vary, so order free samples to see them in your own light.",
+   "answer_html": "<p><strong>There are seven standard colors, plus the TrueGrain Premium Collection.</strong></p><p>Driftwood, Khaki and Slate are solid colors. Beachwood, Chestnut, Redwood and Hazelnut are variegated, with streaks that add depth and help hide pollen and leaf marks between cleanings. The TrueGrain Premium Collection is the top of the line upgrade, with an ultra-realistic wood look in six colors: New England Birch, Coastal Driftwood, Aged Oak, Embered Taupe, Royal IPE and Tropical Walnut. Screen colors vary, so order free samples to see them in your own light.</p>",
    "keywords": [
     "colors",
     "driftwood",
@@ -3304,6 +3305,14 @@
     "chestnut",
     "redwood",
     "hazelnut",
+    "truegrain",
+    "premium",
+    "new england birch",
+    "coastal driftwood",
+    "aged oak",
+    "embered taupe",
+    "royal ipe",
+    "tropical walnut",
     "samples"
    ],
    "category": "product facts"

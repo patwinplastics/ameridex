@@ -2085,6 +2085,15 @@ section { position: relative; }
 .color-pick.selected .check { display: flex; }
 .color-pick:hover { transform: translateY(-1px); }
 
+/* Sample picker groups: standard colors and the TrueGrain Premium Collection */
+.color-pick-group { margin: 0.25rem 0 0.6rem; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; color: var(--navy); }
+.color-pick-group-tg { margin-top: 1.4rem; scroll-margin-top: 110px; }
+.color-pick-group-tg p { margin: 0; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.color-pick-group-tg > span { display: block; font-family: inherit; font-weight: 400; font-size: 0.85rem; color: #555; margin-top: 0.25rem; }
+.premium-tag { display: inline-block; background: #8a6a2e; color: #fff; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 999px; }
+.color-pick-grid-tg .color-pick img { aspect-ratio: 800 / 530; object-fit: cover; }
+@media (min-width: 1024px) { .color-pick-grid-tg { grid-template-columns: repeat(6, 1fr); } }
+
 /* ===== Gallery v2 (carousel desktop, stack mobile) ===== */
 .gallery-carousel {
   display: grid;
