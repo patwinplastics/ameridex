@@ -312,6 +312,8 @@
 .tg-points li { border-top:1px solid #ffffff38; padding-top:16px; }
 .tg-points strong { display:block; font:700 19px/1.25 var(--font-display); letter-spacing:-.02em; margin-bottom:6px; }
 .tg-points span { font-size:13px; line-height:1.7; color:#c9d3dc; }
+.tg-more { margin:22px 0 0; }
+.tg-more a { color:#f3e6cf; font:700 14px/1.4 var(--font-display); letter-spacing:.02em; text-decoration:underline; text-underline-offset:4px; }
 .tg-cta { display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; margin-top:36px; padding:26px; border:1px solid #ffffff30; border-radius:4px; }
 .tg-cta p { font:600 17px/1.5 var(--font-display); max-width:600px; }
 .tg-cta small { display:block; font-size:12px; color:#c9d3dc; margin-top:8px; }
