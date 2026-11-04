@@ -140,7 +140,7 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/blog.html</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -152,6 +152,16 @@
     <image:image>
       <image:loc>https://www.ameridex.com/assets/img/blog/clear-snow-pvc-deck.jpg</image:loc>
       <image:caption>Diagram of snow being pushed off an AmeriDex deck toward the low edge with a plastic shovel, away from the house</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/blog/deck-wider-than-20-feet.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ameridex.com/assets/img/blog/deck-wider-than-20-feet.jpg</image:loc>
+      <image:caption>Plan view of a 32 foot wide deck split into two 16 foot decks by a seam gutter</image:caption>
     </image:image>
   </url>
   <url>
