@@ -107,7 +107,7 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/dry-space-under-deck.html</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -390,7 +390,7 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/under-deck-storage.html</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -426,7 +426,7 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/under-deck-play-area.html</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -439,5 +439,11 @@
       <image:loc>https://www.ameridex.com/assets/img/blog/under-deck-lighting.jpg</image:loc>
       <image:caption>Side-view diagram of lights, a fan, and an outlet in the dry space under an AmeriDex deck</image:caption>
     </image:image>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/under-deck-dog-area.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
