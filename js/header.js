@@ -1,13 +1,19 @@
 /* Single behavior controller for navigation on every static page.
-   CONTRACTOR_PORTAL_URL is the one address for every Contractor portal link.
-   The portal sign-in screen is also where a contractor applies. There is
-   no separate apply path or hash, so both actions use this address.
-   The script applies it to each a[data-contractor-portal]. The href in the
-   markup matches this value so the link still works if the script does not run. */
+   data-contractor-portal marks sign in / portal links. The script sets
+   those hrefs to CONTRACTOR_PORTAL_URL.
+   data-contractor-apply marks application links. The script sets those
+   hrefs to CONTRACTOR_APPLY_URL.
+   The href in the markup matches that constant so the link still
+   works if the script does not run. */
 (() => {
   const CONTRACTOR_PORTAL_URL = "https://contractors.ameridex.com";
   document.querySelectorAll("a[data-contractor-portal]").forEach((link) => {
     link.href = CONTRACTOR_PORTAL_URL;
+  });
+
+  const CONTRACTOR_APPLY_URL = "https://contractors.ameridex.com/apply";
+  document.querySelectorAll("a[data-contractor-apply]").forEach((link) => {
+    link.href = CONTRACTOR_APPLY_URL;
   });
 
   const header = document.querySelector('.shared-header');
