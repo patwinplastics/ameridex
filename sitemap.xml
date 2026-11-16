@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ameridex.com/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -140,7 +140,7 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/blog.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -294,7 +294,7 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/blog/under-deck-living-space-ideas.html</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -378,7 +378,7 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/under-deck-ceiling.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -429,5 +429,15 @@
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/blog/under-deck-lighting-ideas.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ameridex.com/assets/img/blog/under-deck-lighting.jpg</image:loc>
+      <image:caption>Side-view diagram of lights, a fan, and an outlet in the dry space under an AmeriDex deck</image:caption>
+    </image:image>
   </url>
 </urlset>
