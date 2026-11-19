@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.ameridex.com/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -140,7 +140,7 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/blog.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -206,7 +206,7 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/blog/water-dripping-through-deck-boards.html</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -390,7 +390,7 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/under-deck-storage.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -451,5 +451,15 @@
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/blog/musty-smell-mold-under-deck.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ameridex.com/assets/img/blog/musty-under-deck.jpg</image:loc>
+      <image:caption>Side-by-side diagram of a damp space under a gapped deck and a dry space under an AmeriDex deck</image:caption>
+    </image:image>
   </url>
 </urlset>
