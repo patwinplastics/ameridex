@@ -252,4 +252,5 @@ image alt text and page-level JSON-LD `image` point at it. The Organization
 JSON-LD still uses `og.jpg`. To add or rebuild a card, add the page to `PAGES` in
 `tools/build_og_images.py` and run `python3 tools/build_og_images.py <slug>`
 (needs Playwright and Chrome). Diagram cards reuse the page's own inline SVG;
-photo cards that use AI images carry a "Design Inspiration" tag.
+photo cards that use AI images carry a "Design Inspiration" tag. AI source
+photos made only for cards live in `assets/img/og/sources/`.

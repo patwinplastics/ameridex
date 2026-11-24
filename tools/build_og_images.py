@@ -43,6 +43,14 @@ PAGES = {
  "blog-planning-a-new-deck-checklist": ("blog/planning-a-new-deck-checklist.html", "AmeriDex Blog", "Planning a New Deck: A Pre-Construction Checklist", "photo:gallery/05-deck-installed.jpg", ""),
  "blog-under-deck-living-space-ideas": ("blog/under-deck-living-space-ideas.html", "AmeriDex Blog", "5 Ways to Turn the Space Under Your Deck Into a Living Space", "photo:gallery/10-under-deck-kitchen-dining.jpg", "Design Inspiration"),
  "blog-why-decks-rot-from-the-top-down": ("blog/why-decks-rot-from-the-top-down.html", "AmeriDex Blog", "Why Decks Rot From the Top Down and How to Stop It", "crop:blog/ameridex-dry-joists.jpg", "Diagram For Illustration Only"),
+ "blog-above-joist-vs-below-joist-buyer-guide": ("blog/above-joist-vs-below-joist-buyer-guide.html", "AmeriDex Blog", "Above-Joist vs Below-Joist Deck Drainage: A Buyer's Guide", "diagrams/ameridex-system.svg", "Diagram For Illustration Only"),
+ "blog-fall-deck-maintenance-checklist": ("blog/fall-deck-maintenance-checklist.html", "AmeriDex Blog", "Fall Deck Maintenance Checklist: 8 Steps Before Winter", "photo:og/sources/fall-deck-maintenance.jpg", "Design Inspiration"),
+ "blog-how-to-clean-pvc-deck-boards": ("blog/how-to-clean-pvc-deck-boards.html", "AmeriDex Blog", "How to Clean and Maintain PVC Deck Boards", "photo:og/sources/clean-pvc-deck.jpg", "Design Inspiration"),
+ "blog-installing-ameridex-pro-guide": ("blog/installing-ameridex-pro-guide.html", "AmeriDex Blog", "Installing AmeriDex: A Builder's Guide to a Watertight Deck", "blog/deck-slope-drainage.jpg", "Diagram For Illustration Only"),
+ "blog-cellular-pvc-vs-composite-decking": ("blog/cellular-pvc-vs-composite-decking.html", "AmeriDex Blog", "PVC Decking vs Composite Decking: The Full Case for PVC", "cropbox:pvc-vs-composite-core.jpg:0,150,1600,785", "Diagram For Illustration Only"),
+ "blog-dexerdry-automotive-grade-tpe-seal": ("blog/dexerdry-automotive-grade-tpe-seal.html", "AmeriDex Blog", "Why the Dexerdry Seal Is Built From Automotive-Grade TPE", "diagrams/dexerdry-cross-section.png", "Diagram For Illustration Only"),
+ "second-story-deck-waterproofing": ("second-story-deck-waterproofing.html", "AmeriDex Guide", "Second-Story Deck Waterproofing: Keep the Patio Below Dry", "photo:gallery/05-deck-installed.jpg", ""),
+ "blog": ("blog.html", "The AmeriDex Blog", "Decks, Drainage and the Space Underneath", "blog-index", "Diagrams For Illustration Only"),
 }
 
 def data_uri(path, max_w=1400):
@@ -111,6 +119,10 @@ def swatch_html(names):
 
 def build(slug, page):
     page_file, kicker, title, visual, tag = PAGES[slug]
+    if visual == "blog-index":
+        imgs = ["blog/deck-slope-drainage.jpg", "diagrams/dexerdry-cross-section.png", "blog/patio-under-a-deck.jpg"]
+        cards = "".join(f'<div style="flex:1;min-width:0;text-align:center"><img style="width:100%;height:255px;object-fit:contain" src="{data_uri(IMG/f)}"><div style="font:700 19px Montserrat;color:#0A2A4E;margin-top:8px">{label}</div></div>' for f,label in zip(imgs,["Plan Your Deck", "Know Your Materials", "Use the Space Below"]))
+        return diagram_html(kicker,title, f'<div style="display:flex;gap:16px;width:100%;align-items:center">{cards}</div>',tag)
     if visual == "svg":
         src = (ROOT / page_file).read_text()
         svg = re.search(r"<svg.*?</svg>", src, re.S).group(0)
@@ -119,6 +131,11 @@ def build(slug, page):
         return diagram_html(kicker, title, (IMG / visual).read_text(), tag)
     if visual.startswith("photo:"):
         return photo_html(kicker, title, data_uri(IMG / visual[6:]), tag)
+    if visual.startswith("cropbox:"):
+        _, f, box = visual.split(":")
+        im = Image.open(IMG / f).convert("RGB").crop(tuple(int(v) for v in box.split(",")))
+        b = io.BytesIO(); im.save(b, "JPEG", quality=92)
+        return diagram_html(kicker, title, f'<img src="data:image/jpeg;base64,{base64.b64encode(b.getvalue()).decode()}">', tag)
     if visual.startswith("crop:"):
         im = Image.open(IMG / visual[5:]).convert("RGB")
         im = im.crop((0, 130, im.width, im.height))
