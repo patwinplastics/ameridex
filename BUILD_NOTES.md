@@ -242,3 +242,14 @@ can't be parsed, the script stops the deploy and leaves the live site as is.
   band (samples, quote, call). Hidden on the homepage and on Formspree form pages.
 - Homepage: goal picker (#start), "What happens after you ask for a quote"
   (#what-happens), people/contact section, four extra FAQs (also in FAQPage JSON-LD).
+
+## Per-page social preview images (added 2026-11-24)
+
+Under-deck guides, landing pages and blog posts that used the generic
+`assets/img/og.jpg` now have their own 1200x630 card in `assets/img/og/<slug>.jpg`
+(blog posts use `blog-<slug>.jpg`). Each page's `og:image`, `twitter:image`,
+image alt text and page-level JSON-LD `image` point at it. The Organization
+JSON-LD still uses `og.jpg`. To add or rebuild a card, add the page to `PAGES` in
+`tools/build_og_images.py` and run `python3 tools/build_og_images.py <slug>`
+(needs Playwright and Chrome). Diagram cards reuse the page's own inline SVG;
+photo cards that use AI images carry a "Design Inspiration" tag.
