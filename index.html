@@ -2,32 +2,59 @@
 
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-11349043089"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'AW-11349043089');
-  </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
-<!-- Meta Pixel Code -->
+<link as="image" fetchpriority="high" href="assets/img/hero-800.webp" imagesizes="(min-width: 1101px) 55vw, 100vw" imagesrcset="assets/img/hero-800.webp 800w, assets/img/hero-1600.webp 1600w" rel="preload" type="image/webp"/>
+<!-- Google tag (gtag.js) and Meta Pixel. Stubs queue hits immediately.
+     gtag.js and fbevents.js load on window load, the first interaction, or a 4s timeout. -->
 <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-11349043089');
+
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  n.queue=[];}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '431677712006030');
   fbq('track', 'PageView');
-  </script>
+
+  (function () {
+    var started = false;
+    var opts = {capture: true, passive: true};
+    var events = ['pointerdown', 'keydown', 'touchstart'];
+    function clearListeners() {
+      window.removeEventListener('load', loadTracking);
+      events.forEach(function (name) { window.removeEventListener(name, loadTracking, opts); });
+      window.removeEventListener('scroll', onScroll, opts);
+    }
+    function loadTracking() {
+      if (started) return;
+      started = true;
+      clearListeners();
+      var g = document.createElement('script');
+      g.async = true;
+      g.src = 'https://www.googletagmanager.com/gtag/js?id=AW-11349043089';
+      var f = document.createElement('script');
+      f.async = true;
+      f.src = 'https://connect.facebook.net/en_US/fbevents.js';
+      document.head.appendChild(g);
+      document.head.appendChild(f);
+    }
+    function onScroll() {
+      if (performance.now() < 1200) return;
+      loadTracking();
+    }
+    events.forEach(function (name) { window.addEventListener(name, loadTracking, opts); });
+    window.addEventListener('scroll', onScroll, opts);
+    window.addEventListener('load', loadTracking);
+    window.setTimeout(loadTracking, 4000);
+  })();
+</script>
 <noscript><img height="1" src="https://www.facebook.com/tr?id=431677712006030&amp;ev=PageView&amp;noscript=1" style="display:none" width="1"/></noscript>
-<!-- End Meta Pixel Code -->
 <title>AmeriDex Decking | Above-Joist Deck Drainage, Dry Space Below</title>
 <meta content="AmeriDex is waterproof decking with drainage built in. Cellular PVC boards lock onto the Dexerdry seal so rain sheds off the deck and the space below stays dry." name="description"/>
 <meta content="waterproof decking, waterproof deck boards, above-joist deck drainage, above joist deck drainage system, under deck drainage system, water diverting system for deck, dry space under deck, integrated deck drainage, deck water diverter, PVC deck drainage, AmeriDex, Dexerdry, new deck construction, made in USA deck drainage" name="keywords"/>
@@ -59,25 +86,417 @@
 <link href="assets/img/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
 <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="site.webmanifest" rel="manifest"/>
-<!-- Performance: preconnect to font origins, preload the hero image on the homepage -->
-<link as="image" fetchpriority="high" href="assets/img/hero-1600.webp" imagesizes="(min-width: 1101px) 55vw, 100vw" imagesrcset="assets/img/hero-800.webp 800w, assets/img/hero-1600.webp 1600w" rel="preload" type="image/webp"/>
+<!-- Performance: preconnect to font origins. The hero image preload is the first hint in this document. -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/></noscript>
+<style>
+/* First-paint rules so the header and hero do not wait on stylesheets.
+   Full files still load and cover the rest of the page. */
+
+:root {
+  /* Brand palette */
+  --navy: #0A2A4E;
+  --navy-deep: #071F3A;
+  --red: #D6263A;
+  --red-dark: #B61D2E;
+  --offwhite: #F7F5F0;
+  --cream: #EFEAE0;
+  --charcoal: #1A1A1A;
+  --divider: #E5E1D8;
+  --white: #FFFFFF;
+
+  /* Type */
+  --font-display: 'Archivo', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Contain wide comparison tables without hiding page content on phones. */
+.site-header .site-nav { min-width: 0; flex-wrap: wrap; justify-content: flex-end; }
+/* Keep reading content visible even if animation observation is delayed. */
+.js .reveal { opacity: 1 !important; transform: none !important; }
+.guide-content h1 { font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.12; margin: .8rem 0 1.3rem; color: var(--navy); }
+.guide-content h2 { font-size: clamp(1.4rem, 2.4vw, 2rem); line-height: 1.2; margin: 1.8rem 0 1rem; color: var(--navy); }
+/* Long-form article headings. Tailwind CDN preflight resets h1-h6 to inherit size and weight,
+   so restore a readable scale inside article.section-pad (pillar pages and Learning Center posts). */
+article.section-pad h2 { font-size: clamp(1.45rem, 2.4vw, 2rem); font-weight: 800; line-height: 1.2; margin: 2.1rem 0 0.9rem; }
+article.section-pad h3 { font-size: clamp(1.15rem, 1.8vw, 1.4rem); font-weight: 700; line-height: 1.3; margin: 1.6rem 0 0.6rem; }
+article.section-pad h2:first-child, article.section-pad h3:first-child { margin-top: 0; }
+article.section-pad p + p, article.section-pad ul + p, article.section-pad table + p, article.section-pad figure + p, article.section-pad div + p { margin-top: 1rem; }
+article.section-pad ul, article.section-pad ol { margin: 0.75rem 0 1rem; }
+.guide-content h3 { font-size: 1.2rem; line-height: 1.3; margin: 1.5rem 0 .8rem; }
+.guide-content p { font-size: 1rem; line-height: 1.8; margin: .9rem 0; }
+.guide-content p a:not(.btn) { text-decoration: underline; text-underline-offset: 3px; }
+.guide-content li { line-height: 1.8; margin: .5rem 0; }
+.guide-content .btn { margin-top: .7rem; }
+.mobile-menu .mobile-menu-close { display: inline-flex !important; }
+@media (max-width: 1099px) {
+  .site-header .hamburger { display: inline-flex !important; }
+}
+.comparison-scroll { overflow-x: auto; max-width: 100%; margin: 1.5rem 0; }
+.comparison-scroll table { min-width: 660px; width: 100%; border-collapse: collapse; }
+.comparison-scroll th, .comparison-scroll td { padding: 1rem; text-align: left; vertical-align: top; border: 1px solid var(--divider); }
+.comparison-scroll th { background: var(--navy); color: white; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  background: var(--offwhite);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+p { margin: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+/* Focus styles */
+:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+}
+
+/* ===== Eyebrow / Kicker ===== */
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+/* Phase 2: brand-preserving homepage. No replacement product imagery. */
+.home-v2 { --surface:#f7f5f0; --surface-alt:#efeae0; --ink:#0a2a4e; --muted:#59646b; --line:#dcdedb; background:var(--surface); color:var(--ink); }
+.home-v2[data-theme="dark"] { --surface:#102c43; --surface-alt:#18384f; --ink:#f6f4ef; --muted:#bfccd3; --line:#3b5362; }
+.home-v2 a, .home-v2 button { -webkit-tap-highlight-color:transparent; }
+.home-v2 button { font:inherit; cursor:pointer; }
+.home-v2 .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.skip-link { position:fixed; z-index:1000; top:0; left:16px; padding:16px; background:white; color:#0a2a4e; transform:translateY(-200%); }
+.skip-link:focus { transform:translateY(0); }
+.home-v2 .eyebrow { font-size:11px; letter-spacing:.14em; font-weight:700; line-height:1.5; }
+.home-header { min-height:96px; padding:14px max(4vw,24px); display:flex; align-items:center; gap:36px; background:var(--surface); position:relative; z-index:30; }
+.brand { flex-shrink:0; }
+.home-v2[data-theme="dark"] .brand, .home-v2[data-theme="dark"] .home-footer a:has(img) { background:#f7f5f0; padding:6px 10px; border-radius:4px; display:inline-block; }
+.brand img, .home-footer img { width:172px; height:auto; }
+.home-nav { display:flex; gap:25px; margin-left:auto; align-items:center; font-size:13px; font-weight:600; }
+.home-nav a { padding:12px 0; }
+.home-nav a:hover, .home-footer a:hover { text-decoration:underline; text-underline-offset:5px; }
+.header-actions { display:flex; align-items:center; gap:14px; }
+.theme-switch, .home-menu-toggle { border:1px solid var(--line); padding:9px 12px; background:none; color:var(--ink); border-radius:4px; font-size:12px!important; }
+.home-menu-toggle { display:none; }
+.home-mobile-nav[hidden] { display:none; }
+.home-mobile-nav { position:absolute; top:100%; left:0; right:0; background:var(--surface); border-bottom:1px solid var(--line); padding:20px 24px; box-shadow:0 16px 20px #0002; }
+.home-mobile-nav a { display:block; padding:12px 0; font-weight:600; }
+.action { display:inline-flex; align-items:center; justify-content:center; gap:22px; padding:16px 21px; border:1px solid transparent; border-radius:4px; font-size:13px; font-weight:700; line-height:1.4; transition:background .2s, transform .2s; }
+.action:hover { transform:translateY(-2px); }
+.action-red { background:#D6263A; color:white!important; }
+.action-red:hover { background:#b91e30; }
+.action-outline { color:white; border-color:#8795a5; }
+.action-outline:hover { background:#ffffff12; }
+.home-hero { display:grid; grid-template-columns:45% 55%; min-height:565px; background:#0a2a4e; color:white; }
+.hero-copy { padding:64px 38px 48px max(4vw,24px); display:flex; flex-direction:column; justify-content:center; align-items:flex-start; }
+.hero-copy .eyebrow { color:#d8c6a9; margin-bottom:24px; }
+.hero-copy h1 { font-size:clamp(38px,3.65vw,59px); font-weight:800; letter-spacing:-.045em; line-height:1.05; max-width:540px; }
+.hero-copy h1 span { color:#e8d7ba; }
+.hero-intro { color:#d9e0e8; margin:25px 0 29px; font-size:15px; line-height:1.8; max-width:425px; }
+.actions { display:flex; gap:12px; flex-wrap:wrap; }
+.hero-fit { font-size:11px; color:#b9c7d7; margin-top:22px; }
+.hero-photo { position:relative; inset:auto; min-width:0; overflow:hidden; }
+.home-v2 .hero-photo::after { content:none; }
+.hero-photo img { height:100%; width:100%; object-fit:cover; object-position:55% center; }
+.photo-note { position:absolute; bottom:24px; right:24px; background:#0a2a4edb; border-left:2px solid #e8d7ba; padding:14px 20px; font-size:12px; line-height:1.7; }
+.photo-note span { display:block; }
+.contractor-cta { display:grid; grid-template-columns:minmax(0,1.4fr) auto; gap:22px 36px; align-items:center; padding:28px max(4vw,24px); background:#0a2a4e; color:#f6f4ef; border-bottom:4px solid #d6263a; }
+.contractor-cta-kicker { margin:0 0 8px; color:#e8d7ba; font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+.contractor-cta h2 { max-width:16em; margin:0; color:#fff; font-size:clamp(24px,2.5vw,34px); font-weight:800; letter-spacing:-.03em; line-height:1.15; }
+.contractor-cta-actions { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:10px; }
+.contractor-cta a { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:12px 18px; border-radius:4px; border:1px solid transparent; font-size:14px; font-weight:700; line-height:1.3; text-align:center; text-decoration:none; }
+.contractor-cta a:hover { text-decoration:none; transform:translateY(-1px); }
+.contractor-cta-apply { background:#d6263a; color:#fff !important; }
+.contractor-cta-apply:hover { background:#b91e30; }
+.contractor-cta-signin { background:transparent; color:#fff !important; border-color:#c5d0da; }
+.contractor-cta-signin:hover { background:#fff; color:#0a2a4e !important; }
+.contractor-cta :focus-visible { outline:3px solid #e8d7ba; outline-offset:3px; }
+.home-v2[data-theme="dark"] .contractor-cta { background:#102c43; }
+@media (max-width:900px) {
+  .contractor-cta { grid-template-columns:1fr; padding:24px; }
+  .contractor-cta-actions { justify-content:stretch; flex-direction:column; }
+  .contractor-cta a { width:100%; }
+}
+.home-proof { display:grid; grid-template-columns:repeat(3,1fr); padding:25px 7%; border-bottom:1px solid var(--line); background:var(--surface); }
+.home-proof p { display:flex; flex-direction:column; gap:5px; text-align:center; border-right:1px solid var(--line); }
+.home-proof p:last-child { border:0; }
+.home-proof strong { font:700 17px var(--font-display); }
+.home-proof span { color:var(--muted); font-size:11px; }
+.home-proof a { text-decoration:underline; text-underline-offset:3px; }
+.home-section { padding:90px max(6vw,24px); max-width:1600px; margin:auto; }
+.home-section h2, .living-copy h2, .home-final h2 { font-size:clamp(30px,3.2vw,46px); line-height:1.1; letter-spacing:-.035em; }
+.home-section .eyebrow, .living-copy>.eyebrow { color:var(--red); margin-bottom:15px; }
+.home-v2[data-theme="dark"] .home-section .eyebrow, .home-v2[data-theme="dark"] .living-copy>.eyebrow { color:#ff8e9b; }
+.section-intro { text-align:center; max-width:600px; margin:0 auto 45px; }
+.section-intro>p:last-child { color:var(--muted); font-size:15px; line-height:1.7; margin:20px auto 0; max-width:480px; }
+.system-layout { display:grid; grid-template-columns:1.15fr 1fr; gap:6%; align-items:center; }
+.system-figure { margin:0; background:#ece9e2; color:#0a2a4e; min-width:0; padding:26px; border-radius:4px; }
+.figure-label { font:700 12px var(--font-display); text-transform:uppercase; letter-spacing:.08em; }
+.system-figure img { width:100%; height:230px; object-fit:contain; mix-blend-mode:multiply; }
+.system-figure figcaption { font-size:11px; color:#58646a; line-height:1.6; }
+.system-step { display:flex; gap:22px; padding:20px 0; border-bottom:1px solid var(--line); }
+.system-step:first-child { padding-top:0; }
+.step-index { color:var(--muted); font-size:11px; padding-top:5px; }
+.system-step h3 { font-size:20px; line-height:1.3; letter-spacing:-.02em; }
+.system-step p { font-size:13px; line-height:1.75; color:var(--muted); margin-top:8px; }
+.text-link { display:inline-flex; align-items:center; gap:20px; font-size:13px; font-weight:700; padding:4px 0 7px; border-bottom:1px solid currentColor; }
+.text-link:hover { color:var(--red); }
+.system-steps>.text-link { margin-top:23px; }
+.technical-note { font-size:11px; color:var(--muted); line-height:1.7; max-width:900px; margin:28px auto 0; text-align:center; }
+.living-section { display:grid; grid-template-columns:1fr 1fr; background:var(--surface-alt); }
+.living-photo { min-height:470px; overflow:hidden; }
+.living-photo img { width:100%; height:100%; object-fit:cover; }
+.living-copy { padding:65px 12%; display:flex; justify-content:center; align-items:flex-start; flex-direction:column; }
+.living-copy>p:not(.eyebrow):not(.image-caption) { color:var(--muted); font-size:15px; line-height:1.8; margin:25px 0; }
+.living-copy .image-caption { font-size:10px; color:var(--muted); margin-top:25px; }
+.section-top { display:flex; justify-content:space-between; align-items:flex-end; gap:28px; margin-bottom:38px; }
+.section-top>p { font-size:13px; line-height:1.8; color:var(--muted); }
+.color-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+.color-card { background:var(--surface-alt); color:var(--ink); border:1px solid transparent; border-radius:4px; padding:18px; min-width:0; transition:border-color .2s; }
+.color-card:hover { border-color:var(--ink); }
+.color-card img { width:100%; height:148px; object-fit:contain; transition:transform .3s; }
+.color-card:hover img { transform:translateY(-5px); }
+.color-card>span { display:flex; justify-content:space-between; font-size:14px; font-weight:600; padding-top:12px; }
+.color-card>span>span { font-size:22px; font-weight:400; line-height:1; }
+.color-sample-card { padding:24px; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; border:1px solid var(--line); border-radius:4px; }
+.color-sample-card>p { font:700 25px/1.15 var(--font-display); letter-spacing:-.03em; margin-bottom:18px; }
+.color-sample-card>span { font-size:10px; color:var(--muted); line-height:1.6; margin-top:12px; }
+.planning-section { padding-top:0; }
+.planning-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.planning-card { padding:35px 30px; border-right:1px solid var(--line); display:flex; align-items:flex-start; flex-direction:column; }
+.planning-card:first-child { padding-left:0; }
+.planning-card:last-child { border:0; }
+.planning-card h3 { font-size:26px; line-height:1.2; letter-spacing:-.025em; }
+.planning-card p { font-size:13px; line-height:1.8; color:var(--muted); margin:16px 0 24px; }
+.planning-card .text-link { margin-top:auto; }
+.home-faq { display:grid; grid-template-columns:.85fr 1.15fr; gap:9%; background:var(--surface-alt); max-width:none; }
+.home-faq>div>p:not(.eyebrow) { color:var(--muted); font-size:14px; line-height:1.7; margin:22px 0; }
+.home-faq-list details { border-top:1px solid var(--line); }
+.home-faq-list details:last-child { border-bottom:1px solid var(--line); }
+.home-faq-list summary { list-style:none; cursor:pointer; font-weight:600; font-size:15px; padding:22px 32px 22px 0; position:relative; line-height:1.5; }
+.home-faq-list summary::-webkit-details-marker { display:none; }
+.home-faq-list summary:after { content:"+"; position:absolute; right:2px; top:21px; font-weight:400; font-size:22px; }
+.home-faq-list details[open] summary:after { content:"−"; }
+.home-faq-list details>p { color:var(--muted); font-size:13px; line-height:1.85; padding:0 25px 24px 0; }
+.home-faq-list details>p a { text-decoration:underline; }
+.learning-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.learning-card { display:grid; grid-template-columns:45% 1fr; gap:25px; align-items:center; border-top:1px solid var(--line); padding-top:25px; }
+.learning-image { background:#e7e5df; border-radius:4px; overflow:hidden; }
+.learning-image img { width:100%; height:200px; object-fit:cover; }
+.seal-image img { object-fit:contain; padding:12px; mix-blend-mode:multiply; }
+.learning-card .eyebrow { font-size:9px; margin-bottom:12px; }
+.learning-card h3 { font-size:24px; line-height:1.15; margin-bottom:23px; }
+.learning-card .text-link { font-size:11px; }
+.home-final { background:#0a2a4e; color:white; padding:70px 24px; text-align:center; }
+.home-final>.eyebrow { color:#d8c6a9; margin-bottom:17px; }
+.home-final>p:not(.eyebrow) { color:#ccd7e3; font-size:15px; margin:23px 0 28px; }
+.home-final .actions { justify-content:center; }
+.home-footer { padding:60px max(6vw,24px) 25px; background:var(--surface); }
+.footer-main { display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:30px; }
+.footer-main>div>p { margin-top:20px; color:var(--muted); font-size:12px; line-height:1.7; }
+.footer-main h2 { font-size:13px; line-height:1.4; margin:10px 0 20px; }
+.footer-main>div>a:not(:has(img)) { display:block; font-size:12px; color:var(--muted); margin:12px 0; }
+.footer-bottom { margin-top:45px; padding-top:22px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:20px; font-size:10px; color:var(--muted); }
+.color-dialog { border:0; border-radius:6px; padding:0; width:min(800px,calc(100% - 32px)); max-height:90dvh; overflow-y:auto; background:var(--surface); color:var(--ink); }
+.color-dialog::backdrop { background:#031a30c7; backdrop-filter:blur(4px); }
+.color-dialog>img { width:100%; height:330px; object-fit:cover; }
+.dialog-close { position:absolute; right:14px; top:14px; background:white; color:#0a2a4e; border:0; border-radius:50%; width:42px; height:42px; font-size:28px!important; box-shadow:0 2px 12px #0002; }
+.dialog-copy { padding:28px 34px; }
+.dialog-copy h2 { font-size:36px; margin:8px 0 14px; }
+.dialog-copy>p:not(.eyebrow) { color:var(--muted); font-size:13px; line-height:1.7; margin-bottom:22px; }
+@media(min-width:1600px) { .home-header,.hero-copy { padding-left:max(4vw,calc((100vw - 1450px)/2)); } }
+@media(max-width:1100px) { .home-nav { gap:14px; font-size:12px; }.home-header { gap:18px; }.brand img { width:140px; }.theme-switch { padding:8px; }.header-actions { gap:8px; }.header-samples { padding:12px 15px; }.hero-copy { padding-right:28px; }.hero-copy .action { font-size:12px; padding:13px 16px; }.learning-card { grid-template-columns:1fr; }.learning-image img { height:220px; } }
+@media(max-width:850px) { .home-nav { display:none; }.header-actions { margin-left:auto; }.home-menu-toggle { display:block; }.home-header { min-height:80px; }.home-hero { grid-template-columns:1fr 1fr; }.hero-copy h1 { font-size:40px; }.hero-intro { font-size:13px; }.home-section { padding:65px 24px; }.planning-section { padding-top:0; }.system-layout { gap:30px; }.system-figure { padding:20px; }.system-figure img { height:220px; }.living-copy { padding:45px 28px; }.color-grid { gap:12px; }.color-card { padding:12px; }.color-card img { height:110px; }.color-sample-card { padding:16px; }.color-sample-card>p { font-size:21px; }.color-sample-card .text-link { font-size:11px; }.planning-card { padding:25px 20px; }.planning-card h3 { font-size:22px; }.home-faq { gap:5%; } }
+@media(max-width:620px) {
+ .home-header { padding:13px 20px; min-height:76px; gap:10px; }.brand img { width:125px; }.header-samples { display:none; }.theme-switch { padding:9px; }
+ .home-hero { display:flex; flex-direction:column; }.hero-copy { padding:38px 24px 32px; }.hero-copy h1 { font-size:43px; max-width:420px; }.hero-copy .eyebrow { font-size:10px; margin-bottom:20px; }.hero-intro { font-size:14px; margin:21px 0 23px; max-width:440px; }.hero-fit { margin-top:18px; }.hero-copy .action { padding:14px 15px; font-size:12px; }.hero-photo { height:295px; }.hero-photo img { object-position:center; }.photo-note { right:18px; bottom:18px; padding:10px 15px; font-size:11px; }
+ .home-proof { padding:23px 10px; }.home-proof strong { font-size:14px; }.home-proof span { font-size:9px; line-height:1.5; padding:0 8px; }
+ .home-section { padding:58px 22px; }.home-section h2,.living-copy h2,.home-final h2 { font-size:33px; }.section-intro { text-align:left; margin-bottom:30px; }.section-intro>p:last-child { margin-left:0; font-size:14px; }.system-layout { grid-template-columns:1fr; }.system-figure img { height:185px; }.technical-note { text-align:left; font-size:10px; }.system-step h3 { font-size:19px; }
+ .living-section { display:flex; flex-direction:column; }.living-photo { min-height:0; height:280px; }.living-copy { padding:38px 24px 43px; }.living-copy>p:not(.eyebrow):not(.image-caption) { font-size:14px; }
+ .section-top { display:block; margin-bottom:25px; }.section-top>p { margin-top:18px; }.section-top>.text-link { margin-top:20px; }.color-grid { grid-template-columns:repeat(2,1fr); }.color-card { padding:15px 12px; }.color-card img { height:125px; }.color-card>span { font-size:13px; }.color-sample-card>p { font-size:23px; }.color-sample-card .text-link { gap:8px; font-size:10px; }
+ .planning-section { padding-top:0; }.planning-grid { grid-template-columns:1fr; }.planning-card,.planning-card:first-child { padding:28px 0; border-right:0; border-bottom:1px solid var(--line); }.planning-card:last-child { border-bottom:0; }.planning-card h3 { font-size:26px; }.planning-card p { margin:12px 0 18px; }
+ .home-faq { grid-template-columns:1fr; gap:35px; }.home-faq-list summary { font-size:14px; }.learning-grid { grid-template-columns:1fr; gap:35px; }.learning-card { grid-template-columns:1fr; gap:20px; }.learning-image img { height:220px; }.learning-card h3 { font-size:27px; }.learning-card h3 br { display:none; }.home-final { padding:55px 24px; }.home-final .actions { flex-direction:column; align-items:stretch; max-width:340px; margin:auto; }
+ .home-footer { padding:40px 24px 25px; }.footer-main { grid-template-columns:1fr 1fr; gap:25px; }.footer-main>div:first-child { grid-column:1/-1; display:flex; align-items:center; justify-content:space-between; gap:20px; }.home-footer img { width:125px; }.footer-main>div>p { margin:0; font-size:11px; }.footer-main h2 { margin-bottom:18px; }.footer-bottom { flex-wrap:wrap; gap:15px; }.footer-bottom>span:first-child { flex-basis:100%; }
+ .color-dialog>img { height:235px; }.dialog-copy { padding:24px; }.dialog-copy h2 { font-size:30px; }
+}
+@media(max-width:360px) { .hero-copy h1 { font-size:37px; }.hero-copy .actions { flex-direction:column; width:100%; }.color-card img { height:100px; }.color-sample-card { padding:12px; }.color-sample-card>p { font-size:20px; } }
+@media(prefers-reduced-motion:reduce) { .home-v2 *, .home-v2 *:before, .home-v2 *:after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+/* Shared navigation. Scoped so inner-page content keeps its existing styles. */
+.shared-header.home-header {
+  --header-bg:#f7f5f0; --header-ink:#0a2a4e; --header-line:#dcdedb;
+  box-sizing:border-box; min-height:96px; width:100%; margin:0;
+  padding:14px max(4vw,24px); display:flex; align-items:center; gap:36px;
+  background:var(--header-bg); color:var(--header-ink); position:relative; z-index:105;
+  font-family:'Inter',system-ui,sans-serif; line-height:1.4;
+}
+body[data-theme="dark"] .shared-header { --header-bg:#102c43; --header-ink:#f6f4ef; --header-line:#3b5362; }
+.shared-header * { box-sizing:border-box; }
+.shared-header a { text-decoration:none; color:var(--header-ink); }
+.shared-header button { font-family:inherit; cursor:pointer; }
+.shared-header .brand { flex:0 0 auto; display:block; padding:0; }
+.shared-header .brand img { width:240px; height:auto; display:block; }
+body[data-theme="dark"] .shared-header .brand { background:#f7f5f0; border-radius:4px; padding:6px 10px; }
+.shared-header .home-nav { display:flex; align-items:center; gap:25px; margin-left:auto; font-size:13px; font-weight:600; }
+.shared-header .home-nav a { padding:12px 0; white-space:nowrap; }
+.shared-header a:hover, .shared-header a[aria-current="page"] { text-decoration:underline; text-underline-offset:5px; }
+.shared-header .header-actions { display:flex; align-items:center; gap:14px; }
+.shared-header .theme-switch, .shared-header .home-menu-toggle { border:1px solid var(--header-line); padding:9px 12px; background:none; color:var(--header-ink); border-radius:4px; font-size:12px; line-height:1.4; }
+.shared-header .home-menu-toggle { display:none; }
+.shared-header .header-samples { display:inline-flex; align-items:center; justify-content:center; gap:22px; background:#D6263A; color:white; padding:16px 21px; border:1px solid transparent; border-radius:4px; font-size:13px; font-weight:700; line-height:1.4; white-space:nowrap; }
+.shared-header .header-samples:hover { background:#b91e30; text-decoration:none; }
+.shared-header .home-mobile-nav { position:absolute; top:100%; left:0; right:0; background:var(--header-bg); border-bottom:1px solid var(--header-line); padding:20px 24px; box-shadow:0 16px 20px #0002; max-height:calc(100dvh - 130px); overflow-y:auto; }
+.shared-header .home-mobile-nav[hidden] { display:none; }
+.shared-header .home-mobile-nav a { display:block; padding:12px 0; font-size:16px; font-weight:600; }
+.shared-header .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.shared-header :focus-visible { outline:3px solid #D6263A; outline-offset:3px; }
+@media(min-width:1600px) { .shared-header.home-header { padding-left:max(4vw,calc((100vw - 1450px)/2)); } }
+@media(max-width:1200px) {
+ .shared-header.home-header { gap:18px; }
+ .shared-header .home-nav { gap:14px; font-size:12px; }
+ .shared-header .brand img { width:190px; }
+ .shared-header .header-actions { gap:8px; }
+ .shared-header .theme-switch { padding:8px; }
+ .shared-header .header-samples { padding:12px 15px; }
+}
+@media(max-width:1100px) {
+ .shared-header.home-header { min-height:80px; }
+ .shared-header .home-nav { display:none; }
+ .shared-header .header-actions { margin-left:auto; }
+ .shared-header .home-menu-toggle { display:block; }
+}
+@media(max-width:620px) {
+ .shared-header.home-header { padding:13px 16px; min-height:76px; gap:10px; }
+ .shared-header .brand img { width:clamp(140px,45vw,180px); }
+ .shared-header .header-samples { display:none; }
+ .shared-header .theme-switch { padding:9px; }
+}
+/* Tap-to-call and quote button (desktop header). */
+.shared-header .header-phone { font-size:13px; font-weight:700; white-space:nowrap; padding:12px 2px; }
+.shared-header .header-quote { display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--header-ink); color:var(--header-ink); padding:15px 18px; border-radius:4px; font-size:13px; font-weight:700; line-height:1.4; white-space:nowrap; }
+.shared-header .header-quote:hover { background:var(--header-ink); color:var(--header-bg); text-decoration:none; }
+@media(max-width:1300px) { .shared-header .header-phone { display:none; } }
+@media(max-width:1200px) { .shared-header .header-quote { padding:11px 13px; } }
+@media(max-width:1100px) { .shared-header .header-quote { display:none; } }
+/* Dealer "My Store" chip mounted in the action row by js/dealer-routing.js. */
+.shared-header .ad-store-chip { margin-left:0; }
+.shared-header .ad-store-chip-button { color:#0a2a4e; }
+.shared-header .ad-store-chip-pop { color:#0a2a4e; }
+.shared-header .ad-store-chip-pop a { color:#0a2a4e; }
+/* Below 1100px the chip stays hidden (css/site.css) and the dealer banner shows instead. */
+/* Visible breadcrumb trail, rendered from JSON-LD by tools/sync-breadcrumbs.py. */
+.crumbs { background:#f7f5f0; border-top:1px solid #dcdedb; border-bottom:1px solid #dcdedb; padding:10px max(4vw,24px); font-family:'Inter',system-ui,sans-serif; font-size:13px; line-height:1.5; }
+.crumbs ol { list-style:none; margin:0 auto; padding:0; display:flex; flex-wrap:wrap; align-items:center; gap:4px 0; max-width:1450px; }
+.crumbs li { display:inline-flex; align-items:center; color:#4f5b63; min-width:0; }
+.crumbs li + li::before { content:"/"; margin:0 9px; color:#8a949a; }
+.crumbs a { color:#0a2a4e; text-decoration:underline; text-underline-offset:3px; font-weight:600; }
+.crumbs a:hover { color:#b91e30; }
+.crumbs [aria-current="page"] { color:#4f5b63; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:60vw; }
+body[data-theme="dark"] .crumbs { background:#102c43; border-color:#3b5362; }
+body[data-theme="dark"] .crumbs a { color:#f6f4ef; }
+body[data-theme="dark"] .crumbs li, body[data-theme="dark"] .crumbs [aria-current="page"] { color:#bfccd3; }
+@media(max-width:620px) { .crumbs { padding:8px 16px; font-size:12px; } }
+/* Make room for the chip so the action row never pushes past the viewport. */
+@media(max-width:1640px) { .shared-header:has(.ad-store-chip) .header-phone { display:none; } }
+@media(max-width:1360px) { .shared-header:has(.ad-store-chip) .theme-switch { display:none; } .shared-header:has(.ad-store-chip) .home-nav { gap:14px; } }
+@media(max-width:1250px) { .shared-header:has(.ad-store-chip) .header-quote { display:none; } }
+/* Laptop widths (1200-1420): tighten spacing so the full action row fits. */
+@media(max-width:1420px) and (min-width:1101px) { .shared-header.home-header { gap:20px; } .shared-header .home-nav { gap:16px; } .shared-header .header-actions { gap:10px; } }
+@media(max-width:1300px) and (min-width:1101px) { .shared-header .home-nav { gap:13px; } .shared-header .brand img { width:180px; } }
+@media(max-width:1640px) and (min-width:1101px) { .shared-header:has(.ad-store-chip).home-header { gap:20px; } .shared-header:has(.ad-store-chip) .home-nav { gap:16px; } .shared-header:has(.ad-store-chip) .header-actions { gap:10px; } }
+/* Room for the Contractors item without pushing the action buttons off screen.
+   The phone number hides a little earlier so the nav still fits on one row. */
+@media(max-width:1360px) { .shared-header .header-phone { display:none; } }
+@media(max-width:1520px) and (min-width:1101px) {
+  .shared-header .home-nav { gap:12px; }
+}
+@media(max-width:1400px) and (min-width:1241px) {
+  .shared-header.home-header { gap:14px; }
+  .shared-header .home-nav { gap:10px; }
+}
+@media(max-width:1240px) and (min-width:1101px) {
+  .shared-header.home-header { gap:12px; padding-left:16px; padding-right:16px; }
+  .shared-header .brand img { width:150px; }
+  .shared-header .home-nav { gap:8px; }
+  .shared-header .header-actions { gap:8px; }
+}
+
+/* Room for the Install help item (Oct 2026). On laptop widths the Dark/Light
+   switch steps aside (it stays in the mobile header) so all nav items, the
+   phone number and both buttons fit on one row without horizontal scroll. */
+@media(max-width:1700px) and (min-width:1101px) { .shared-header .theme-switch { display:none; } }
+@media(max-width:1500px) and (min-width:1101px) { .shared-header:has(.ad-store-chip) .header-quote { display:none; } }
+@media(max-width:1660px) and (min-width:1521px) { .shared-header .home-nav { gap:16px; } .shared-header.home-header { gap:20px; } }
+@media(max-width:1960px) and (min-width:1101px) { .shared-header:has(.ad-store-chip) .header-phone, .shared-header:has(.ad-store-chip) .theme-switch { display:none; } }
+
+/* Mobile sticky action bar: shown where the desktop nav collapses, hidden on lead-form pages. */
+.shared-footer .mobile-cta-bar{display:none}
+@media(max-width:1100px){
+.shared-footer .mobile-cta-bar{display:grid;grid-template-columns:0.8fr 1.1fr 1.1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:100;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:#f7f5f0;border-top:1px solid #dcdedb;box-shadow:0 -6px 16px #0a2a4e1f;font-family:Inter,system-ui,sans-serif}
+.shared-footer .mobile-cta-bar a{display:flex;align-items:center;justify-content:center;min-height:44px;margin:0;padding:0 6px;border-radius:4px;font-size:14px;font-weight:700;line-height:1.2;text-align:center;text-decoration:none;white-space:nowrap}
+.shared-footer .mobile-cta-bar .mcta-call{border:1px solid #0a2a4e;color:#0a2a4e;background:#fff}
+.shared-footer .mobile-cta-bar .mcta-samples{background:#d6263a;color:#fff}
+.shared-footer .mobile-cta-bar .mcta-quote{background:#0a2a4e;color:#fff}
+body{padding-bottom:calc(60px + env(safe-area-inset-bottom))}
+body:has(form[action*="formspree.io"]){padding-bottom:0}
+body:has(form[action*="formspree.io"]) .shared-footer .mobile-cta-bar{display:none}
+}
+@media(max-width:340px){.shared-footer .mobile-cta-bar a{font-size:13px}}
+</style>
+<link href="css/site.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="css/home.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="css/header.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link href="css/footer.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript>
 <link href="css/site.css" rel="stylesheet"/>
+<link href="css/home.css" rel="stylesheet"/>
+<link href="css/header.css" rel="stylesheet"/>
+<link href="css/footer.css" rel="stylesheet"/>
+</noscript>
+<style>
+/* Hold the homepage hero when site.css arrives. Its older .hero-photo rules
+   target a different hero and would pull this photo out of flow. */
+.home-v2 .hero-photo { position:relative; inset:auto; }
+.home-v2 .hero-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:55% center; }
+.home-v2 .hero-photo::after { content:none; }
+@media (min-width:621px) { .home-v2 .hero-photo { width:100%; height:100%; } }
+@media (max-width:620px) { .home-v2 .hero-photo { height:295px; } .home-v2 .hero-photo img { object-position:center; } }
+</style>
 <!-- Tailwind CDN is a progressive enhancement only - all critical styling is in site.css -->
 <script defer="" src="js/site.js"></script>
 <!-- Dealer routing: My Store chip, suggestion banner, IP-based suggestion, form stamping. -->
 <!-- Loaded on every page so the chip and confirmed-state CTAs follow the visitor sitewide. -->
 <script defer="" src="js/dealer-routing.js"></script>
-<!-- Structured data (schema.org / JSON-LD) -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://www.ameridex.com/#organization","name":"AmeriDex","alternateName":["Ameri Dex","AmeriDex Deck Drainage","Ambidex","AmeriDeck","Ameri Deck","Dexter Dry","Dexedry","Dexer Dry"],"legalName":"A & M Building Products","url":"https://www.ameridex.com","logo":"https://www.ameridex.com/assets/img/logo.png","image":"https://www.ameridex.com/assets/img/og.jpg","description":"AmeriDex is the integrated above-joist deck drainage system. PVC deck boards lock onto a Dexerdry seal at install, sending rain off the deck and creating a dry, finished under-deck living space. Made in the USA.","foundingDate":"2023","founder":[{"@id":"https://www.ameridex.com/#founder-ardolina"},{"@id":"https://www.ameridex.com/#founder-murphy"}],"telephone":"+1-800-217-9206","email":"sales@ameridex.com","address":{"@type":"PostalAddress","streetAddress":"1129A Industrial Parkway","addressLocality":"Brick","addressRegion":"NJ","postalCode":"08724","addressCountry":"US"},"sameAs":["https://www.facebook.com/ameridexdryspace/","https://www.youtube.com/channel/UC3Fz0TEKbLpQZefnYQNCxmg"],"knowsAbout":["above-joist deck drainage","under deck drainage system","cellular PVC decking","integrated water-diverting deck seal","new deck construction","dry under-deck living space"],"areaServed":"US","slogan":"Protect The Space Under Your Deck."}</script>
-
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ameridex.com/"}]}</script>
-<link href="css/home.css" rel="stylesheet"/><script defer="True" src="js/home.js"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I use AmeriDex on an existing deck?","acceptedAnswer":{"@type":"Answer","text":"Yes, on a re-deck on sound framing that already has the right pitch where the old boards are removed. Your builder must confirm framing condition, spacing, pitch, flashing, fastening, and the current installation requirements. It cannot be added beneath boards that stay in place."}},{"@type":"Question","name":"Does it keep all rain out of the space below?","acceptedAnswer":{"@type":"Answer","text":"No system can promise that for an open-sided space. The correctly installed board-and-seal assembly sheds rain off the deck surface, so the area underneath stays much drier and usable. Wind-driven rain can still blow in from the open sides, and perimeter details matter. It is not a fully enclosed, weatherproof room."}},{"@type":"Question","name":"How is it different from under-deck drainage?","acceptedAnswer":{"@type":"Answer","text":"AmeriDex integrates the drainage function at the deck surface. Other systems use a separate above-joist layer beneath the boards or collect water below the joists. Compare the three approaches to match the system to your project."}},{"@type":"Question","name":"Is AmeriDex waterproof decking?","acceptedAnswer":{"@type":"Answer","text":"Yes, at the deck surface. The Dexerdry seal closes the gap between the boards, so a correctly installed deck sheds rain off the surface instead of letting it drip through. The area underneath stays much drier and usable, but it is open-sided, so wind-driven rain can still blow in from the sides. It is not a fully enclosed, weatherproof room. See how waterproof decking compares to membranes, aluminum planks, and coatings."}},{"@type":"Question","name":"What are AmeriDex deck boards made of?","acceptedAnswer":{"@type":"Answer","text":"AmeriDex boards are cellular PVC with a proprietary ASA cap and a wood-grain finish. There is no wood fiber anywhere in the board, so a cut edge is just more PVC, with nothing to rot, swell or feed mold. The boards are made in Linden, New Jersey."}},{"@type":"Question","name":"What colors are available, and which are solid?","acceptedAnswer":{"@type":"Answer","text":"There are seven standard colors, plus the TrueGrain Premium Collection. Driftwood, Khaki and Slate are solid colors. Beachwood, Chestnut, Redwood and Hazelnut are variegated, with streaks that add depth and help hide pollen and leaf marks between cleanings. The TrueGrain Premium Collection is the top of the line upgrade, with an ultra-realistic wood look in six colors: New England Birch, Coastal Driftwood, Aged Oak, Embered Taupe, Royal IPE and Tropical Walnut. Screen colors vary, so order free samples to see them in your own light."}},{"@type":"Question","name":"What lengths do the boards come in?","acceptedAnswer":{"@type":"Answer","text":"AmeriDex boards are stocked in 12, 16 and 20 foot lengths. Standard runs top out at 20 ft, and custom lengths up to 25 ft are available on request."}},{"@type":"Question","name":"What is the difference between grooved and solid edge boards?","acceptedAnswer":{"@type":"Answer","text":"Grooved boards have a groove along each side, and the Dexerdry seal locks into it. That is what closes the gap so rain sheds off the surface. Solid edge (square edge) boards have no side groove. You rout a groove only where the seal needs to fit, so they are used at starts, edges, corners and trim."}},{"@type":"Question","name":"Can I get a picture frame border or a breaker board?","acceptedAnswer":{"@type":"Answer","text":"Yes, both are done with solid edge boards. Picture frame: the Dexerdry picture frame detail uses 1 1/2 inch strips ripped from a deck board. A 1/8 inch drainage gap stays between the board ends and the frame, so you get the framed look while water still runs off the deck. A full picture frame is not used, because perimeter boards capping the board ends would dam the water. Breaker: on decks wider than 20 ft, a solid edge center board (also called a butt board) splits the deck, with a gutter on each side. It is an optional design choice; your builder will lay out the details."}},{"@type":"Question","name":"How much do AmeriDex boards expand and contract?","acceptedAnswer":{"@type":"Answer","text":"AmeriDex boards move about 1/8 inch over a 20 ft board across normal seasonal temperature swings. The movement is lengthwise only, along the length of the board, not side to side."}},{"@type":"Question","name":"What gap should I leave at butt joints?","acceptedAnswer":{"@type":"Answer","text":"Butt joints happen only at a center or breaker board, never mid-run. Leave a 1/4 inch gap at butt joints."}},{"@type":"Question","name":"Do the boards move side to side, and how are they spaced?","acceptedAnswer":{"@type":"Answer","text":"No. AmeriDex boards move only lengthwise, not side to side. The Dexerdry seal spaces the boards evenly, so no separate spacers are needed."}},{"@type":"Question","name":"My deck is wider than 20 feet. How is that handled?","acceptedAnswer":{"@type":"Answer","text":"Treat it as smaller decks side by side. For example, a 32 ft deck becomes two 16 ft decks, split by a seam gutter (frame a 3 to 3 1/4 inch gap) or by a center board with a gutter on each side. Deck boards stop about 1/4 inch short of the gutter."}},{"@type":"Question","name":"What joist spacing do AmeriDex boards need?","acceptedAnswer":{"@type":"Answer","text":"Frame the joists at 12 or 16 inches on center, never more than 16 inches on center."}},{"@type":"Question","name":"Does the board direction have to run away from the house?","acceptedAnswer":{"@type":"Answer","text":"No. AmeriDex works with boards parallel or perpendicular to the house. Parallel decks start at a grooved frieze board at the wall. Your contractor supplies the frieze board; AmeriDex does not sell frieze, joists or stringers. Perpendicular decks start with a square edge board caulked to the ledger, with a gutter at the house. Either way, the deck needs 1/8 inch per foot of pitch."}},{"@type":"Question","name":"Can I use hidden fastener clips?","acceptedAnswer":{"@type":"Answer","text":"No. The Dexerdry seal sits in the side groove that clips would use. Boards are face screwed with Starborn top mount screws and capped with color-matched plugs, which gives a clean, hidden fastener look."}},{"@type":"Question","name":"What screws and plugs should I use, and how many?","acceptedAnswer":{"@type":"Answer","text":"Use Starborn epoxy-coated or stainless steel screws with color-matched plugs, two screws per joist on every board. Work from the center of the deck outward, keeping each board compressed. Drive the heads flush, not buried, and put the plugs in as soon as you can, before rain or debris gets into the holes. Approved fasteners are part of the warranty terms, although the fasteners themselves are not warranted."}},{"@type":"Question","name":"Do I need to pre-drill AmeriDex boards?","acceptedAnswer":{"@type":"Answer","text":"No. Cellular PVC does not need pre-drilling, while composite boards need a 3/16 inch pilot hole at every screw. This is one reason PVC goes in faster with the two-screw-per-joist pattern."}},{"@type":"Question","name":"What tools do I need to cut and install AmeriDex?","acceptedAnswer":{"@type":"Answer","text":"You need: the BlueClaw compression tool and a 2x beater board a router with the matching bit a circular saw and a table saw (for drip edges) a rubber mallet a PVC pipe cutter for the seal a drill or impact driver a caulk gun with clear caulk safety glasses A cut board needs no sealing, because a cut edge is just more PVC."}},{"@type":"Question","name":"Do AmeriDex boards get hot in the sun?","acceptedAnswer":{"@type":"Answer","text":"Any deck surface warms in direct sun, and color matters most. Dark colors like Slate and Redwood absorb more heat and feel warmer underfoot in July. For a barefoot or pool deck, lean toward Driftwood, Khaki, Beachwood or Hazelnut, and leave a sample in the sun to test it."}},{"@type":"Question","name":"Will the color fade?","acceptedAnswer":{"@type":"Answer","text":"The ASA cap on every board is designed to resist fading, but no material is fade-proof after years of sun. Boards may lighten a little as they weather, which is normal and not a defect. Under the limited warranty, the color will not fade more than 5 Delta E (CIE) units, a standard measure of color change, after exposure to light and weathering."}},{"@type":"Question","name":"Do the boards need to be stained or sealed?","acceptedAnswer":{"@type":"Answer","text":"No. The color and protection are built into the ASA cap, so there is no sanding, staining, sealing or repainting. Putting a sealer or stain on the boards is unnecessary and could affect your warranty, so check your warranty documents first."}},{"@type":"Question","name":"Will the boards stain from spills or leaves?","acceptedAnswer":{"@type":"Answer","text":"The boards are made to resist permanent staining from food and drink spills. Clean a spill with soap and water or a mild household cleaner as soon as you see it, and within one week. Rinse leaves off before they sit through a rain, and use an oxygen bleach solution for tannin marks. If a food or drink stain still will not come out, have a professional deck cleaner clean it at your cost; if it is still there after that, you can file a stain claim under the limited warranty within 30 days of the professional cleaning."}},{"@type":"Question","name":"How do I clean the deck?","acceptedAnswer":{"@type":"Answer","text":"A broom and a garden hose take care of most days. For a deeper clean, use mild soap, warm water and a soft-bristle brush along the grain. Do not pressure wash: the stream can create micro-tears in the cap and disturb the seal. Avoid solvents, abrasive cleaners and chlorine bleach stronger than 3 percent."}},{"@type":"Question","name":"Can mold or mildew grow on AmeriDex?","acceptedAnswer":{"@type":"Answer","text":"Mold cannot feed on PVC itself. It can grow on pollen, dirt or leaf debris left on the surface in shady, damp spots. Clean it off with 1 cup of oxygen bleach per gallon of warm water: let it sit 5 minutes, scrub lightly, then rinse."}},{"@type":"Question","name":"How does PVC compare with composite and wood?","acceptedAnswer":{"@type":"Answer","text":"Wood needs sealing every year or two and can rot. Composite blends wood fiber with plastic under a cap. That fiber can absorb water at cuts, scratches or uncapped faces. Cellular PVC has no wood fiber at all, so it does not swell, rot or feed mold, and it needs no pre-drilling. PVC does move a bit more with temperature along its length."}},{"@type":"Question","name":"How much does AmeriDex cost?","acceptedAnswer":{"@type":"Answer","text":"AmeriDex is priced by the lineal foot of deck board, and that figure covers both the cellular PVC board and the Dexerdry seal, because together they are the drainage system. Use the cost guide calculator for a starting number, then ask for a written quote for exact figures."}},{"@type":"Question","name":"Are the samples really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Pick the colors you want to see, choose a 6-inch or 12-inch sample, and we ship them to your door at no cost. Request your samples."}},{"@type":"Question","name":"What warranty comes with it?","acceptedAnswer":{"@type":"Answer","text":"AmeriDex deck boards and accessories carry a 25-year limited residential warranty and a 10-year limited commercial warranty. It covers manufacturing defects that cause splitting, flaking, rotting or structural defects. Claims are prorated over the warranty term, the remedy is replacement of the defective product, and no claim can exceed the original purchase price. Read the warranty details and remember to register your warranty within 30 days."}},{"@type":"Question","name":"How long will an AmeriDex deck last?","acceptedAnswer":{"@type":"Answer","text":"We do not publish a lifespan figure. What we put in writing is the limited warranty: 25 years on residential decks and 10 years on commercial decks, covering manufacturing defects that cause splitting, flaking, rotting or structural defects. Install the boards exactly as the instructions show, since improper installation voids the warranty."}},{"@type":"Question","name":"What can void the warranty?","acceptedAnswer":{"@type":"Answer","text":"The limited warranty is void if the problem comes from improper installation; settling, distortion or collapse of the structure under the deck; abuse, such as shoveling snow or scraping with a metal shovel or other metal object; natural disasters such as floods, tornadoes, earthquakes or hurricanes; paints or other chemicals not recommended by the manufacturer; or extreme heat, including sunlight reflected from Low-E glass."}},{"@type":"Question","name":"How do I make a warranty claim?","acceptedAnswer":{"@type":"Answer","text":"Mail your claim within 30 days of discovering the defect to A&M Building Products LLC (AmeriDex), 1129A Industrial Parkway, Brick, NJ 08724. Include proof of purchase showing the purchase date, a description of the problem and photos of the affected area. For questions, email sales@ameridex.com or call 1-800-217-9206. We may ask for more information or to inspect the deck. If the claim is valid, we replace the defective product."}},{"@type":"Question","name":"Can I transfer the warranty to a new owner?","acceptedAnswer":{"@type":"Answer","text":"Yes, one time, within 5 years of the original purchase date. The original owner must send us a written request with proof of purchase and proof of the transfer within 60 days of selling the property or transferring the product. The new owner gets the rest of the original warranty term."}},{"@type":"Question","name":"Where is AmeriDex made?","acceptedAnswer":{"@type":"Answer","text":"Our cellular PVC deck boards are manufactured in Linden, New Jersey, and the Dexerdry seal is also produced in the USA. Our headquarters, sales, and warehouse are in Brick, New Jersey."}},{"@type":"Question","name":"Where should I start?","acceptedAnswer":{"@type":"Answer","text":"Request physical color samples, sketch your deck dimensions, and ask for a project quote. Your written quote should confirm boards, seals, fasteners, accessories, delivery, and any installation costs."}}]}</script><link href="css/header.css" rel="stylesheet"/><script defer="True" src="js/header.js"></script><script defer="True" src="js/track-clicks.js"></script><link href="css/footer.css" rel="stylesheet"/></head>
+<script defer="True" src="js/home.js"></script><script defer="True" src="js/header.js"></script><script defer="True" src="js/track-clicks.js"></script></head>
 <body class="home-v2">
 <a class="skip-link" href="#main">Skip to content</a><header class="home-header shared-header">
-<a aria-label="AmeriDex home" class="brand" href="index.html"><img alt="AmeriDex" height="134" src="assets/img/logo.png" width="800"/></a>
+<a aria-label="AmeriDex home" class="brand" href="index.html"><img alt="AmeriDex" fetchpriority="low" height="134" src="assets/img/logo.png" width="800"/></a>
 <nav aria-label="Primary navigation" class="home-nav">
 <a href="how-system-works.html">How it works</a>
 <a href="index.html#colors">Colors</a>
@@ -312,7 +731,7 @@
 <div class="footer-help-actions"><a class="fh-samples" href="samples-request.html">Get free samples</a><a class="fh-quote" href="get-a-free-quote.html">Get a free quote</a><a class="fh-call" href="tel:18002179206">Call 800-217-9206</a><a class="fh-install" href="dexerdry-install-help.html">Install help</a></div>
 </section>
 <div class="footer-main">
-<div class="footer-identity"><a href="index.html"><img alt="AmeriDex home" height="134" src="assets/img/logo.png" width="800"/></a><p>Beautiful decking.<br/>More possibilities underneath.</p></div>
+<div class="footer-identity"><a href="index.html"><img alt="AmeriDex home" fetchpriority="low" height="134" loading="lazy" src="assets/img/logo.png" width="800"/></a><p>Beautiful decking.<br/>More possibilities underneath.</p></div>
 <div><h2>Explore</h2><a href="how-system-works.html">How the system works</a><a href="waterproof-decking.html">Waterproof decking</a><a href="dry-space-under-deck.html">Dry space decking</a><a href="index.html#colors">Decking colors</a><a href="gallery.html">Gallery</a><a href="blog.html">Learning center</a><a href="contractor-resources.html">Contractor resources</a><a href="dexerdry-install-help.html">Install help</a></div>
 <div><h2>Plan your project</h2><a href="plan-your-project.html">Start a project plan</a><a href="samples-request.html">Free samples</a><a href="get-a-free-quote.html">Project quote</a><a href="where-to-buy.html">Where to buy</a><a href="above-joist-deck-drainage-cost.html">Cost guide</a></div>
 <div><h2>Connect</h2><a href="about.html">About AmeriDex</a><a href="contact-us.html">Contact us</a><a href="become-a-dealer.html">Become a dealer</a><a href="https://dealerportal.ameridex.com" rel="noopener nofollow" target="_blank">Dealer portal (new tab)</a><a data-contractor-portal="" href="https://contractors.ameridex.com" rel="noopener nofollow" target="_blank">Contractor portal (new tab)</a><a href="tel:18002179206">800-217-9206</a></div>
@@ -325,5 +744,9 @@
 </nav>
 </footer>
 <dialog aria-labelledby="color-dialog-title" class="color-dialog" id="color-dialog"><button aria-label="Close color detail" class="dialog-close" type="button">×</button><img alt="" id="color-dialog-image"/><div class="dialog-copy"><p class="eyebrow">Explore the texture</p><h2 id="color-dialog-title"></h2><p>See the finish up close, then compare a physical sample at home. Screen colors vary.</p><a class="action action-red" href="samples-request.html" id="color-dialog-sample">Request this color <span aria-hidden="true">↗</span></a><p style="margin-top:18px"><a class="text-link" href="plan-your-project.html" id="color-dialog-plan">Plan with this color ↗</a></p></div></dialog>
+<!-- Structured data (schema.org / JSON-LD). Kept after the hero so it does not delay the LCP image. -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://www.ameridex.com/#organization","name":"AmeriDex","alternateName":["Ameri Dex","AmeriDex Deck Drainage","Ambidex","AmeriDeck","Ameri Deck","Dexter Dry","Dexedry","Dexer Dry"],"legalName":"A & M Building Products","url":"https://www.ameridex.com","logo":"https://www.ameridex.com/assets/img/logo.png","image":"https://www.ameridex.com/assets/img/og.jpg","description":"AmeriDex is the integrated above-joist deck drainage system. PVC deck boards lock onto a Dexerdry seal at install, sending rain off the deck and creating a dry, finished under-deck living space. Made in the USA.","foundingDate":"2023","founder":[{"@id":"https://www.ameridex.com/#founder-ardolina"},{"@id":"https://www.ameridex.com/#founder-murphy"}],"telephone":"+1-800-217-9206","email":"sales@ameridex.com","address":{"@type":"PostalAddress","streetAddress":"1129A Industrial Parkway","addressLocality":"Brick","addressRegion":"NJ","postalCode":"08724","addressCountry":"US"},"sameAs":["https://www.facebook.com/ameridexdryspace/","https://www.youtube.com/channel/UC3Fz0TEKbLpQZefnYQNCxmg"],"knowsAbout":["above-joist deck drainage","under deck drainage system","cellular PVC decking","integrated water-diverting deck seal","new deck construction","dry under-deck living space"],"areaServed":"US","slogan":"Protect The Space Under Your Deck."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ameridex.com/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I use AmeriDex on an existing deck?","acceptedAnswer":{"@type":"Answer","text":"Yes, on a re-deck on sound framing that already has the right pitch where the old boards are removed. Your builder must confirm framing condition, spacing, pitch, flashing, fastening, and the current installation requirements. It cannot be added beneath boards that stay in place."}},{"@type":"Question","name":"Does it keep all rain out of the space below?","acceptedAnswer":{"@type":"Answer","text":"No system can promise that for an open-sided space. The correctly installed board-and-seal assembly sheds rain off the deck surface, so the area underneath stays much drier and usable. Wind-driven rain can still blow in from the open sides, and perimeter details matter. It is not a fully enclosed, weatherproof room."}},{"@type":"Question","name":"How is it different from under-deck drainage?","acceptedAnswer":{"@type":"Answer","text":"AmeriDex integrates the drainage function at the deck surface. Other systems use a separate above-joist layer beneath the boards or collect water below the joists. Compare the three approaches to match the system to your project."}},{"@type":"Question","name":"Is AmeriDex waterproof decking?","acceptedAnswer":{"@type":"Answer","text":"Yes, at the deck surface. The Dexerdry seal closes the gap between the boards, so a correctly installed deck sheds rain off the surface instead of letting it drip through. The area underneath stays much drier and usable, but it is open-sided, so wind-driven rain can still blow in from the sides. It is not a fully enclosed, weatherproof room. See how waterproof decking compares to membranes, aluminum planks, and coatings."}},{"@type":"Question","name":"What are AmeriDex deck boards made of?","acceptedAnswer":{"@type":"Answer","text":"AmeriDex boards are cellular PVC with a proprietary ASA cap and a wood-grain finish. There is no wood fiber anywhere in the board, so a cut edge is just more PVC, with nothing to rot, swell or feed mold. The boards are made in Linden, New Jersey."}},{"@type":"Question","name":"What colors are available, and which are solid?","acceptedAnswer":{"@type":"Answer","text":"There are seven standard colors, plus the TrueGrain Premium Collection. Driftwood, Khaki and Slate are solid colors. Beachwood, Chestnut, Redwood and Hazelnut are variegated, with streaks that add depth and help hide pollen and leaf marks between cleanings. The TrueGrain Premium Collection is the top of the line upgrade, with an ultra-realistic wood look in six colors: New England Birch, Coastal Driftwood, Aged Oak, Embered Taupe, Royal IPE and Tropical Walnut. Screen colors vary, so order free samples to see them in your own light."}},{"@type":"Question","name":"What lengths do the boards come in?","acceptedAnswer":{"@type":"Answer","text":"AmeriDex boards are stocked in 12, 16 and 20 foot lengths. Standard runs top out at 20 ft, and custom lengths up to 25 ft are available on request."}},{"@type":"Question","name":"What is the difference between grooved and solid edge boards?","acceptedAnswer":{"@type":"Answer","text":"Grooved boards have a groove along each side, and the Dexerdry seal locks into it. That is what closes the gap so rain sheds off the surface. Solid edge (square edge) boards have no side groove. You rout a groove only where the seal needs to fit, so they are used at starts, edges, corners and trim."}},{"@type":"Question","name":"Can I get a picture frame border or a breaker board?","acceptedAnswer":{"@type":"Answer","text":"Yes, both are done with solid edge boards. Picture frame: the Dexerdry picture frame detail uses 1 1/2 inch strips ripped from a deck board. A 1/8 inch drainage gap stays between the board ends and the frame, so you get the framed look while water still runs off the deck. A full picture frame is not used, because perimeter boards capping the board ends would dam the water. Breaker: on decks wider than 20 ft, a solid edge center board (also called a butt board) splits the deck, with a gutter on each side. It is an optional design choice; your builder will lay out the details."}},{"@type":"Question","name":"How much do AmeriDex boards expand and contract?","acceptedAnswer":{"@type":"Answer","text":"AmeriDex boards move about 1/8 inch over a 20 ft board across normal seasonal temperature swings. The movement is lengthwise only, along the length of the board, not side to side."}},{"@type":"Question","name":"What gap should I leave at butt joints?","acceptedAnswer":{"@type":"Answer","text":"Butt joints happen only at a center or breaker board, never mid-run. Leave a 1/4 inch gap at butt joints."}},{"@type":"Question","name":"Do the boards move side to side, and how are they spaced?","acceptedAnswer":{"@type":"Answer","text":"No. AmeriDex boards move only lengthwise, not side to side. The Dexerdry seal spaces the boards evenly, so no separate spacers are needed."}},{"@type":"Question","name":"My deck is wider than 20 feet. How is that handled?","acceptedAnswer":{"@type":"Answer","text":"Treat it as smaller decks side by side. For example, a 32 ft deck becomes two 16 ft decks, split by a seam gutter (frame a 3 to 3 1/4 inch gap) or by a center board with a gutter on each side. Deck boards stop about 1/4 inch short of the gutter."}},{"@type":"Question","name":"What joist spacing do AmeriDex boards need?","acceptedAnswer":{"@type":"Answer","text":"Frame the joists at 12 or 16 inches on center, never more than 16 inches on center."}},{"@type":"Question","name":"Does the board direction have to run away from the house?","acceptedAnswer":{"@type":"Answer","text":"No. AmeriDex works with boards parallel or perpendicular to the house. Parallel decks start at a grooved frieze board at the wall. Your contractor supplies the frieze board; AmeriDex does not sell frieze, joists or stringers. Perpendicular decks start with a square edge board caulked to the ledger, with a gutter at the house. Either way, the deck needs 1/8 inch per foot of pitch."}},{"@type":"Question","name":"Can I use hidden fastener clips?","acceptedAnswer":{"@type":"Answer","text":"No. The Dexerdry seal sits in the side groove that clips would use. Boards are face screwed with Starborn top mount screws and capped with color-matched plugs, which gives a clean, hidden fastener look."}},{"@type":"Question","name":"What screws and plugs should I use, and how many?","acceptedAnswer":{"@type":"Answer","text":"Use Starborn epoxy-coated or stainless steel screws with color-matched plugs, two screws per joist on every board. Work from the center of the deck outward, keeping each board compressed. Drive the heads flush, not buried, and put the plugs in as soon as you can, before rain or debris gets into the holes. Approved fasteners are part of the warranty terms, although the fasteners themselves are not warranted."}},{"@type":"Question","name":"Do I need to pre-drill AmeriDex boards?","acceptedAnswer":{"@type":"Answer","text":"No. Cellular PVC does not need pre-drilling, while composite boards need a 3/16 inch pilot hole at every screw. This is one reason PVC goes in faster with the two-screw-per-joist pattern."}},{"@type":"Question","name":"What tools do I need to cut and install AmeriDex?","acceptedAnswer":{"@type":"Answer","text":"You need: the BlueClaw compression tool and a 2x beater board a router with the matching bit a circular saw and a table saw (for drip edges) a rubber mallet a PVC pipe cutter for the seal a drill or impact driver a caulk gun with clear caulk safety glasses A cut board needs no sealing, because a cut edge is just more PVC."}},{"@type":"Question","name":"Do AmeriDex boards get hot in the sun?","acceptedAnswer":{"@type":"Answer","text":"Any deck surface warms in direct sun, and color matters most. Dark colors like Slate and Redwood absorb more heat and feel warmer underfoot in July. For a barefoot or pool deck, lean toward Driftwood, Khaki, Beachwood or Hazelnut, and leave a sample in the sun to test it."}},{"@type":"Question","name":"Will the color fade?","acceptedAnswer":{"@type":"Answer","text":"The ASA cap on every board is designed to resist fading, but no material is fade-proof after years of sun. Boards may lighten a little as they weather, which is normal and not a defect. Under the limited warranty, the color will not fade more than 5 Delta E (CIE) units, a standard measure of color change, after exposure to light and weathering."}},{"@type":"Question","name":"Do the boards need to be stained or sealed?","acceptedAnswer":{"@type":"Answer","text":"No. The color and protection are built into the ASA cap, so there is no sanding, staining, sealing or repainting. Putting a sealer or stain on the boards is unnecessary and could affect your warranty, so check your warranty documents first."}},{"@type":"Question","name":"Will the boards stain from spills or leaves?","acceptedAnswer":{"@type":"Answer","text":"The boards are made to resist permanent staining from food and drink spills. Clean a spill with soap and water or a mild household cleaner as soon as you see it, and within one week. Rinse leaves off before they sit through a rain, and use an oxygen bleach solution for tannin marks. If a food or drink stain still will not come out, have a professional deck cleaner clean it at your cost; if it is still there after that, you can file a stain claim under the limited warranty within 30 days of the professional cleaning."}},{"@type":"Question","name":"How do I clean the deck?","acceptedAnswer":{"@type":"Answer","text":"A broom and a garden hose take care of most days. For a deeper clean, use mild soap, warm water and a soft-bristle brush along the grain. Do not pressure wash: the stream can create micro-tears in the cap and disturb the seal. Avoid solvents, abrasive cleaners and chlorine bleach stronger than 3 percent."}},{"@type":"Question","name":"Can mold or mildew grow on AmeriDex?","acceptedAnswer":{"@type":"Answer","text":"Mold cannot feed on PVC itself. It can grow on pollen, dirt or leaf debris left on the surface in shady, damp spots. Clean it off with 1 cup of oxygen bleach per gallon of warm water: let it sit 5 minutes, scrub lightly, then rinse."}},{"@type":"Question","name":"How does PVC compare with composite and wood?","acceptedAnswer":{"@type":"Answer","text":"Wood needs sealing every year or two and can rot. Composite blends wood fiber with plastic under a cap. That fiber can absorb water at cuts, scratches or uncapped faces. Cellular PVC has no wood fiber at all, so it does not swell, rot or feed mold, and it needs no pre-drilling. PVC does move a bit more with temperature along its length."}},{"@type":"Question","name":"How much does AmeriDex cost?","acceptedAnswer":{"@type":"Answer","text":"AmeriDex is priced by the lineal foot of deck board, and that figure covers both the cellular PVC board and the Dexerdry seal, because together they are the drainage system. Use the cost guide calculator for a starting number, then ask for a written quote for exact figures."}},{"@type":"Question","name":"Are the samples really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Pick the colors you want to see, choose a 6-inch or 12-inch sample, and we ship them to your door at no cost. Request your samples."}},{"@type":"Question","name":"What warranty comes with it?","acceptedAnswer":{"@type":"Answer","text":"AmeriDex deck boards and accessories carry a 25-year limited residential warranty and a 10-year limited commercial warranty. It covers manufacturing defects that cause splitting, flaking, rotting or structural defects. Claims are prorated over the warranty term, the remedy is replacement of the defective product, and no claim can exceed the original purchase price. Read the warranty details and remember to register your warranty within 30 days."}},{"@type":"Question","name":"How long will an AmeriDex deck last?","acceptedAnswer":{"@type":"Answer","text":"We do not publish a lifespan figure. What we put in writing is the limited warranty: 25 years on residential decks and 10 years on commercial decks, covering manufacturing defects that cause splitting, flaking, rotting or structural defects. Install the boards exactly as the instructions show, since improper installation voids the warranty."}},{"@type":"Question","name":"What can void the warranty?","acceptedAnswer":{"@type":"Answer","text":"The limited warranty is void if the problem comes from improper installation; settling, distortion or collapse of the structure under the deck; abuse, such as shoveling snow or scraping with a metal shovel or other metal object; natural disasters such as floods, tornadoes, earthquakes or hurricanes; paints or other chemicals not recommended by the manufacturer; or extreme heat, including sunlight reflected from Low-E glass."}},{"@type":"Question","name":"How do I make a warranty claim?","acceptedAnswer":{"@type":"Answer","text":"Mail your claim within 30 days of discovering the defect to A&M Building Products LLC (AmeriDex), 1129A Industrial Parkway, Brick, NJ 08724. Include proof of purchase showing the purchase date, a description of the problem and photos of the affected area. For questions, email sales@ameridex.com or call 1-800-217-9206. We may ask for more information or to inspect the deck. If the claim is valid, we replace the defective product."}},{"@type":"Question","name":"Can I transfer the warranty to a new owner?","acceptedAnswer":{"@type":"Answer","text":"Yes, one time, within 5 years of the original purchase date. The original owner must send us a written request with proof of purchase and proof of the transfer within 60 days of selling the property or transferring the product. The new owner gets the rest of the original warranty term."}},{"@type":"Question","name":"Where is AmeriDex made?","acceptedAnswer":{"@type":"Answer","text":"Our cellular PVC deck boards are manufactured in Linden, New Jersey, and the Dexerdry seal is also produced in the USA. Our headquarters, sales, and warehouse are in Brick, New Jersey."}},{"@type":"Question","name":"Where should I start?","acceptedAnswer":{"@type":"Answer","text":"Request physical color samples, sketch your deck dimensions, and ask for a project quote. Your written quote should confirm boards, seals, fasteners, accessories, delivery, and any installation costs."}}]}</script>
 </body>
 </html>
