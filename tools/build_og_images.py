@@ -51,6 +51,7 @@ PAGES = {
  "blog-dexerdry-automotive-grade-tpe-seal": ("blog/dexerdry-automotive-grade-tpe-seal.html", "AmeriDex Blog", "Why the Dexerdry Seal Is Built From Automotive-Grade TPE", "diagrams/dexerdry-cross-section.png", "Diagram For Illustration Only"),
  "second-story-deck-waterproofing": ("second-story-deck-waterproofing.html", "AmeriDex Guide", "Second-Story Deck Waterproofing: Keep the Patio Below Dry", "photo:gallery/05-deck-installed.jpg", ""),
  "blog": ("blog.html", "The AmeriDex Blog", "Decks, Drainage and the Space Underneath", "blog-index", "Diagrams For Illustration Only"),
+ "homeowners": ("homeowners.html", "For Homeowners", "Plan a Dry Space Under Your Deck", "photo:gallery/05-deck-installed.jpg", "Design Inspiration"),
 }
 
 def data_uri(path, max_w=1400):

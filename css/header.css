@@ -104,3 +104,24 @@ body[data-theme="dark"] .crumbs li, body[data-theme="dark"] .crumbs [aria-curren
 @media(max-width:1500px) and (min-width:1101px) { .shared-header:has(.ad-store-chip) .header-quote { display:none; } }
 @media(max-width:1660px) and (min-width:1521px) { .shared-header .home-nav { gap:16px; } .shared-header.home-header { gap:20px; } }
 @media(max-width:1960px) and (min-width:1101px) { .shared-header:has(.ad-store-chip) .header-phone, .shared-header:has(.ad-store-chip) .theme-switch { display:none; } }
+/* Room for the Homeowners item (before Contractors). Keeps every desktop
+   link on one row without horizontal scroll. */
+@media(max-width:1920px) and (min-width:1101px) {
+  .shared-header.home-header { gap: 14px; }
+  .shared-header .brand img { width: 190px; }
+  .shared-header .home-nav { gap: 11px; font-size: 12.5px; }
+  .shared-header .header-actions { gap: 8px; }
+  .shared-header .header-quote { padding: 12px 12px; }
+  .shared-header .header-samples { padding: 12px 14px; gap: 10px; }
+}
+@media(max-width:1500px) and (min-width:1101px) {
+  .shared-header.home-header { gap: 10px; padding-left: 16px; padding-right: 16px; }
+  .shared-header .brand img { width: 150px; }
+  .shared-header .home-nav { gap: 8px; font-size: 12px; }
+}
+@media(max-width:1280px) and (min-width:1101px) {
+  .shared-header .brand img { width: 136px; }
+  .shared-header .home-nav { gap: 7px; font-size: 11.5px; }
+  .shared-header .header-samples { padding: 11px 10px; }
+  .shared-header .header-quote { padding: 10px 10px; }
+}
