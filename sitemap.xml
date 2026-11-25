@@ -83,19 +83,19 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/how-to-choose-under-deck-drainage-system.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.ameridex.com/what-to-look-for-deck-rain-guard.html</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.ameridex.com/above-joist-deck-drainage-cost.html</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -107,7 +107,7 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/dry-space-under-deck.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -140,7 +140,7 @@
   </url>
   <url>
     <loc>https://www.ameridex.com/blog.html</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -482,6 +482,16 @@
     <image:image>
       <image:loc>https://www.ameridex.com/assets/img/blog/deck-height-clear-space.jpg</image:loc>
       <image:caption>Side-view diagram of deck height vs clear height under an elevated AmeriDex deck</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.ameridex.com/blog/questions-to-ask-deck-builder.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.ameridex.com/assets/img/blog/deck-builder-questions.jpg</image:loc>
+      <image:caption>Diagram of six points to ask a deck builder about on an AmeriDex deck with a dry space below</image:caption>
     </image:image>
   </url>
 </urlset>
