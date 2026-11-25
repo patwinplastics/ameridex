@@ -359,6 +359,16 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.ameridex.com/homeowners.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.ameridex.com/assets/img/og/homeowners.jpg</image:loc>
+      <image:caption>Finished deck over a covered lower level, for the AmeriDex homeowners guide</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.ameridex.com/plan-your-project.html</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
