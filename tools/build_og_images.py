@@ -16,6 +16,7 @@ IMG = ROOT / "assets/img"
 # slug: (page file, kicker, Title Case headline, visual, tag)
 # visual: "svg" = first inline <svg> on the page, or an image path under assets/img
 PAGES = {
+ "under-deck-workshop": ("under-deck-workshop.html", "AmeriDex Guide", "Workshop Under a Deck: Work in a Dry Space", "svg", "Diagram For Illustration Only"),
  "under-deck-home-gym": ("under-deck-home-gym.html", "AmeriDex Guide", "Home Gym Under a Deck: Work Out in a Dry Space", "svg", "Diagram For Illustration Only"),
  "under-deck-carport": ("under-deck-carport.html", "AmeriDex Guide", "Carport Under a Deck: Park in a Dry Space", "svg", "Diagram For Illustration Only"),
  "under-deck-ceiling": ("under-deck-ceiling.html", "AmeriDex Guide", "Under Deck Ceiling Options for a Dry Deck", "svg", "Diagram For Illustration Only"),
